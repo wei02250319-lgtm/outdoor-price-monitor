@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789499419
+      "updated_at": 1789503094
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -16,7 +16,7 @@
       "currency": "USD",
       "current_price": 196.93,
       "max_discount": 30,
-      "updated_at": 1789501178
+      "updated_at": 1789503104
     },
     "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789499398
+      "updated_at": 1789503072
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -52,7 +52,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 33,
-      "updated_at": 1789499409
+      "updated_at": 1789503083
     },
     "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
       "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
@@ -206,11 +206,29 @@
       "current_price": 29.83,
       "max_discount": 70,
       "updated_at": 1789499473
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-hoodie-NF0A84I1?color=0UZ": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-hoodie-NF0A84I1?color=0UZ",
+      "name": "Men’s Aconcagua 3 Hoodie",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 175.0,
+      "max_discount": 0,
+      "updated_at": 1789503135
+    },
+    "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-rainwear-299273/womens-antora-rain-jacket-NF0A8BKD?color=JK3": {
+      "url": "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-rainwear-299273/womens-antora-rain-jacket-NF0A8BKD?color=JK3",
+      "name": "Women’s Antora Rain Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 130.0,
+      "max_discount": 0,
+      "updated_at": 1789503160
     }
   },
   "meta": {
-    "fixed_rotation_index": 5,
+    "fixed_rotation_index": 2,
     "version": 3,
-    "discovery_rotation_index": 4
+    "discovery_rotation_index": 6
   }
 }
