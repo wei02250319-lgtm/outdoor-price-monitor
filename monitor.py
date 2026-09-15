@@ -1966,17 +1966,17 @@ def should_alert(
             discount,
         )
 
-    
     if max_discount < IMPORTANT_DISCOUNT:
 
-    print(
-        f"价格下降，但当前最大折扣 "
-        f"{max_discount}% < "
-        f"{IMPORTANT_DISCOUNT}%："
-        f"不推送"
-    )
+        print(
+            f"价格下降，但当前最大折扣 "
+            f"{max_discount}% < "
+            f"{IMPORTANT_DISCOUNT}%："
+            f"不推送"
+        )
 
-    return False
+        return False
+
     print(
         f"满足推送条件："
         f"当前折扣 {max_discount}%"
