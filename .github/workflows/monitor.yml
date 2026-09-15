@@ -31,12 +31,7 @@ jobs:
           CRAWLBASE_JS_TOKEN: ${{ secrets.CRAWLBASE_JS_TOKEN }}
         run: |
           echo "开始运行 monitor.py"
-          python -u monitor.py
+          python -u monitr.py
 
-      - name: Save price history
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/prices.json
-          git diff --cached --quiet || git commit -m "Update price history"
-          git push
+      
+  
