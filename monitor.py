@@ -469,50 +469,112 @@ def is_product_url(url):
             "/shop/web-specials/mens/fair-trade",
             "/shop/web-specials/mens/pfc-free",
         }
+def is_product_url(url):
 
-        if path in category_parts:
-            return False
-
-        # Patagonia 某些商品链接是 /product/...
-        # 其他 shop 链接需要有明显商品 slug
-        if "/shop/" in path:
-
-            tail = path.split(
-                "/shop/",
-                1
-            )[-1]
-
-            # 明显分类词排除
-            if tail in {
-                "web-specials",
-                "web-specials/mens",
-                "mens",
-            }:
-                return False
-
-            return (
-                len(tail.split("/"))
-                >= 2
-            )
-
+    if not url:
         return False
 
-    # ---------------------
+    parsed = urlparse(url)
+
+    host = parsed.netloc.lower()
+
+    path = (
+        parsed.path
+        .lower()
+        .rstrip("/")
+    )
+
+    # =====================
+    # REI
+    # =====================
+
+    if "rei.com" in host:
+
+        return "/product/" in path
+
+    # =====================
+    # Arc'teryx Outlet
+    # =====================
+
+    if "outlet.arcteryx.com" in host:
+
+        # 实际商品 URL：
+        # /us/en/shop/mens/xxxxx
+        # /ca/en/shop/mens/xxxxx
+
+        if not re.search(
+            r"/shop/mens/[^/]+$",
+            path,
+            re.I,
+        ):
+            return False
+
+        # 排除明显分类页
+        category_words = {
+            "jackets",
+            "tops",
+            "shirts",
+            "pants",
+            "shorts",
+            "fleece",
+            "insulation",
+            "shells",
+            "layers",
+            "vests",
+            "hoodies",
+            "sweaters",
+            "base-layers",
+            "accessories",
+            "packs",
+            "footwear",
+            "climbing",
+            "ski",
+            "snow",
+        }
+
+        slug = path.rsplit(
+            "/",
+            1
+        )[-1]
+
+        if slug in category_words:
+            return False
+
+        return True
+
+    # =====================
+    # Patagonia US / Canada
+    # =====================
+
+    if (
+        "patagonia.com" in host
+        or "patagonia.ca" in host
+    ):
+
+        # Patagonia 真正商品页使用 /product/
+        #
+        # 例如：
+        # /product/xxxx
+
+        if "/product/" in path:
+            return True
+
+        # /shop/web-specials/mens/xxxx
+        # 这一类路径可能是分类页，
+        # 统一不作为商品页。
+        return False
+
+    # =====================
     # The North Face
-    # ---------------------
+    # =====================
 
     if "thenorthface.com" in host:
 
-        # 排除分类入口
-        category_words = {
-            "/en-us/c/sale/mens-sale-317774",
-            "/en-ca/c/sale-829803",
-        }
-
-        if path in category_words:
+        # 排除分类页面
+        if "/c/" in path:
             return False
 
-        # TNF 商品页面通常存在 p/ 或 product 特征
+        # TNF 常见商品 URL
         if re.search(
             r"/(?:p|product)/",
             path,
@@ -520,20 +582,15 @@ def is_product_url(url):
         ):
             return True
 
-        # 某些 TNF 商品 URL 可能没有 product，
-        # 但会出现颜色/款式 slug + 编号
+        # 某些商品 URL 使用编号结尾
         if (
             "/en-us/" in path
             or "/en-ca/" in path
         ):
 
-            # 排除明显栏目页
-            if "/c/" in path:
-                return False
-
             return bool(
                 re.search(
-                    r"[a-z0-9-]+-\d{5,}",
+                    r"[a-z0-9-]+-\d{5,}$",
                     path,
                     re.I,
                 )
@@ -542,7 +599,6 @@ def is_product_url(url):
         return False
 
     return False
-
 
 def extract_product_links(
     markdown,
