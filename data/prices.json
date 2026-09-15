@@ -7,7 +7,27 @@
       "original_price": 500.0,
       "discount": 40,
       "currency": "USD",
-      "price_cny": 2128.79
+      "price_cny": 2128.79,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "30",
+        "31",
+        "33",
+        "34",
+        "35",
+        "40",
+        "42",
+        "44",
+        "45",
+        "50",
+        "54"
+      ],
+      "stock_status": "out_of_stock"
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "name": "Arc'teryx Atom Insulated Hoody - Men's",
@@ -16,7 +36,29 @@
       "original_price": 300.0,
       "discount": 33,
       "currency": "USD",
-      "price_cny": 1418.79
+      "price_cny": 1418.79,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "30",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "38",
+        "40",
+        "44",
+        "45",
+        "50",
+        "54"
+      ],
+      "stock_status": "out_of_stock"
     },
     "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
       "name": "Arc'teryx Beta SL Jacket - Women's",
@@ -25,7 +67,27 @@
       "original_price": 500.0,
       "discount": 40,
       "currency": "USD",
-      "price_cny": 2128.79
+      "price_cny": 2128.79,
+      "sizes": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "30",
+        "34",
+        "35",
+        "40",
+        "44",
+        "45",
+        "46",
+        "48",
+        "50",
+        "54"
+      ],
+      "stock_status": "out_of_stock"
     },
     "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens": {
       "name": "Arc'teryx Atom Insulated Hoody - Women's",
@@ -34,7 +96,26 @@
       "original_price": 300.0,
       "discount": 30,
       "currency": "USD",
-      "price_cny": 1497.6
+      "price_cny": 1497.6,
+      "sizes": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "30",
+        "32",
+        "35",
+        "39",
+        "40",
+        "44",
+        "45",
+        "50",
+        "54"
+      ],
+      "stock_status": "out_of_stock"
     },
     "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
       "name": "Arc'teryx Bird Head Toque Beanie",
@@ -43,9 +124,21 @@
       "original_price": null,
       "discount": null,
       "currency": "USD",
-      "price_cny": 426.0
+      "price_cny": 426.0,
+      "sizes": [
+        "S",
+        "M",
+        "30",
+        "35",
+        "36",
+        "44",
+        "45",
+        "50",
+        "54"
+      ],
+      "stock_status": "out_of_stock"
     }
   },
   "exchange_rates": {},
-  "last_update": "2026-09-15T04:43:28.313621+00:00"
+  "last_update": "2026-09-15T04:50:29.805117+00:00"
 }
