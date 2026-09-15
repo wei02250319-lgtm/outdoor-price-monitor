@@ -6,19 +6,38 @@ import html
 import requests
 from bs4 import BeautifulSoup
 
+
 # ============================================================
 # 基本设置
 # ============================================================
 
 FIRECRAWL_API = "https://api.firecrawl.dev/v2/scrape"
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY", "").strip()
+TELEGRAM_BOT_TOKEN = os.getenv(
+    "TELEGRAM_BOT_TOKEN",
+    ""
+).strip()
+
+TELEGRAM_CHAT_ID = os.getenv(
+    "TELEGRAM_CHAT_ID",
+    ""
+).strip()
+
+FIRECRAWL_API_KEY = os.getenv(
+    "FIRECRAWL_API_KEY",
+    ""
+).strip()
 
 HISTORY_FILE = "data/prices.json"
 
 REQUEST_TIMEOUT = 90
+
+# Firecrawl 限流保护
+FIRECRAWL_WAIT_SECONDS = 12
+
+# 每次运行最多抓几个商品详情
+MAX_DETAIL_PER_RUN = 3
+
 
 # ============================================================
 # 重点商品
@@ -49,6 +68,7 @@ WATCHLIST = [
     "c1",
 ]
 
+
 # ============================================================
 # REI 品牌页面
 # ============================================================
@@ -68,19 +88,12 @@ BRAND_PAGES = [
     ),
 ]
 
-FOCUS_SIZES = [
-    "XXXS",
-    "XXS",
-    "XS",
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL",
-    "XXXL"
-]
 
-# 暂时使用 USD → RMB
+# ============================================================
+# 汇率
+# ============================================================
+
+# 暂时使用 USD -> RMB
 # 后面再接实时汇率
 RATES_TO_RMB = {
     "USD": 7.15
@@ -92,35 +105,69 @@ RATES_TO_RMB = {
 # ============================================================
 
 def clean_text(text):
+
     if text is None:
         return ""
 
-    text = html.unescape(str(text))
-    text = text.replace("\u00a0", " ")
-    text = re.sub(r"\s+", " ", text)
+    text = html.unescape(
+        str(text)
+    )
+
+    text = text.replace(
+        "\u00a0",
+        " "
+    )
+
+    text = re.sub(
+        r"\s+",
+        " ",
+        text
+    )
 
     return text.strip()
 
 
 def normalize_name(text):
-    text = clean_text(text).lower()
 
-    text = text.replace("’", "'")
-    text = text.replace("–", "-")
-    text = text.replace("—", "-")
+    text = clean_text(
+        text
+    ).lower()
+
+    text = text.replace(
+        "’",
+        "'"
+    )
+
+    text = text.replace(
+        "–",
+        "-"
+    )
+
+    text = text.replace(
+        "—",
+        "-"
+    )
 
     return text
 
 
 def ensure_history_file():
-    os.makedirs("data", exist_ok=True)
 
-    if not os.path.exists(HISTORY_FILE):
+    os.makedirs(
+        "data",
+        exist_ok=True
+    )
+
+    if not os.path.exists(
+        HISTORY_FILE
+    ):
+
         with open(
             HISTORY_FILE,
             "w",
             encoding="utf-8"
         ) as f:
+
             json.dump(
                 {},
                 f,
@@ -143,12 +190,18 @@ def load_history():
 
             data = json.load(f)
 
-            if isinstance(data, dict):
+            if isinstance(
+                data,
+                dict
+            ):
                 return data
 
     except Exception as e:
 
-        print("读取价格历史失败:", e)
+        print(
+            "读取价格历史失败:",
+            e
+        )
 
     return {}
 
@@ -157,7 +210,10 @@ def save_history(history):
 
     ensure_history_file()
 
-    temp_file = HISTORY_FILE + ".tmp"
+    temp_file = (
+        HISTORY_FILE
+        + ".tmp"
+    )
 
     with open(
         temp_file,
@@ -182,20 +238,32 @@ def save_history(history):
 # Firecrawl
 # ============================================================
 
-def firecrawl(url, formats=None):
+def firecrawl(
+    url,
+    formats=None
+):
 
     if formats is None:
-        formats = ["markdown"]
+
+        formats = [
+            "markdown"
+        ]
 
     if not FIRECRAWL_API_KEY:
 
-        print("错误：FIRECRAWL_API_KEY 没有读取到")
+        print(
+            "错误："
+            "FIRECRAWL_API_KEY "
+            "没有读取到"
+        )
 
         return None
 
     headers = {
-        "Authorization": f"Bearer {FIRECRAWL_API_KEY}",
-        "Content-Type": "application/json"
+        "Authorization":
+            f"Bearer {FIRECRAWL_API_KEY}",
+        "Content-Type":
+            "application/json"
     }
 
     payload = {
@@ -215,8 +283,23 @@ def firecrawl(url, formats=None):
         )
 
         print(
-            f"Firecrawl: {response.status_code} {url}"
+            "Firecrawl:",
+            response.status_code,
+            url
         )
+
+        # ----------------------------------------------------
+        # 429 限流
+        # ----------------------------------------------------
+
+        if response.status_code == 429:
+
+            print(
+                "Firecrawl 触发限流，"
+                "本次跳过这个请求。"
+            )
+
+            return None
 
         if response.status_code != 200:
 
@@ -228,7 +311,10 @@ def firecrawl(url, formats=None):
 
         data = response.json()
 
-        if not data.get("success", True):
+        if not data.get(
+            "success",
+            True
+        ):
 
             print(
                 "Firecrawl 返回失败:",
@@ -255,11 +341,15 @@ def firecrawl(url, formats=None):
 
 def is_watch_product(text):
 
-    text = normalize_name(text)
+    text = normalize_name(
+        text
+    )
 
     for keyword in WATCHLIST:
 
-        keyword = normalize_name(keyword)
+        keyword = normalize_name(
+            keyword
+        )
 
         if keyword == "c1":
 
@@ -272,10 +362,15 @@ def is_watch_product(text):
         else:
 
             if keyword in text:
+
                 return True
 
     return False
 
+
+# ============================================================
+# 提取 REI 商品链接
+# ============================================================
 
 def extract_links_from_markdown(
     markdown,
@@ -283,9 +378,11 @@ def extract_links_from_markdown(
 ):
 
     if not markdown:
+
         return []
 
     results = []
+
     seen = set()
 
     # --------------------------------------------------------
@@ -294,11 +391,14 @@ def extract_links_from_markdown(
 
     pattern = re.compile(
         r"\[([^\]]+)\]"
-        r"\((https?://www\.rei\.com/[^)\s]+|/[^)\s]+)\)",
+        r"\((https?://www\.rei\.com/"
+        r"[^)\s]+|/[^)\s]+)\)",
         re.I
     )
 
-    for match in pattern.finditer(markdown):
+    for match in pattern.finditer(
+        markdown
+    ):
 
         title = clean_text(
             match.group(1)
@@ -306,7 +406,9 @@ def extract_links_from_markdown(
 
         href = match.group(2)
 
-        if href.startswith("/"):
+        if href.startswith(
+            "/"
+        ):
 
             href = (
                 "https://www.rei.com"
@@ -323,18 +425,26 @@ def extract_links_from_markdown(
             "/product/" not in href
             and "/products/" not in href
         ):
+
             continue
 
         if href in seen:
+
             continue
 
         combined = normalize_name(
-            title + " " + href
+            title
+            + " "
+            + href
         )
 
-        if is_watch_product(combined):
+        if is_watch_product(
+            combined
+        ):
 
-            seen.add(href)
+            seen.add(
+                href
+            )
 
             results.append({
                 "brand": brand,
@@ -353,7 +463,9 @@ def extract_links_from_markdown(
         re.I
     )
 
-    for match in url_pattern.finditer(markdown):
+    for match in url_pattern.finditer(
+        markdown
+    ):
 
         href = match.group(0)
 
@@ -365,27 +477,36 @@ def extract_links_from_markdown(
         )
 
         if href in seen:
+
             continue
 
         start = max(
             0,
-            match.start() - 500
+            match.start() - 700
         )
 
         end = min(
             len(markdown),
-            match.end() + 500
+            match.end() + 700
         )
 
-        nearby = markdown[start:end]
+        nearby = markdown[
+            start:end
+        ]
 
         combined = normalize_name(
-            href + " " + nearby
+            href
+            + " "
+            + nearby
         )
 
-        if is_watch_product(combined):
+        if is_watch_product(
+            combined
+        ):
 
-            seen.add(href)
+            seen.add(
+                href
+            )
 
             results.append({
                 "brand": brand,
@@ -403,14 +524,30 @@ def extract_links_from_markdown(
 def parse_money(value):
 
     if value is None:
+
         return None
 
     text = str(value)
 
-    text = text.replace(",", "")
-    text = text.replace("$", "")
-    text = text.replace("US", "")
-    text = text.replace("USD", "")
+    text = text.replace(
+        ",",
+        ""
+    )
+
+    text = text.replace(
+        "$",
+        ""
+    )
+
+    text = text.replace(
+        "US",
+        ""
+    )
+
+    text = text.replace(
+        "USD",
+        ""
+    )
 
     match = re.search(
         r"(\d+(?:\.\d{1,2})?)",
@@ -418,6 +555,7 @@ def parse_money(value):
     )
 
     if not match:
+
         return None
 
     try:
@@ -434,15 +572,22 @@ def parse_money(value):
 def money(value):
 
     if value is None:
+
         return ""
 
-    value = float(value)
+    value = float(
+        value
+    )
 
     if value.is_integer():
 
-        return f"${int(value)}"
+        return (
+            f"${int(value)}"
+        )
 
-    return f"${value:.2f}"
+    return (
+        f"${value:.2f}"
+    )
 
 
 def calculate_discount(
@@ -455,10 +600,13 @@ def calculate_discount(
         or not current
         or original <= current
     ):
+
         return 0
 
     return round(
-        (original - current)
+        (
+            original - current
+        )
         / original
         * 100
     )
@@ -467,6 +615,7 @@ def calculate_discount(
 def usd_to_rmb(value):
 
     if value is None:
+
         return None
 
     return round(
@@ -476,24 +625,34 @@ def usd_to_rmb(value):
 
 
 # ============================================================
-# JSON 递归解析
+# JSON 递归
 # ============================================================
 
 def recursive_objects(obj):
 
-    if isinstance(obj, dict):
+    if isinstance(
+        obj,
+        dict
+    ):
 
         yield obj
 
         for value in obj.values():
 
-            yield from recursive_objects(value)
+            yield from recursive_objects(
+                value
+            )
 
-    elif isinstance(obj, list):
+    elif isinstance(
+        obj,
+        list
+    ):
 
         for value in obj:
 
-            yield from recursive_objects(value)
+            yield from recursive_objects(
+                value
+            )
 
 
 def get_value(
@@ -501,7 +660,11 @@ def get_value(
     keys
 ):
 
-    if not isinstance(obj, dict):
+    if not isinstance(
+        obj,
+        dict
+    ):
+
         return None
 
     lower_map = {
@@ -511,9 +674,14 @@ def get_value(
 
     for key in keys:
 
-        if key.lower() in lower_map:
+        if (
+            key.lower()
+            in lower_map
+        ):
 
-            return lower_map[key.lower()]
+            return lower_map[
+                key.lower()
+            ]
 
     return None
 
@@ -534,14 +702,20 @@ def detect_color(obj):
             "colourName",
             "swatchName",
             "variantColor",
-            "optionColor"
+            "optionColor",
+            "displayColor",
+            "displayColour"
         ]
     )
 
     if value is None:
+
         return ""
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict
+    ):
 
         value = get_value(
             value,
@@ -553,7 +727,9 @@ def detect_color(obj):
             ]
         )
 
-    return clean_text(value)
+    return clean_text(
+        value
+    )
 
 
 # ============================================================
@@ -570,14 +746,19 @@ def detect_size(obj):
             "size_name",
             "variantSize",
             "dimension",
-            "optionSize"
+            "optionSize",
+            "displaySize"
         ]
     )
 
     if value is None:
+
         return ""
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict
+    ):
 
         value = get_value(
             value,
@@ -589,7 +770,9 @@ def detect_size(obj):
             ]
         )
 
-    return clean_text(value)
+    return clean_text(
+        value
+    )
 
 
 # ============================================================
@@ -612,7 +795,10 @@ def detect_availability(obj):
         ]
     )
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict
+    ):
 
         value = get_value(
             value,
@@ -624,7 +810,10 @@ def detect_availability(obj):
             ]
         )
 
-    if isinstance(value, bool):
+    if isinstance(
+        value,
+        bool
+    ):
 
         return value
 
@@ -632,7 +821,9 @@ def detect_availability(obj):
 
         return None
 
-    text = normalize_name(value)
+    text = normalize_name(
+        value
+    )
 
     if any(
         x in text
@@ -683,7 +874,10 @@ def detect_price(obj):
         ]
     )
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict
+    ):
 
         value = get_value(
             value,
@@ -694,7 +888,9 @@ def detect_price(obj):
             ]
         )
 
-    return parse_money(value)
+    return parse_money(
+        value
+    )
 
 
 # ============================================================
@@ -716,11 +912,16 @@ def detect_original_price(obj):
             "compare_at_price",
             "msrp",
             "wasPrice",
-            "was_price"
+            "was_price",
+            "retailPrice",
+            "retail_price"
         ]
     )
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict
+    ):
 
         value = get_value(
             value,
@@ -731,72 +932,116 @@ def detect_original_price(obj):
             ]
         )
 
-    return parse_money(value)
+    return parse_money(
+        value
+    )
 
 
 # ============================================================
-# 判断是不是商品变体
+# 变体判断
 # ============================================================
 
-def object_looks_like_variant(obj):
+def object_looks_like_variant(
+    obj
+):
 
-    if not isinstance(obj, dict):
+    if not isinstance(
+        obj,
+        dict
+    ):
+
         return False
 
-    price = detect_price(obj)
+    price = detect_price(
+        obj
+    )
 
-    color = detect_color(obj)
+    color = detect_color(
+        obj
+    )
 
-    size = detect_size(obj)
+    size = detect_size(
+        obj
+    )
 
-    availability = detect_availability(obj)
+    availability = detect_availability(
+        obj
+    )
 
     if price is None:
+
         return False
 
     if color or size:
+
         return True
 
     if availability is not None:
+
         return True
 
     return False
 
 
 # ============================================================
-# 从 JSON 中提取变体
+# JSON 提取变体
 # ============================================================
 
-def extract_variants_from_json(data):
+def extract_variants_from_json(
+    data
+):
 
     variants = []
 
-    for obj in recursive_objects(data):
+    for obj in recursive_objects(
+        data
+    ):
 
-        if not object_looks_like_variant(obj):
+        if not object_looks_like_variant(
+            obj
+        ):
+
             continue
 
-        current = detect_price(obj)
+        current = detect_price(
+            obj
+        )
 
         if current is None:
+
             continue
 
-        original = detect_original_price(obj)
+        original = detect_original_price(
+            obj
+        )
 
         if original is None:
+
             original = current
 
-        color = detect_color(obj)
+        color = detect_color(
+            obj
+        )
 
-        size = detect_size(obj)
+        size = detect_size(
+            obj
+        )
 
-        available = detect_availability(obj)
+        available = detect_availability(
+            obj
+        )
 
         variants.append({
             "price": current,
             "original": original,
-            "color": color or "未标注颜色",
-            "size": size or "未标注尺码",
+            "color": (
+                color
+                or "未标注颜色"
+            ),
+            "size": (
+                size
+                or "未标注尺码"
+            ),
             "available": available
         })
 
@@ -804,12 +1049,15 @@ def extract_variants_from_json(data):
 
 
 # ============================================================
-# HTML 中的 JSON
+# HTML JSON
 # ============================================================
 
-def extract_json_scripts(raw_html):
+def extract_json_scripts(
+    raw_html
+):
 
     if not raw_html:
+
         return []
 
     soup = BeautifulSoup(
@@ -819,7 +1067,10 @@ def extract_json_scripts(raw_html):
 
     results = []
 
+    # --------------------------------------------------------
     # JSON-LD
+    # --------------------------------------------------------
+
     for script in soup.find_all(
         "script",
         type="application/ld+json"
@@ -831,19 +1082,28 @@ def extract_json_scripts(raw_html):
         )
 
         if not text:
+
             continue
 
         try:
 
             results.append(
-                json.loads(text)
+                json.loads(
+                    text
+                )
             )
 
         except Exception:
+
             pass
 
+    # --------------------------------------------------------
     # 普通 JSON script
-    for script in soup.find_all("script"):
+    # --------------------------------------------------------
+
+    for script in soup.find_all(
+        "script"
+    ):
 
         text = (
             script.string
@@ -851,34 +1111,45 @@ def extract_json_scripts(raw_html):
         )
 
         if not text:
+
             continue
 
         text = text.strip()
 
         if len(text) < 100:
+
             continue
 
         if (
-            "__NEXT_DATA__" in text
+            "__NEXT_DATA__"
+            in text
         ):
+
             continue
 
         if not (
             text.startswith("{")
             or text.startswith("[")
         ):
+
             continue
 
         try:
 
             results.append(
-                json.loads(text)
+                json.loads(
+                    text
+                )
             )
 
         except Exception:
+
             pass
 
+    # --------------------------------------------------------
     # NEXT DATA
+    # --------------------------------------------------------
+
     script = soup.find(
         "script",
         id="__NEXT_DATA__"
@@ -896,13 +1167,228 @@ def extract_json_scripts(raw_html):
             try:
 
                 results.append(
-                    json.loads(text)
+                    json.loads(
+                        text
+                    )
                 )
 
             except Exception:
+
                 pass
 
     return results
+
+
+# ============================================================
+# 商品主图
+# ============================================================
+
+def extract_product_image(
+    raw_html
+):
+
+    if not raw_html:
+
+        return ""
+
+    soup = BeautifulSoup(
+        raw_html,
+        "html.parser"
+    )
+
+    # --------------------------------------------------------
+    # OpenGraph
+    # --------------------------------------------------------
+
+    for prop in [
+        "og:image",
+        "og:image:url"
+    ]:
+
+        tag = soup.find(
+            "meta",
+            property=prop
+        )
+
+        if (
+            tag
+            and tag.get("content")
+        ):
+
+            image = html.unescape(
+                tag["content"]
+            ).strip()
+
+            if image.startswith(
+                "http"
+            ):
+
+                return image
+
+    # --------------------------------------------------------
+    # Twitter
+    # --------------------------------------------------------
+
+    tag = soup.find(
+        "meta",
+        attrs={
+            "name":
+                "twitter:image"
+        }
+    )
+
+    if (
+        tag
+        and tag.get("content")
+    ):
+
+        image = html.unescape(
+            tag["content"]
+        ).strip()
+
+        if image.startswith(
+            "http"
+        ):
+
+            return image
+
+    # --------------------------------------------------------
+    # image_src
+    # --------------------------------------------------------
+
+    tag = soup.find(
+        "link",
+        rel="image_src"
+    )
+
+    if (
+        tag
+        and tag.get("href")
+    ):
+
+        image = html.unescape(
+            tag["href"]
+        ).strip()
+
+        if image.startswith(
+            "http"
+        ):
+
+            return image
+
+    # --------------------------------------------------------
+    # JSON-LD
+    # --------------------------------------------------------
+
+    for script in soup.find_all(
+        "script",
+        type="application/ld+json"
+    ):
+
+        text = (
+            script.string
+            or script.get_text()
+        )
+
+        if not text:
+
+            continue
+
+        try:
+
+            data = json.loads(
+                text
+            )
+
+            for obj in recursive_objects(
+                data
+            ):
+
+                image = obj.get(
+                    "image"
+                )
+
+                if isinstance(
+                    image,
+                    str
+                ):
+
+                    if image.startswith(
+                        "http"
+                    ):
+
+                        return image
+
+                if isinstance(
+                    image,
+                    list
+                ):
+
+                    for item in image:
+
+                        if (
+                            isinstance(
+                                item,
+                                str
+                            )
+                            and item.startswith(
+                                "http"
+                            )
+                        ):
+
+                            return item
+
+        except Exception:
+
+            pass
+
+    # --------------------------------------------------------
+    # HTML 中最后兜底找图片
+    # --------------------------------------------------------
+
+    for tag in soup.find_all(
+        "img"
+    ):
+
+        for attr in [
+            "src",
+            "data-src",
+            "data-lazy-src"
+        ]:
+
+            value = tag.get(
+                attr
+            )
+
+            if not value:
+
+                continue
+
+            value = html.unescape(
+                value
+            ).strip()
+
+            if value.startswith(
+                "http"
+            ):
+
+                # 避开明显的 logo/icon
+                low = value.lower()
+
+                if any(
+                    x in low
+                    for x in [
+                        "logo",
+                        "icon",
+                        "sprite"
+                    ]
+                ):
+
+                    continue
+
+                return value
+
+    return ""
 
 
 # ============================================================
@@ -922,31 +1408,50 @@ def deduplicate_variants(
         key = (
             round(
                 float(
-                    v.get("price") or 0
+                    v.get(
+                        "price"
+                    )
+                    or 0
                 ),
                 2
             ),
             round(
                 float(
-                    v.get("original") or 0
+                    v.get(
+                        "original"
+                    )
+                    or 0
                 ),
                 2
             ),
             normalize_name(
-                v.get("color", "")
+                v.get(
+                    "color",
+                    ""
+                )
             ),
             normalize_name(
-                v.get("size", "")
+                v.get(
+                    "size",
+                    ""
+                )
             ),
-            v.get("available")
+            v.get(
+                "available"
+            )
         )
 
         if key in seen:
+
             continue
 
-        seen.add(key)
+        seen.add(
+            key
+        )
 
-        result.append(v)
+        result.append(
+            v
+        )
 
     return result
 
@@ -960,14 +1465,15 @@ def fallback_markdown_variants(
 ):
 
     if not markdown:
+
         return []
 
     prices = []
 
-    # 同时识别：
-    # $399
-    # $399.83
-    # $1,299
+    # --------------------------------------------------------
+    # 识别 $
+    # --------------------------------------------------------
+
     pattern = re.compile(
         r"\$\s?"
         r"(\d{1,4}(?:,\d{3})*"
@@ -983,28 +1489,40 @@ def fallback_markdown_variants(
         )
 
         if value is None:
+
             continue
 
         if value not in prices:
-            prices.append(value)
+
+            prices.append(
+                value
+            )
 
     if len(prices) < 2:
+
         return []
 
-    original = max(prices)
+    original = max(
+        prices
+    )
 
     variants = []
 
-    for price in sorted(prices):
+    for price in sorted(
+        prices
+    ):
 
         if price >= original:
+
             continue
 
         variants.append({
             "price": price,
             "original": original,
-            "color": "页面未明确颜色",
-            "size": "页面未明确尺码",
+            "color":
+                "页面未明确颜色",
+            "size":
+                "页面未明确尺码",
             "available": None
         })
 
@@ -1030,11 +1548,16 @@ def get_product_title(
             list_title
         )
 
+    # Markdown H1
     for line in markdown.splitlines():
 
-        line = clean_text(line)
+        line = clean_text(
+            line
+        )
 
-        if line.startswith("#"):
+        if line.startswith(
+            "#"
+        ):
 
             title = re.sub(
                 r"^#+\s*",
@@ -1046,6 +1569,7 @@ def get_product_title(
 
                 return title
 
+    # HTML title
     if raw_html:
 
         soup = BeautifulSoup(
@@ -1084,7 +1608,9 @@ def product_detail(
 ):
 
     print()
-    print("抓取重点商品:")
+    print(
+        "抓取重点商品:"
+    )
     print(url)
 
     data = firecrawl(
@@ -1097,7 +1623,9 @@ def product_detail(
 
     if not data:
 
-        print("商品抓取失败")
+        print(
+            "商品抓取失败"
+        )
 
         return None
 
@@ -1128,6 +1656,27 @@ def product_detail(
         list_title
     )
 
+    # --------------------------------------------------------
+    # 商品图片
+    # --------------------------------------------------------
+
+    image_url = extract_product_image(
+        raw_html
+    )
+
+    if image_url:
+
+        print(
+            "发现商品图片:",
+            image_url[:150]
+        )
+
+    else:
+
+        print(
+            "没有发现商品图片"
+        )
+
     variants = []
 
     # --------------------------------------------------------
@@ -1140,7 +1689,9 @@ def product_detail(
         )
     )
 
-    for json_data in json_data_list:
+    for json_data in (
+        json_data_list
+    ):
 
         variants.extend(
             extract_variants_from_json(
@@ -1153,7 +1704,7 @@ def product_detail(
     )
 
     # --------------------------------------------------------
-    # JSON 没解析出来时使用 Markdown
+    # Markdown 备用
     # --------------------------------------------------------
 
     if not variants:
@@ -1180,9 +1731,13 @@ def product_detail(
 
     for v in variants:
 
-        if not v.get("original"):
+        if not v.get(
+            "original"
+        ):
 
-            v["original"] = v["price"]
+            v["original"] = (
+                v["price"]
+            )
 
         discount = calculate_discount(
             v["original"],
@@ -1193,7 +1748,9 @@ def product_detail(
 
         if discount > 0:
 
-            sale_variants.append(v)
+            sale_variants.append(
+                v
+            )
 
     if not sale_variants:
 
@@ -1204,7 +1761,7 @@ def product_detail(
         return None
 
     # --------------------------------------------------------
-    # 按价格分组
+    # 按价格档位分组
     # --------------------------------------------------------
 
     grouped = group_variants_by_price(
@@ -1212,15 +1769,18 @@ def product_detail(
     )
 
     print(
-        f"发现折扣价格层级: {len(grouped)}"
+        "发现折扣价格层级:",
+        len(grouped)
     )
 
     for level in grouped:
 
         print(
-            f"  原价 {money(level['original'])}"
+            f"  原价 "
+            f"{money(level['original'])}"
             f" -> "
-            f"现价 {money(level['price'])}"
+            f"现价 "
+            f"{money(level['price'])}"
             f" "
             f"({level['discount']}%)"
         )
@@ -1229,6 +1789,7 @@ def product_detail(
         "brand": brand,
         "name": title,
         "url": url,
+        "image": image_url,
         "levels": grouped
     }
 
@@ -1247,11 +1808,15 @@ def group_variants_by_price(
 
         key = (
             round(
-                float(v["price"]),
+                float(
+                    v["price"]
+                ),
                 2
             ),
             round(
-                float(v["original"]),
+                float(
+                    v["original"]
+                ),
                 2
             )
         )
@@ -1259,25 +1824,32 @@ def group_variants_by_price(
         if key not in groups:
 
             groups[key] = {
-                "price": v["price"],
-                "original": v["original"],
-                "discount": v.get(
-                    "discount",
-                    0
-                ),
+                "price":
+                    v["price"],
+                "original":
+                    v["original"],
+                "discount":
+                    v.get(
+                        "discount",
+                        0
+                    ),
                 "colors": {}
             }
 
         color = (
             clean_text(
-                v.get("color")
+                v.get(
+                    "color"
+                )
             )
             or "未标注颜色"
         )
 
         size = (
             clean_text(
-                v.get("size")
+                v.get(
+                    "size"
+                )
             )
             or "未标注尺码"
         )
@@ -1287,13 +1859,17 @@ def group_variants_by_price(
             not in groups[key]["colors"]
         ):
 
-            groups[key]["colors"][color] = {
+            groups[key]["colors"][
+                color
+            ] = {
                 "sizes": [],
                 "available": []
             }
 
         color_data = (
-            groups[key]["colors"][color]
+            groups[key]["colors"][
+                color
+            ]
         )
 
         if (
@@ -1314,7 +1890,9 @@ def group_variants_by_price(
             color_data[
                 "available"
             ].append(
-                bool(available)
+                bool(
+                    available
+                )
             )
 
     result = list(
@@ -1357,9 +1935,12 @@ def lowest_sale_price(
             )
 
     if not prices:
+
         return None
 
-    return min(prices)
+    return min(
+        prices
+    )
 
 
 # ============================================================
@@ -1378,17 +1959,18 @@ def make_price_signature(
     ):
 
         result.append({
-            "price": round(
-                level["price"],
-                2
-            ),
-            "original": round(
-                level["original"],
-                2
-            ),
-            "discount": level[
-                "discount"
-            ]
+            "price":
+                round(
+                    level["price"],
+                    2
+                ),
+            "original":
+                round(
+                    level["original"],
+                    2
+                ),
+            "discount":
+                level["discount"]
         })
 
     result.sort(
@@ -1402,7 +1984,7 @@ def make_price_signature(
 
 
 # ============================================================
-# 是否推送
+# 是否降价
 # ============================================================
 
 def should_notify(
@@ -1419,9 +2001,12 @@ def should_notify(
     )
 
     if current_price is None:
+
         return False
 
-    old = history.get(url)
+    old = history.get(
+        url
+    )
 
     # --------------------------------------------------------
     # 第一次发现
@@ -1430,19 +2015,23 @@ def should_notify(
     if not old:
 
         history[url] = {
-            "name": product["name"],
-            "lowest_price": current_price,
+            "name":
+                product["name"],
+            "lowest_price":
+                current_price,
             "price_signature":
                 make_price_signature(
                     product
                 ),
-            "updated": int(
-                time.time()
-            )
+            "updated":
+                int(
+                    time.time()
+                )
         }
 
         print(
-            "首次记录，建立价格基准:",
+            "首次记录，"
+            "建立价格基准:",
             product["name"]
         )
 
@@ -1455,27 +2044,33 @@ def should_notify(
     if old_price is None:
 
         history[url] = {
-            "name": product["name"],
-            "lowest_price": current_price,
+            "name":
+                product["name"],
+            "lowest_price":
+                current_price,
             "price_signature":
                 make_price_signature(
                     product
                 ),
-            "updated": int(
-                time.time()
-            )
+            "updated":
+                int(
+                    time.time()
+                )
         }
 
         return False
 
+    old_price = float(
+        old_price
+    )
+
     # --------------------------------------------------------
     # 核心规则：
-    # 只有价格下降才推送
+    # 只有当前最低价 < 历史最低价
+    # 才推送
     # --------------------------------------------------------
 
-    if current_price < float(
-        old_price
-    ):
+    if current_price < old_price:
 
         print(
             f"发现降价: "
@@ -1485,41 +2080,47 @@ def should_notify(
         )
 
         history[url] = {
-            "name": product["name"],
-            "lowest_price": current_price,
+            "name":
+                product["name"],
+            "lowest_price":
+                current_price,
             "price_signature":
                 make_price_signature(
                     product
                 ),
-            "updated": int(
-                time.time()
-            )
+            "updated":
+                int(
+                    time.time()
+                )
         }
 
         return True
 
     # --------------------------------------------------------
-    # 涨价 / 持平：
+    # 持平 / 涨价：
     # 不推送
     # --------------------------------------------------------
 
     history[url] = {
-        "name": product["name"],
-        "lowest_price": current_price,
+        "name":
+            product["name"],
+        "lowest_price":
+            current_price,
         "price_signature":
             make_price_signature(
                 product
             ),
-        "updated": int(
-            time.time()
-        )
+        "updated":
+            int(
+                time.time()
+            )
     }
 
     return False
 
 
 # ============================================================
-# Telegram 格式
+# Telegram 文本
 # ============================================================
 
 def format_product(
@@ -1528,11 +2129,28 @@ def format_product(
 
     lines = []
 
-    for level in product["levels"]:
+    # 品牌
+    lines.append(
+        f"🏔️ {product['brand']}"
+    )
 
-        price = level["price"]
-        original = level["original"]
-        discount = level["discount"]
+    lines.append("")
+
+    for level in product[
+        "levels"
+    ]:
+
+        price = level[
+            "price"
+        ]
+
+        original = level[
+            "original"
+        ]
+
+        discount = level[
+            "discount"
+        ]
 
         rmb_price = usd_to_rmb(
             price
@@ -1542,7 +2160,10 @@ def format_product(
             original
         )
 
+        # ----------------------------------------------------
         # 折扣等级
+        # ----------------------------------------------------
+
         if discount >= 50:
 
             icon = "🚨"
@@ -1556,7 +2177,7 @@ def format_product(
             icon = "🏷️"
 
         # ----------------------------------------------------
-        # 标题
+        # 商品名称
         # ----------------------------------------------------
 
         lines.append(
@@ -1565,18 +2186,26 @@ def format_product(
             f"{product['name']}"
         )
 
+        # ----------------------------------------------------
+        # 原价 / 现价
+        # ----------------------------------------------------
+
         lines.append(
-            f"🏷️ 原价 {money(original)}"
+            f"🏷️ 原价 "
+            f"{money(original)}"
             f"（¥{int(rmb_original)}）"
             f"｜"
-            f"💰 现价 {money(price)}"
+            f"💰 现价 "
+            f"{money(price)}"
             f"（¥{int(rmb_price)}）"
         )
 
         lines.append("")
 
         colors = list(
-            level["colors"].keys()
+            level[
+                "colors"
+            ].keys()
         )
 
         if colors:
@@ -1587,7 +2216,9 @@ def format_product(
 
             lines.append(
                 "颜色       "
-                + "      ".join(colors)
+                + "      ".join(
+                    colors
+                )
             )
 
             # ------------------------------------------------
@@ -1599,7 +2230,9 @@ def format_product(
             for color in colors:
 
                 info = (
-                    level["colors"][color]
+                    level[
+                        "colors"
+                    ][color]
                 )
 
                 sizes = []
@@ -1608,14 +2241,19 @@ def format_product(
                     "sizes"
                 ]:
 
-                    if size not in sizes:
+                    if (
+                        size
+                        not in sizes
+                    ):
 
                         sizes.append(
                             size
                         )
 
                 size_values.append(
-                    " ".join(sizes)
+                    " ".join(
+                        sizes
+                    )
                 )
 
             lines.append(
@@ -1634,7 +2272,9 @@ def format_product(
             for color in colors:
 
                 info = (
-                    level["colors"][color]
+                    level[
+                        "colors"
+                    ][color]
                 )
 
                 states = info.get(
@@ -1680,28 +2320,32 @@ def format_product(
         lines.append("")
 
     # --------------------------------------------------------
-    # 只保留商品链接
+    # 最后只放直接链接
     # --------------------------------------------------------
 
     lines.append(
         product["url"]
     )
 
-    return "\n".join(lines)
+    return "\n".join(
+        lines
+    )
 
 
 # ============================================================
-# Telegram
+# Telegram 推送
 # ============================================================
 
 def telegram_send(
-    message
+    message,
+    image_url=""
 ):
 
     if not TELEGRAM_BOT_TOKEN:
 
         print(
-            "Telegram Bot Token 没有读取到"
+            "Telegram Bot Token "
+            "没有读取到"
         )
 
         return False
@@ -1709,20 +2353,111 @@ def telegram_send(
     if not TELEGRAM_CHAT_ID:
 
         print(
-            "Telegram Chat ID 没有读取到"
+            "Telegram Chat ID "
+            "没有读取到"
         )
 
         return False
 
+    # ========================================================
+    # 有图片：先尝试 sendPhoto
+    # ========================================================
+
+    if image_url:
+
+        photo_url = (
+            "https://api.telegram.org/"
+            f"bot{TELEGRAM_BOT_TOKEN}/"
+            "sendPhoto"
+        )
+
+        # Telegram caption 上限约 1024
+        if len(message) <= 1000:
+
+            caption = message
+
+        else:
+
+            # 图片说明只保留前面的完整头部，
+            # 完整文字随后再发
+            caption = (
+                message[:997]
+                + "..."
+            )
+
+        payload = {
+            "chat_id":
+                TELEGRAM_CHAT_ID,
+            "photo":
+                image_url,
+            "caption":
+                caption
+        }
+
+        try:
+
+            response = requests.post(
+                photo_url,
+                json=payload,
+                timeout=30
+            )
+
+            print(
+                "Telegram 图片:",
+                response.status_code
+            )
+
+            if response.status_code == 200:
+
+                # 如果完整信息超过 Telegram 图片 caption
+                # 则再补发完整文字
+                if len(message) > 1000:
+
+                    time.sleep(0.5)
+
+                    return telegram_send_text(
+                        message
+                    )
+
+                return True
+
+            print(
+                response.text[:1000]
+            )
+
+        except Exception as e:
+
+            print(
+                "Telegram 图片发送异常:",
+                e
+            )
+
+    # ========================================================
+    # 图片失败 -> 普通文字
+    # ========================================================
+
+    return telegram_send_text(
+        message
+    )
+
+
+def telegram_send_text(
+    message
+):
+
     url = (
-        f"https://api.telegram.org/"
-        f"bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        "https://api.telegram.org/"
+        f"bot{TELEGRAM_BOT_TOKEN}/"
+        "sendMessage"
     )
 
     payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": message,
-        "disable_web_page_preview": True
+        "chat_id":
+            TELEGRAM_CHAT_ID,
+        "text":
+            message,
+        "disable_web_page_preview":
+            True
     }
 
     try:
@@ -1734,7 +2469,7 @@ def telegram_send(
         )
 
         print(
-            "Telegram:",
+            "Telegram 文字:",
             response.status_code
         )
 
@@ -1759,6 +2494,76 @@ def telegram_send(
 
 
 # ============================================================
+# 详情页轮换
+# ============================================================
+
+def get_detail_batch(
+    watch_products,
+    history
+):
+
+    if not watch_products:
+
+        return []
+
+    state = history.get(
+        "__monitor_state__",
+        {}
+    )
+
+    next_index = int(
+        state.get(
+            "next_index",
+            0
+        )
+    )
+
+    total = len(
+        watch_products
+    )
+
+    batch_size = min(
+        MAX_DETAIL_PER_RUN,
+        total
+    )
+
+    selected = []
+
+    for i in range(
+        batch_size
+    ):
+
+        index = (
+            next_index + i
+        ) % total
+
+        selected.append(
+            watch_products[
+                index
+            ]
+        )
+
+    # 下一次从后面继续
+    history[
+        "__monitor_state__"
+    ] = {
+        "next_index":
+            (
+                next_index
+                + batch_size
+            ) % total,
+        "total":
+            total,
+        "updated":
+            int(
+                time.time()
+            )
+    }
+
+    return selected
+
+
+# ============================================================
 # 主程序
 # ============================================================
 
@@ -1772,18 +2577,22 @@ def main():
         "REI Outdoor Price Monitor"
     )
     print(
+        "图片 + 降价 + 颜色/尺码/库存"
+    )
+    print(
         "======================================"
     )
     print()
 
     # --------------------------------------------------------
-    # 检查 Secrets
+    # Secrets
     # --------------------------------------------------------
 
     if not FIRECRAWL_API_KEY:
 
         print(
-            "错误：FIRECRAWL_API_KEY 未读取"
+            "错误："
+            "FIRECRAWL_API_KEY 未读取"
         )
 
         return
@@ -1791,33 +2600,37 @@ def main():
     if not TELEGRAM_BOT_TOKEN:
 
         print(
-            "警告：TELEGRAM_BOT_TOKEN 未读取"
+            "警告："
+            "TELEGRAM_BOT_TOKEN 未读取"
         )
 
     if not TELEGRAM_CHAT_ID:
 
         print(
-            "警告：TELEGRAM_CHAT_ID 未读取"
+            "警告："
+            "TELEGRAM_CHAT_ID 未读取"
         )
 
     history = load_history()
 
     all_products = []
 
-    # --------------------------------------------------------
-    # 抓取品牌页面
-    # --------------------------------------------------------
+    # ========================================================
+    # 1. 抓取品牌列表
+    # ========================================================
 
     for brand, url in BRAND_PAGES:
 
         print()
         print(
-            f"抓取列表: {url}"
+            f"抓取列表: {brand}"
         )
 
         data = firecrawl(
             url,
-            formats=["markdown"]
+            formats=[
+                "markdown"
+            ]
         )
 
         if not data:
@@ -1825,6 +2638,9 @@ def main():
             print(
                 "列表抓取失败"
             )
+
+            # 避免列表连续请求过快
+            time.sleep(3)
 
             continue
 
@@ -1849,16 +2665,20 @@ def main():
         )
 
         print(
-            f"发现商品: {len(products)}"
+            f"发现商品: "
+            f"{len(products)}"
         )
 
         all_products.extend(
             products
         )
 
-    # --------------------------------------------------------
-    # 去重
-    # --------------------------------------------------------
+        # 列表页之间也稍微停一下
+        time.sleep(3)
+
+    # ========================================================
+    # 2. URL 去重
+    # ========================================================
 
     unique = {}
 
@@ -1878,9 +2698,9 @@ def main():
         f"{len(all_products)}"
     )
 
-    # --------------------------------------------------------
-    # 匹配重点商品
-    # --------------------------------------------------------
+    # ========================================================
+    # 3. 匹配重点商品
+    # ========================================================
 
     watch_products = []
 
@@ -1911,9 +2731,9 @@ def main():
         f"{len(watch_products)}"
     )
 
-    # --------------------------------------------------------
-    # 没找到商品
-    # --------------------------------------------------------
+    # ========================================================
+    # 4. 没找到重点商品
+    # ========================================================
 
     if not watch_products:
 
@@ -1926,33 +2746,52 @@ def main():
             "以下是抓到的部分 REI 商品："
         )
 
-        for product in all_products[:30]:
+        for product in (
+            all_products[:30]
+        ):
 
             print(
                 product.get(
                     "title",
                     ""
                 ),
-                product["url"]
+                product[
+                    "url"
+                ]
             )
 
         print()
 
+    # ========================================================
+    # 5. 本轮轮换选择详情页
+    # ========================================================
+
+    detail_products = get_detail_batch(
+        watch_products,
+        history
+    )
+
+    print()
+    print(
+        f"本轮抓取详情: "
+        f"{len(detail_products)}"
+    )
+
     notifications = []
 
-    # --------------------------------------------------------
-    # 抓重点商品详情
-    # --------------------------------------------------------
+    # ========================================================
+    # 6. 抓详情
+    # ========================================================
 
     for index, item in enumerate(
-        watch_products,
+        detail_products,
         start=1
     ):
 
         print()
         print(
             f"[{index}/"
-            f"{len(watch_products)}]"
+            f"{len(detail_products)}]"
         )
 
         product = product_detail(
@@ -1965,6 +2804,12 @@ def main():
         )
 
         if not product:
+
+            # 即使失败也继续下一个
+            time.sleep(
+                FIRECRAWL_WAIT_SECONDS
+            )
+
             continue
 
         if should_notify(
@@ -1976,20 +2821,36 @@ def main():
                 product
             )
 
-        # 避免请求过快
-        time.sleep(1)
+        # ----------------------------------------------------
+        # 重点：
+        # Firecrawl 每分钟请求数限制
+        # ----------------------------------------------------
 
-    # --------------------------------------------------------
-    # 保存历史
-    # --------------------------------------------------------
+        if index < len(
+            detail_products
+        ):
+
+            print(
+                f"等待 "
+                f"{FIRECRAWL_WAIT_SECONDS} 秒，"
+                f"避免 Firecrawl 限流..."
+            )
+
+            time.sleep(
+                FIRECRAWL_WAIT_SECONDS
+            )
+
+    # ========================================================
+    # 7. 保存历史
+    # ========================================================
 
     save_history(
         history
     )
 
-    # --------------------------------------------------------
-    # Telegram 推送
-    # --------------------------------------------------------
+    # ========================================================
+    # 8. Telegram
+    # ========================================================
 
     if notifications:
 
@@ -2006,11 +2867,17 @@ def main():
             )
 
             print()
-            print(message)
+            print(
+                message
+            )
             print()
 
             telegram_send(
-                message
+                message,
+                product.get(
+                    "image",
+                    ""
+                )
             )
 
             time.sleep(1)
@@ -2032,6 +2899,10 @@ def main():
     print(
         "======================================")
 
+
+# ============================================================
+# 启动
+# ============================================================
 
 if __name__ == "__main__":
 
