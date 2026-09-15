@@ -34,7 +34,7 @@
       "currency": "USD",
       "current_price": 54.93,
       "max_discount": 30,
-      "updated_at": 1789504795
+      "updated_at": 1789508313
     },
     "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789504805
+      "updated_at": 1789508324
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -52,7 +52,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 33,
-      "updated_at": 1789506636
+      "updated_at": 1789508335
     },
     "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
       "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
@@ -106,7 +106,7 @@
       "currency": "USD",
       "current_price": 103.83,
       "max_discount": 50,
-      "updated_at": 1789504784
+      "updated_at": 1789508303
     },
     "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ": {
       "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ",
@@ -236,8 +236,8 @@
     }
   },
   "meta": {
-    "fixed_rotation_index": 3,
+    "fixed_rotation_index": 0,
     "version": 3,
-    "discovery_rotation_index": 3
+    "discovery_rotation_index": 5
   }
 }
