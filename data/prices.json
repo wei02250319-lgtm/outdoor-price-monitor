@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789493967
+      "updated_at": 1789497772
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -16,7 +16,7 @@
       "currency": "USD",
       "current_price": 196.93,
       "max_discount": 30,
-      "updated_at": 1789493978
+      "updated_at": 1789497783
     },
     "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
@@ -25,7 +25,7 @@
       "currency": "USD",
       "current_price": 200.0,
       "max_discount": 0,
-      "updated_at": 1789493988
+      "updated_at": 1789497793
     },
     "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
@@ -106,7 +106,7 @@
       "currency": "USD",
       "current_price": 103.83,
       "max_discount": 50,
-      "updated_at": 1789495913
+      "updated_at": 1789497804
     },
     "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ": {
       "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ",
@@ -134,11 +134,38 @@
       "current_price": 168.98,
       "max_discount": 0,
       "updated_at": 1789492335
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-big-sizes-290143/mens-big-aconcagua-3-jacket-NF0A84KG?color=4H0": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-big-sizes-290143/mens-big-aconcagua-3-jacket-NF0A84KG?color=4H0",
+      "name": "Men’s Big Aconcagua 3 Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 140.0,
+      "max_discount": 0,
+      "updated_at": 1789497836
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests-211702/mens-terra-peak-jacket-NF0A88U2?color=BOM": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests-211702/mens-terra-peak-jacket-NF0A88U2?color=BOM",
+      "name": "Men’s Terra Peak Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 175.0,
+      "max_discount": 0,
+      "updated_at": 1789497852
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-bottoms/mens-shorts-224220/mens-wander-shorts-20-NF0A86R6?color=JK3": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-bottoms/mens-shorts-224220/mens-wander-shorts-20-NF0A86R6?color=JK3",
+      "name": "Men’s Wander Shorts 2.0",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 32.98,
+      "max_discount": 0,
+      "updated_at": 1789497870
     }
   },
   "meta": {
-    "fixed_rotation_index": 0,
+    "fixed_rotation_index": 4,
     "version": 3,
-    "discovery_rotation_index": 5
+    "discovery_rotation_index": 0
   }
 }
