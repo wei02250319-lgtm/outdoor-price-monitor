@@ -376,31 +376,23 @@
     ]
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
-    "name": "Arc'teryxAtom Insulated Hoody - Men's",
+    "title": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Hoody - Men's",
+    "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "lowest_price": 199.83,
-    "price_signature": [
+    "tiers": [
       {
-        "price": 199.83,
+        "current": 199.83,
         "original": 300.0,
-        "discount": 33
-      },
-      {
-        "price": 229.73,
-        "original": 280.0,
-        "discount": 18
-      },
-      {
-        "price": 244.73,
-        "original": 300.0,
-        "discount": 18
-      },
-      {
-        "price": 284.73,
-        "original": 350.0,
-        "discount": 19
+        "discount": 33,
+        "colors": {
+          "颜色/尺码页面未明确": {
+            "sizes": [],
+            "available": []
+          }
+        }
       }
     ],
-    "updated": 1789462002
+    "updated_at": 1789462338
   },
   "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta SL Jacket - Women's",
@@ -582,71 +574,11 @@
     ]
   },
   "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens": {
-    "name": "Arc'teryxAtom Insulated Hoody - Women's",
-    "lowest_price": 117.93,
-    "price_signature": [
-      {
-        "price": 117.93,
-        "original": 169.0,
-        "discount": 30
-      },
-      {
-        "price": 119.73,
-        "original": 175.0,
-        "discount": 32
-      },
-      {
-        "price": 126.73,
-        "original": 170.0,
-        "discount": 25
-      },
-      {
-        "price": 148.83,
-        "original": 299.0,
-        "discount": 50
-      },
-      {
-        "price": 159.87,
-        "original": 279.0,
-        "discount": 43
-      },
-      {
-        "price": 181.93,
-        "original": 260.0,
-        "discount": 30
-      },
-      {
-        "price": 187.93,
-        "original": 269.0,
-        "discount": 30
-      },
-      {
-        "price": 209.73,
-        "original": 280.0,
-        "discount": 25
-      },
-      {
-        "price": 245.83,
-        "original": 350.0,
-        "discount": 30
-      },
-      {
-        "price": 284.73,
-        "original": 350.0,
-        "discount": 19
-      },
-      {
-        "price": 329.73,
-        "original": 400.0,
-        "discount": 18
-      },
-      {
-        "price": 409.73,
-        "original": 500.0,
-        "discount": 18
-      }
-    ],
-    "updated": 1789462014
+    "title": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Hoody - Women's",
+    "url": "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens",
+    "lowest_price": null,
+    "tiers": [],
+    "updated_at": 1789462358
   },
   "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Bird Head Toque Beanie",
@@ -783,26 +715,11 @@
     ]
   },
   "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
-    "name": "Arc'teryxAtom Insulated Jacket - Men's",
-    "lowest_price": 229.73,
-    "price_signature": [
-      {
-        "price": 229.73,
-        "original": 280.0,
-        "discount": 18
-      },
-      {
-        "price": 244.73,
-        "original": 300.0,
-        "discount": 18
-      },
-      {
-        "price": 289.73,
-        "original": 350.0,
-        "discount": 17
-      }
-    ],
-    "updated": 1789462025
+    "title": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Jacket - Men's",
+    "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+    "lowest_price": null,
+    "tiers": [],
+    "updated_at": 1789462348
   },
   "https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta AR Jacket - Women's",
@@ -2102,8 +2019,6 @@
     ]
   },
   "__monitor_state__": {
-    "next_index": 6,
-    "total": 9,
-    "updated": 1789461791
+    "next_index": 9
   }
 }
