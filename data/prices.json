@@ -81,7 +81,7 @@
     "Arc'teryx Gamma MX Hoody - Men's": {
       "title": "Gamma MX Hoody - Men's",
       "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-      "updated": 1789468448,
+      "updated": 1789469560,
       "variants": {
         "2351460055": {
           "price": 400.0,
@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789468458,
+      "updated": 1789469570,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -431,7 +431,7 @@
     "Arc'teryx Gamma Pants - Men's": {
       "title": "Gamma Pants - Men's",
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
-      "updated": 1789468467,
+      "updated": 1789469579,
       "variants": {
         "2428530017": {
           "price": 200.0,
@@ -1777,637 +1777,569 @@
       }
     },
     "Arc'teryx Atom Insulated Hoody - Men's": {
+      "title": "Atom Insulated Hoody - Men's",
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "updated": 1789469551,
       "variants": {
-        "id:2431750009": {
+        "2431750009": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750008": {
+        "2431750008": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750129": {
+        "2431750129": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750007": {
+        "2431750007": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750128": {
+        "2431750128": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750006": {
+        "2431750006": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750127": {
+        "2431750127": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750005": {
+        "2431750005": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750126": {
+        "2431750126": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750004": {
+        "2431750004": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750125": {
+        "2431750125": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750003": {
+        "2431750003": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750124": {
+        "2431750124": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750002": {
+        "2431750002": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750123": {
+        "2431750123": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750092": {
+        "2431750092": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750091": {
+        "2431750091": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750090": {
+        "2431750090": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750012": {
+        "2431750012": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750133": {
+        "2431750133": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750011": {
+        "2431750011": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750099": {
+        "2431750099": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750132": {
+        "2431750132": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750010": {
+        "2431750010": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750098": {
+        "2431750098": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750131": {
+        "2431750131": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750097": {
+        "2431750097": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750130": {
+        "2431750130": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Mongoose/Bracken",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750096": {
+        "2431750096": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750095": {
+        "2431750095": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750094": {
+        "2431750094": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750093": {
+        "2431750093": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750014": {
+        "2431750014": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750013": {
+        "2431750013": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750144": {
+        "2431750144": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750143": {
+        "2431750143": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750142": {
+        "2431750142": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750141": {
+        "2431750141": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750147": {
+        "2431750147": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750146": {
+        "2431750146": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750145": {
+        "2431750145": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Stratus",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750100": {
+        "2431750100": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750108": {
+        "2431750108": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750107": {
+        "2431750107": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750106": {
+        "2431750106": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750105": {
+        "2431750105": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "XXXL",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750104": {
+        "2431750104": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750103": {
+        "2431750103": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750102": {
+        "2431750102": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750101": {
+        "2431750101": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Spotlight",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750109": {
+        "2431750109": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750078": {
+        "2431750078": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750111": {
+        "2431750111": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750110": {
+        "2431750110": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750079": {
+        "2431750079": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750112": {
+        "2431750112": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Stone Red",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750081": {
+        "2431750081": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750080": {
+        "2431750080": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750001": {
+        "2431750001": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750089": {
+        "2431750089": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750122": {
+        "2431750122": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750088": {
+        "2431750088": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750121": {
+        "2431750121": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750087": {
+        "2431750087": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750120": {
+        "2431750120": {
           "price": 300.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Larch",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750086": {
+        "2431750086": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750085": {
+        "2431750085": {
           "price": 210.93,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Fluidity/Black Sapphire",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750084": {
+        "2431750084": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "XXXL",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         },
-        "id:2431750083": {
+        "2431750083": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789467078
+          "stock": true
         },
-        "id:2431750082": {
+        "2431750082": {
           "price": 199.83,
-          "original_price": 300.0,
+          "original": 300.0,
           "currency": "USD",
           "color": "Cloud/Black",
           "size": "XL",
-          "in_stock": false,
-          "updated_at": 1789467078
+          "stock": false
         }
       }
     },
@@ -7572,6 +7504,1633 @@
           "stock": true
         }
       }
+    },
+    "auto:https://www.rei.com/product/234886/rei-co-op-active-pursuits-long-sleeve-quarter-zip-pullover-mens": {
+      "title": "Active Pursuits Long-Sleeve Quarter-Zip Pullover - Men's",
+      "url": "https://www.rei.com/product/234886/rei-co-op-active-pursuits-long-sleeve-quarter-zip-pullover-mens",
+      "updated": 1789469714,
+      "variants": {
+        "2348860080": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2348860084": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860083": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "L",
+          "stock": true
+        },
+        "2348860082": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "M",
+          "stock": true
+        },
+        "2348860081": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "S",
+          "stock": true
+        },
+        "2348860077": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2348860076": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860075": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860074": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860079": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2348860078": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2348860073": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2348860072": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2348860071": {
+          "price": 40.93,
+          "original": 54.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "S",
+          "stock": true
+        },
+        "2348860100": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2348860011": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2348860099": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2348860098": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2348860097": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2348860096": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860015": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860014": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860013": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2348860012": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "2348860019": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2348860018": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2348860017": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2348860016": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860091": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "S",
+          "stock": true
+        },
+        "2348860090": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2348860095": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860094": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860093": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "L",
+          "stock": true
+        },
+        "2348860092": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Teal Storm",
+          "size": "M",
+          "stock": true
+        },
+        "2348860088": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2348860087": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2348860086": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860085": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860089": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2348860040": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2348860033": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "L",
+          "stock": true
+        },
+        "2348860032": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "M",
+          "stock": true
+        },
+        "2348860031": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "S",
+          "stock": true
+        },
+        "2348860037": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2348860036": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860035": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860034": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860039": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2348860038": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2348860020": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2348860060": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2348860055": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "2348860054": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2348860053": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2348860052": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2348860059": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2348860058": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2348860057": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2348860056": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860051": {
+          "price": 54.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "S",
+          "stock": true
+        },
+        "2348860050": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2348860044": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "XL",
+          "stock": false
+        },
+        "2348860043": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "L",
+          "stock": false
+        },
+        "2348860042": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "M",
+          "stock": false
+        },
+        "2348860041": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "S",
+          "stock": false
+        },
+        "2348860048": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2348860047": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2348860046": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2348860045": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "XXL",
+          "stock": false
+        },
+        "2348860049": {
+          "price": 24.83,
+          "original": 49.95,
+          "currency": "USD",
+          "color": "Stone Green",
+          "size": "XL Tall",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
+      "title": "Delta Jacket - Men's",
+      "url": "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens",
+      "updated": 1789469743,
+      "variants": {
+        "2362370063": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "M",
+          "stock": true
+        },
+        "2362370064": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "L",
+          "stock": true
+        },
+        "2362370061": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370062": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "S",
+          "stock": true
+        },
+        "2362370060": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370058": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "L",
+          "stock": true
+        },
+        "2362370059": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370056": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "S",
+          "stock": true
+        },
+        "2362370057": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "M",
+          "stock": true
+        },
+        "2362370054": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370055": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Bracken/Mongoose",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370072": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370070": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "L",
+          "stock": true
+        },
+        "2362370071": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370069": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "M",
+          "stock": true
+        },
+        "2362370067": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370068": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus",
+          "size": "S",
+          "stock": true
+        },
+        "2362370065": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370066": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Nucleus/Larch",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370040": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "L",
+          "stock": true
+        },
+        "2362370042": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370041": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370037": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370039": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "M",
+          "stock": true
+        },
+        "2362370038": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "S",
+          "stock": true
+        },
+        "2362370051": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "M",
+          "stock": false
+        },
+        "2362370050": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "S",
+          "stock": false
+        },
+        "2362370053": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "XL",
+          "stock": false
+        },
+        "2362370052": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "L",
+          "stock": false
+        },
+        "2362370004": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2362370048": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370003": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "2362370047": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370006": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2362370005": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2362370049": {
+          "price": 99.83,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Tatsu/Mantis",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370044": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "S",
+          "stock": true
+        },
+        "2362370043": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "XS",
+          "stock": false
+        },
+        "2362370002": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2362370046": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "L",
+          "stock": false
+        },
+        "2362370001": {
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XS",
+          "stock": true
+        },
+        "2362370045": {
+          "price": 149.93,
+          "original": 200.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "M",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
+      "title": "Kyanite Lightweight Fleece Hoodie - Men's",
+      "url": "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens",
+      "updated": 1789469792,
+      "variants": {
+        "2179400065": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "XXL",
+          "stock": true
+        },
+        "2179400061": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "S",
+          "stock": true
+        },
+        "2179400062": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "M",
+          "stock": true
+        },
+        "2179400063": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "L",
+          "stock": true
+        },
+        "2179400064": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "XL",
+          "stock": true
+        },
+        "2179400076": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XL",
+          "stock": true
+        },
+        "2179400077": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XXL",
+          "stock": true
+        },
+        "2179400078": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "XS",
+          "stock": false
+        },
+        "2179400079": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "S",
+          "stock": true
+        },
+        "2179400072": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XS",
+          "stock": false
+        },
+        "2179400073": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "S",
+          "stock": true
+        },
+        "2179400074": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "M",
+          "stock": false
+        },
+        "2179400075": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "L",
+          "stock": true
+        },
+        "2179400071": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black X",
+          "size": "XS",
+          "stock": false
+        },
+        "2179400087": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "L",
+          "stock": true
+        },
+        "2179400088": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "XL",
+          "stock": true
+        },
+        "2179400089": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "XXL",
+          "stock": true
+        },
+        "2179400083": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "XXL",
+          "stock": true
+        },
+        "2179400084": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "XS",
+          "stock": true
+        },
+        "2179400085": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "S",
+          "stock": true
+        },
+        "2179400086": {
+          "price": 150.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Tatsu",
+          "size": "M",
+          "stock": true
+        },
+        "2179400080": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "M",
+          "stock": true
+        },
+        "2179400081": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "L",
+          "stock": true
+        },
+        "2179400082": {
+          "price": 105.93,
+          "original": 150.0,
+          "currency": "USD",
+          "color": "Stone Red",
+          "size": "XL",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/C17088/smartwool-perfect-crew-t-shirt-mens": {
+      "title": "Perfect Crew T-Shirt - Men's",
+      "url": "https://www.rei.com/product/C17088/smartwool-perfect-crew-t-shirt-mens",
+      "updated": 1789469840,
+      "variants": {
+        "C170880009": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Deep Navy",
+          "size": "XS",
+          "stock": true
+        },
+        "C170880001": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXS",
+          "stock": true
+        },
+        "C170880012": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Deep Navy",
+          "size": "XXL",
+          "stock": false
+        },
+        "C170880023": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "XL",
+          "stock": false
+        },
+        "C170880002": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XS",
+          "stock": true
+        },
+        "C170880013": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "XXS",
+          "stock": true
+        },
+        "C170880024": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "XXL",
+          "stock": false
+        },
+        "C170880003": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "C170880014": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "S",
+          "stock": false
+        },
+        "C170880004": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": false
+        },
+        "C170880015": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "M",
+          "stock": true
+        },
+        "C170880016": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "L",
+          "stock": true
+        },
+        "C170880006": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": false
+        },
+        "C170880017": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "XL",
+          "stock": false
+        },
+        "C170880007": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "C170880018": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Light Gray Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "C170880008": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Deep Navy",
+          "size": "XXS",
+          "stock": true
+        },
+        "C170880019": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "XS",
+          "stock": false
+        },
+        "C170880020": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "S",
+          "stock": false
+        },
+        "C170880010": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Deep Navy",
+          "size": "S",
+          "stock": true
+        },
+        "C170880021": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "M",
+          "stock": true
+        },
+        "C170880011": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Deep Navy",
+          "size": "M",
+          "stock": false
+        },
+        "C170880022": {
+          "price": 39.97,
+          "original": 60.0,
+          "currency": "USD",
+          "color": "Winter Moss",
+          "size": "L",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/236138/rei-co-op-trailmade-joggers-mens": {
+      "title": "Trailmade Joggers - Men's",
+      "url": "https://www.rei.com/product/236138/rei-co-op-trailmade-joggers-mens",
+      "updated": 1789469865,
+      "variants": {
+        "2361380051": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2361380050": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2361380053": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2361380052": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "2361380008": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2361380007": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2361380009": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2361380004": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "XL",
+          "stock": true
+        },
+        "2361380048": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2361380003": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "L",
+          "stock": true
+        },
+        "2361380047": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2361380006": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2361380005": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "XXL",
+          "stock": true
+        },
+        "2361380049": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2361380044": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XL",
+          "stock": true
+        },
+        "2361380043": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "L",
+          "stock": true
+        },
+        "2361380002": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "M",
+          "stock": true
+        },
+        "2361380046": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2361380001": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "S",
+          "stock": true
+        },
+        "2361380045": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXL",
+          "stock": true
+        },
+        "2361380040": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2361380042": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "M",
+          "stock": true
+        },
+        "2361380041": {
+          "price": 59.93,
+          "original": 79.95,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "S",
+          "stock": true
+        },
+        "2361380037": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2361380036": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2361380039": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2361380038": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2361380033": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "L",
+          "stock": true
+        },
+        "2361380032": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "M",
+          "stock": true
+        },
+        "2361380035": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "XXL",
+          "stock": true
+        },
+        "2361380034": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "XL",
+          "stock": true
+        },
+        "2361380031": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray",
+          "size": "S",
+          "stock": true
+        },
+        "2361380060": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2361380059": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2361380058": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2361380055": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2361380010": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2361380054": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2361380057": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2361380056": {
+          "price": 79.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXXL",
+          "stock": true
+        }
+      }
     }
   },
   "exchange_rates": {},
@@ -10014,8 +11573,8 @@
     }
   },
   "rotation": 0,
-  "position": 6,
-  "discovery_position": 6,
+  "position": 3,
+  "discovery_position": 12,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
