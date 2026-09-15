@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789510241
+      "updated_at": 1789511967
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -34,7 +34,7 @@
       "currency": "USD",
       "current_price": 54.93,
       "max_discount": 30,
-      "updated_at": 1789508313
+      "updated_at": 1789511935
     },
     "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789508324
+      "updated_at": 1789511946
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -52,7 +52,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 33,
-      "updated_at": 1789508335
+      "updated_at": 1789511956
     },
     "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
       "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
@@ -269,11 +269,56 @@
       "current_price": 115.0,
       "max_discount": 0,
       "updated_at": 1789510347
+    },
+    "https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens": {
+      "url": "https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens",
+      "name": "Cormac Hoody - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 66.93,
+      "max_discount": 26,
+      "updated_at": 1789511977
+    },
+    "https://www.rei.com/product/C00898/patagonia-capilene-cool-daily-graphic-long-sleeve-shirt-mens": {
+      "url": "https://www.rei.com/product/C00898/patagonia-capilene-cool-daily-graphic-long-sleeve-shirt-mens",
+      "name": "Capilene Cool Daily Graphic Long-Sleeve Shirt - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 47.93,
+      "max_discount": 31,
+      "updated_at": 1789511988
+    },
+    "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens": {
+      "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
+      "name": "Sahara Shade Hoodie - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 24.83,
+      "max_discount": 50,
+      "updated_at": 1789511999
+    },
+    "https://www.rei.com/product/202656/rei-co-op-swiftland-running-t-shirt-mens": {
+      "url": "https://www.rei.com/product/202656/rei-co-op-swiftland-running-t-shirt-mens",
+      "name": "Swiftland Running T-Shirt - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 32.93,
+      "max_discount": 27,
+      "updated_at": 1789512009
+    },
+    "https://www.rei.com/product/C08969/prana-stretch-zion-field-pants-mens": {
+      "url": "https://www.rei.com/product/C08969/prana-stretch-zion-field-pants-mens",
+      "name": "Stretch Zion Field Pants - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 49.73,
+      "max_discount": 49,
+      "updated_at": 1789512020
     }
   },
   "meta": {
-    "fixed_rotation_index": 4,
+    "fixed_rotation_index": 1,
     "version": 3,
-    "discovery_rotation_index": 0
+    "discovery_rotation_index": 2
   }
 }
