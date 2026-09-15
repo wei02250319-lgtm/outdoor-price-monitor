@@ -16748,6 +16748,813 @@
           "stock": true
         }
       }
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "name": "Gamma MX Hoody - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 199.83,
+      "max_discount": 50,
+      "variants": [
+        {
+          "key": "2351460055",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460054",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460006",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460005",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460002",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460046",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2351460001",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460045",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2351460004",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460003",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460047",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460042",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2351460044",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2351460043",
+          "price": 199.83,
+          "original": 400.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2351460028",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460027",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460029",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460024",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460026",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460025",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460057",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460056",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460059",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2351460058",
+          "price": 400.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        }
+      ],
+      "updated_at": 1789486871
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "name": "Gamma Jacket - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 196.93,
+      "max_discount": 30,
+      "variants": [
+        {
+          "key": "C010070030",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070010",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "C010070011",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "C010070012",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070005",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070027",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070006",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070028",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070007",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "C010070029",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070008",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "C010070009",
+          "price": 196.93,
+          "original": 280.0,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "C010070001",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070002",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070003",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070025",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070004",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "C010070026",
+          "price": 280.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        }
+      ],
+      "updated_at": 1789486880
+    },
+    "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
+      "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
+      "name": "Gamma Pants - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 200.0,
+      "max_discount": 0,
+      "variants": [
+        {
+          "key": "2428530017",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530013",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530014",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530015",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530016",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530097",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530010",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530011",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530012",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530093",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530094",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530095",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530096",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530006",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530007",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530008",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530009",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530002",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530003",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530004",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530005",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530087",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530088",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530001",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530089",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530090",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530091",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530050",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530051",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": false
+        },
+        {
+          "key": "2428530046",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530047",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530048",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530049",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530042",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530043",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530044",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530045",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530040",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530041",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530039",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530035",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530036",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530037",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        },
+        {
+          "key": "2428530038",
+          "price": 200.0,
+          "original": null,
+          "currency": "USD",
+          "color": "默认颜色",
+          "size": "默认尺码",
+          "stock": true
+        }
+      ],
+      "updated_at": 1789486890
     }
   },
   "exchange_rates": {},
@@ -20718,5 +21525,8 @@
       "source": "The North Face Canada",
       "currency": "CAD"
     }
-  ]
+  ],
+  "meta": {
+    "fixed_rotation_index": 4
+  }
 }
