@@ -901,9 +901,9 @@
     ]
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
-    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Gamma MX Hoody - Men's",
-    "lowest_sale": null,
-    "updated_at": 1789463163
+    "price": 30.0,
+    "original": 400.0,
+    "updated_at": "2026-09-15T09:11:47.394049+00:00"
   },
   "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Kyanite Lightweight Fleece Hoodie - Men's",
@@ -1788,16 +1788,17 @@
     "next_index": 3
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
-    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Gamma Pants - Men's",
-    "lowest_sale": null,
-    "updated_at": 1789463213
+    "price": 20.0,
+    "original": 200.0,
+    "updated_at": "2026-09-15T09:12:33.107552+00:00"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
-    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Gamma Jacket - Men's",
-    "lowest_sale": null,
-    "updated_at": 1789463191
+    "price": 28.0,
+    "original": 400.0,
+    "updated_at": "2026-09-15T09:12:14.102644+00:00"
   },
   "_state": {
     "position": 3
-  }
+  },
+  "_rotation_position": 3
 }
