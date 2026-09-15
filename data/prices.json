@@ -788,1106 +788,991 @@
       }
     },
     "Patagonia R2 TechFace Jacket - Men's": {
+      "title": "R2 TechFace Jacket - Men's",
       "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "updated": 1789468749,
       "variants": {
-        "id:2221480011": {
+        "2221480011": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         },
-        "id:2221480010": {
+        "2221480010": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         },
-        "id:2221480013": {
+        "2221480013": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465974
+          "stock": true
         },
-        "id:2221480012": {
+        "2221480012": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "XL",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         },
-        "id:2221480014": {
+        "2221480014": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "XXXL",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         },
-        "id:2221480008": {
+        "2221480008": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         },
-        "id:2221480009": {
+        "2221480009": {
           "price": 103.83,
-          "original_price": 209.0,
+          "original": 209.0,
           "currency": "USD",
           "color": "Black",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789465974
+          "stock": false
         }
       }
     },
     "Patagonia Capilene Cool Daily Graphic Hoody - Men's": {
+      "title": "Capilene Cool Daily Graphic Hoody - Men's",
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "updated": 1789468758,
       "variants": {
-        "id:C009000070": {
+        "C009000070": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000109": {
+        "C009000109": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000116": {
+        "C009000116": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000117": {
+        "C009000117": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000118": {
+        "C009000118": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000119": {
+        "C009000119": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000079": {
+        "C009000079": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000112": {
+        "C009000112": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000113": {
+        "C009000113": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000114": {
+        "C009000114": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000115": {
+        "C009000115": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Black",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000075": {
+        "C009000075": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000076": {
+        "C009000076": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000077": {
+        "C009000077": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000110": {
+        "C009000110": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000078": {
+        "C009000078": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000111": {
+        "C009000111": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000071": {
+        "C009000071": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000072": {
+        "C009000072": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000073": {
+        "C009000073": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000074": {
+        "C009000074": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Canopy Green",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000105": {
+        "C009000105": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000106": {
+        "C009000106": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000107": {
+        "C009000107": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000108": {
+        "C009000108": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Feather Grey",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000068": {
+        "C009000068": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000101": {
+        "C009000101": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000069": {
+        "C009000069": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000102": {
+        "C009000102": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000103": {
+        "C009000103": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000104": {
+        "C009000104": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000064": {
+        "C009000064": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000065": {
+        "C009000065": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000066": {
+        "C009000066": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000067": {
+        "C009000067": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Berm Brown",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000100": {
+        "C009000100": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000090": {
+        "C009000090": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000091": {
+        "C009000091": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000092": {
+        "C009000092": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000138": {
+        "C009000138": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000139": {
+        "C009000139": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000013": {
+        "C009000013": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "XXL",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000134": {
+        "C009000134": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000014": {
+        "C009000014": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "XXXL",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000135": {
+        "C009000135": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000136": {
+        "C009000136": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000137": {
+        "C009000137": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000097": {
+        "C009000097": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000130": {
+        "C009000130": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000010": {
+        "C009000010": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000098": {
+        "C009000098": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000131": {
+        "C009000131": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000011": {
+        "C009000011": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000099": {
+        "C009000099": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Clement Blue",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000132": {
+        "C009000132": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000012": {
+        "C009000012": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "XL",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000133": {
+        "C009000133": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000093": {
+        "C009000093": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000094": {
+        "C009000094": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000095": {
+        "C009000095": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000096": {
+        "C009000096": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Great Waves/Berm Brown",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000080": {
+        "C009000080": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000081": {
+        "C009000081": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000127": {
+        "C009000127": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000128": {
+        "C009000128": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000008": {
+        "C009000008": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000129": {
+        "C009000129": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Gumtree Green",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000009": {
+        "C009000009": {
           "price": 54.93,
-          "original_price": 79.0,
+          "original": 79.0,
           "currency": "USD",
           "color": "73 Skyline/Gem Green",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789465984
+          "stock": false
         },
-        "id:C009000123": {
+        "C009000123": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000124": {
+        "C009000124": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000125": {
+        "C009000125": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000126": {
+        "C009000126": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000086": {
+        "C009000086": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000087": {
+        "C009000087": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000120": {
+        "C009000120": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000088": {
+        "C009000088": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000121": {
+        "C009000121": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000089": {
+        "C009000089": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000122": {
+        "C009000122": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/Dyno White",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000082": {
+        "C009000082": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000083": {
+        "C009000083": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000084": {
+        "C009000084": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Feather Grey",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000085": {
+        "C009000085": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Fitz Roy Foothill/Limestone",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         },
-        "id:C009000140": {
+        "C009000140": {
           "price": 79.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Hut Tripper/May Grey",
           "size": "XXXL",
-          "in_stock": true,
-          "updated_at": 1789465984
+          "stock": true
         }
       }
     },
     "Arc'teryx Atom Insulated Jacket - Men's": {
+      "title": "Atom Insulated Jacket - Men's",
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "updated": 1789468768,
       "variants": {
-        "id:2432560044": {
+        "2432560044": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560001": {
+        "2432560001": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560045": {
+        "2432560045": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560042": {
+        "2432560042": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560043": {
+        "2432560043": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560004": {
+        "2432560004": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560048": {
+        "2432560048": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560005": {
+        "2432560005": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560002": {
+        "2432560002": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560046": {
+        "2432560046": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560003": {
+        "2432560003": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560047": {
+        "2432560047": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Bracken",
           "size": "XL",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560008": {
+        "2432560008": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "S",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560009": {
+        "2432560009": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560006": {
+        "2432560006": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560007": {
+        "2432560007": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XS",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560011": {
+        "2432560011": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560012": {
+        "2432560012": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560010": {
+        "2432560010": {
           "price": 280.0,
-          "original_price": null,
+          "original": null,
           "currency": "USD",
           "color": "Black Sapphire",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560040": {
+        "2432560040": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "L",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560041": {
+        "2432560041": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560033": {
+        "2432560033": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "M",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560034": {
+        "2432560034": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "L",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560031": {
+        "2432560031": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560032": {
+        "2432560032": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560037": {
+        "2432560037": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "XS",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560038": {
+        "2432560038": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "S",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560035": {
+        "2432560035": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "XL",
-          "in_stock": false,
-          "updated_at": 1789465994
+          "stock": false
         },
-        "id:2432560036": {
+        "2432560036": {
           "price": 179.83,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Forage",
           "size": "XXL",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         },
-        "id:2432560039": {
+        "2432560039": {
           "price": 196.93,
-          "original_price": 280.0,
+          "original": 280.0,
           "currency": "USD",
           "color": "Habitat",
           "size": "M",
-          "in_stock": true,
-          "updated_at": 1789465994
+          "stock": true
         }
       }
     },
@@ -3903,6 +3788,3787 @@
           "currency": "USD",
           "color": "Shaded Olive",
           "size": "XXXL",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/236065/rei-co-op-sahara-convertible-pants-mens": {
+      "title": "Sahara Convertible Pants - Men's",
+      "url": "https://www.rei.com/product/236065/rei-co-op-sahara-convertible-pants-mens",
+      "updated": 1789468810,
+      "variants": {
+        "2360650009": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "38 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650008": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "36 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650129": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "36 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650007": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "35 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650128": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "35 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650249": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650006": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "34 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650127": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "34 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650248": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650369": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "48 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650012": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650133": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "28 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650254": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "28 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650375": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650011": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650132": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "42 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650253": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "50 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650374": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650010": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "40 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650131": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "40 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650252": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "48 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650373": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650130": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "38 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650251": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "46 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650372": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650016": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650137": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "33 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650258": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "33 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650379": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650015": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650136": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "32 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650257": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "32 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650378": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650014": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650135": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "31 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650256": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "31 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650377": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "35 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650013": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650134": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "30 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650255": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "30 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650376": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650250": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "44 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650371": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "28 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650370": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "50 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650019": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650018": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650139": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "35 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650017": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "35 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650138": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "34 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650259": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "34 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650023": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "46 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650144": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650386": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "28 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650022": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "44 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650143": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650264": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "42 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650385": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "50 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650021": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650142": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "40 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650263": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "40 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650384": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "48 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650020": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650141": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "38 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650262": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "38 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650383": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "46 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650027": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650148": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650026": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650147": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650389": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "32 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650025": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "50 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650146": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650388": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "31 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650024": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "48 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650145": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650387": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "30 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650140": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "36 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650261": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "36 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650382": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "44 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650260": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "35 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650381": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650380": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650108": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650229": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650107": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "28 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650228": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650349": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650106": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "50 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650227": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650348": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650105": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "48 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650226": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650347": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "35 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650109": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650111": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650232": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650353": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "46 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650110": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650231": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650352": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "44 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650230": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "35 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650351": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650350": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650115": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650236": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "46 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650357": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650114": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650235": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "44 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650356": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650113": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "35 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650234": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650355": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "50 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650112": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650233": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650354": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "48 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650119": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "46 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650118": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "44 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650239": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "28 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650117": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650238": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "50 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650359": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650116": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650237": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "48 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650358": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650001": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "28 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650122": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "28 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650243": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650364": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650121": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "50 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650242": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650363": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650120": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "48 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650241": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650362": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "35 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650240": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650361": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650005": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "33 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650126": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "33 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650247": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650368": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "46 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650004": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "32 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650125": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "32 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650246": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650367": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "44 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650003": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "31 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650124": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "31 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650245": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "35 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650366": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650002": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "30 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650123": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "30 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650244": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650365": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650360": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650207": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "38 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650206": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "36 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650205": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "35 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650204": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "34 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650446": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650209": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650208": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "40 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650210": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650331": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "28 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650214": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650335": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "33 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650213": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650334": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "32 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650212": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650333": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "31 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650211": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650332": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "30 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650218": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650339": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "38 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650217": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650338": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "36 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650216": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650337": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "35 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650215": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "35 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650336": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "34 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650219": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650100": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650221": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "46 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650342": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650220": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "44 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650341": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650340": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "40 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650104": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "46 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650225": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650346": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650103": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "44 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650224": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650345": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650102": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650223": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "50 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650344": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650101": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650222": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "48 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650343": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650427": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650425": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650429": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650430": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650432": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650431": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650438": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650440": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650203": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "33 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650445": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650202": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "32 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650444": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650201": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "31 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650200": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "30 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650442": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650408": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650407": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650412": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650410": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650416": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650415": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650414": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650417": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650423": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650422": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650099": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650098": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "35 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650097": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650092": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650091": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "50 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650090": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "48 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650096": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650095": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650094": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650093": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650078": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650199": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Asphalt",
+          "size": "28 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650077": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650198": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "42 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650076": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "40 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650197": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "40 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650075": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "38 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650196": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "38 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650079": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650070": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "32 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650191": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "32 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650190": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "31 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650074": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "36 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650195": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "36 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650073": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "35 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650194": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "35 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650072": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "34 IN Waist x 28 IN Inseam",
+          "stock": true
+        },
+        "2360650193": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "34 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650071": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "33 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650192": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "33 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650089": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "46 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650088": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "44 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650087": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650086": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650081": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650080": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650085": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650084": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650083": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "35 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650082": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650056": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "28 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650177": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650055": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "50 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650176": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650054": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "48 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650175": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650053": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "46 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650174": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650059": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "32 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650058": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "31 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650179": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "35 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650057": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "30 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650178": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650052": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "44 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650173": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "28 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650051": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650172": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "50 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650050": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650171": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "48 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650170": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "46 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650067": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "28 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650188": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "28 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650066": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "42 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650187": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "50 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650065": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "40 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650186": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "48 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650064": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "38 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650185": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "46 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650069": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "31 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650068": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Olive",
+          "size": "30 IN Waist x 28 IN Inseam",
+          "stock": false
+        },
+        "2360650189": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "30 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650180": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650063": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "36 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650184": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "44 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650062": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "35 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650183": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650061": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "34 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650182": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650060": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "33 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650181": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650029": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650028": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650149": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "35 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650034": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650155": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "46 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650033": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650154": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "44 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650396": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "42 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650032": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "35 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650153": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650395": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "40 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650031": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650152": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650394": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "38 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650038": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "46 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650159": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650037": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "44 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650158": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650036": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650157": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "50 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650035": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650156": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "48 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2360650030": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650151": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650393": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "36 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650150": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2360650392": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "35 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650391": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "34 IN Waist x 36 IN Inseam",
+          "stock": false
+        },
+        "2360650390": {
+          "price": 89.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Crimini",
+          "size": "33 IN Waist x 36 IN Inseam",
+          "stock": true
+        },
+        "2360650039": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "48 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650045": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650166": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650044": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650165": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650043": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650164": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "35 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650042": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650163": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650049": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650048": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650169": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "44 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650047": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "35 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650168": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650046": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2360650167": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650041": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "28 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2360650162": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2360650040": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Armadillo Taupe",
+          "size": "50 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650161": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2360650160": {
+          "price": 66.93,
+          "original": 89.95,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
+      "title": "Active Pursuits Long-Sleeve T-Shirt - Men's",
+      "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
+      "updated": 1789468888,
+      "variants": {
+        "2219180119": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2219180114": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180113": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2219180079": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2219180112": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2219180078": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2219180111": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "S",
+          "stock": false
+        },
+        "2219180118": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2219180117": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2219180116": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2219180115": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180073": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "L",
+          "stock": true
+        },
+        "2219180072": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "M",
+          "stock": true
+        },
+        "2219180071": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "S",
+          "stock": true
+        },
+        "2219180077": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2219180076": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2219180075": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180074": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180140": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2219180009": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2219180004": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180125": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180003": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2219180124": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180002": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2219180123": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "L",
+          "stock": true
+        },
+        "2219180001": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "S",
+          "stock": true
+        },
+        "2219180089": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL Tall",
+          "stock": true
+        },
+        "2219180122": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "M",
+          "stock": true
+        },
+        "2219180008": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2219180129": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2219180007": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2219180128": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2219180006": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2219180127": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2219180005": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180126": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2219180084": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180083": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2219180082": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "2219180081": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2219180088": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L Tall",
+          "stock": true
+        },
+        "2219180121": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "S",
+          "stock": true
+        },
+        "2219180087": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M Tall",
+          "stock": true
+        },
+        "2219180120": {
+          "price": 29.93,
+          "original": 39.95,
+          "currency": "USD",
+          "color": "Rei Blue Heather",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2219180086": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2219180085": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180080": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Saragasso Sea",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2219180136": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXXL",
+          "stock": false
+        },
+        "2219180135": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XXL",
+          "stock": true
+        },
+        "2219180134": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XL",
+          "stock": true
+        },
+        "2219180133": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "L",
+          "stock": true
+        },
+        "2219180139": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2219180138": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2219180137": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2219180132": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "M",
+          "stock": true
+        },
+        "2219180010": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Alloy Gray Heather",
+          "size": "XXL Tall",
+          "stock": true
+        },
+        "2219180131": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Cherrywood",
+          "size": "S",
+          "stock": false
+        },
+        "2219180130": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Woodland Olive",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2219180090": {
+          "price": 39.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL Tall",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens": {
+      "title": "Renegade Recon Pants - Men's",
+      "url": "https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens",
+      "updated": 1789468912,
+      "variants": {
+        "2281680110": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680113": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680114": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680111": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680112": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680106": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680107": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680104": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680105": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680108": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680109": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680115": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680116": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680054": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "34 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680055": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "36 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680052": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "32 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680053": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "33 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680058": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "42 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680056": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "38 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680057": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "40 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680050": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "30 IN Waist x 34 IN Inseam",
+          "stock": true
+        },
+        "2281680051": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "31 IN Waist x 34 IN Inseam",
+          "stock": false
+        },
+        "2281680049": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "42 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680032": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680033": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680030": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680031": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680036": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680037": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680034": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680035": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680043": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "32 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680044": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2281680041": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680042": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2281680047": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "38 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680048": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "40 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680045": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680046": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "36 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680040": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680038": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680039": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680098": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "28 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680099": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "30 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680096": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "40 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680097": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "42 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680090": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "31 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680091": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "32 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680094": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "36 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680095": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "38 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680092": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "33 IN Waist x 30 IN Inseam",
+          "stock": false
+        },
+        "2281680093": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "34 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680088": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "28 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680089": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "30 IN Waist x 30 IN Inseam",
+          "stock": true
+        },
+        "2281680102": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "33 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2281680103": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "34 IN Waist x 32 IN Inseam",
+          "stock": true
+        },
+        "2281680100": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "31 IN Waist x 32 IN Inseam",
+          "stock": false
+        },
+        "2281680101": {
+          "price": 73.93,
+          "original": 99.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "32 IN Waist x 32 IN Inseam",
           "stock": true
         }
       }
@@ -6348,8 +10014,8 @@
     }
   },
   "rotation": 0,
-  "position": 3,
-  "discovery_position": 3,
+  "position": 6,
+  "discovery_position": 6,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
