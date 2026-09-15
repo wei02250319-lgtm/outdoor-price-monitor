@@ -214,7 +214,7 @@ def main():
     products = products[:MAX_PRODUCTS]
 data = load_data()
 
-    for product in products:
+for product in products:
         key = product.get("url") or product.get("name")
         data["products"][key] = product
 
