@@ -2046,7 +2046,477 @@
       "color": "73 Skyline/Gem Green",
       "size": "S",
       "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560042": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560040": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "L",
+      "stock": true
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560041": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560033": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560034": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560031": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560032": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560037": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560038": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560035": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "XL",
+      "stock": false
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560036": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 179.83,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Forage",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens|sku:2432560039": {
+      "product": "Atom Insulated Jacket - Men's",
+      "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "M",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750092": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750091": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "XXXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750090": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750099": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750098": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XXXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750097": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750096": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "XL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750095": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750094": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750093": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Habitat",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750100": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "S",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750108": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "M",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750107": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750106": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750105": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "XXXL",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750104": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750103": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "XL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750102": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750101": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Spotlight",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750109": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "L",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750078": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750111": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750110": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "XL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750079": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750112": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Stone Red",
+      "size": "XXXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750081": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750080": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750089": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "XL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750088": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "L",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750087": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "M",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750086": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "S",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750085": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Fluidity/Black Sapphire",
+      "size": "XS",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750084": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "XXXL",
+      "stock": false
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750083": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens|sku:2431750082": {
+      "product": "Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "currency": "USD",
+      "color": "Cloud/Black",
+      "size": "XL",
+      "stock": false
     }
   },
-  "rotation": 6
+  "rotation": 0
 }
