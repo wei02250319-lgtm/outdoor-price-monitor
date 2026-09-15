@@ -240,8 +240,16 @@ def main():
       data = load_data()
 
     for product in products:
-        key = product.get("url") or product.get("name")
-        data["products"][key] = product
+    if product.get("price") is not None:
+        product["price_cny"] = round(product["price"] * USD_TO_CNY, 2)
+
+    if product.get("original_price") is not None:
+        product["original_price_cny"] = round(
+            product["original_price"] * USD_TO_CNY, 2
+        )
+
+    key = product.get("url") or product.get("name")
+    data["products"][key] = product
 
     from datetime import datetime, timezone
 
