@@ -9,6 +9,7 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
 DATA_FILE = "data/prices.json"
+USD_TO_CNY = 7.10
 REI_URL = "https://www.rei.com/b/arcteryx/c/all"
 MAX_PRODUCTS = 5
 
