@@ -4,7 +4,7 @@ import json
 import time
 import html
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 import requests
 
@@ -25,15 +25,21 @@ BATCH_SIZE = 4
 # 每次运行检查 6 个自动发现商品
 DISCOVERY_BATCH_SIZE = 6
 
-# Firecrawl 请求间隔
+# 两次 Firecrawl 请求之间等待
 REQUEST_INTERVAL = 9
 
-# 当前折扣至少20%才允许推送
+# 当前折扣至少 20%
 MIN_DISCOUNT = 20.0
+
+# Firecrawl 单次超时
+FIRECRAWL_TIMEOUT = 60
+
+# Firecrawl 最多重试次数
+FIRECRAWL_RETRIES = 3
 
 
 # =========================
-# 7个重点商品
+# 7 个重点商品
 # =========================
 
 FIXED_PRODUCTS = [
@@ -117,7 +123,7 @@ SESSION.headers.update(
     {
         "User-Agent": (
             "Mozilla/5.0 "
-            "(compatible; OutdoorPriceMonitor/1.0)"
+            "(compatible; OutdoorPriceMonitor/2.0)"
         )
     }
 )
@@ -127,21 +133,27 @@ SESSION.headers.update(
 # 历史记录
 # =========================
 
+def default_history():
+    return {
+        "position": 0,
+        "discovery_position": 0,
+        "products": {},
+        "discovered_products": [],
+    }
+
+
 def load_history():
+
     HISTORY_FILE.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     if not HISTORY_FILE.exists():
-        return {
-            "position": 0,
-            "discovery_position": 0,
-            "products": {},
-            "discovered_products": [],
-        }
+        return default_history()
 
     try:
+
         data = json.loads(
             HISTORY_FILE.read_text(
                 encoding="utf-8"
@@ -155,22 +167,26 @@ def load_history():
 
         return data
 
-    except Exception:
-        return {
-            "position": 0,
-            "discovery_position": 0,
-            "products": {},
-            "discovered_products": [],
-        }
+    except Exception as error:
+
+        print(
+            "历史记录读取失败:",
+            error,
+        )
+
+        return default_history()
 
 
 def save_history(history):
+
     HISTORY_FILE.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    temp_file = HISTORY_FILE.with_suffix(".tmp")
+    temp_file = HISTORY_FILE.with_suffix(
+        ".tmp"
+    )
 
     temp_file.write_text(
         json.dumps(
@@ -189,67 +205,151 @@ def save_history(history):
 # =========================
 
 def firecrawl(url, formats):
+
     if not FIRECRAWL_API_KEY:
         raise RuntimeError(
             "缺少 FIRECRAWL_API_KEY"
         )
 
-    response = SESSION.post(
-        "https://api.firecrawl.dev/v2/scrape",
-        headers={
-            "Authorization": (
-                f"Bearer {FIRECRAWL_API_KEY}"
-            ),
-            "Content-Type": "application/json",
-        },
-        json={
-            "url": url,
-            "formats": formats,
-            "waitFor": 3000,
-        },
-        timeout=90,
+    last_error = None
+
+    for attempt in range(
+        1,
+        FIRECRAWL_RETRIES + 1,
+    ):
+
+        try:
+
+            print(
+                f"Firecrawl 请求 "
+                f"{attempt}/{FIRECRAWL_RETRIES}: "
+                f"{url}"
+            )
+
+            response = SESSION.post(
+                "https://api.firecrawl.dev/v2/scrape",
+                headers={
+                    "Authorization": (
+                        f"Bearer "
+                        f"{FIRECRAWL_API_KEY}"
+                    ),
+                    "Content-Type": (
+                        "application/json"
+                    ),
+                },
+                json={
+                    "url": url,
+                    "formats": formats,
+                    "waitFor": 3000,
+                },
+                timeout=FIRECRAWL_TIMEOUT,
+            )
+
+            if response.status_code == 200:
+
+                body = response.json()
+
+                if body.get("success"):
+
+                    return body.get(
+                        "data",
+                        {},
+                    )
+
+                last_error = RuntimeError(
+                    "Firecrawl failed: "
+                    + str(body)[:500]
+                )
+
+            else:
+
+                last_error = RuntimeError(
+                    f"Firecrawl HTTP "
+                    f"{response.status_code}: "
+                    f"{response.text[:500]}"
+                )
+
+                # 404 / 400 这类错误通常重试意义不大
+                if response.status_code in {
+                    400,
+                    401,
+                    403,
+                    404,
+                }:
+                    break
+
+        except requests.exceptions.Timeout as error:
+
+            last_error = error
+
+            print(
+                f"Firecrawl 超时，"
+                f"准备重试: {url}"
+            )
+
+        except requests.exceptions.RequestException as error:
+
+            last_error = error
+
+            print(
+                f"Firecrawl 网络错误，"
+                f"准备重试: {url}"
+            )
+
+        except Exception as error:
+
+            last_error = error
+
+            print(
+                f"Firecrawl 异常，"
+                f"准备重试: {url}"
+            )
+
+        if attempt < FIRECRAWL_RETRIES:
+
+            time.sleep(
+                5 * attempt
+            )
+
+    raise RuntimeError(
+        f"Firecrawl 最终失败: "
+        f"{last_error}"
     )
-
-    if response.status_code != 200:
-        raise RuntimeError(
-            f"Firecrawl HTTP "
-            f"{response.status_code}: "
-            f"{response.text[:300]}"
-        )
-
-    body = response.json()
-
-    if not body.get("success"):
-        raise RuntimeError(
-            f"Firecrawl failed: {body}"
-        )
-
-    return body.get("data", {})
 
 
 def product_scrape(url):
+
     data = firecrawl(
         url,
         ["product"],
     )
 
-    return data.get("product") or {}
+    return data.get(
+        "product"
+    ) or {}
 
 
 def discovery_scrape(url):
+
     data = firecrawl(
         url,
         ["markdown"],
     )
 
-    return data.get("markdown") or ""
+    return data.get(
+        "markdown"
+    ) or ""
 
 
 # =========================
-# URL处理
+# URL
 # =========================
 
-def normalize_url(url):
+def normalize_url(
+    url,
+    base_url=None,
+):
+
     if not url:
         return ""
 
@@ -257,17 +357,29 @@ def normalize_url(url):
         str(url).strip()
     )
 
-    if url.startswith("/"):
-        if "rei.com" in url:
-            url = (
-                "https://www.rei.com"
-                + url
-            )
+    # 去掉 markdown / HTML 常见尾部字符
+    url = url.rstrip(
+        " \t\r\n\"'>"
+    )
 
-    if not url.startswith("http"):
+    if base_url:
+        url = urljoin(
+            base_url,
+            url,
+        )
+
+    if not url.startswith(
+        "http"
+    ):
         return ""
 
     parsed = urlparse(url)
+
+    if parsed.scheme not in {
+        "http",
+        "https",
+    }:
+        return ""
 
     return (
         f"{parsed.scheme}://"
@@ -276,30 +388,175 @@ def normalize_url(url):
     ).rstrip("/")
 
 
+# =========================
+# 判断真正商品 URL
+# =========================
+
+def is_product_url(url):
+
+    if not url:
+        return False
+
+    parsed = urlparse(url)
+
+    host = (
+        parsed.netloc
+        .lower()
+    )
+
+    path = (
+        parsed.path
+        .lower()
+        .rstrip("/")
+    )
+
+    # ---------------------
+    # REI
+    # ---------------------
+
+    if "rei.com" in host:
+
+        return (
+            "/product/" in path
+        )
+
+    # ---------------------
+    # Arc'teryx Outlet
+    # ---------------------
+
+    if "outlet.arcteryx.com" in host:
+
+        # 排除明显分类页
+        category_words = {
+            "/shop/mens",
+            "/shop/mens/",
+            "/shop/mens/jackets",
+            "/shop/mens/tops",
+            "/shop/mens/pants",
+            "/shop/mens/fleece",
+            "/shop/mens/insulation",
+        }
+
+        if path in category_words:
+            return False
+
+        # 商品页一般在 shop/mens 后还有商品 slug
+        return bool(
+            re.search(
+                r"/shop/mens/[^/]+",
+                path,
+                re.I,
+            )
+        )
+
+    # ---------------------
+    # Patagonia
+    # ---------------------
+
+    if "patagonia.com" in host:
+
+        # Patagonia 商品页通常带 product
+        if "/product/" in path:
+            return True
+
+        # 排除分类页
+        category_parts = {
+            "/shop/web-specials/mens",
+            "/shop/web-specials/mens/wool",
+            "/shop/web-specials/mens/down-insulation",
+            "/shop/web-specials/mens/hemp",
+            "/shop/web-specials/mens/econyl",
+            "/shop/web-specials/mens/fair-trade",
+            "/shop/web-specials/mens/pfc-free",
+        }
+
+        if path in category_parts:
+            return False
+
+        # Patagonia 某些商品链接是 /product/...
+        # 其他 shop 链接需要有明显商品 slug
+        if "/shop/" in path:
+
+            tail = path.split(
+                "/shop/",
+                1
+            )[-1]
+
+            # 明显分类词排除
+            if tail in {
+                "web-specials",
+                "web-specials/mens",
+                "mens",
+            }:
+                return False
+
+            return (
+                len(tail.split("/"))
+                >= 2
+            )
+
+        return False
+
+    # ---------------------
+    # The North Face
+    # ---------------------
+
+    if "thenorthface.com" in host:
+
+        # 排除分类入口
+        category_words = {
+            "/en-us/c/sale/mens-sale-317774",
+            "/en-ca/c/sale-829803",
+        }
+
+        if path in category_words:
+            return False
+
+        # TNF 商品页面通常存在 p/ 或 product 特征
+        if re.search(
+            r"/(?:p|product)/",
+            path,
+            re.I,
+        ):
+            return True
+
+        # 某些 TNF 商品 URL 可能没有 product，
+        # 但会出现颜色/款式 slug + 编号
+        if (
+            "/en-us/" in path
+            or "/en-ca/" in path
+        ):
+
+            # 排除明显栏目页
+            if "/c/" in path:
+                return False
+
+            return bool(
+                re.search(
+                    r"[a-z0-9-]+-\d{5,}",
+                    path,
+                    re.I,
+                )
+            )
+
+        return False
+
+    return False
+
+
 def extract_product_links(
     markdown,
     base_url,
 ):
+
     results = []
     seen = set()
 
+    # Markdown / HTML 中尽可能提取 URL
     patterns = [
-        (
-            r'https?://(?:www\.)?'
-            r'(?:rei\.com|'
-            r'outlet\.arcteryx\.com|'
-            r'arcteryx\.com|'
-            r'patagonia\.com|'
-            r'patagonia\.ca|'
-            r'thenorthface\.com)'
-            r'/[^)\s"<>]+'
-        ),
-        (
-            r'(?:^|[\s(])'
-            r'(/(?:product|shop|'
-            r'en-us|en-ca|us/en|ca/en)/'
-            r'[^)\s"<>]+)'
-        ),
+        r'\]\(([^)\s]+)\)',
+        r'href=["\']([^"\']+)["\']',
+        r'(https?://[^\s<>"\']+)',
     ]
 
     for pattern in patterns:
@@ -310,60 +567,59 @@ def extract_product_links(
             re.I,
         ):
 
-            raw = match.group(0).strip()
+            raw = match.group(1)
 
-            if raw.startswith("("):
-                raw = raw[1:]
+            raw = html.unescape(
+                raw
+            )
 
-            url = normalize_url(raw)
+            # 去掉 markdown 尾巴
+            raw = raw.rstrip(
+                ".,);"
+            )
+
+            url = normalize_url(
+                raw,
+                base_url,
+            )
 
             if not url:
                 continue
 
-            parsed = urlparse(url)
-
-            path = parsed.path.lower()
-
-            allowed = (
-                "/product/" in path
-                or (
-                    "/shop/" in path
-                    and any(
-                        brand in parsed.netloc
-                        for brand in [
-                            "arcteryx",
-                            "patagonia",
-                            "thenorthface",
-                        ]
-                    )
-                )
-            )
-
-            if not allowed:
+            if not is_product_url(
+                url
+            ):
                 continue
 
-            if url not in seen:
-                seen.add(url)
-                results.append(url)
+            if url in seen:
+                continue
+
+            seen.add(url)
+            results.append(url)
 
     return results
 
 
 # =========================
-# 数值解析
+# 数值
 # =========================
 
 def to_float(value):
+
     if value is None:
         return None
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict,
+    ):
 
         for key in (
             "amount",
             "value",
             "price",
         ):
+
             if key in value:
                 return to_float(
                     value[key]
@@ -395,7 +651,11 @@ def to_float(value):
     )
 
 
-def nested(obj, *keys):
+def nested(
+    obj,
+    *keys,
+):
+
     current = obj
 
     for key in keys:
@@ -406,21 +666,28 @@ def nested(obj, *keys):
         ):
             return None
 
-        current = current.get(key)
+        current = current.get(
+            key
+        )
 
     return current
 
 
 def amount(value):
+
     if value is None:
         return None
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict,
+    ):
 
         for key in (
             "amount",
             "value",
         ):
+
             if key in value:
                 return to_float(
                     value[key]
@@ -431,17 +698,18 @@ def amount(value):
                 value["price"]
             )
 
-    return to_float(value)
+    return to_float(
+        value
+    )
 
 
-def get_price(variant):
+def get_price(
+    variant,
+):
 
     candidates = [
         variant.get("price"),
-        nested(
-            variant,
-            "currentPrice",
-        ),
+        variant.get("currentPrice"),
         nested(
             variant,
             "sale",
@@ -454,7 +722,9 @@ def get_price(variant):
 
     for candidate in candidates:
 
-        value = amount(candidate)
+        value = amount(
+            candidate
+        )
 
         if value is not None:
             return value
@@ -462,7 +732,9 @@ def get_price(variant):
     return None
 
 
-def get_original(variant):
+def get_original(
+    variant,
+):
 
     candidates = [
         nested(
@@ -483,7 +755,9 @@ def get_original(variant):
 
     for candidate in candidates:
 
-        value = amount(candidate)
+        value = amount(
+            candidate
+        )
 
         if value is not None:
             return value
@@ -556,7 +830,9 @@ def get_currency(
 # 颜色 / 尺码 / 库存
 # =========================
 
-def get_values(variant):
+def get_values(
+    variant,
+):
 
     values = variant.get(
         "values"
@@ -587,7 +863,9 @@ def get_values(variant):
     )
 
 
-def in_stock(variant):
+def in_stock(
+    variant,
+):
 
     candidates = [
         variant.get(
@@ -644,7 +922,9 @@ def in_stock(variant):
     return True
 
 
-def variant_key(variant):
+def variant_key(
+    variant,
+):
 
     for key in (
         "sku",
@@ -668,7 +948,7 @@ def variant_key(variant):
 
 
 # =========================
-# 折扣计算
+# 折扣
 # =========================
 
 def calculate_discount(
@@ -685,8 +965,7 @@ def calculate_discount(
 
         return round(
             (
-                original
-                - current
+                original - current
             )
             / original
             * 100,
@@ -839,6 +1118,7 @@ def is_mens(
         "m's ",
         "male",
         "/mens/",
+        "-mens",
     ]
 
     return any(
@@ -847,52 +1127,13 @@ def is_mens(
     )
 
 
-def is_relevant_url(url):
-
-    host = (
-        urlparse(url)
-        .netloc
-        .lower()
-    )
-
-    path = (
-        urlparse(url)
-        .path
-        .lower()
-    )
-
-    if "rei.com" in host:
-        return "/product/" in path
-
-    if "arcteryx" in host:
-        return (
-            "/shop/mens/"
-            in path
-        )
-
-    if "patagonia" in host:
-        return (
-            "/shop/" in path
-            and (
-                "mens" in path
-                or "m-" in path
-            )
-        )
-
-    if "thenorthface" in host:
-        return (
-            "/en-us/" in path
-            or "/en-ca/" in path
-        )
-
-    return False
-
-
 # =========================
 # Telegram
 # =========================
 
-def send_telegram(text):
+def send_telegram(
+    text,
+):
 
     if (
         not TELEGRAM_BOT_TOKEN
@@ -937,6 +1178,8 @@ def exchange_rates():
             "v6/latest/CNY",
             timeout=20,
         )
+
+        response.raise_for_status()
 
         data = response.json()
 
@@ -1000,7 +1243,7 @@ def to_cny(
 
 
 # =========================
-# Telegram 报警格式
+# Telegram 报警
 # =========================
 
 def build_alert(
@@ -1011,7 +1254,12 @@ def build_alert(
     rates,
 ):
 
-    changed = []
+    # -------------------------
+    # 第一步：
+    # 找到真正发生降价的价格档
+    # -------------------------
+
+    changed_tiers = set()
 
     for row in rows:
 
@@ -1021,46 +1269,54 @@ def build_alert(
         ):
             continue
 
-        if (
-            row["previous"]
-            is None
-        ):
+        if row["previous"] is None:
             continue
 
-        # 核心规则：
-        # 当前实际价格必须低于历史实际价格
         if not (
             row["price"]
             < row["previous"]
         ):
             continue
 
-        # 当前折扣必须 >= 20%
         if (
-            row["discount"]
-            is None
+            row["discount"] is None
             or row["discount"]
             < MIN_DISCOUNT
         ):
             continue
 
-        changed.append(row)
+        changed_tiers.add(
+            (
+                row["original"],
+                row["price"],
+                row["currency"],
+            )
+        )
 
-    if not changed:
+    if not changed_tiers:
         return None
 
-    tiers = {}
+    # -------------------------
+    # 第二步：
+    # 一个价格档发生降价后，
+    # 把这个价格档全部规格都显示
+    # -------------------------
 
-    for row in changed:
+    groups = {}
 
-        tier_key = (
+    for row in rows:
+
+        tier = (
             row["original"],
             row["price"],
             row["currency"],
         )
 
-        tiers.setdefault(
-            tier_key,
+        if tier not in changed_tiers:
+            continue
+
+        groups.setdefault(
+            tier,
             [],
         ).append(row)
 
@@ -1071,11 +1327,11 @@ def build_alert(
         price,
         currency,
     ), group in sorted(
-        tiers.items(),
+        groups.items(),
         key=lambda item: -item[0][1],
     ):
 
-        current_discount = (
+        discount = (
             calculate_discount(
                 original,
                 price,
@@ -1083,9 +1339,9 @@ def build_alert(
             or 0
         )
 
-        if current_discount >= 50:
+        if discount >= 50:
             icon = "🚨"
-        elif current_discount >= 30:
+        elif discount >= 30:
             icon = "🔥"
         else:
             icon = "🏷️"
@@ -1099,7 +1355,7 @@ def build_alert(
         lines = [
             (
                 f"{icon} "
-                f"{current_discount:.0f}% OFF"
+                f"{discount:.0f}% OFF"
                 f"｜{title}"
             ),
             (
@@ -1115,6 +1371,7 @@ def build_alert(
             "",
         ]
 
+        # 按颜色分组
         colors = list(
             dict.fromkeys(
                 row["color"]
@@ -1123,8 +1380,10 @@ def build_alert(
         )
 
         lines.append(
-            "颜色       "
-            + "    ".join(colors)
+            "颜色｜"
+            + "  |  ".join(
+                colors
+            )
         )
 
         for color in colors:
@@ -1143,7 +1402,7 @@ def build_alert(
                 )
             )
 
-            stocks = list(
+            stock_text = list(
                 dict.fromkeys(
                     (
                         "有货"
@@ -1155,13 +1414,17 @@ def build_alert(
             )
 
             lines.append(
-                f"尺码｜{color}   "
-                + " ".join(sizes)
+                f"尺码｜{color}："
+                + " ".join(
+                    sizes
+                )
             )
 
             lines.append(
-                f"库存｜{color}   "
-                + " ".join(stocks)
+                f"库存｜{color}："
+                + " ".join(
+                    stock_text
+                )
             )
 
         lines.append("")
@@ -1175,14 +1438,18 @@ def build_alert(
         "\n\n"
         "━━━━━━━━━━━━"
         "\n\n"
-    ).join(blocks)
+    ).join(
+        blocks
+    )
 
 
 # =========================
 # 自动发现
 # =========================
 
-def discover_urls(history):
+def discover_urls(
+    history,
+):
 
     fixed_urls = {
         url.rstrip("/")
@@ -1190,19 +1457,63 @@ def discover_urls(history):
         in FIXED_PRODUCTS
     }
 
-    existing = set(
-        item["url"]
+    # -------------------------
+    # 清理历史中的分类页
+    # -------------------------
+
+    cleaned = []
+
+    for item in history.get(
+        "discovered_products",
+        [],
+    ):
+
+        if isinstance(
+            item,
+            dict,
+        ):
+
+            url = item.get(
+                "url",
+                "",
+            )
+
+            if is_product_url(
+                url
+            ):
+                cleaned.append(
+                    item
+                )
+
+        elif isinstance(
+            item,
+            str,
+        ):
+
+            if is_product_url(
+                item
+            ):
+                cleaned.append(
+                    {
+                        "url": item,
+                        "source": "旧记录",
+                        "currency": "USD",
+                    }
+                )
+
+    history[
+        "discovered_products"
+    ] = cleaned
+
+    existing = {
+        item["url"].rstrip("/")
+        for item in cleaned
         if isinstance(
             item,
             dict,
         )
-        else item
-        for item
-        in history.get(
-            "discovered_products",
-            [],
-        )
-    )
+        and item.get("url")
+    }
 
     new_items = []
 
@@ -1227,27 +1538,35 @@ def discover_urls(history):
                 page,
             )
 
+            print(
+                f"发现 {len(urls)} 个商品链接："
+                f"{source}"
+            )
+
             for url in urls:
 
-                if (
-                    url.rstrip("/")
-                    in fixed_urls
+                clean_url = url.rstrip(
+                    "/"
+                )
+
+                if clean_url in fixed_urls:
+                    continue
+
+                if clean_url in existing:
+                    continue
+
+                if not is_product_url(
+                    clean_url
                 ):
                     continue
 
-                if url in existing:
-                    continue
-
-                if not is_relevant_url(
-                    url
-                ):
-                    continue
-
-                existing.add(url)
+                existing.add(
+                    clean_url
+                )
 
                 new_items.append(
                     {
-                        "url": url,
+                        "url": clean_url,
                         "source": source,
                         "currency": currency,
                     }
@@ -1266,7 +1585,14 @@ def discover_urls(history):
 
     history[
         "discovered_products"
-    ].extend(new_items)
+    ].extend(
+        new_items
+    )
+
+    print(
+        "本次新增发现商品：",
+        len(new_items)
+    )
 
     return history
 
@@ -1289,6 +1615,19 @@ def process_one(
     )
 
     try:
+
+        # 自动发现再次检查 URL
+        # 防止历史里残留分类页
+        if is_auto and not is_product_url(
+            url
+        ):
+
+            print(
+                "跳过非商品链接：",
+                url,
+            )
+
+            return
 
         product = product_scrape(
             url
@@ -1329,13 +1668,14 @@ def process_one(
 
             return
 
-        # 固定商品用名称作为历史Key
-        # 自动发现商品用URL作为历史Key
         if is_auto:
+
             history_key = (
                 f"auto:{url}"
             )
+
         else:
+
             history_key = name
 
         previous = (
@@ -1374,7 +1714,7 @@ def process_one(
                 )
             )
 
-            # 只有实际当前售价下降才记录为降价
+            # 只有实际当前售价下降
             if (
                 old_price is not None
                 and row["price"]
@@ -1404,7 +1744,7 @@ def process_one(
                 title,
             )
 
-        # 无论是否推送，都保存最新价格
+        # 保存最新价格
         history[
             "products"
         ][history_key] = {
@@ -1462,18 +1802,18 @@ def main():
 
     rates = exchange_rates()
 
-    # --------------------------------
-    # 1. 自动扫描所有官网折扣入口
-    # --------------------------------
+    # -------------------------
+    # 1. 扫描所有官网
+    # -------------------------
 
     history = discover_urls(
         history
     )
 
-    # --------------------------------
-    # 2. 轮询7个重点商品
-    # 每次4个
-    # --------------------------------
+    # -------------------------
+    # 2. 7 个重点商品轮询
+    # 每次 4 个
+    # -------------------------
 
     start = (
         history["position"]
@@ -1513,10 +1853,10 @@ def main():
         + len(fixed_batch)
     ) % len(FIXED_PRODUCTS)
 
-    # --------------------------------
-    # 3. 轮询自动发现商品
-    # 每次6个
-    # --------------------------------
+    # -------------------------
+    # 3. 自动发现商品
+    # 每次 6 个
+    # -------------------------
 
     discovered = history.get(
         "discovered_products",
@@ -1542,7 +1882,9 @@ def main():
                 (start + i)
                 % len(discovered)
             ]
-            for i in range(count)
+            for i in range(
+                count
+            )
         ]
 
         for item in batch:
@@ -1569,9 +1911,9 @@ def main():
             start + count
         ) % len(discovered)
 
-    # --------------------------------
+    # -------------------------
     # 4. 保存历史
-    # --------------------------------
+    # -------------------------
 
     save_history(
         history
