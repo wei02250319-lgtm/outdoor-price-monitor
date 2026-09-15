@@ -1,59 +1,36 @@
+import os
 import requests
-import re
 
-url = "https://api.firecrawl.dev/v2/scrape"
-
-data = {
-    "url": "https://www.rei.com/b/arcteryx/c/all",
-    "formats": ["markdown"]
-}
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 print("=" * 50)
-print("REI 价格解析测试")
+print("Telegram 推送测试")
 print("=" * 50)
 
-r = requests.post(url, json=data, timeout=90)
-
-print("Firecrawl 状态:", r.status_code)
-
-if r.status_code != 200:
-    print("❌ 抓取失败")
-    print(r.text[:1000])
+if not TOKEN:
+    print("❌ 没找到 TELEGRAM_BOT_TOKEN")
     raise SystemExit
 
-result = r.json()
-markdown = result.get("data", {}).get("markdown", "")
+if not CHAT_ID:
+    print("❌ 没找到 TELEGRAM_CHAT_ID")
+    raise SystemExit
 
-print("网页内容长度:", len(markdown))
+url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
-# 提取 REI 商品链接
-links = re.findall(
-    r'https://www\.rei\.com/product/\d+/[^\s\)\]]+',
-    markdown
-)
+data = {
+    "chat_id": CHAT_ID,
+    "text": "✅ REI价格监控测试成功！\n\nTelegram 推送已经正常连接。"
+}
 
-links = list(dict.fromkeys(links))
+r = requests.post(url, data=data, timeout=30)
 
-print("发现商品链接:", len(links))
-print()
+print("Telegram 状态:", r.status_code)
+print("返回:", r.text[:500])
 
-# 输出前 10 个商品附近的内容
-for i, link in enumerate(links[:10], 1):
-    print("-" * 50)
-    print(f"商品 {i}")
-    print("链接:", link)
+if r.status_code == 200:
+    print("✅ Telegram 推送成功")
+else:
+    print("❌ Telegram 推送失败")
 
-    pos = markdown.find(link)
-
-    if pos >= 0:
-        nearby = markdown[pos:pos + 1200]
-
-        # 清理多余空白
-        nearby = re.sub(r'\n+', '\n', nearby)
-
-        print("商品页面内容:")
-        print(nearby[:1000])
-
-print("=" * 50)
-print("✅ REI 商品数据解析测试完成")
 print("=" * 50)
