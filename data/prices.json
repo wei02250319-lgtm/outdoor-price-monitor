@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789472479,
+      "updated": 1789476323,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -431,7 +431,7 @@
     "Arc'teryx Gamma Pants - Men's": {
       "title": "Gamma Pants - Men's",
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
-      "updated": 1789472489,
+      "updated": 1789476333,
       "variants": {
         "2428530017": {
           "price": 200.0,
@@ -790,7 +790,7 @@
     "Patagonia R2 TechFace Jacket - Men's": {
       "title": "R2 TechFace Jacket - Men's",
       "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
-      "updated": 1789472498,
+      "updated": 1789476342,
       "variants": {
         "2221480011": {
           "price": 103.83,
@@ -853,7 +853,7 @@
     "Patagonia Capilene Cool Daily Graphic Hoody - Men's": {
       "title": "Capilene Cool Daily Graphic Hoody - Men's",
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
-      "updated": 1789474460,
+      "updated": 1789476352,
       "variants": {
         "C009000070": {
           "price": 79.0,
@@ -19151,8 +19151,8 @@
     }
   },
   "rotation": 0,
-  "position": 1,
-  "discovery_position": 30,
+  "position": 5,
+  "discovery_position": 36,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
