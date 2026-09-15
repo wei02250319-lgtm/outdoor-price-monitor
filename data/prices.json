@@ -1785,5 +1785,128 @@
   "_state": {
     "position": 3
   },
-  "_rotation_position": 3
+  "_rotation_position": 3,
+  "variants": {
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460046": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "XL",
+      "stock": false
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460045": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460047": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460042": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460044": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens|sku:2351460043": {
+      "product": "Gamma MX Hoody - Men's",
+      "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "price": 199.83,
+      "original_price": 400.0,
+      "currency": "USD",
+      "color": "Dk Stratus/Fluidity",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070010": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070011": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "XL",
+      "stock": false
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070012": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070007": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070008": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens|sku:C010070009": {
+      "product": "Gamma Jacket - Men's",
+      "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+      "price": 196.93,
+      "original_price": 280.0,
+      "currency": "USD",
+      "color": "Black Sapphire",
+      "size": "M",
+      "stock": false
+    }
+  },
+  "rotation": 3
 }
