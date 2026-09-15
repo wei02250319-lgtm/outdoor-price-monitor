@@ -81,7 +81,7 @@
     "Arc'teryx Gamma MX Hoody - Men's": {
       "title": "Gamma MX Hoody - Men's",
       "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-      "updated": 1789474489,
+      "updated": 1789477971,
       "variants": {
         "2351460055": {
           "price": 400.0,
@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789476323,
+      "updated": 1789477980,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -1532,7 +1532,7 @@
     "Arc'teryx Atom Insulated Jacket - Men's": {
       "title": "Atom Insulated Jacket - Men's",
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
-      "updated": 1789474470,
+      "updated": 1789477951,
       "variants": {
         "2432560044": {
           "price": 280.0,
@@ -1779,7 +1779,7 @@
     "Arc'teryx Atom Insulated Hoody - Men's": {
       "title": "Atom Insulated Hoody - Men's",
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
-      "updated": 1789474480,
+      "updated": 1789477961,
       "variants": {
         "2431750009": {
           "price": 300.0,
@@ -16709,6 +16709,45 @@
           "stock": true
         }
       }
+    },
+    "auto:https://www.patagonia.com/shop/web-specials/mens/one-size": {
+      "title": "P-6 Logo LoPro Trucker Hat",
+      "url": "https://www.patagonia.com/shop/web-specials/mens/one-size",
+      "updated": 1789478050,
+      "variants": {
+        "192964417823": {
+          "price": 18.99,
+          "original": 39.0,
+          "currency": "USD",
+          "color": "Black (BLK)",
+          "size": "One Size",
+          "stock": true
+        },
+        "192964417977": {
+          "price": 39.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Forge Grey (FGE)",
+          "size": "One Size",
+          "stock": true
+        },
+        "196924556836": {
+          "price": 39.0,
+          "original": null,
+          "currency": "USD",
+          "color": "New Navy (NENA)",
+          "size": "One Size",
+          "stock": true
+        },
+        "198077794684": {
+          "price": 18.99,
+          "original": 39.0,
+          "currency": "USD",
+          "color": "White w/Peach Sherbet (WTPE)",
+          "size": "One Size",
+          "stock": true
+        }
+      }
     }
   },
   "exchange_rates": {},
@@ -19151,8 +19190,8 @@
     }
   },
   "rotation": 0,
-  "position": 5,
-  "discovery_position": 36,
+  "position": 2,
+  "discovery_position": 42,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
