@@ -218,13 +218,13 @@ for product in products:
         key = product.get("url") or product.get("name")
         data["products"][key] = product
 
-    from datetime import datetime, timezone
+from datetime import datetime, timezone
 
-    data["last_update"] = datetime.now(timezone.utc).isoformat()
+data["last_update"] = datetime.now(timezone.utc).isoformat()
 
-    save_data(data)
+save_data(data)
 
-    print("已保存价格数据:", len(products))
+print("已保存价格数据:", len(products))
 
     message = (
         "🟢 户外价格监控运行成功\n\n"
