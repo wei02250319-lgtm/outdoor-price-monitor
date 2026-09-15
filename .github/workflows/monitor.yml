@@ -26,13 +26,13 @@ jobs:
 
       - name: Run monitor
         env:
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
-          CRAWLBASE_JS_TOKEN: ${{ secrets.CRAWLBASE_JS_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
           echo "开始运行 monitor.py"
           python -u monitor.py
+
       - name: Save price history
         run: |
           git config user.name "github-actions[bot]"
@@ -41,5 +41,3 @@ jobs:
           git diff --cached --quiet || git commit -m "Update price history"
           git pull --rebase origin main
           git push origin main
-      
-  
