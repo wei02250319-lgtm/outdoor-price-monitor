@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789511967
+      "updated_at": 1789515526
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -16,7 +16,7 @@
       "currency": "USD",
       "current_price": 196.93,
       "max_discount": 30,
-      "updated_at": 1789513790
+      "updated_at": 1789515536
     },
     "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789511946
+      "updated_at": 1789515504
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -52,7 +52,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 33,
-      "updated_at": 1789511956
+      "updated_at": 1789515515
     },
     "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
       "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
@@ -314,11 +314,38 @@
       "current_price": 49.73,
       "max_discount": 49,
       "updated_at": 1789512020
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-1996-retro-nuptse-jacket-NF0A3C8D?color=JY7": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-1996-retro-nuptse-jacket-NF0A3C8D?color=JY7",
+      "name": "Men’s 1996 Retro Nuptse Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 266.0,
+      "max_discount": 0,
+      "updated_at": 1789515561
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-thermoball-jacket-NF0A8D1P?color=JK3": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-thermoball-jacket-NF0A8D1P?color=JK3",
+      "name": "Men’s THERMOBALL™ Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 154.0,
+      "max_discount": 0,
+      "updated_at": 1789515576
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-footwear/mens-sandals-313279/mens-never-stop-cush-slides-NF0A8A90?color=KX7": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-footwear/mens-sandals-313279/mens-never-stop-cush-slides-NF0A8A90?color=KX7",
+      "name": "Men’s Never Stop Cush Slides",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 32.0,
+      "max_discount": 0,
+      "updated_at": 1789515606
     }
   },
   "meta": {
-    "fixed_rotation_index": 5,
+    "fixed_rotation_index": 2,
     "version": 3,
-    "discovery_rotation_index": 4
+    "discovery_rotation_index": 6
   }
 }
