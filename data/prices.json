@@ -81,7 +81,7 @@
     "Arc'teryx Gamma MX Hoody - Men's": {
       "title": "Gamma MX Hoody - Men's",
       "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-      "updated": 1789472470,
+      "updated": 1789474489,
       "variants": {
         "2351460055": {
           "price": 400.0,
@@ -853,7 +853,7 @@
     "Patagonia Capilene Cool Daily Graphic Hoody - Men's": {
       "title": "Capilene Cool Daily Graphic Hoody - Men's",
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
-      "updated": 1789470697,
+      "updated": 1789474460,
       "variants": {
         "C009000070": {
           "price": 79.0,
@@ -1532,7 +1532,7 @@
     "Arc'teryx Atom Insulated Jacket - Men's": {
       "title": "Atom Insulated Jacket - Men's",
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
-      "updated": 1789470706,
+      "updated": 1789474470,
       "variants": {
         "2432560044": {
           "price": 280.0,
@@ -1779,7 +1779,7 @@
     "Arc'teryx Atom Insulated Hoody - Men's": {
       "title": "Atom Insulated Hoody - Men's",
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
-      "updated": 1789470716,
+      "updated": 1789474480,
       "variants": {
         "2431750009": {
           "price": 300.0,
@@ -15824,6 +15824,891 @@
           "stock": false
         }
       }
+    },
+    "auto:https://www.rei.com/product/249477/arcteryx-gamma-hoody-mens": {
+      "title": "Gamma Hoody - Men's",
+      "url": "https://www.rei.com/product/249477/arcteryx-gamma-hoody-mens",
+      "updated": 1789474518,
+      "variants": {
+        "2494770004": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2494770003": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": false
+        },
+        "2494770006": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2494770005": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2494770022": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "L",
+          "stock": false
+        },
+        "2494770021": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "M",
+          "stock": false
+        },
+        "2494770024": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "XXL",
+          "stock": false
+        },
+        "2494770023": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "XL",
+          "stock": true
+        },
+        "2494770020": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "S",
+          "stock": false
+        },
+        "2494770019": {
+          "price": 210.93,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Forage",
+          "size": "XS",
+          "stock": false
+        },
+        "2494770033": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "M",
+          "stock": true
+        },
+        "2494770032": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "S",
+          "stock": false
+        },
+        "2494770035": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "XL",
+          "stock": true
+        },
+        "2494770034": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "L",
+          "stock": true
+        },
+        "2494770031": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "XS",
+          "stock": false
+        },
+        "2494770030": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "XXL",
+          "stock": true
+        },
+        "2494770029": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "XL",
+          "stock": false
+        },
+        "2494770026": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "S",
+          "stock": false
+        },
+        "2494770025": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "XS",
+          "stock": false
+        },
+        "2494770028": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "L",
+          "stock": false
+        },
+        "2494770027": {
+          "price": 179.83,
+          "original": 300.0,
+          "currency": "USD",
+          "color": "Moon Drop",
+          "size": "M",
+          "stock": false
+        },
+        "2494770002": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2494770001": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XS",
+          "stock": true
+        },
+        "2494770040": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "L",
+          "stock": true
+        },
+        "2494770042": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "XXL",
+          "stock": true
+        },
+        "2494770041": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "XL",
+          "stock": true
+        },
+        "2494770037": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "XS",
+          "stock": true
+        },
+        "2494770036": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "XXL",
+          "stock": true
+        },
+        "2494770039": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "M",
+          "stock": true
+        },
+        "2494770038": {
+          "price": 300.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Cloud",
+          "size": "S",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens": {
+      "title": "Cormac Hoody - Men's",
+      "url": "https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens",
+      "updated": 1789474588,
+      "variants": {
+        "C013100007": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XS",
+          "stock": true
+        },
+        "C013100029": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "XL",
+          "stock": true
+        },
+        "C013100006": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013100028": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "L",
+          "stock": true
+        },
+        "C013100009": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "C013100008": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "C013100003": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "M",
+          "stock": true
+        },
+        "C013100025": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "XS",
+          "stock": true
+        },
+        "C013100002": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "S",
+          "stock": true
+        },
+        "C013100005": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "XL",
+          "stock": true
+        },
+        "C013100027": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "M",
+          "stock": true
+        },
+        "C013100004": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "L",
+          "stock": true
+        },
+        "C013100026": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "S",
+          "stock": true
+        },
+        "C013100001": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Arctic Silk",
+          "size": "XS",
+          "stock": true
+        },
+        "C013100018": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013100017": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XL",
+          "stock": true
+        },
+        "C013100014": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "S",
+          "stock": true
+        },
+        "C013100013": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "XS",
+          "stock": false
+        },
+        "C013100016": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "L",
+          "stock": true
+        },
+        "C013100015": {
+          "price": 66.93,
+          "original": 90.0,
+          "currency": "USD",
+          "color": "Fluidity",
+          "size": "M",
+          "stock": true
+        },
+        "C013100010": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "C013100012": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013100011": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "C013100030": {
+          "price": 90.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "XXL",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/228080/kuhl-renegade-rock-9-shorts-mens": {
+      "title": "Renegade Rock 9\" Shorts - Men's",
+      "url": "https://www.rei.com/product/228080/kuhl-renegade-rock-9-shorts-mens",
+      "updated": 1789474618,
+      "variants": {
+        "2280800063": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800062": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800021": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800065": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800020": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800064": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800061": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800060": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800027": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800026": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800023": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800067": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800022": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800066": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800025": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800069": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800024": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800068": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800052": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800051": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800054": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800053": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800050": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800019": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Onyx",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800059": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800056": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800055": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800058": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800057": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Sage Brush",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800041": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800040": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800043": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800042": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800009": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800008": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800005": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "34 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800049": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800004": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "33 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800048": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800007": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800006": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "36 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800001": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800045": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800044": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800003": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800047": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800002": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Burnt Olive",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800046": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Nocturnal Blue",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800070": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "38 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800072": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "42 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800071": {
+          "price": 63.73,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Grey",
+          "size": "40 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800038": {
+          "price": 55.93,
+          "original": 75.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "31 IN Waist x 9 IN Inseam",
+          "stock": false
+        },
+        "2280800037": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "30 IN Waist x 9 IN Inseam",
+          "stock": true
+        },
+        "2280800039": {
+          "price": 62.93,
+          "original": 85.0,
+          "currency": "USD",
+          "color": "Charcoal Blue",
+          "size": "32 IN Waist x 9 IN Inseam",
+          "stock": true
+        }
+      }
     }
   },
   "exchange_rates": {},
@@ -18266,8 +19151,8 @@
     }
   },
   "rotation": 0,
-  "position": 4,
-  "discovery_position": 24,
+  "position": 1,
+  "discovery_position": 30,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
