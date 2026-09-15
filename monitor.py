@@ -226,17 +226,17 @@ save_data(data)
 
 print("已保存价格数据:", len(products))
 
-    message = (
-        "🟢 户外价格监控运行成功\n\n"
-        "REI 始祖鸟页面\n"
-        f"本次发现商品：{len(products)} 个\n"
-        "监控程序已正常运行。"
-    )
+message = (
+    "🟢 户外价格监控运行成功\n\n"
+    "REI 始祖鸟页面\n"
+    f"本次发现商品：{len(products)} 个\n"
+    "监控程序已正常运行。"
+)
 
-    send_telegram(message)
+send_telegram(message)
 
-    print("运行完成")
+print("运行完成")
 
 
 if __name__ == "__main__":
-    main()
+main()
