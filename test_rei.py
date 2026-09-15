@@ -1,36 +1,70 @@
-import os
 import requests
+import re
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+print("=" * 60)
+print("REI 商品价格解析测试")
+print("=" * 60)
 
-print("=" * 50)
-print("Telegram 推送测试")
-print("=" * 50)
-
-if not TOKEN:
-    print("❌ 没找到 TELEGRAM_BOT_TOKEN")
-    raise SystemExit
-
-if not CHAT_ID:
-    print("❌ 没找到 TELEGRAM_CHAT_ID")
-    raise SystemExit
-
-url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+url = "https://api.firecrawl.dev/v2/scrape"
 
 data = {
-    "chat_id": CHAT_ID,
-    "text": "✅ REI价格监控测试成功！\n\nTelegram 推送已经正常连接。"
+    "url": "https://www.rei.com/b/arcteryx/c/all",
+    "formats": ["markdown"]
 }
 
-r = requests.post(url, data=data, timeout=30)
+try:
+    r = requests.post(url, json=data, timeout=90)
 
-print("Telegram 状态:", r.status_code)
-print("返回:", r.text[:500])
+    print("Firecrawl 状态:", r.status_code)
 
-if r.status_code == 200:
-    print("✅ Telegram 推送成功")
-else:
-    print("❌ Telegram 推送失败")
+    if r.status_code != 200:
+        print("❌ Firecrawl 抓取失败")
+        print(r.text[:1000])
+        raise SystemExit
 
-print("=" * 50)
+    result = r.json()
+    markdown = result.get("data", {}).get("markdown", "")
+
+    print("网页内容长度:", len(markdown))
+
+    # 找 REI 商品链接
+    links = re.findall(
+        r'https://www\.rei\.com/product/\d+/[^\s\)\]]+',
+        markdown
+    )
+
+    links = list(dict.fromkeys(links))
+
+    print("发现商品链接:", len(links))
+    print()
+
+    if not links:
+        print("❌ 没找到商品链接")
+        raise SystemExit
+
+    # 显示前10个商品及附近价格信息
+    for i, link in enumerate(links[:10], 1):
+
+        print("-" * 60)
+        print("商品", i)
+        print("链接:", link)
+
+        pos = markdown.find(link)
+
+        if pos >= 0:
+            nearby = markdown[pos:pos + 1500]
+
+            # 简单清理文字
+            nearby = re.sub(r'\n+', '\n', nearby)
+
+            print("商品信息:")
+            print(nearby[:1200])
+
+    print()
+    print("=" * 60)
+    print("✅ REI 商品价格解析测试完成")
+    print("=" * 60)
+
+except Exception as e:
+    print("❌ 程序发生错误:")
+    print(str(e))
