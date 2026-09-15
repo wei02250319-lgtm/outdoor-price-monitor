@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789497772
+      "updated_at": 1789499419
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -34,7 +34,7 @@
       "currency": "USD",
       "current_price": 54.93,
       "max_discount": 30,
-      "updated_at": 1789495924
+      "updated_at": 1789499387
     },
     "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789495935
+      "updated_at": 1789499398
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -52,7 +52,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 33,
-      "updated_at": 1789495946
+      "updated_at": 1789499409
     },
     "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens": {
       "url": "https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
@@ -161,11 +161,56 @@
       "current_price": 32.98,
       "max_discount": 0,
       "updated_at": 1789497870
+    },
+    "https://www.rei.com/product/250406/arcteryx-emblem-fleece-crew-mens": {
+      "url": "https://www.rei.com/product/250406/arcteryx-emblem-fleece-crew-mens",
+      "name": "Emblem Fleece Crew - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 83.93,
+      "max_discount": 30,
+      "updated_at": 1789499430
+    },
+    "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
+      "url": "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens",
+      "name": "Kyanite Lightweight Fleece Hoodie - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 105.93,
+      "max_discount": 29,
+      "updated_at": 1789499440
+    },
+    "https://www.rei.com/product/C01380/rei-co-op-microtrek-insulated-hoodie-mens": {
+      "url": "https://www.rei.com/product/C01380/rei-co-op-microtrek-insulated-hoodie-mens",
+      "name": "Microtrek Insulated Hoodie - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 99.83,
+      "max_discount": 44,
+      "updated_at": 1789499451
+    },
+    "https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens": {
+      "url": "https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens",
+      "name": "Renegade Recon Pants - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 73.93,
+      "max_discount": 25,
+      "updated_at": 1789499462
+    },
+    "https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens": {
+      "url": "https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens",
+      "name": "Rainier Rain Jacket - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 29.83,
+      "max_discount": 70,
+      "updated_at": 1789499473
     }
   },
   "meta": {
-    "fixed_rotation_index": 4,
+    "fixed_rotation_index": 1,
     "version": 3,
-    "discovery_rotation_index": 0
+    "discovery_rotation_index": 2
   }
 }
