@@ -154,6 +154,20 @@ def extract_product_links(soup):
     return result
 
 
+def deduplicate_products(products):
+    result = []
+    seen = set()
+
+    for product in products:
+        key = product.get("url") or product.get("name")
+
+        if not key or key in seen:
+            continue
+
+        seen.add(key)
+        result.append(product)
+
+    return result
 def load_data():
     if not os.path.exists(DATA_FILE):
         return {
