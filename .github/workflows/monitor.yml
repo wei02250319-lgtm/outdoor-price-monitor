@@ -31,7 +31,7 @@ jobs:
           CRAWLBASE_JS_TOKEN: ${{ secrets.CRAWLBASE_JS_TOKEN }}
         run: |
           echo "开始运行 monitor.py"
-          python -u monitr.py
+          python -u monitor.py
 
       
   
