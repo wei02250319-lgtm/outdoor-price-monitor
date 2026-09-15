@@ -8,28 +8,8 @@
       "discount": 40,
       "currency": "USD",
       "price_cny": 2128.79,
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "30",
-        "31",
-        "33",
-        "34",
-        "35",
-        "40",
-        "41",
-        "42",
-        "44",
-        "45",
-        "48",
-        "50",
-        "54"
-      ],
-      "stock_status": "out_of_stock"
+      "sizes": [],
+      "stock_status": "unknown"
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "name": "Arc'teryx Atom Insulated Hoody - Men's",
@@ -133,25 +113,16 @@
         "S",
         "M",
         "30",
-        "32",
-        "34",
         "35",
         "36",
-        "37",
-        "38",
-        "40",
-        "42",
         "44",
         "45",
-        "46",
-        "48",
         "50",
-        "52",
         "54"
       ],
       "stock_status": "out_of_stock"
     }
   },
   "exchange_rates": {},
-  "last_update": "2026-09-15T04:53:49.372412+00:00"
+  "last_update": "2026-09-15T05:07:02.505395+00:00"
 }
