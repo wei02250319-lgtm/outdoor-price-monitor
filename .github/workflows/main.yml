@@ -1,0 +1,16 @@
+name: REI Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run REI test
+        run: |
+          python test_rei.py
