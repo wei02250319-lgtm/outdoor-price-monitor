@@ -212,7 +212,7 @@ def main():
 
     products = deduplicate_products(products)
     products = products[:MAX_PRODUCTS]
-        data = load_data()
+data = load_data()
 
     for product in products:
         key = product.get("url") or product.get("name")
