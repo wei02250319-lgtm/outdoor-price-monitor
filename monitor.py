@@ -1,191 +1,195 @@
 import os
 import json
 import re
+import time
 import hashlib
 from datetime import datetime, timezone
-from urllib.parse import urlparse
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
 
 
-# =========================
+# ============================================================
 # 基础配置
-# =========================
+# ============================================================
 
 DATA_FILE = "data/prices.json"
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
-# 人民币参考汇率
-# 后续可以改成自动获取实时汇率
-RATES_TO_CNY = {
-    "USD": 7.15,
-    "CAD": 5.20,
-    "DKK": 1.05,
-    "JPY": 0.048,
-    "CNY": 1.0
-}
+# 第一版使用固定参考汇率
+# 后续可以升级成实时汇率
+USD_TO_CNY = 7.15
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Linux; Android 16) "
-        "AppleWebKit/537.36 Chrome/140.0 Mobile Safari/537.36"
+        "Mozilla/5.0 (Linux; Android 10; Mobile) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/140.0 Mobile Safari/537.36"
     ),
-    "Accept-Language": "en-US,en;q=0.9"
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-TIMEOUT = 25
+# REI 两个重点品牌
+BRANDS = {
+    "Arc'teryx": "https://www.rei.com/b/arcteryx/c/all",
+    "Patagonia": "https://www.rei.com/b/patagonia/c/all",
+}
+
+# 每个品牌最多扫描页数
+# 第一版先控制访问量，后续可以继续扩大
+MAX_PAGES = 20
+
+REQUEST_TIMEOUT = 30
+
+session = requests.Session()
+session.headers.update(HEADERS)
 
 
-# =========================
-# 文件操作
-# =========================
+# ============================================================
+# 文件
+# ============================================================
 
 def load_data():
-    if not os.path.exists(DATA_FILE):
-        os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
-        data = {
+    if not os.path.exists(DATA_FILE):
+        return {
             "products": {},
-            "exchange_rates": RATES_TO_CNY,
+            "exchange_rates": {
+                "USD": USD_TO_CNY,
+                "CNY": 1.0
+            },
             "last_update": None
         }
 
-        save_data(data)
-        return data
-
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+
+        if "products" not in data:
+            data["products"] = {}
+
+        return data
+
     except Exception:
         return {
             "products": {},
-            "exchange_rates": RATES_TO_CNY,
+            "exchange_rates": {
+                "USD": USD_TO_CNY,
+                "CNY": 1.0
+            },
             "last_update": None
         }
 
 
 def save_data(data):
-    os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-# =========================
-# 工具
-# =========================
+# ============================================================
+# 网络
+# ============================================================
 
-def now():
-    return datetime.now(timezone.utc).isoformat()
+def get_page(url):
+    for attempt in range(3):
+        try:
+            response = session.get(
+                url,
+                timeout=REQUEST_TIMEOUT
+            )
 
+            if response.status_code == 200:
+                return response.text
 
-def product_id(url):
-    return hashlib.sha256(url.encode()).hexdigest()[:16]
+            print(
+                f"[WARN] HTTP {response.status_code}: {url}"
+            )
 
+        except Exception as e:
+            print(
+                f"[WARN] request failed "
+                f"{attempt + 1}/3: {url} -> {e}"
+            )
 
-def currency_from_url(url):
-    host = urlparse(url).netloc.lower()
+        time.sleep(2)
 
-    if ".ca" in host:
-        return "CAD"
-
-    if ".dk" in host:
-        return "DKK"
-
-    if ".jp" in host:
-        return "JPY"
-
-    return "USD"
-
-
-def to_cny(price, currency):
-    rate = RATES_TO_CNY.get(currency)
-
-    if not rate:
-        return None
-
-    return round(price * rate, 2)
+    return ""
 
 
-def money(value, currency):
-    if value is None:
-        return "-"
+# ============================================================
+# JSON-LD
+# ============================================================
 
-    symbols = {
-        "USD": "$",
-        "CAD": "C$",
-        "DKK": "kr",
-        "JPY": "¥",
-        "CNY": "¥"
-    }
+def extract_jsonld_products(soup):
+    products = []
 
-    return f"{symbols.get(currency, '')}{value:,.2f}"
-
-
-# =========================
-# JSON-LD 商品信息
-# =========================
-
-def find_product_jsonld(soup):
-    scripts = soup.find_all(
+    for script in soup.find_all(
         "script",
         type="application/ld+json"
-    )
-
-    for script in scripts:
+    ):
         try:
-            obj = json.loads(script.string or script.get_text())
+            raw = script.string
 
-            objects = obj if isinstance(obj, list) else [obj]
+            if not raw:
+                continue
 
-            for item in objects:
-                if not isinstance(item, dict):
-                    continue
-
-                if item.get("@type") == "Product":
-                    return item
-
-                if isinstance(item.get("@graph"), list):
-                    for graph_item in item["@graph"]:
-                        if (
-                            isinstance(graph_item, dict)
-                            and graph_item.get("@type") == "Product"
-                        ):
-                            return graph_item
+            data = json.loads(raw)
 
         except Exception:
             continue
 
-    return None
+        if isinstance(data, dict):
+            if data.get("@type") == "Product":
+                products.append(data)
+
+            if isinstance(data.get("@graph"), list):
+                for item in data["@graph"]:
+                    if (
+                        isinstance(item, dict)
+                        and item.get("@type") == "Product"
+                    ):
+                        products.append(item)
+
+        elif isinstance(data, list):
+            for item in data:
+                if (
+                    isinstance(item, dict)
+                    and item.get("@type") == "Product"
+                ):
+                    products.append(item)
+
+    return products
 
 
-# =========================
-# 价格解析
-# =========================
+# ============================================================
+# 价格
+# ============================================================
 
-def parse_number(value):
-    if value is None:
+def number_from_text(text):
+    if not text:
         return None
 
-    if isinstance(value, (int, float)):
-        return float(value)
-
-    value = str(value)
-
-    value = value.replace(",", "")
+    text = str(text).replace(",", "")
 
     match = re.search(
-        r"[-+]?\d+(?:\.\d+)?",
-        value
+        r"(\d+(?:\.\d{1,2})?)",
+        text
     )
 
     if not match:
         return None
 
-    return float(match.group())
+    try:
+        return float(match.group(1))
+    except Exception:
+        return None
 
 
 def get_price(product):
@@ -197,204 +201,340 @@ def get_price(product):
     if not isinstance(offers, dict):
         offers = {}
 
-    price = parse_number(offers.get("price"))
-
-    low_price = parse_number(
-        offers.get("lowPrice")
+    price = (
+        offers.get("price")
+        or product.get("price")
     )
 
-    if price is None:
-        price = low_price
+    price_value = number_from_text(price)
 
-    currency = offers.get("priceCurrency")
-
-    return price, currency
+    return price_value
 
 
-# =========================
-# 页面抓取
-# =========================
+def detect_original_price(text):
+    if not text:
+        return None
 
-def fetch_product(url):
-    try:
-        response = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=TIMEOUT
+    # 常见形式：
+    # $199.83 - $300.00
+    # $199.83 $300.00
+    # Save 25% compared to $260.00
+    patterns = [
+        r"Save\s+\d+%\s+compared\s+to\s+\$?([\d,]+(?:\.\d{1,2})?)",
+        r"\$([\d,]+\.\d{2})\s*-\s*\$([\d,]+\.\d{2})",
+    ]
+
+    for pattern in patterns:
+        match = re.search(
+            pattern,
+            text,
+            re.IGNORECASE
         )
 
-        response.raise_for_status()
+        if not match:
+            continue
 
-    except Exception as e:
-        return {
-            "success": False,
-            "error": str(e)
-        }
+        if len(match.groups()) == 1:
+            return number_from_text(match.group(1))
 
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
+        values = []
+
+        for value in match.groups():
+            number = number_from_text(value)
+
+            if number is not None:
+                values.append(number)
+
+        if len(values) >= 2:
+            return max(values)
+
+    return None
+
+
+def detect_discount(text, current_price, original_price):
+    if not text:
+        text = ""
+
+    match = re.search(
+        r"(\d+)%\s*(?:off|save)",
+        text,
+        re.IGNORECASE
     )
 
-    product = find_product_jsonld(soup)
+    if match:
+        try:
+            return int(match.group(1))
+        except Exception:
+            pass
 
-    if not product:
-        return {
-            "success": False,
-            "error": "页面没有找到标准 Product JSON-LD"
-        }
+    if (
+        current_price is not None
+        and original_price is not None
+        and original_price > current_price
+    ):
+        discount = (
+            1 - current_price / original_price
+        ) * 100
 
-    name = product.get("name") or "未知商品"
+        return round(discount)
 
-    price, currency = get_price(product)
+    return 0
 
-    if currency is None:
-        currency = currency_from_url(url)
 
-    if price is None:
-        return {
-            "success": False,
-            "error": "没有找到价格"
-        }
+# ============================================================
+# 商品信息
+# ============================================================
 
-    # 原价
-    old_price = None
+def clean_text(text):
+    if not text:
+        return ""
+
+    return re.sub(
+        r"\s+",
+        " ",
+        text
+    ).strip()
+
+
+def get_product_id(url, name):
+    raw = f"{url}|{name}"
+
+    return hashlib.sha256(
+        raw.encode("utf-8")
+    ).hexdigest()[:24]
+
+
+def parse_jsonld_product(product, brand):
+    name = clean_text(
+        product.get("name", "")
+    )
+
+    url = ""
 
     offers = product.get("offers")
 
+    if isinstance(offers, list):
+        offers = offers[0] if offers else {}
+
     if isinstance(offers, dict):
-        old_price = parse_number(
-            offers.get("priceSpecification", {}).get(
-                "price"
-            )
+        url = offers.get("url", "")
+
+    if not url:
+        url = product.get("url", "")
+
+    if url:
+        url = urljoin(
+            "https://www.rei.com",
+            url
         )
 
-    # 从页面文字中寻找折扣
-    text = soup.get_text(" ", strip=True)
+    price = get_price(product)
 
-    discount = None
+    if not name or price is None:
+        return None
 
-    discount_match = re.search(
-        r"(\d{1,2})\s*%\s*(?:OFF|off|discount|折扣)",
-        text
+    currency = "USD"
+
+    description = clean_text(
+        product.get("description", "")
     )
 
-    if discount_match:
-        discount = float(
-            discount_match.group(1)
-        )
+    original_price = detect_original_price(
+        description
+    )
 
-    # 尝试根据原价/现价计算折扣
-    if old_price and price and old_price > price:
-        discount = round(
-            (old_price - price)
-            / old_price
-            * 100,
-            1
-        )
+    discount = detect_discount(
+        description,
+        price,
+        original_price
+    )
 
-    # 颜色
-    colors = []
-
-    color_patterns = [
-        r"Color[:：]\s*([^|,;\n]+)",
-        r"Colour[:：]\s*([^|,;\n]+)"
-    ]
-
-    for pattern in color_patterns:
-        matches = re.findall(
-            pattern,
-            text,
-            re.I
-        )
-
-        for item in matches:
-            item = item.strip()
-
-            if item and item not in colors:
-                colors.append(item)
-
-    # 尺码
-    sizes = []
-
-    for size in [
-        "XXS", "XS", "S", "M", "L", "XL", "XXL",
-        "2XS", "2XL",
-        "28", "30", "32", "34", "36", "38",
-        "40", "42", "44"
-    ]:
-        if re.search(
-            rf"\b{re.escape(size)}\b",
-            text,
-            re.I
-        ):
-            sizes.append(size)
+    product_id = get_product_id(
+        url,
+        name
+    )
 
     return {
-        "success": True,
-        "name": name.strip(),
+        "id": product_id,
+        "brand": brand,
+        "name": name,
         "url": url,
         "currency": currency,
-        "price": price,
-        "price_cny": to_cny(
-            price,
-            currency
+        "price": round(price, 2),
+        "original_price": (
+            round(original_price, 2)
+            if original_price
+            else None
         ),
-        "old_price": old_price,
         "discount": discount,
-        "colors": colors,
-        "sizes": sizes,
-        "checked_at": now()
+        "sizes": [],
+        "colors": [],
+        "stock": "unknown"
     }
 
 
-# =========================
-# 是否需要通知
-# =========================
+# ============================================================
+# 页面商品链接备用解析
+# ============================================================
 
-def should_notify(old, new):
-    if not old:
-        # 第一次发现商品：
-        # 只有有折扣才通知
-        return (
-            new.get("discount") is not None
-            and new.get("discount", 0) > 0
+def extract_product_links(soup):
+    links = []
+
+    for a in soup.find_all("a", href=True):
+        href = a.get("href", "")
+
+        if "/product/" not in href:
+            continue
+
+        url = urljoin(
+            "https://www.rei.com",
+            href
         )
 
-    # 价格发生变化
-    if old.get("price") != new.get("price"):
-        return True
+        if url not in links:
+            links.append(url)
 
-    # 折扣变化
-    if old.get("discount") != new.get("discount"):
-        return True
-
-    # 颜色变化
-    if old.get("colors") != new.get("colors"):
-        return True
-
-    # 尺码变化
-    if old.get("sizes") != new.get("sizes"):
-        return True
-
-    return False
+    return links
 
 
-# =========================
+# ============================================================
+# 解析品牌页面
+# ============================================================
+
+def parse_brand_page(html, brand):
+    if not html:
+        return []
+
+    soup = BeautifulSoup(
+        html,
+        "lxml"
+    )
+
+    products = []
+
+    # 第一优先：JSON-LD
+    jsonld_products = extract_jsonld_products(
+        soup
+    )
+
+    for item in jsonld_products:
+        parsed = parse_jsonld_product(
+            item,
+            brand
+        )
+
+        if parsed:
+            products.append(parsed)
+
+    # 去重
+    unique = {}
+
+    for product in products:
+        unique[product["id"]] = product
+
+    return list(unique.values())
+
+
+# ============================================================
+# 发现商品
+# ============================================================
+
+def discover_brand_products(brand, base_url):
+    all_products = {}
+
+    print(
+        f"\n========== {brand} =========="
+    )
+
+    for page in range(1, MAX_PAGES + 1):
+
+        if page == 1:
+            url = base_url
+        else:
+            url = f"{base_url}?page={page}"
+
+        print(
+            f"[SCAN] {brand} page {page}"
+        )
+
+        html = get_page(url)
+
+        if not html:
+            print(
+                f"[WARN] empty page: {url}"
+            )
+            continue
+
+        products = parse_brand_page(
+            html,
+            brand
+        )
+
+        print(
+            f"[FOUND] {len(products)} products"
+        )
+
+        before = len(all_products)
+
+        for product in products:
+            all_products[
+                product["id"]
+            ] = product
+
+        after = len(all_products)
+
+        # 如果连续页面没有新增商品，
+        # 后面的页面大概率已经没有内容
+        if page > 2 and after == before:
+            print(
+                "[INFO] no new products, stop paging"
+            )
+            break
+
+        time.sleep(1)
+
+    return list(all_products.values())
+
+
+# ============================================================
+# 人民币
+# ============================================================
+
+def to_cny(price, currency):
+    if price is None:
+        return None
+
+    if currency == "USD":
+        return round(
+            price * USD_TO_CNY,
+            2
+        )
+
+    if currency == "CNY":
+        return round(price, 2)
+
+    return None
+
+
+# ============================================================
 # Telegram
-# =========================
+# ============================================================
 
-def telegram_send(message):
+def send_telegram(message):
     if not TELEGRAM_BOT_TOKEN:
-        print("没有设置 TELEGRAM_BOT_TOKEN")
+        print(
+            "[WARN] TELEGRAM_BOT_TOKEN missing"
+        )
         return False
 
     if not TELEGRAM_CHAT_ID:
-        print("没有设置 TELEGRAM_CHAT_ID")
+        print(
+            "[WARN] TELEGRAM_CHAT_ID missing"
+        )
         return False
 
     url = (
-        f"https://api.telegram.org/bot"
+        "https://api.telegram.org/bot"
         f"{TELEGRAM_BOT_TOKEN}/sendMessage"
     )
 
@@ -411,154 +551,240 @@ def telegram_send(message):
             timeout=20
         )
 
-        response.raise_for_status()
+        if response.status_code == 200:
+            print("[TELEGRAM] sent")
+            return True
 
-        return True
+        print(
+            "[TELEGRAM] failed:",
+            response.text[:500]
+        )
 
     except Exception as e:
-        print("Telegram 推送失败:", e)
-        return False
+        print(
+            "[TELEGRAM] error:",
+            e
+        )
+
+    return False
 
 
-# =========================
-# 消息
-# =========================
+# ============================================================
+# 是否需要提醒
+# ============================================================
 
-def build_message(item, old):
-    discount = item.get("discount")
+def should_notify(old, new):
+    # 第一次发现商品：
+    # 只有已经打折才提醒
+    if old is None:
+        return new.get("discount", 0) > 0
 
-    if discount is not None:
-        if discount >= 50:
-            title = "🔥🔥 超级优惠"
-        elif discount >= 30:
-            title = "🔥 30%+大折扣"
-        else:
-            title = "💰 商品价格变化"
+    # 价格变化
+    if old.get("price") != new.get("price"):
+        return True
+
+    # 折扣变化
+    if old.get("discount") != new.get("discount"):
+        return True
+
+    # 原价变化
+    if old.get("original_price") != new.get(
+        "original_price"
+    ):
+        return True
+
+    # 尺码变化
+    if old.get("sizes") != new.get("sizes"):
+        return True
+
+    # 颜色变化
+    if old.get("colors") != new.get("colors"):
+        return True
+
+    # 库存变化
+    if old.get("stock") != new.get("stock"):
+        return True
+
+    return False
+
+
+# ============================================================
+# Telegram 消息
+# ============================================================
+
+def make_message(product, old=None):
+    brand = product["brand"]
+    name = product["name"]
+
+    price = product["price"]
+    price_cny = to_cny(
+        price,
+        product["currency"]
+    )
+
+    original = product.get(
+        "original_price"
+    )
+
+    discount = product.get(
+        "discount",
+        0
+    )
+
+    if discount >= 50:
+        level = "🔥🔥 超级优惠"
+    elif discount >= 30:
+        level = "🔥 重点优惠"
+    elif discount > 0:
+        level = "🏷️ 有折扣"
     else:
-        title = "💰 商品价格变化"
+        level = "📌 价格变化"
 
-    currency = item["currency"]
-
-    message = [
-        title,
+    lines = [
+        f"{level}",
         "",
-        f"商品：{item['name']}",
-        f"本地价格：{money(item['price'], currency)}",
-        f"人民币：¥{item['price_cny']:,.2f}",
+        f"品牌：{brand}",
+        f"商品：{name}",
+        "",
+        f"REI价格：${price:.2f}",
     ]
 
-    if discount is not None:
-        message.append(
-            f"折扣：{discount}%"
+    if price_cny is not None:
+        lines.append(
+            f"人民币约：¥{price_cny:.0f}"
+        )
+
+    if original:
+        lines.append(
+            f"原价：${original:.2f}"
+        )
+
+    if discount:
+        lines.append(
+            f"折扣：{discount}% OFF"
         )
 
     if old:
         old_price = old.get("price")
 
-        if old_price != item["price"]:
-            old_cny = old.get("price_cny")
+        if old_price is not None:
+            change = price - old_price
 
-            message.extend([
-                "",
-                "📉 价格变化：",
-                f"{money(old_price, currency)}"
-                f" → "
-                f"{money(item['price'], currency)}"
-            ])
-
-            if old_cny is not None:
-                message.append(
-                    f"人民币：¥{old_cny:,.2f}"
-                    f" → "
-                    f"¥{item['price_cny']:,.2f}"
+            if change < 0:
+                lines.append(
+                    f"⬇️ 比上次低：${abs(change):.2f}"
                 )
 
-    if item.get("colors"):
-        message.extend([
+            elif change > 0:
+                lines.append(
+                    f"⬆️ 比上次高：${change:.2f}"
+                )
+
+    if product.get("url"):
+        lines.extend([
             "",
-            "🎨 颜色：",
-            "、".join(item["colors"][:20])
+            product["url"]
         ])
 
-    if item.get("sizes"):
-        message.extend([
-            "",
-            "📏 页面检测到的尺码：",
-            "、".join(item["sizes"])
-        ])
-
-    message.extend([
-        "",
-        "🔗 商品链接：",
-        item["url"]
-    ])
-
-    return "\n".join(message)
+    return "\n".join(lines)
 
 
-# =========================
+# ============================================================
 # 主程序
-# =========================
+# ============================================================
 
 def main():
+    print(
+        "\n======================================"
+    )
+    print(
+        " REI Outdoor Price Monitor"
+    )
+    print(
+        " Arc'teryx + Patagonia"
+    )
+    print(
+        "======================================"
+    )
+
     data = load_data()
 
-    # =========================================
-    # 商品链接
-    # 后续我们会把这里改成自动发现
-    # =========================================
+    old_products = data.get(
+        "products",
+        {}
+    )
 
-    urls = [
-        # 在这里加入需要监控的商品链接
-        #
-        # "https://www.rei.com/...",
-        # "https://arcteryx.com/...",
-        # "https://www.patagonia.com/...",
-    ]
+    new_products = {}
 
-    if not urls:
-        print(
-            "当前还没有商品链接。"
-            "下一步我们会建立 products.json "
-            "自动管理监控商品。"
+    total_found = 0
+    notifications = 0
+
+    for brand, url in BRANDS.items():
+
+        products = discover_brand_products(
+            brand,
+            url
         )
-        return
 
-    for url in urls:
-        print("检查:", url)
+        total_found += len(products)
 
-        result = fetch_product(url)
+        for product in products:
 
-        if not result["success"]:
-            print(
-                "检查失败:",
-                result.get("error")
-            )
-            continue
+            product_id = product["id"]
 
-        pid = product_id(url)
-
-        old = data["products"].get(pid)
-
-        if should_notify(old, result):
-            message = build_message(
-                result,
-                old
+            old = old_products.get(
+                product_id
             )
 
-            print(message)
+            new_products[product_id] = product
 
-            telegram_send(message)
+            if should_notify(
+                old,
+                product
+            ):
+                message = make_message(
+                    product,
+                    old
+                )
 
-        # 永远保存最新状态
-        data["products"][pid] = result
+                print(
+                    "\n[NOTIFY]"
+                )
+                print(message)
 
-    data["exchange_rates"] = RATES_TO_CNY
-    data["last_update"] = now()
+                if send_telegram(message):
+                    notifications += 1
+
+                # 避免短时间大量发送
+                time.sleep(0.5)
+
+    data["products"] = new_products
+
+    data["exchange_rates"] = {
+        "USD_CNY": USD_TO_CNY
+    }
+
+    data["last_update"] = datetime.now(
+        timezone.utc
+    ).isoformat()
 
     save_data(data)
 
-    print("监控完成:", now())
+    print(
+        "\n======================================"
+    )
+    print(
+        f"商品数量：{total_found}"
+    )
+    print(
+        f"本次推送：{notifications}"
+    )
+    print(
+        "历史价格：已保存"
+    )
+    print(
+        "======================================"
+    )
 
 
 if __name__ == "__main__":
