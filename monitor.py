@@ -202,6 +202,7 @@ def save_data(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+
 def main():
     print("================================")
     print("Outdoor Price Monitor")
@@ -234,15 +235,50 @@ def main():
 
     products = deduplicate_products(products)
     products = products[:MAX_PRODUCTS]
+
     data = load_data()
 
-    for product in products:
-      data = load_data()
+    price_drop_products = []
 
     for product in products:
-        product["price_cny"] = round(product["price"] * USD_TO_CNY, 2)
+        price = product.get("price")
+
+        if price is None:
+            print("跳过没有价格的商品:", product.get("name"))
+            continue
+
+        product["price_cny"] = round(price * USD_TO_CNY, 2)
+
         key = product.get("url") or product.get("name")
+
+        old_product = data["products"].get(key)
+
+        if old_product:
+            old_price = old_product.get("price")
+
+            if old_price is not None and price < old_price:
+                price_drop_products.append({
+                    "name": product.get("name"),
+                    "old_price": old_price,
+                    "new_price": price,
+                    "price_cny": product["price_cny"],
+                    "discount": product.get("discount"),
+                    "url": product.get("url")
+                })
+
+                print(
+                    "发现降价:",
+                    product.get("name"),
+                    old_price,
+                    "->",
+                    price
+                )
+
+        else:
+            print("首次发现商品，不推送:", product.get("name"))
+
         data["products"][key] = product
+
     from datetime import datetime, timezone
 
     data["last_update"] = datetime.now(timezone.utc).isoformat()
@@ -251,17 +287,31 @@ def main():
 
     print("已保存价格数据:", len(products))
 
-    message = (
-        "🟢 户外价格监控运行成功\n\n"
-        "REI 始祖鸟页面\n"
-        f"本次发现商品：{len(products)} 个\n"
-        "监控程序已正常运行。"
-    )
+    if price_drop_products:
+        message = "🔥 REI 始祖鸟降价提醒\n\n"
 
-    send_telegram(message)
+        for item in price_drop_products:
+            message += (
+                f"商品：{item['name']}\n"
+                f"原价格：${item['old_price']:.2f}\n"
+                f"新价格：${item['new_price']:.2f}\n"
+                f"人民币：¥{item['price_cny']:.2f}\n"
+            )
+
+            if item["discount"] is not None:
+                message += f"折扣：{item['discount']}%\n"
+
+            message += f"链接：{item['url']}\n\n"
+
+        send_telegram(message)
+
+        print("已发送降价提醒:", len(price_drop_products))
+
+    else:
+        print("没有发现降价商品，不发送 Telegram")
 
     print("运行完成")
 
 
 if __name__ == "__main__":
-    main()  
+    main()
