@@ -26,8 +26,9 @@ jobs:
 
       - name: Run monitor
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           CRAWLBASE_JS_TOKEN: ${{ secrets.CRAWLBASE_JS_TOKEN }}
         run: |
           echo "开始运行 monitor.py"
