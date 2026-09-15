@@ -215,7 +215,7 @@ def main():
     data = load_data()
 
     for product in products:
-    data = load_data()
+      data = load_data()
 
     for product in products:
         key = product.get("url") or product.get("name")
@@ -239,5 +239,7 @@ def main():
     send_telegram(message)
 
     print("运行完成")
+
+
 if __name__ == "__main__":
-    main()        
+    main()  
