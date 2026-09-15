@@ -376,7 +376,7 @@
     ]
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
-    "title": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Hoody - Men's",
+    "title": "Arc'teryx Atom Insulated Hoody - Men's",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "lowest_price": 199.83,
     "tiers": [
@@ -392,7 +392,7 @@
         }
       }
     ],
-    "updated_at": 1789462338
+    "updated_at": 1789462620
   },
   "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta SL Jacket - Women's",
@@ -901,243 +901,11 @@
     ]
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
-    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Gamma MX Hoody - Men's",
+    "title": "Arc'teryx Gamma MX Hoody - Men's",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-    "variants": [
-      {
-        "price": 30.0,
-        "original": 400.0,
-        "discount": 92,
-        "currency": "USD",
-        "rmb": 216.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 40.0,
-        "original": 400.0,
-        "discount": 90,
-        "currency": "USD",
-        "rmb": 288.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 50.0,
-        "original": 400.0,
-        "discount": 88,
-        "currency": "USD",
-        "rmb": 360.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 70.0,
-        "original": 400.0,
-        "discount": 82,
-        "currency": "USD",
-        "rmb": 504.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 199.83,
-        "original": 400.0,
-        "discount": 50,
-        "currency": "USD",
-        "rmb": 1438.78,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 400.0,
-        "original": 400.0,
-        "discount": 0,
-        "currency": "USD",
-        "rmb": 2880.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      }
-    ],
-    "sale_variants": [
-      {
-        "price": 30.0,
-        "original": 400.0,
-        "discount": 92,
-        "currency": "USD",
-        "rmb": 216.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 40.0,
-        "original": 400.0,
-        "discount": 90,
-        "currency": "USD",
-        "rmb": 288.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 50.0,
-        "original": 400.0,
-        "discount": 88,
-        "currency": "USD",
-        "rmb": 360.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 70.0,
-        "original": 400.0,
-        "discount": 82,
-        "currency": "USD",
-        "rmb": 504.0,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      },
-      {
-        "price": 199.83,
-        "original": 400.0,
-        "discount": 50,
-        "currency": "USD",
-        "rmb": 1438.78,
-        "colors": [
-          "Black",
-          "White"
-        ],
-        "sizes": [
-          "S",
-          "M",
-          "L"
-        ],
-        "focus_sizes": {
-          "M": true,
-          "L": true,
-          "XL": false
-        }
-      }
-    ]
+    "lowest_price": null,
+    "tiers": [],
+    "updated_at": 1789462592
   },
   "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
     "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Kyanite Lightweight Fleece Hoodie - Men's",
@@ -2019,6 +1787,13 @@
     ]
   },
   "__monitor_state__": {
-    "next_index": 9
+    "next_index": 3
+  },
+  "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
+    "title": "Arc'teryx Gamma Pants - Men's",
+    "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
+    "lowest_price": null,
+    "tiers": [],
+    "updated_at": 1789462610
   }
 }
