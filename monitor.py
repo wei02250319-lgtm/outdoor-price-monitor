@@ -16,7 +16,7 @@ USD_TO_CNY = 7.10
 
 REI_URL = "https://www.rei.com/b/arcteryx/c/all"
 
-MAX_PRODUCTS = 5
+MAX_PRODUCTS = 1
 
 
 def send_telegram(message):
