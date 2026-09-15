@@ -212,31 +212,32 @@ def main():
 
     products = deduplicate_products(products)
     products = products[:MAX_PRODUCTS]
-data = load_data()
+    data = load_data()
 
-for product in products:
+    for product in products:
+    data = load_data()
+
+    for product in products:
         key = product.get("url") or product.get("name")
         data["products"][key] = product
 
-from datetime import datetime, timezone
+    from datetime import datetime, timezone
 
-data["last_update"] = datetime.now(timezone.utc).isoformat()
+    data["last_update"] = datetime.now(timezone.utc).isoformat()
 
-save_data(data)
+    save_data(data)
 
-print("已保存价格数据:", len(products))
+    print("已保存价格数据:", len(products))
 
-message = (
-    "🟢 户外价格监控运行成功\n\n"
-    "REI 始祖鸟页面\n"
-    f"本次发现商品：{len(products)} 个\n"
-    "监控程序已正常运行。"
-)
+    message = (
+        "🟢 户外价格监控运行成功\n\n"
+        "REI 始祖鸟页面\n"
+        f"本次发现商品：{len(products)} 个\n"
+        "监控程序已正常运行。"
+    )
 
-send_telegram(message)
+    send_telegram(message)
 
-print("运行完成")
-
-
+    print("运行完成")
 if __name__ == "__main__":
-    main()
+    main()        
