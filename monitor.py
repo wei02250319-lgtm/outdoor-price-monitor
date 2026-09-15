@@ -256,7 +256,7 @@ def main():
         if old_product:
             old_price = old_product.get("price")
 
-            if old_price is not None and price < old_price:
+            if old_price is not None and price < old_price * 0.8:
                 price_drop_products.append({
                     "name": product.get("name"),
                     "old_price": old_price,
