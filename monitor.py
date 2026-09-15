@@ -79,45 +79,52 @@ def fetch_page(url):
 def extract_jsonld_products(soup):
     products = []
 
-    for tag in soup.find_all("script", type="application/ld+json"):
-        try:
-            data = json.loads(tag.string or tag.get_text())
-        except Exception:
+    for a in soup.find_all("a", href=True):
+        href = a.get("href", "")
+
+        if "/product/" not in href:
             continue
 
-        items = data if isinstance(data, list) else [data]
+        name = a.get_text(" ", strip=True)
 
-        for item in items:
-            if not isinstance(item, dict):
-                continue
+        if not name:
+            continue
 
-            if item.get("@type") != "Product":
-                continue
+        if href.startswith("/"):
+            full_url = "https://www.rei.com" + href
+        else:
+            full_url = href
 
-            name = item.get("name")
-            url = item.get("url")
-            offers = item.get("offers")
+        parent_text = a.parent.get_text(" ", strip=True) if a.parent else ""
+        text = parent_text[:2000]
 
-            price = None
-            currency = None
+        prices = re.findall(r"\$\s?(\d+(?:\.\d{1,2})?)", text)
 
-            if isinstance(offers, dict):
-                price = price_to_number(offers.get("price"))
-                currency = offers.get("priceCurrency")
+        price = None
+        original_price = None
 
-            elif isinstance(offers, list) and offers:
-                first = offers[0]
-                if isinstance(first, dict):
-                    price = price_to_number(first.get("price"))
-                    currency = first.get("priceCurrency")
+        if prices:
+            numbers = [float(x) for x in prices]
+            price = numbers[0]
 
-            if name:
-                products.append({
-                    "name": name,
-                    "url": url,
-                    "price": price,
-                    "currency": currency
-                })
+            if len(numbers) > 1:
+                original_price = max(numbers)
+
+        discount = None
+
+        if price and original_price and original_price > price:
+            discount = round(
+                (original_price - price) / original_price * 100
+            )
+
+        products.append({
+            "name": name,
+            "url": full_url,
+            "price": price,
+            "original_price": original_price,
+            "discount": discount,
+            "currency": "USD"
+        })
 
     return products
 
