@@ -16,7 +16,7 @@
       "currency": "USD",
       "current_price": 196.93,
       "max_discount": 30,
-      "updated_at": 1789486880
+      "updated_at": 1789490494
     },
     "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
@@ -25,7 +25,7 @@
       "currency": "USD",
       "current_price": 200.0,
       "max_discount": 0,
-      "updated_at": 1789486890
+      "updated_at": 1789490505
     },
     "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
@@ -34,7 +34,7 @@
       "currency": "USD",
       "current_price": 54.93,
       "max_discount": 30,
-      "updated_at": 1789488770
+      "updated_at": 1789490526
     },
     "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
@@ -98,11 +98,20 @@
       "current_price": 179.83,
       "max_discount": 40,
       "updated_at": 1789488854
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "name": "R2 TechFace Jacket - Men's",
+      "site": "REI",
+      "currency": "USD",
+      "current_price": 103.83,
+      "max_discount": 50,
+      "updated_at": 1789490515
     }
   },
   "meta": {
-    "fixed_rotation_index": 1,
+    "fixed_rotation_index": 5,
     "version": 3,
-    "discovery_rotation_index": 2
+    "discovery_rotation_index": 4
   }
 }
