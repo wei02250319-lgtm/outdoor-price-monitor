@@ -7,7 +7,7 @@
       "currency": "USD",
       "current_price": 199.83,
       "max_discount": 50,
-      "updated_at": 1789506647
+      "updated_at": 1789510241
     },
     "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
@@ -16,7 +16,7 @@
       "currency": "USD",
       "current_price": 196.93,
       "max_discount": 30,
-      "updated_at": 1789506658
+      "updated_at": 1789510251
     },
     "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
@@ -25,7 +25,7 @@
       "currency": "USD",
       "current_price": 200.0,
       "max_discount": 0,
-      "updated_at": 1789506668
+      "updated_at": 1789510262
     },
     "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
@@ -106,7 +106,7 @@
       "currency": "USD",
       "current_price": 103.83,
       "max_discount": 50,
-      "updated_at": 1789508303
+      "updated_at": 1789510272
     },
     "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ": {
       "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ",
@@ -233,11 +233,47 @@
       "current_price": 56.98,
       "max_discount": 0,
       "updated_at": 1789504856
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-summit-series-breithorn-hoodie-NF0A87ZM?color=D3P": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-summit-series-breithorn-hoodie-NF0A87ZM?color=D3P",
+      "name": "Men’s Summit Series Breithorn Hoodie",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 336.0,
+      "max_discount": 0,
+      "updated_at": 1789510302
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-collections/mens-summit-series-324273/mens-summit-series-breithorn-jacket-NF0A87ZN?color=D3P": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-collections/mens-summit-series-324273/mens-summit-series-breithorn-jacket-NF0A87ZN?color=D3P",
+      "name": "Men’s Summit Series Breithorn Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 301.0,
+      "max_discount": 0,
+      "updated_at": 1789510318
+    },
+    "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-softshells-299287/mens-big-apex-bionic-3-jacket-NF0A84JX?color=4H0": {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-softshells-299287/mens-big-apex-bionic-3-jacket-NF0A84JX?color=4H0",
+      "name": "Men’s Big Apex Bionic 3 Jacket",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 112.0,
+      "max_discount": 0,
+      "updated_at": 1789510332
+    },
+    "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-borealis-backpack-NF0A52SI?color=53R": {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-borealis-backpack-NF0A52SI?color=53R",
+      "name": "Women’s Borealis Backpack - 27L",
+      "site": "The North Face US",
+      "currency": "USD",
+      "current_price": 115.0,
+      "max_discount": 0,
+      "updated_at": 1789510347
     }
   },
   "meta": {
-    "fixed_rotation_index": 0,
+    "fixed_rotation_index": 4,
     "version": 3,
-    "discovery_rotation_index": 5
+    "discovery_rotation_index": 0
   }
 }
