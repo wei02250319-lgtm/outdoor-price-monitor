@@ -82,263 +82,2586 @@
   "exchange_rates": {},
   "last_update": "2026-09-15T05:22:06.833738+00:00",
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
-    "name": "Arc'teryxBeta SL Jacket - Men's](https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta SL Jacket - Men's",
     "url": "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens",
-    "offers": [
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 500.0,
+        "discount": 94,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 500.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 80.0,
+        "original": 500.0,
+        "discount": 84,
+        "currency": "USD",
+        "rmb": 576.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
       {
         "price": 299.83,
-        "original": null,
-        "discount": 0
+        "original": 500.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2158.78,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 349.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2519.5,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 350.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2526.7,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
       },
       {
         "price": 500.0,
-        "original": null,
-        "discount": 0
+        "original": 500.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 3600.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.163076+00:00"
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 500.0,
+        "discount": 94,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 500.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 80.0,
+        "original": 500.0,
+        "discount": 84,
+        "currency": "USD",
+        "rmb": 576.0,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 299.83,
+        "original": 500.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2158.78,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 349.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2519.5,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      },
+      {
+        "price": 350.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2526.7,
+        "colors": [
+          "Black",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": true
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
-    "name": "Arc'teryxAtom Insulated Hoody - Men's](https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Hoody - Men's",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
-    "offers": [
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 300.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 300.0,
+        "discount": 83,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
       {
         "price": 199.83,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 33,
+        "currency": "USD",
+        "rmb": 1438.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 210.93,
+        "original": 300.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1518.7,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 300.0,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 2160.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": true,
-    "updated": "2026-09-15T07:18:54.164312+00:00"
-  },
-  "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
-    "name": "Arc'teryxBeta SL Jacket - Women's](https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens)",
-    "url": "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens",
-    "offers": [
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 300.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 300.0,
+        "discount": 83,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 199.83,
+        "original": 300.0,
+        "discount": 33,
+        "currency": "USD",
+        "rmb": 1438.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
       {
         "price": 210.93,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1518.7,
+        "colors": [
+          "Black",
+          "Blue",
+          "Green",
+          "Red"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
+  },
+  "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta SL Jacket - Women's",
+    "url": "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens",
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 500.0,
+        "discount": 94,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 500.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 299.83,
-        "original": null,
-        "discount": 0
+        "original": 500.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2158.78,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
-        "price": 300.0,
-        "original": null,
-        "discount": 0
+        "price": 350.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2526.7,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 500.0,
-        "original": null,
-        "discount": 0
+        "original": 500.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 3600.0,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.165513+00:00"
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 500.0,
+        "discount": 94,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 500.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 299.83,
+        "original": 500.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2158.78,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 350.93,
+        "original": 500.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 2526.7,
+        "colors": [
+          "Black",
+          "Green"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens": {
-    "name": "Arc'teryxAtom Insulated Hoody - Women's](https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Hoody - Women's",
     "url": "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens",
-    "offers": [
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 300.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 300.0,
+        "discount": 83,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
       {
         "price": 60.0,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 80,
+        "currency": "USD",
+        "rmb": 432.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 210.93,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1518.7,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 300.0,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 2160.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": true,
-    "updated": "2026-09-15T07:18:54.166718+00:00"
-  },
-  "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
-    "name": "Arc'teryxBird Head Toque Beanie](https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie)",
-    "url": "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie",
-    "offers": [
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 300.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 300.0,
+        "discount": 83,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
       {
         "price": 60.0,
-        "original": null,
-        "discount": 0
+        "original": 300.0,
+        "discount": 80,
+        "currency": "USD",
+        "rmb": 432.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
-        "price": 179.83,
-        "original": null,
-        "discount": 0
+        "price": 210.93,
+        "original": 300.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1518.7,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
+  },
+  "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Bird Head Toque Beanie",
+    "url": "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie",
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 60.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
       },
       {
-        "price": 280.0,
-        "original": null,
-        "discount": 0
+        "price": 36.0,
+        "original": 60.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 259.2,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 60.0,
+        "discount": 17,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 60.0,
+        "original": 60.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 432.0,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.167923+00:00"
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 60.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 36.0,
+        "original": 60.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 259.2,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 60.0,
+        "discount": 17,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "White",
+          "Yellow",
+          "Purple"
+        ],
+        "sizes": [],
+        "focus_sizes": {
+          "M": false,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
-    "name": "Arc'teryxAtom Insulated Jacket - Men's](https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Atom Insulated Jacket - Men's",
     "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
-    "offers": [
+    "variants": [
+      {
+        "price": 28.0,
+        "original": 280.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 201.6,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 280.0,
+        "discount": 89,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 280.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 58.0,
+        "original": 280.0,
+        "discount": 79,
+        "currency": "USD",
+        "rmb": 417.6,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
       {
         "price": 179.83,
-        "original": null,
-        "discount": 0
+        "original": 280.0,
+        "discount": 36,
+        "currency": "USD",
+        "rmb": 1294.78,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 196.93,
+        "original": 280.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1417.9,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
       },
       {
         "price": 280.0,
-        "original": null,
-        "discount": 0
-      },
-      {
-        "price": 389.83,
-        "original": null,
-        "discount": 0
-      },
-      {
-        "price": 650.0,
-        "original": null,
-        "discount": 0
+        "original": 280.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 2016.0,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": true,
-    "updated": "2026-09-15T07:18:54.169128+00:00"
+    "sale_variants": [
+      {
+        "price": 28.0,
+        "original": 280.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 201.6,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 280.0,
+        "discount": 89,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 280.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 58.0,
+        "original": 280.0,
+        "discount": 79,
+        "currency": "USD",
+        "rmb": 417.6,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 179.83,
+        "original": 280.0,
+        "discount": 36,
+        "currency": "USD",
+        "rmb": 1294.78,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 196.93,
+        "original": 280.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1417.9,
+        "colors": [
+          "Black",
+          "Gray",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "L",
+          "XXL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens": {
-    "name": "Arc'teryxBeta AR Jacket - Women's](https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Beta AR Jacket - Women's",
     "url": "https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens",
-    "offers": [
+    "variants": [
       {
-        "price": 199.83,
-        "original": null,
-        "discount": 0
+        "price": 30.0,
+        "original": 650.0,
+        "discount": 95,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 650.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 65.0,
+        "original": 650.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 468.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 389.83,
-        "original": null,
-        "discount": 0
-      },
-      {
-        "price": 400.0,
-        "original": null,
-        "discount": 0
+        "original": 650.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2806.78,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 650.0,
-        "original": null,
-        "discount": 0
+        "original": 650.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 4680.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.170379+00:00"
-  },
-  "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
-    "name": "Arc'teryxGamma MX Hoody - Men's](https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens)",
-    "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-    "offers": [
+    "sale_variants": [
       {
-        "price": 105.93,
-        "original": null,
-        "discount": 0
+        "price": 30.0,
+        "original": 650.0,
+        "discount": 95,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
-        "price": 150.0,
-        "original": null,
-        "discount": 0
+        "price": 50.0,
+        "original": 650.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 65.0,
+        "original": 650.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 468.0,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 389.83,
+        "original": 650.0,
+        "discount": 40,
+        "currency": "USD",
+        "rmb": 2806.78,
+        "colors": [
+          "Black",
+          "Blue"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
+  },
+  "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Gamma MX Hoody - Men's",
+    "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 400.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 40.0,
+        "original": 400.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 288.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 400.0,
+        "discount": 88,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 70.0,
+        "original": 400.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 504.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
       },
       {
         "price": 199.83,
-        "original": null,
-        "discount": 0
+        "original": 400.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 1438.78,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
       },
       {
         "price": 400.0,
-        "original": null,
-        "discount": 0
+        "original": 400.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 2880.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": true,
-    "updated": "2026-09-15T07:18:54.171580+00:00"
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 400.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 40.0,
+        "original": 400.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 288.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 400.0,
+        "discount": 88,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 70.0,
+        "original": 400.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 504.0,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      },
+      {
+        "price": 199.83,
+        "original": 400.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 1438.78,
+        "colors": [
+          "Black",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": true,
+          "XL": false
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
-    "name": "Arc'teryxKyanite Lightweight Fleece Hoodie - Men's](https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Kyanite Lightweight Fleece Hoodie - Men's",
     "url": "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens",
-    "offers": [
+    "variants": [
       {
-        "price": 99.83,
-        "original": null,
-        "discount": 0
+        "price": 15.0,
+        "original": 150.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 108.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 150.0,
+        "discount": 80,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 150.0,
+        "discount": 67,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
       },
       {
         "price": 105.93,
-        "original": null,
-        "discount": 0
+        "original": 150.0,
+        "discount": 29,
+        "currency": "USD",
+        "rmb": 762.7,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
       },
       {
         "price": 150.0,
-        "original": null,
-        "discount": 0
-      },
-      {
-        "price": 200.0,
-        "original": null,
-        "discount": 0
+        "original": 150.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 1080.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.172770+00:00"
+    "sale_variants": [
+      {
+        "price": 15.0,
+        "original": 150.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 108.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 150.0,
+        "discount": 80,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 150.0,
+        "discount": 67,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      },
+      {
+        "price": 105.93,
+        "original": 150.0,
+        "discount": 29,
+        "currency": "USD",
+        "rmb": 762.7,
+        "colors": [
+          "Black",
+          "Blue",
+          "Red",
+          "White"
+        ],
+        "sizes": [
+          "M",
+          "XL"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": true
+        }
+      }
+    ]
   },
   "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
-    "name": "Arc'teryxDelta Jacket - Men's](https://www.rei.com/product/236237/arcteryx-delta-jacket-mens)",
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Delta Jacket - Men's",
     "url": "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens",
-    "offers": [
+    "variants": [
+      {
+        "price": 20.0,
+        "original": 200.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 144.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 200.0,
+        "discount": 85,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 200.0,
+        "discount": 75,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
       {
         "price": 99.83,
-        "original": null,
-        "discount": 0
+        "original": 200.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 718.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 149.93,
+        "original": 200.0,
+        "discount": 25,
+        "currency": "USD",
+        "rmb": 1079.5,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       },
       {
         "price": 200.0,
-        "original": null,
-        "discount": 0
+        "original": 200.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 1440.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
       }
     ],
-    "sizes": [],
-    "colors": [],
-    "watchlist": false,
-    "updated": "2026-09-15T07:18:54.174090+00:00"
+    "sale_variants": [
+      {
+        "price": 20.0,
+        "original": 200.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 144.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 200.0,
+        "discount": 85,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 200.0,
+        "discount": 75,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 99.83,
+        "original": 200.0,
+        "discount": 50,
+        "currency": "USD",
+        "rmb": 718.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 149.93,
+        "original": 200.0,
+        "discount": 25,
+        "currency": "USD",
+        "rmb": 1079.5,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "S",
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
+  },
+  "https://www.rei.com/product/235614/arcteryx-kyanite-hoody-womens": {
+    "name": "[Arc'teryx](https://www.rei.com/b/arcteryx) Kyanite Hoody - Women's",
+    "url": "https://www.rei.com/product/235614/arcteryx-kyanite-hoody-womens",
+    "variants": [
+      {
+        "price": 20.0,
+        "original": 200.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 144.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 200.0,
+        "discount": 85,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 200.0,
+        "discount": 75,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 140.93,
+        "original": 200.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1014.7,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 200.0,
+        "original": 200.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 1440.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ],
+    "sale_variants": [
+      {
+        "price": 20.0,
+        "original": 200.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 144.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 30.0,
+        "original": 200.0,
+        "discount": 85,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 200.0,
+        "discount": 75,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 140.93,
+        "original": 200.0,
+        "discount": 30,
+        "currency": "USD",
+        "rmb": 1014.7,
+        "colors": [
+          "Black",
+          "Green",
+          "White",
+          "Purple",
+          "Silver"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
+  },
+  "https://www.rei.com/product/228617/arcteryx-beta-jacket-mens": {
+    "name": "![Preview of Arc'teryx Beta Jacket - Men's Video](https://i.ytimg.com/vi/GW4HY6A0p2U/maxresdefault.jpg)Arc'teryx Beta Jacket - Men's Video loading",
+    "url": "https://www.rei.com/product/228617/arcteryx-beta-jacket-mens",
+    "variants": [
+      {
+        "price": 30.0,
+        "original": 400.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 40.0,
+        "original": 400.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 288.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 400.0,
+        "discount": 88,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 70.0,
+        "original": 400.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 504.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 249.83,
+        "original": 400.0,
+        "discount": 38,
+        "currency": "USD",
+        "rmb": 1798.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 400.0,
+        "original": 400.0,
+        "discount": 0,
+        "currency": "USD",
+        "rmb": 2880.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ],
+    "sale_variants": [
+      {
+        "price": 30.0,
+        "original": 400.0,
+        "discount": 92,
+        "currency": "USD",
+        "rmb": 216.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 40.0,
+        "original": 400.0,
+        "discount": 90,
+        "currency": "USD",
+        "rmb": 288.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 50.0,
+        "original": 400.0,
+        "discount": 88,
+        "currency": "USD",
+        "rmb": 360.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 70.0,
+        "original": 400.0,
+        "discount": 82,
+        "currency": "USD",
+        "rmb": 504.0,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      },
+      {
+        "price": 249.83,
+        "original": 400.0,
+        "discount": 38,
+        "currency": "USD",
+        "rmb": 1798.78,
+        "colors": [
+          "Black",
+          "Blue",
+          "White"
+        ],
+        "sizes": [
+          "M"
+        ],
+        "focus_sizes": {
+          "M": true,
+          "L": false,
+          "XL": false
+        }
+      }
+    ]
   }
 }
