@@ -5,19 +5,17 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 
+
 CRAWLBASE_JS_TOKEN = os.getenv("CRAWLBASE_JS_TOKEN", "").strip()
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
 DATA_FILE = "data/prices.json"
 
-# 美元人民币汇率
 USD_TO_CNY = 7.10
 
-# REI 始祖鸟
 REI_URL = "https://www.rei.com/b/arcteryx/c/all"
 
-# 目前先监控 5 个商品
 MAX_PRODUCTS = 5
 
 
@@ -101,7 +99,6 @@ def price_to_number(value):
 
     try:
         return float(match.group())
-
     except Exception:
         return None
 
@@ -230,6 +227,210 @@ def deduplicate_products(products):
     return result
 
 
+def extract_inventory(soup):
+    """
+    尝试从 REI 商品详情页提取尺码/库存信息。
+
+    返回：
+    {
+        "sizes": [...],
+        "stock_status": "in_stock" / "out_of_stock" / "unknown"
+    }
+    """
+
+    sizes = set()
+
+    # 先检查页面中的 JSON / script 内容
+    script_texts = []
+
+    for script in soup.find_all("script"):
+        text = script.get_text(" ", strip=True)
+
+        if text:
+            script_texts.append(text)
+
+    combined_text = " ".join(script_texts)
+
+    # 常见尺码关键词
+    size_patterns = [
+        r'"size"\s*:\s*"([^"]+)"',
+        r'"displaySize"\s*:\s*"([^"]+)"',
+        r'"sizeName"\s*:\s*"([^"]+)"',
+        r'"label"\s*:\s*"([^"]+)"'
+    ]
+
+    for pattern in size_patterns:
+
+        matches = re.findall(
+            pattern,
+            combined_text,
+            flags=re.IGNORECASE
+        )
+
+        for value in matches:
+
+            value = value.strip()
+
+            if is_valid_size(value):
+                sizes.add(value)
+
+    # 再从页面可见文字中寻找常见尺码
+    visible_text = soup.get_text(
+        " ",
+        strip=True
+    )
+
+    common_sizes = [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "2XS",
+        "2XL",
+        "3XL",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "48",
+        "50",
+        "52",
+        "54"
+    ]
+
+    for size in common_sizes:
+
+        pattern = rf"\b{re.escape(size)}\b"
+
+        if re.search(
+            pattern,
+            visible_text,
+            flags=re.IGNORECASE
+        ):
+            sizes.add(size)
+
+    sizes = sorted(
+        sizes,
+        key=size_sort_key
+    )
+
+    lower_text = visible_text.lower()
+
+    if (
+        "out of stock" in lower_text
+        or "sold out" in lower_text
+        or "unavailable" in lower_text
+    ):
+        stock_status = "out_of_stock"
+
+    elif (
+        "add to cart" in lower_text
+        or "add to bag" in lower_text
+        or "in stock" in lower_text
+    ):
+        stock_status = "in_stock"
+
+    else:
+        stock_status = "unknown"
+
+    return {
+        "sizes": sizes,
+        "stock_status": stock_status
+    }
+
+
+def is_valid_size(value):
+
+    if not value:
+        return False
+
+    value = value.strip().upper()
+
+    if len(value) > 12:
+        return False
+
+    allowed = {
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "2XS",
+        "2XL",
+        "3XL"
+    }
+
+    if value in allowed:
+        return True
+
+    if re.fullmatch(
+        r"\d{2}",
+        value
+    ):
+        number = int(value)
+
+        if 28 <= number <= 60:
+            return True
+
+    return False
+
+
+def size_sort_key(value):
+
+    order = {
+        "XXS": 0,
+        "2XS": 1,
+        "XS": 2,
+        "S": 3,
+        "M": 4,
+        "L": 5,
+        "XL": 6,
+        "2XL": 7,
+        "XXL": 8,
+        "3XL": 9,
+        "XXXL": 10
+    }
+
+    value_upper = value.upper()
+
+    if value_upper in order:
+        return (
+            0,
+            order[value_upper]
+        )
+
+    try:
+        return (
+            1,
+            int(value)
+        )
+    except Exception:
+        return (
+            2,
+            value
+        )
+
+
 def load_data():
 
     if not os.path.exists(DATA_FILE):
@@ -310,7 +511,9 @@ def main():
 
     if not html:
 
-        print("没有取得网页内容")
+        print(
+            "没有取得网页内容"
+        )
 
         return
 
@@ -351,6 +554,7 @@ def main():
     data = load_data()
 
     price_drop_products = []
+    inventory_changes = []
 
     for product in products:
 
@@ -379,16 +583,70 @@ def main():
             key
         )
 
+        # -----------------------------
+        # 抓取商品详情页库存/尺码
+        # -----------------------------
+
+        detail_html = fetch_page(
+            product["url"]
+        )
+
+        if detail_html:
+
+            detail_soup = BeautifulSoup(
+                detail_html,
+                "lxml"
+            )
+
+            inventory = extract_inventory(
+                detail_soup
+            )
+
+            product["sizes"] = inventory[
+                "sizes"
+            ]
+
+            product["stock_status"] = inventory[
+                "stock_status"
+            ]
+
+            print(
+                "尺码:",
+                product["sizes"]
+            )
+
+            print(
+                "库存状态:",
+                product["stock_status"]
+            )
+
+        else:
+
+            product["sizes"] = []
+
+            product["stock_status"] = (
+                "unknown"
+            )
+
+            print(
+                "商品详情页抓取失败，"
+                "库存状态未知"
+            )
+
+        # -----------------------------
+        # 价格变化
+        # -----------------------------
+
         if old_product:
 
             old_price = old_product.get(
                 "price"
             )
 
-            # 价格下降 20% 或以上才提醒
+            # 价格下降 20% 或以上
             if (
                 old_price is not None
-                and price < old_price * 0.8
+                and price <= old_price * 0.8
             ):
 
                 price_drop_products.append({
@@ -429,7 +687,84 @@ def main():
                 product.get("name")
             )
 
+        # -----------------------------
+        # 尺码变化
+        # -----------------------------
+
+        if old_product:
+
+            old_sizes = set(
+                old_product.get(
+                    "sizes",
+                    []
+                )
+            )
+
+            new_sizes = set(
+                product.get(
+                    "sizes",
+                    []
+                )
+            )
+
+            added_sizes = sorted(
+                new_sizes - old_sizes,
+                key=size_sort_key
+            )
+
+            removed_sizes = sorted(
+                old_sizes - new_sizes,
+                key=size_sort_key
+            )
+
+            old_stock = old_product.get(
+                "stock_status",
+                "unknown"
+            )
+
+            new_stock = product.get(
+                "stock_status",
+                "unknown"
+            )
+
+            if (
+                added_sizes
+                or removed_sizes
+                or (
+                    old_stock != new_stock
+                    and new_stock != "unknown"
+                )
+            ):
+
+                inventory_changes.append({
+
+                    "name": product.get(
+                        "name"
+                    ),
+
+                    "url": product.get(
+                        "url"
+                    ),
+
+                    "added_sizes": added_sizes,
+
+                    "removed_sizes": removed_sizes,
+
+                    "old_stock": old_stock,
+
+                    "new_stock": new_stock
+                })
+
+                print(
+                    "发现库存/尺码变化:",
+                    product.get("name")
+                )
+
         data["products"][key] = product
+
+    # -----------------------------
+    # 更新时间
+    # -----------------------------
 
     data["last_update"] = (
         datetime.now(
@@ -440,9 +775,13 @@ def main():
     save_data(data)
 
     print(
-        "已保存价格数据:",
+        "已保存价格和库存数据:",
         len(products)
     )
+
+    # -----------------------------
+    # Telegram：价格提醒
+    # -----------------------------
 
     if price_drop_products:
 
@@ -477,10 +816,83 @@ def main():
             len(price_drop_products)
         )
 
-    else:
+    # -----------------------------
+    # Telegram：库存/尺码提醒
+    # -----------------------------
+
+    if inventory_changes:
+
+        message = (
+            "📦 REI 始祖鸟库存/尺码变化\n\n"
+        )
+
+        for item in inventory_changes:
+
+            message += (
+                f"商品：{item['name']}\n"
+            )
+
+            if item["added_sizes"]:
+
+                message += (
+                    "🟢 新增尺码："
+                    + ", ".join(
+                        item["added_sizes"]
+                    )
+                    + "\n"
+                )
+
+            if item["removed_sizes"]:
+
+                message += (
+                    "🔴 消失尺码："
+                    + ", ".join(
+                        item["removed_sizes"]
+                    )
+                    + "\n"
+                )
+
+            if (
+                item["old_stock"]
+                != item["new_stock"]
+            ):
+
+                if (
+                    item["new_stock"]
+                    == "in_stock"
+                ):
+
+                    message += (
+                        "🟢 状态：补货/有货\n"
+                    )
+
+                elif (
+                    item["new_stock"]
+                    == "out_of_stock"
+                ):
+
+                    message += (
+                        "🔴 状态：售罄/缺货\n"
+                    )
+
+            message += (
+                f"链接：{item['url']}\n\n"
+            )
+
+        send_telegram(message)
 
         print(
-            "没有发现降价商品，"
+            "已发送库存变化提醒:",
+            len(inventory_changes)
+        )
+
+    if (
+        not price_drop_products
+        and not inventory_changes
+    ):
+
+        print(
+            "没有价格或库存变化，"
             "不发送 Telegram"
         )
 
