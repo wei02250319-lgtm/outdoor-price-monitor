@@ -1,37 +1,87 @@
+import os
 import requests
+from bs4 import BeautifulSoup
 
-URL = "https://www.rei.com/b/arcteryx/c/all"
+TOKEN = os.getenv("CRAWLBASE_JS_TOKEN", "")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-}
+REI_URL = "https://www.rei.com/b/arcteryx/c/all"
 
-print("================================")
-print("REI 连接测试")
-print("================================")
 
-try:
-    print("正在连接 REI...")
+def send_telegram(text):
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
-    r = requests.get(
-        URL,
-        headers=HEADERS,
-        timeout=10
+    r = requests.post(
+        url,
+        json={
+            "chat_id": CHAT_ID,
+            "text": text
+        },
+        timeout=15
     )
 
-    print("HTTP状态码：", r.status_code)
-    print("页面大小：", len(r.text), "字符")
+    print("Telegram:", r.status_code)
 
-    if r.status_code == 200:
-        print("✅ REI 连接成功")
-    else:
-        print("⚠️ REI 返回异常状态")
 
-except Exception as e:
-    print("❌ REI 连接失败")
-    print(type(e).__name__, e)
+def main():
 
-print("================================")
-print("测试结束")
+    print("================================")
+    print("REI + Crawlbase 测试")
+    print("================================")
+
+    if not TOKEN:
+        print("❌ 没有读取到 Crawlbase Token")
+        return
+
+    print("正在通过 Crawlbase 访问 REI...")
+
+    api_url = "https://api.crawlbase.com/"
+
+    params = {
+        "token": TOKEN,
+        "url": REI_URL,
+        "javascript": "true"
+    }
+
+    try:
+        r = requests.get(
+            api_url,
+            params=params,
+            timeout=60
+        )
+
+        print("Crawlbase HTTP:", r.status_code)
+        print("返回数据长度:", len(r.text))
+
+        if r.status_code != 200:
+            print("❌ Crawlbase 请求失败")
+            print(r.text[:500])
+            return
+
+        soup = BeautifulSoup(r.text, "lxml")
+
+        title = soup.title.get_text(strip=True) if soup.title else "未找到网页标题"
+
+        print("网页标题:", title)
+
+        message = (
+            "🧪 REI监控测试\n\n"
+            "品牌：Arc'teryx\n"
+            "方式：Crawlbase\n"
+            f"HTTP：{r.status_code}\n"
+            f"页面长度：{len(r.text)}\n\n"
+            "✅ REI 页面获取成功！"
+        )
+
+        send_telegram(message)
+
+        print("✅ 测试完成，Telegram 已发送")
+
+    except Exception as e:
+        print("❌ 测试失败")
+        print(type(e).__name__, e)
+
+
+if __name__ == "__main__":
+    main()
