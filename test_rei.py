@@ -1,20 +1,30 @@
 import requests
 
-url = "https://api.scrapingant.com/v2/general"
+url = "https://api.firecrawl.dev/v2/scrape"
 
-params = {
+data = {
     "url": "https://www.rei.com/b/arcteryx/c/all",
-    "x-api-key": "YOUR_API_KEY"
+    "formats": ["markdown"]
 }
 
-print("开始测试 REI...")
-r = requests.get(url, params=params, timeout=60)
+print("开始测试 Firecrawl → REI")
 
-print("状态码:", r.status_code)
-print("网页长度:", len(r.text))
+try:
+    r = requests.post(
+        url,
+        json=data,
+        timeout=90
+    )
 
-if r.status_code == 200 and len(r.text) > 10000:
-    print("✅ 测试成功：已经能够通过中转访问 REI")
-else:
-    print("❌ 测试失败")
+    print("HTTP状态:", r.status_code)
+    print("返回长度:", len(r.text))
+    print("返回内容前500字:")
     print(r.text[:500])
+
+    if r.status_code == 200:
+        print("✅ Firecrawl 抓取成功")
+    else:
+        print("❌ Firecrawl 测试失败")
+
+except Exception as e:
+    print("❌ 程序错误:", type(e).__name__, str(e))
