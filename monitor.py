@@ -139,7 +139,7 @@ def extract_product_links(soup):
 
     return links
     def deduplicate_products(products):
-    result = []
+        result = []
     seen = set()
 
     for product in products:
