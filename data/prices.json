@@ -81,7 +81,7 @@
     "Arc'teryx Gamma MX Hoody - Men's": {
       "title": "Gamma MX Hoody - Men's",
       "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-      "updated": 1789481530,
+      "updated": 1789484433,
       "variants": {
         "2351460055": {
           "price": 400.0,
@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789481539,
+      "updated": 1789484442,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -431,7 +431,7 @@
     "Arc'teryx Gamma Pants - Men's": {
       "title": "Gamma Pants - Men's",
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
-      "updated": 1789481548,
+      "updated": 1789484452,
       "variants": {
         "2428530017": {
           "price": 200.0,
@@ -790,7 +790,7 @@
     "Patagonia R2 TechFace Jacket - Men's": {
       "title": "R2 TechFace Jacket - Men's",
       "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
-      "updated": 1789483323,
+      "updated": 1789484461,
       "variants": {
         "2221480011": {
           "price": 103.83,
@@ -19190,8 +19190,8 @@
     }
   },
   "rotation": 0,
-  "position": 0,
-  "discovery_position": 60,
+  "position": 4,
+  "discovery_position": 66,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
@@ -19329,11 +19329,6 @@
       "currency": "USD"
     },
     {
-      "url": "https://www.patagonia.com/shop/web-specials/mens",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
       "url": "https://www.patagonia.com/shop/web-specials/mens/xxs",
       "source": "Patagonia US",
       "currency": "USD"
@@ -19460,36 +19455,6 @@
     },
     {
       "url": "https://www.patagonia.com/shop/web-specials/mens/goretex",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/wool",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/down-insulation",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/hemp",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/econyl",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/fair-trade",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/pfc-free",
       "source": "Patagonia US",
       "currency": "USD"
     },
@@ -19672,6 +19637,1401 @@
       "url": "https://www.patagonia.com/shop/web-specials/mens/purple",
       "source": "Patagonia US",
       "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/629bafd3-d29d-41d0-9f39-d0602499142c.jpg)](https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/d78288f6-e3ca-4935-8909-090618f8b24f.jpg)](https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/b47e4a65-f79f-486f-98a5-cd561c9ac5fb.jpg)](https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/6fdbd1e2-1bec-43db-8658-3168f2983423.jpg)](https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/bcf6a3e3-7b98-4e0f-bf64-2b27583223c6.jpg)](https://www.rei.com/product/236065/rei-co-op-sahara-convertible-pants-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/42d836a3-8897-47fc-af67-508108d68c9b.jpg)](https://www.rei.com/product/221918/rei-co-op-active-pursuits-long-sleeve-t-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/e0bcfecb-b328-49bc-a689-0f3b89aef02f.jpg)](https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/650ce4a0-dd0f-4836-be7f-7780f93f4952.jpg)](https://www.rei.com/product/228505/rei-co-op-active-pursuits-t-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/8d9f9e89-f1fd-47fc-9b4b-82ab0f97cb55.jpg)](https://www.rei.com/product/234886/rei-co-op-active-pursuits-long-sleeve-quarter-zip-pullover-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/56dd6d02-0f47-40a7-b54d-2d3684ce496c.jpg)](https://www.rei.com/product/236237/arcteryx-delta-jacket-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/a6ff3407-43cb-4fe1-ba12-d6c7c58da4d0.jpg)](https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/c39a58ce-df33-4e22-a8d3-4a988a5309a4.jpg)](https://www.rei.com/product/C17088/smartwool-perfect-crew-t-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/f2ec9eca-f9e7-4737-9c4e-f40b7c2927e5.jpg)](https://www.rei.com/product/236138/rei-co-op-trailmade-joggers-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/dc2c2b86-34fa-4dd5-a9f8-e4ff341224ad.jpg)](https://www.rei.com/product/243241/patagonia-r1-jacket-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/04a73e40-9ad4-4a4f-bc96-bf85fb18eb3c.jpg)](https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/ef7f5765-094b-4a10-bf7f-0623aacfee7e.jpg)](https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/c253fc1c-28a7-4829-9729-019d3c548111.jpg)](https://www.rei.com/product/202656/rei-co-op-swiftland-running-t-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/0ce88f7d-9684-4718-b753-4b0b2154f662.jpg)](https://www.rei.com/product/184815/vuori-strato-tech-polo-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/a4986076-8bc2-4f78-b838-a9eb7232a792.jpg)](https://www.rei.com/product/C01005/arcteryx-squamish-hoody-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/f296641c-177a-4f10-af7e-888430436bc7.jpg)](https://www.rei.com/product/C09416/patagonia-fjord-flannel-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/3b5b5546-6809-44be-904e-f7124e9fcff1.jpg)](https://www.rei.com/product/C00898/patagonia-capilene-cool-daily-graphic-long-sleeve-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/0cb9949a-5f75-4e0f-af35-14d00518b09b.jpg)](https://www.rei.com/product/C08969/prana-stretch-zion-field-pants-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/215ae73a-5632-4ad1-a0a8-7c046f41f0b2.jpg)](https://www.rei.com/product/229159/fjallraven-vidda-pro-ventilated-trousers-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/4f69c959-fdb5-42a8-ad9d-254d9e3cb470.jpg)](https://www.rei.com/product/250406/arcteryx-emblem-fleece-crew-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/42573599-b0ca-4690-9146-e3414ec462a7.jpg)](https://www.rei.com/product/C01380/rei-co-op-microtrek-insulated-hoodie-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/d8ce9556-021b-4a70-bcee-e0b0f0e88542.jpg)](https://www.rei.com/product/127853/vuori-strato-tech-t-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/6a30a66d-6297-4cbf-a8d9-54b27313a707.jpg)](https://www.rei.com/product/250115/rei-co-op-campwell-flannel-shirt-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/c9b588af-b920-48fd-9c30-53cddd3c4cd7.jpg)](https://www.rei.com/product/249477/arcteryx-gamma-hoody-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/a800abcd-667f-466c-bfde-0a55786abffd.jpg)](https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.rei.com/media/290e7cb9-d48c-44cb-b29e-ff3d6afebd54.jpg)](https://www.rei.com/product/228080/kuhl-renegade-rock-9-shorts-mens",
+      "source": "REI",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-daily-quilted-insulated-jacket/20270.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-terrebonne-joggers/24541.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-better-sweater-fleece-crewneck/26240.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-nomader-jacket/26855.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-fjord-cotton-flannel-shirt/42401.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-nomader-hoody-jacket/20440.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-outdoor-everyday-marsupial-pullover/20345.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-r1-techface-jacket/83582.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-classic-retro-x-fleece-vest/23049.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-snowdrifter-ski-snowboard-bibs/30076.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-light-gust-insulated-hooded-pullover/20566.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/natural-blend-retro-cardigan-sweater/20535.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-nano-puff-insulated-jacket/84212.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-daily-snap-t-pullover/25490.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-vest/40285.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-lightweight-insulated-fjord-flannel-shirt/20386.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-isthmus-deck-jacket/27025.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-tidal-threads-button-down-camp-shirt/52567.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-light-gust-insulated-shirt-jacket/20585.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/p-6-logo-lopro-trucker-hat/38283.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-daily-pocket-tee/37878.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-better-sweater-quarter-zip-fleece-pullover/25523.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-sunrise-stream-button-down-shirt/52562.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-better-sweater-half-zip-fleece-pullover/26245.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-trailcheck-uprisal-hoody/39734.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-quandary-hiking-joggers/55796.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-long-sleeved-sunrise-stream-shirt/41885.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-untracked-ski-snowboard-bibs/29904.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-midweight-water-people-mark-pocket-tee/37881.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-textured-fleece-hoody/23315.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-tropic-comfort-natural-crew-sun-upf-shirt/41965.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-down-sweater-insulated-hoody/84702.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-daily-sweatpants/21475.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-nano-air-ultralight-insulated-pullover/85345.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-m10-waterproof-alpine-anorak/85880.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-water-people-spotter-t-shirt/37842.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-nomader-shorts/57181.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-textured-fleece-jacket/23310.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-untracked-ski-snowboard-pants/29845.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-midweight-daily-t-shirt/37879.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-trail-harbor-hoody/42050.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-95-oval-logo-t-shirt/37847.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-classic-retro-x-fleece-jacket/23057.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-fjord-loft-thick-flannel-shirt/42440.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-pluma-pro-alpine-bibs/85660.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-baggies-longs-7-inch-shorts/58035.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-fitz-roy-trout-t-shirt/37846.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-downdrift-insulated-vest/20785.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/quandary-brimmer-hat-wide-brim/33342.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-super-free-alpine-jacket/85750.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-trail-harbor-button-down-knit-shirt/42045.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-upstride-backcountry-ski-pants/29956.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-all-seasons-hemp-canvas-double-knee-work-pants-long/55790.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-textured-fleece-vest/23330.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-transit-traveler-joggers/22046.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-essential-polo-shirt/42215.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-long-sleeved-great-waves-responsibili-tee/37876.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-venga-rock-climbing-shorts/83102.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-powslayer-ski-snowboard-pants/30336.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-multi-trails-shorts-8-inch/57602.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-full-zip-hoody/40256.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-chouinard-crest-pocket-responsibili-tee/37770.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-p-6-logo-t-shirt/37882.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-trail-craft-mountain-bike-jacket/24382.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-long-sleeved-dirt-craft-mountain-bike-jersey-shirt/23891.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-zip-neck/40246.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-r1-ultralight-fleece-hoody/40035.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/boardshort-label-funfarer-flat-bill-cap/38278.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-micro-d-fleece-crewneck-sweatshirt/23225.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-terravia-peak-trail-pants-regular/21151.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-double-knee-work-pants-short/55291.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-daily-quilted-insulated-jacket/20270.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-terrebonne-joggers/24541.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-better-sweater-fleece-crewneck/26240.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-nomader-jacket/26855.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-fjord-cotton-flannel-shirt/42401.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-nomader-hoody-jacket/20440.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-outdoor-everyday-marsupial-pullover/20345.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-r1-techface-jacket/83582.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-classic-retro-x-fleece-vest/23049.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-snowdrifter-ski-snowboard-bibs/30076.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-light-gust-insulated-hooded-pullover/20566.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/natural-blend-retro-cardigan-sweater/20535.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-nano-puff-insulated-jacket/84212.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-daily-snap-t-pullover/25490.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-vest/40285.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-lightweight-insulated-fjord-flannel-shirt/20386.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-isthmus-deck-jacket/27025.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-tidal-threads-button-down-camp-shirt/52567.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-light-gust-insulated-shirt-jacket/20585.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/p-6-logo-lopro-trucker-hat/38283.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-daily-pocket-tee/37878.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-better-sweater-quarter-zip-fleece-pullover/25523.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-sunrise-stream-button-down-shirt/52562.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-better-sweater-half-zip-fleece-pullover/26245.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-trailcheck-uprisal-hoody/39734.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-quandary-hiking-joggers/55796.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-long-sleeved-sunrise-stream-shirt/41885.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-untracked-ski-snowboard-bibs/29904.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-midweight-water-people-mark-pocket-tee/37881.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-textured-fleece-hoody/23315.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-tropic-comfort-natural-crew-sun-upf-shirt/41965.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-down-sweater-insulated-hoody/84702.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-daily-sweatpants/21475.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-nano-air-ultralight-insulated-pullover/85345.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-m10-waterproof-alpine-anorak/85880.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-water-people-spotter-t-shirt/37842.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-nomader-shorts/57181.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-textured-fleece-jacket/23310.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-untracked-ski-snowboard-pants/29845.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-midweight-daily-t-shirt/37879.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-trail-harbor-hoody/42050.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-95-oval-logo-t-shirt/37847.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-classic-retro-x-fleece-jacket/23057.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-fjord-loft-thick-flannel-shirt/42440.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-pluma-pro-alpine-bibs/85660.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-baggies-longs-7-inch-shorts/58035.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-fitz-roy-trout-t-shirt/37846.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-downdrift-insulated-vest/20785.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/quandary-brimmer-hat-wide-brim/33342.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-super-free-alpine-jacket/85750.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-trail-harbor-button-down-knit-shirt/42045.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-upstride-backcountry-ski-pants/29956.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-all-seasons-hemp-canvas-double-knee-work-pants-long/55790.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-textured-fleece-vest/23330.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-transit-traveler-joggers/22046.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-essential-polo-shirt/42215.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-long-sleeved-great-waves-responsibili-tee/37876.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-venga-rock-climbing-shorts/83102.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-powslayer-ski-snowboard-pants/30336.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-multi-trails-shorts-8-inch/57602.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-full-zip-hoody/40256.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-chouinard-crest-pocket-responsibili-tee/37770.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-p-6-logo-t-shirt/37882.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-trail-craft-mountain-bike-jacket/24382.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-long-sleeved-dirt-craft-mountain-bike-jersey-shirt/23891.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-r1-air-fleece-midlayer-zip-neck/40246.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-r1-ultralight-fleece-hoody/40035.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/boardshort-label-funfarer-flat-bill-cap/38278.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-micro-d-fleece-crewneck-sweatshirt/23225.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-terravia-peak-trail-pants-regular/21151.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-double-knee-work-pants-short/55291.html",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.patagonia.com/shop/web-specials/mens/fleece)—rely",
+      "source": "Patagonia US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/mens-backpacks-298772/jester-backpack-NF0A3VXF",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-hoodie-NF0A84I1",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-jacket-NF0A84HZ",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-yumiori-1-4-zip-NF0A883S",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-hike-263754/horizon-hat-NF0A5FXL",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-tops/mens-t-shirts-213137/mens-evolution-box-nse-long-sleeve-tee-NF0A8B68",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-tops/mens-t-shirts-213137/mens-evolution-box-nse-short-sleeve-tee-NF0A8B6K",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-thermoball-jacket-NF0A8D1P",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-collections/mens-summit-series-324273/summit-series-run-vest-10-NF0A8BKM",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/luggage-and-duffels/rolling-luggage-224545/base-camp-rolling-thunder22-40l-NF0A87GB",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-bottoms/mens-pants-224219/mens-basin-pants-NF0A88X7",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-softshells-299287/mens-big-apex-bionic-3-jacket-NF0A84JX",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/back-to-campus/footwear-747784/base-camp-mules-NF0A7W4D",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/rain-gear-592279/mens-gore-tex-mountain-jacket-NF0A831M",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece-299285/mens-big-retro-denali-jacket-NF0A8AKM",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/accessories-500789/roomy-norm-hat-NF0A7WHP",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-bottoms/mens-shorts-224220/mens-wander-shorts-20-NF0A86R6",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-collections/mens-summit-series-324273/mens-summit-series-futurefleece-lt-1-2-zip-NF0A5J8R",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/technical-packs/trail-run-packs-798783/summit-series-run-vest-5-NF0A8BKK",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-big-sizes-290143/mens-big-aconcagua-3-jacket-NF0A84KG",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/the-base-camp-shop/lifestyle-829906/base-camp-tote-pack-NF0A8BK7",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/mens-backpacks-298772/borealis-backpack-NF0A52SE",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-bottoms/mens-shorts-224220/mens-basin-7-shorts-NF0A8B52",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/accessories-500789/embroidered-mudder-trucker-hat-NF0A7WH3",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-footwear/mens-sandals-313279/mens-never-stop-cush-slides-NF0A8A90",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/luggage-and-duffels/travel-accessories-224548/base-camp-voyager-toiletry-kit-NF0A81BL",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/accessories-500789/deep-fit-mudder-trucker-hat-NF0A5FX8",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-tops/mens-active-tops-224210/mens-adventure-polo-NF0A872U",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/luggage-and-duffels/travel-accessories-224548/base-camp-travel-canisterl-NF0A52TF",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/luggage-and-duffels/travel-accessories-224548/base-camp-travel-canisters-NF0A52TG",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-rainwear-299284/mens-quest-jacket-NF0A8G0R",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-hike-263754/mens-lightning-zip-in-jacket-NF0A87GN",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-summit-series-breithorn-hoodie-NF0A87ZM",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-thermoball-hooded-jacket-NF0A8D1N",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-collections/mens-summit-series-324273/mens-summit-series-breithorn-jacket-NF0A87ZN",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-1996-retro-nuptse-jacket-NF0A3C8D",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-big-thermoball-jacket-NF0A8D1R",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests-211702/mens-terra-peak-jacket-NF0A88U2",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests-211702/mens-terra-peak-hoodie-NF0A88TV",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/shop-all/accessories/beanies-829866/tnf-logo-box-cuffed-beanie-NF0A8CHE",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/mens-backpacks-298772/recon-backpack-NF0A52SH",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-puffer-jackets-829825/womens-aconcagua-3-hoodie-NF0A84IV",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-puffer-jackets-829825/womens-hydrenalite-down-hoodie-NF0A5GGG",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-parkas-327273/womens-arctic-parka-NF0A84J2",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/kids-backpacks-224503/youth-mini-explorer-backpack-10l-NF0A52VW",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-borealis-backpack-NF0A52SI",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-jester-backpack-NF0A3VXG",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/mens-backpacks-298772/router-backpack-NF0A52SF",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/kids/kids-featured/shop-all-kids-accessories-351276/kids-tnf-logo-box-cuffed-beanie-NF0A8CGU",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/bags-and-gear/backpacks/womens-backpacks-268801/borealis-mini-backpack-NF0A52SW",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/womens/womens-jackets-and-vests/womens-rainwear-299273/womens-antora-rain-jacket-NF0A8BKD",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-us/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-hydrenalite-down-hoodie-NF0A5GIE",
+      "source": "The North Face US",
+      "currency": "USD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-rainwear-299284/mens-antora-jacket-NF0A7QEY",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-insulated-and-down-299277/womens-aconcagua-3-jacket-NF0A84IU",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-rainwear-299273/womens-antora-rain-jacket-NF0A8BKD",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-rainwear-299284/mens-antora-triclimate-jacket-NF0A7UJP",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-rainwear-299284/mens-valley-view-jacket-NF0A8ESA",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-bottoms/mens-shorts-224220/mens-class-v-pathfinder-belted-7-shorts-NF0A8BHV",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-jacket-NF0A84HZ",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories/brimmer-and-bucket-hats-554777/horizon-breeze-brimmer-hat-NF0A5FX6",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/deep-fit-mudder-trucker-hat-NF0A5FX8",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-bottoms/womens-shorts-and-skorts-224274/womens-basin-5-shorts-NF0A8B51",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-rainwear-299273/womens-daybreak-mid-rain-parka-NF0A8B6D",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-accessories/womens-gloves-213446/womens-apex-insulated-etip-gloves-NF0A89RC",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/roomy-norm-hat-NF0A7WHP",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-hoodie-NF0A84I1",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/baby-0-24m/baby-accessories-226756/baby-bear-trapper-NF0A8CGG",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/half-dome-trucker-hat-NF0A8BME",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-accessories/womens-gloves-213446/womens-etip-recycled-gloves-NF0A4SHB",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/never-stop-hat-NF0A8EPN",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-accessories/womens-hats-374282/womens-horizon-hat-NF0A5FXM",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/mudder-trucker-hat-NF0A5FXA",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-parkas-327273/womens-arctic-parka-NF0A84J2",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories/beanies-829866/tnf-logo-box-cuffed-beanie-NF0A8CHE",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/baby-0-24m/baby-accessories-226756/baby-bear-mitts-NF0A8CGH",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/summer-lt-trucker-hat-NF0A8A2E",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/lightrange-summer-run-bucket-hat-NF0A876K",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/kids-featured/shop-all-kids-accessories-351276/kids-recycled-etip-gloves-NF0A7WGE",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-accessories/womens-beanies-213439/womens-oh-mega-fur-pom-lined-beanie-NF0A8974",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/girls-apparel/fleece-301777/girls-yumiori-full-zip-jacket-NF0A8AZH",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-puffer-jackets-829825/womens-aconcagua-3-hoodie-NF0A84IV",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/boys-apparel-211735/boys-yumiori-full-zip-jacket-NF0A8AZG",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/baby-0-24m-226751/baby-antora-rain-jacket-NF0A7ZZS",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/horizon-hat-NF0A8CQ1",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-puffer-jackets-829825/womens-1996-retro-nuptse-jacket-NF0A3XEO",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/kids-featured/shop-all-kids-accessories-351276/kids-sierra-etip-gloves-NF0A7WFY",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/graphic-mudder-trucker-hat-NF0A8CP2",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/norm-hat-NF0A7WHO",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/mens-backpacks-298772/hot-shot-se-backpack-NF0A3KYJ",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/shop-all/accessories-500789/class-v-camp-hat-NF0A8EPR",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-fleece/womens-fleece-full-zip-829792/womens-yumiori-full-zip-NF0A8E88",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/mens-backpacks-298772/borealis-backpack-NF0A52SE",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/mens-backpacks-298772/recon-backpack-NF0A52SH",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/womens/womens-jackets-and-vests/womens-puffer-jackets-829825/womens-hydrenalite-down-hoodie-NF0A5GGG",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-bottoms/mens-shorts-224220/mens-wander-shorts-20-NF0A86R6",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-rainwear-299284/mens-quest-jacket-NF0A8G0R",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-borealis-backpack-NF0A52SI",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/womens-backpacks-268801/womens-jester-backpack-NF0A3VXG",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/luggage-and-duffels/travel-accessories-224548/base-camp-voyager-toiletry-kit-NF0A81BL",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/mens-backpacks-298772/router-backpack-NF0A52SF",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/kids/kids-featured/shop-all-kids-accessories-351276/kids-tnf-logo-box-cuffed-beanie-NF0A8CGU",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/womens-backpacks-268801/borealis-mini-backpack-NF0A52SW",
+      "source": "The North Face Canada",
+      "currency": "CAD"
+    },
+    {
+      "url": "https://www.thenorthface.com/en-ca/p/bags-and-gear/backpacks/mens-backpacks-298772/jester-backpack-NF0A3VXF",
+      "source": "The North Face Canada",
+      "currency": "CAD"
     }
   ]
 }
