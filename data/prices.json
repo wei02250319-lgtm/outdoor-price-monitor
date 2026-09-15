@@ -2663,5 +2663,10 @@
         }
       }
     ]
+  },
+  "__monitor_state__": {
+    "next_index": 3,
+    "total": 9,
+    "updated": 1789461673
   }
 }
