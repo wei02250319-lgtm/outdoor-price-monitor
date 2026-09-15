@@ -80,5 +80,115 @@
     }
   },
   "exchange_rates": {},
-  "last_update": "2026-09-15T05:22:06.833738+00:00"
+  "last_update": "2026-09-15T05:22:06.833738+00:00",
+  "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
+    "name": "Arc'teryxBeta SL Jacket - Men's](https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens)",
+    "url": "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens",
+    "price": 299.83,
+    "original": 500.0,
+    "discount": 40.0,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:49.595761+00:00"
+  },
+  "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
+    "name": "Arc'teryxAtom Insulated Hoody - Men's](https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens)",
+    "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+    "price": 199.83,
+    "original": 300.0,
+    "discount": 33.4,
+    "sizes": [],
+    "colors": [],
+    "watchlist": true,
+    "updated": "2026-09-15T07:10:50.150699+00:00"
+  },
+  "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
+    "name": "Arc'teryxBeta SL Jacket - Women's](https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens)",
+    "url": "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens",
+    "price": 210.93,
+    "original": 500.0,
+    "discount": 57.8,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:50.668497+00:00"
+  },
+  "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens": {
+    "name": "Arc'teryxAtom Insulated Hoody - Women's](https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens)",
+    "url": "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens",
+    "price": 60.0,
+    "original": 300.0,
+    "discount": 80.0,
+    "sizes": [],
+    "colors": [],
+    "watchlist": true,
+    "updated": "2026-09-15T07:10:51.176538+00:00"
+  },
+  "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
+    "name": "Arc'teryxBird Head Toque Beanie](https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie)",
+    "url": "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie",
+    "price": 60.0,
+    "original": 280.0,
+    "discount": 78.6,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:51.666149+00:00"
+  },
+  "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
+    "name": "Arc'teryxAtom Insulated Jacket - Men's](https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens)",
+    "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+    "price": 179.83,
+    "original": 650.0,
+    "discount": 72.3,
+    "sizes": [],
+    "colors": [],
+    "watchlist": true,
+    "updated": "2026-09-15T07:10:52.173418+00:00"
+  },
+  "https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens": {
+    "name": "Arc'teryxBeta AR Jacket - Women's](https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens)",
+    "url": "https://www.rei.com/product/249381/arcteryx-beta-ar-jacket-womens",
+    "price": 199.83,
+    "original": 650.0,
+    "discount": 69.3,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:52.671550+00:00"
+  },
+  "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
+    "name": "Arc'teryxGamma MX Hoody - Men's](https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens)",
+    "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+    "price": 105.93,
+    "original": 400.0,
+    "discount": 73.5,
+    "sizes": [],
+    "colors": [],
+    "watchlist": true,
+    "updated": "2026-09-15T07:10:53.196821+00:00"
+  },
+  "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens": {
+    "name": "Arc'teryxKyanite Lightweight Fleece Hoodie - Men's](https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens)",
+    "url": "https://www.rei.com/product/217940/arcteryx-kyanite-lightweight-fleece-hoodie-mens",
+    "price": 99.83,
+    "original": 200.0,
+    "discount": 50.1,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:53.701128+00:00"
+  },
+  "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
+    "name": "Arc'teryxDelta Jacket - Men's](https://www.rei.com/product/236237/arcteryx-delta-jacket-mens)",
+    "url": "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens",
+    "price": 99.83,
+    "original": 200.0,
+    "discount": 50.1,
+    "sizes": [],
+    "colors": [],
+    "watchlist": false,
+    "updated": "2026-09-15T07:10:54.217824+00:00"
+  }
 }
