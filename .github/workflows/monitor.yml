@@ -32,6 +32,13 @@ jobs:
         run: |
           echo "开始运行 monitor.py"
           python -u monitor.py
-
+      - name: Save price history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/prices.json
+          git diff --cached --quiet || git commit -m "Update price history"
+          git pull --rebase origin main
+          git push origin main
       
   
