@@ -25,7 +25,7 @@
       "currency": "USD",
       "current_price": 200.0,
       "max_discount": 0,
-      "updated_at": 1789490505
+      "updated_at": 1789492223
     },
     "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
@@ -34,7 +34,7 @@
       "currency": "USD",
       "current_price": 54.93,
       "max_discount": 30,
-      "updated_at": 1789490526
+      "updated_at": 1789492243
     },
     "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
       "url": "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
@@ -43,7 +43,7 @@
       "currency": "USD",
       "current_price": 179.83,
       "max_discount": 36,
-      "updated_at": 1789491161
+      "updated_at": 1789492254
     },
     "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
       "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
@@ -106,7 +106,7 @@
       "currency": "USD",
       "current_price": 103.83,
       "max_discount": 50,
-      "updated_at": 1789490515
+      "updated_at": 1789492233
     },
     "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ": {
       "url": "https://www.thenorthface.com/en-us/p/mens/mens-fleece/mens-fleece-pullover-829794/mens-cedar-trail-grid-fleece-1-4-zip-NF0A8AZE?color=0UZ",
@@ -125,11 +125,20 @@
       "current_price": 260.0,
       "max_discount": 0,
       "updated_at": 1789491282
+    },
+    "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-jacket-NF0A84HZ?color=4H0": {
+      "url": "https://www.thenorthface.com/en-ca/p/mens/mens-jackets-and-vests/mens-insulated-and-down-300771/mens-aconcagua-3-jacket-NF0A84HZ?color=4H0",
+      "name": "Men’s Aconcagua 3 Jacket",
+      "site": "The North Face Canada",
+      "currency": "CAD",
+      "current_price": 168.98,
+      "max_discount": 0,
+      "updated_at": 1789492335
     }
   },
   "meta": {
-    "fixed_rotation_index": 2,
+    "fixed_rotation_index": 6,
     "version": 3,
-    "discovery_rotation_index": 6
+    "discovery_rotation_index": 1
   }
 }
