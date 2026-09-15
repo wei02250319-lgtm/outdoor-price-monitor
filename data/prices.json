@@ -1906,7 +1906,147 @@
       "color": "Black Sapphire",
       "size": "M",
       "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480011": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480010": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480013": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "XXL",
+      "stock": true
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480012": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "XL",
+      "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480014": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "XXXL",
+      "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480008": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "XS",
+      "stock": false
+    },
+    "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens|sku:2221480009": {
+      "product": "R2 TechFace Jacket - Men's",
+      "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+      "price": 103.83,
+      "original_price": 209.0,
+      "currency": "USD",
+      "color": "Black",
+      "size": "S",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000013": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "XXL",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000014": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "XXXL",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000010": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "M",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000011": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "L",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000012": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "XL",
+      "stock": false
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000008": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "XS",
+      "stock": true
+    },
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens|sku:C009000009": {
+      "product": "Capilene Cool Daily Graphic Hoody - Men's",
+      "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+      "price": 54.93,
+      "original_price": 79.0,
+      "currency": "USD",
+      "color": "73 Skyline/Gem Green",
+      "size": "S",
+      "stock": false
     }
   },
-  "rotation": 3
+  "rotation": 6
 }
