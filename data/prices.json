@@ -1,5 +1,46 @@
 {
-  "products": {},
+  "products": {
+    "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
+      "name": "Arc'teryx Beta SL Jacket - Men's",
+      "url": "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens",
+      "price": 299.83,
+      "original_price": 500.0,
+      "discount": 40,
+      "currency": "USD"
+    },
+    "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
+      "name": "Arc'teryx Atom Insulated Hoody - Men's",
+      "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+      "price": 199.83,
+      "original_price": 300.0,
+      "discount": 33,
+      "currency": "USD"
+    },
+    "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens": {
+      "name": "Arc'teryx Beta SL Jacket - Women's",
+      "url": "https://www.rei.com/product/234978/arcteryx-beta-sl-jacket-womens",
+      "price": 299.83,
+      "original_price": 500.0,
+      "discount": 40,
+      "currency": "USD"
+    },
+    "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens": {
+      "name": "Arc'teryx Atom Insulated Hoody - Women's",
+      "url": "https://www.rei.com/product/243332/arcteryx-atom-insulated-hoody-womens",
+      "price": 210.93,
+      "original_price": 300.0,
+      "discount": 30,
+      "currency": "USD"
+    },
+    "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie": {
+      "name": "Arc'teryx Bird Head Toque Beanie",
+      "url": "https://www.rei.com/product/785251/arcteryx-bird-head-toque-beanie",
+      "price": 60.0,
+      "original_price": null,
+      "discount": null,
+      "currency": "USD"
+    }
+  },
   "exchange_rates": {},
-  "last_update": "2026-09-15T02:49:06.504806+00:00"
+  "last_update": "2026-09-15T02:49:45.085445+00:00"
 }
