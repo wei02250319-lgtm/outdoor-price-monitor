@@ -19,11 +19,11 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 HISTORY_FILE = Path("data/prices.json")
 
-# 每次运行检查几个固定商品
-BATCH_SIZE = 3
+# 每次运行检查 4 个固定商品
+BATCH_SIZE = 4
 
-# 每次运行检查几个自动发现商品
-DISCOVERY_BATCH_SIZE = 3
+# 每次运行检查 6 个自动发现商品
+DISCOVERY_BATCH_SIZE = 6
 
 # Firecrawl 请求间隔
 REQUEST_INTERVAL = 9
@@ -1472,6 +1472,7 @@ def main():
 
     # --------------------------------
     # 2. 轮询7个重点商品
+    # 每次4个
     # --------------------------------
 
     start = (
@@ -1514,6 +1515,7 @@ def main():
 
     # --------------------------------
     # 3. 轮询自动发现商品
+    # 每次6个
     # --------------------------------
 
     discovered = history.get(
