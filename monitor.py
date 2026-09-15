@@ -1,41 +1,37 @@
-import os
 import requests
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+URL = "https://www.rei.com/b/arcteryx/c/all"
 
-print("开始测试 Telegram")
-
-if not TOKEN:
-    print("错误：TELEGRAM_BOT_TOKEN 没有读取到")
-    raise SystemExit(1)
-
-if not CHAT_ID:
-    print("错误：TELEGRAM_CHAT_ID 没有读取到")
-    raise SystemExit(1)
-
-url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-
-data = {
-    "chat_id": CHAT_ID,
-    "text": "✅ REI户外价格监控：Telegram 推送测试成功！"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
 
+print("================================")
+print("REI 连接测试")
+print("================================")
+
 try:
-    r = requests.post(
-        url,
-        json=data,
-        timeout=15
+    print("正在连接 REI...")
+
+    r = requests.get(
+        URL,
+        headers=HEADERS,
+        timeout=10
     )
 
-    print("Telegram HTTP状态码：", r.status_code)
-    print("Telegram返回：", r.text)
+    print("HTTP状态码：", r.status_code)
+    print("页面大小：", len(r.text), "字符")
 
-    if r.status_code != 200:
-        raise SystemExit(1)
-
-    print("Telegram测试成功！")
+    if r.status_code == 200:
+        print("✅ REI 连接成功")
+    else:
+        print("⚠️ REI 返回异常状态")
 
 except Exception as e:
-    print("Telegram测试失败：", type(e).__name__, e)
-    raise SystemExit(1)
+    print("❌ REI 连接失败")
+    print(type(e).__name__, e)
+
+print("================================")
+print("测试结束")
