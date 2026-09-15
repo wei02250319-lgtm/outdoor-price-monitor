@@ -81,7 +81,7 @@
     "Arc'teryx Gamma MX Hoody - Men's": {
       "title": "Gamma MX Hoody - Men's",
       "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
-      "updated": 1789469560,
+      "updated": 1789472470,
       "variants": {
         "2351460055": {
           "price": 400.0,
@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789469570,
+      "updated": 1789472479,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -431,7 +431,7 @@
     "Arc'teryx Gamma Pants - Men's": {
       "title": "Gamma Pants - Men's",
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
-      "updated": 1789469579,
+      "updated": 1789472489,
       "variants": {
         "2428530017": {
           "price": 200.0,
@@ -790,7 +790,7 @@
     "Patagonia R2 TechFace Jacket - Men's": {
       "title": "R2 TechFace Jacket - Men's",
       "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
-      "updated": 1789470687,
+      "updated": 1789472498,
       "variants": {
         "2221480011": {
           "price": 103.83,
@@ -12286,6 +12286,3544 @@
           "stock": false
         }
       }
+    },
+    "auto:https://www.rei.com/product/C08969/prana-stretch-zion-field-pants-mens": {
+      "title": "Stretch Zion Field Pants - Men's",
+      "url": "https://www.rei.com/product/C08969/prana-stretch-zion-field-pants-mens",
+      "updated": 1789472530,
+      "variants": {
+        "C089690011": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "S x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690055": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690010": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XXL x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690054": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690013": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "L x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690057": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "L x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690012": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "M x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690056": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "M x 30 IN Inseam",
+          "stock": true
+        },
+        "C089690015": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XXL x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690059": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "S x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690014": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XL x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690058": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "XL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690051": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690050": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690053": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690052": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690044": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690043": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L x 30 IN Inseam",
+          "stock": true
+        },
+        "C089690002": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "M x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690046": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690001": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "S x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690045": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690004": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690048": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690003": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "L x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690047": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690006": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "S x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690005": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XXL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690049": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690008": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "L x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690007": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "M x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690009": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Mud",
+          "size": "XL x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690040": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XL x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690042": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690041": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XXL x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690033": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "M x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690077": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XXL x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690032": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "S x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690076": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XL x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690035": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690034": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "L x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690037": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "S x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690036": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XXL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690039": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "L x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690038": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "M x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690071": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690070": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "L x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690073": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "S x 34 IN Inseam",
+          "stock": false
+        },
+        "C089690072": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XXL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690031": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XXL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690075": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "L x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690030": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "XL x 30 IN Inseam",
+          "stock": true
+        },
+        "C089690074": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "M x 34 IN Inseam",
+          "stock": true
+        },
+        "C089690066": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690065": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "L x 30 IN Inseam",
+          "stock": true
+        },
+        "C089690068": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "S x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690067": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "XXL x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690069": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "M x 32 IN Inseam",
+          "stock": false
+        },
+        "C089690028": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "M x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690027": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "S x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690029": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Grey Blue",
+          "size": "L x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690060": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "M x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690062": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "XL x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690061": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "L x 32 IN Inseam",
+          "stock": true
+        },
+        "C089690064": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Thyme",
+          "size": "M x 30 IN Inseam",
+          "stock": false
+        },
+        "C089690063": {
+          "price": 49.73,
+          "original": 98.0,
+          "currency": "USD",
+          "color": "Tawny",
+          "size": "XXL x 32 IN Inseam",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/229159/fjallraven-vidda-pro-ventilated-trousers-mens": {
+      "title": "Vidda Pro Ventilated Trousers - Men's",
+      "url": "https://www.rei.com/product/229159/fjallraven-vidda-pro-ventilated-trousers-mens",
+      "updated": 1789472559,
+      "variants": {
+        "2291590050": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "46 EU",
+          "stock": true
+        },
+        "2291590055": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "56 EU",
+          "stock": true
+        },
+        "2291590056": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "58 EU",
+          "stock": true
+        },
+        "2291590057": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "44 EU Tall",
+          "stock": true
+        },
+        "2291590058": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "46 EU Tall",
+          "stock": true
+        },
+        "2291590051": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "48 EU",
+          "stock": true
+        },
+        "2291590052": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "50 EU",
+          "stock": true
+        },
+        "2291590053": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "52 EU",
+          "stock": true
+        },
+        "2291590054": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "54 EU",
+          "stock": true
+        },
+        "2291590049": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "44 EU",
+          "stock": true
+        },
+        "2291590060": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "50 EU Tall",
+          "stock": false
+        },
+        "2291590061": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "52 EU Tall",
+          "stock": false
+        },
+        "2291590066": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "46 EU Short",
+          "stock": true
+        },
+        "2291590067": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "48 EU Short",
+          "stock": false
+        },
+        "2291590100": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "50 EU",
+          "stock": true
+        },
+        "2291590068": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "50 EU Short",
+          "stock": false
+        },
+        "2291590101": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "52 EU",
+          "stock": true
+        },
+        "2291590069": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "52 EU Short",
+          "stock": false
+        },
+        "2291590102": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "54 EU",
+          "stock": true
+        },
+        "2291590062": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "54 EU Tall",
+          "stock": false
+        },
+        "2291590063": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "56 EU Tall",
+          "stock": true
+        },
+        "2291590064": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "58 EU Tall",
+          "stock": true
+        },
+        "2291590065": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "44 EU Short",
+          "stock": true
+        },
+        "2291590059": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "48 EU Tall",
+          "stock": true
+        },
+        "2291590070": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "54 EU Short",
+          "stock": true
+        },
+        "2291590071": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "56 EU Short",
+          "stock": true
+        },
+        "2291590072": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Grey/Black",
+          "size": "58 EU Short",
+          "stock": true
+        },
+        "2291590077": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "52 EU",
+          "stock": true
+        },
+        "2291590110": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "54 EU Tall",
+          "stock": false
+        },
+        "2291590078": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "54 EU",
+          "stock": true
+        },
+        "2291590111": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "56 EU Tall",
+          "stock": false
+        },
+        "2291590079": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "56 EU",
+          "stock": true
+        },
+        "2291590112": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "58 EU Tall",
+          "stock": false
+        },
+        "2291590113": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "44 EU Short",
+          "stock": true
+        },
+        "2291590073": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "44 EU",
+          "stock": true
+        },
+        "2291590074": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "46 EU",
+          "stock": true
+        },
+        "2291590075": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "48 EU",
+          "stock": true
+        },
+        "2291590076": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "50 EU",
+          "stock": true
+        },
+        "2291590107": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "48 EU Tall",
+          "stock": false
+        },
+        "2291590108": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "50 EU Tall",
+          "stock": false
+        },
+        "2291590109": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "52 EU Tall",
+          "stock": false
+        },
+        "2291590103": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "56 EU",
+          "stock": true
+        },
+        "2291590104": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "58 EU",
+          "stock": true
+        },
+        "2291590105": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "44 EU Tall",
+          "stock": true
+        },
+        "2291590106": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "46 EU Tall",
+          "stock": true
+        },
+        "2291590080": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "58 EU",
+          "stock": true
+        },
+        "2291590081": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "44 EU Tall",
+          "stock": true
+        },
+        "2291590082": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "46 EU Tall",
+          "stock": true
+        },
+        "2291590083": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "48 EU Tall",
+          "stock": true
+        },
+        "2291590088": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "58 EU Tall",
+          "stock": true
+        },
+        "2291590121": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "44 EU",
+          "stock": true
+        },
+        "2291590001": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "44 EU",
+          "stock": true
+        },
+        "2291590089": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "44 EU Short",
+          "stock": true
+        },
+        "2291590122": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "46 EU",
+          "stock": true
+        },
+        "2291590002": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "46 EU",
+          "stock": true
+        },
+        "2291590123": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "48 EU",
+          "stock": false
+        },
+        "2291590003": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "48 EU",
+          "stock": true
+        },
+        "2291590124": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "50 EU",
+          "stock": false
+        },
+        "2291590084": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "50 EU Tall",
+          "stock": true
+        },
+        "2291590085": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "52 EU Tall",
+          "stock": true
+        },
+        "2291590086": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "54 EU Tall",
+          "stock": false
+        },
+        "2291590087": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "56 EU Tall",
+          "stock": true
+        },
+        "2291590120": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "58 EU Short",
+          "stock": true
+        },
+        "2291590118": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "54 EU Short",
+          "stock": true
+        },
+        "2291590119": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "56 EU Short",
+          "stock": true
+        },
+        "2291590114": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "46 EU Short",
+          "stock": true
+        },
+        "2291590115": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "48 EU Short",
+          "stock": true
+        },
+        "2291590116": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "50 EU Short",
+          "stock": true
+        },
+        "2291590117": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "52 EU Short",
+          "stock": false
+        },
+        "2291590091": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "48 EU Short",
+          "stock": true
+        },
+        "2291590092": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "50 EU Short",
+          "stock": false
+        },
+        "2291590093": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "52 EU Short",
+          "stock": false
+        },
+        "2291590094": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "54 EU Short",
+          "stock": false
+        },
+        "2291590090": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "46 EU Short",
+          "stock": true
+        },
+        "2291590011": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "48 EU Tall",
+          "stock": false
+        },
+        "2291590099": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "48 EU",
+          "stock": true
+        },
+        "2291590132": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "50 EU Tall",
+          "stock": false
+        },
+        "2291590012": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "50 EU Tall",
+          "stock": false
+        },
+        "2291590133": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "52 EU Tall",
+          "stock": false
+        },
+        "2291590013": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "52 EU Tall",
+          "stock": false
+        },
+        "2291590134": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "54 EU Tall",
+          "stock": false
+        },
+        "2291590014": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "54 EU Tall",
+          "stock": false
+        },
+        "2291590135": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "56 EU Tall",
+          "stock": false
+        },
+        "2291590095": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "56 EU Short",
+          "stock": true
+        },
+        "2291590096": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Suede Brown/Dark Olive",
+          "size": "58 EU Short",
+          "stock": true
+        },
+        "2291590097": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "44 EU",
+          "stock": true
+        },
+        "2291590130": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "46 EU Tall",
+          "stock": true
+        },
+        "2291590010": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "46 EU Tall",
+          "stock": false
+        },
+        "2291590098": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Olive",
+          "size": "46 EU",
+          "stock": true
+        },
+        "2291590131": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "48 EU Tall",
+          "stock": false
+        },
+        "2291590008": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "58 EU",
+          "stock": false
+        },
+        "2291590129": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "44 EU Tall",
+          "stock": true
+        },
+        "2291590009": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "44 EU Tall",
+          "stock": false
+        },
+        "2291590004": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "50 EU",
+          "stock": true
+        },
+        "2291590125": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "52 EU",
+          "stock": false
+        },
+        "2291590005": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "52 EU",
+          "stock": true
+        },
+        "2291590126": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "54 EU",
+          "stock": false
+        },
+        "2291590006": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "54 EU",
+          "stock": true
+        },
+        "2291590127": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "56 EU",
+          "stock": false
+        },
+        "2291590007": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "56 EU",
+          "stock": true
+        },
+        "2291590128": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "58 EU",
+          "stock": false
+        },
+        "2291590022": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "54 EU Short",
+          "stock": false
+        },
+        "2291590143": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "56 EU Short",
+          "stock": false
+        },
+        "2291590023": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "56 EU Short",
+          "stock": false
+        },
+        "2291590144": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "58 EU Short",
+          "stock": false
+        },
+        "2291590024": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "58 EU Short",
+          "stock": true
+        },
+        "2291590140": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "50 EU Short",
+          "stock": false
+        },
+        "2291590020": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "50 EU Short",
+          "stock": false
+        },
+        "2291590141": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "52 EU Short",
+          "stock": false
+        },
+        "2291590021": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "52 EU Short",
+          "stock": false
+        },
+        "2291590142": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "54 EU Short",
+          "stock": false
+        },
+        "2291590019": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "48 EU Short",
+          "stock": false
+        },
+        "2291590015": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "56 EU Tall",
+          "stock": false
+        },
+        "2291590136": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "58 EU Tall",
+          "stock": false
+        },
+        "2291590016": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "58 EU Tall",
+          "stock": false
+        },
+        "2291590137": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "44 EU Short",
+          "stock": false
+        },
+        "2291590017": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "44 EU Short",
+          "stock": true
+        },
+        "2291590138": {
+          "price": 94.83,
+          "original": 190.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "46 EU Short",
+          "stock": false
+        },
+        "2291590018": {
+          "price": 190.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "46 EU Short",
+          "stock": true
+        },
+        "2291590139": {
+          "price": 94.83,
+          "original": 180.0,
+          "currency": "USD",
+          "color": "Laurel Green/Deep Forest",
+          "size": "48 EU Short",
+          "stock": false
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/250406/arcteryx-emblem-fleece-crew-mens": {
+      "title": "Emblem Fleece Crew - Men's",
+      "url": "https://www.rei.com/product/250406/arcteryx-emblem-fleece-crew-mens",
+      "updated": 1789472624,
+      "variants": {
+        "2504060018": {
+          "price": 95.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "XXL",
+          "stock": true
+        },
+        "2504060017": {
+          "price": 95.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "XL",
+          "stock": false
+        },
+        "2504060039": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "M",
+          "stock": true
+        },
+        "2504060016": {
+          "price": 95.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "L",
+          "stock": false
+        },
+        "2504060038": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "S",
+          "stock": true
+        },
+        "2504060015": {
+          "price": 87.93,
+          "original": 110.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "M",
+          "stock": false
+        },
+        "2504060014": {
+          "price": 87.93,
+          "original": 110.0,
+          "currency": "USD",
+          "color": "Black Sapphire",
+          "size": "S",
+          "stock": false
+        },
+        "2504060035": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "XL",
+          "stock": true
+        },
+        "2504060012": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "2504060034": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "L",
+          "stock": true
+        },
+        "2504060011": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "2504060033": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "M",
+          "stock": true
+        },
+        "2504060010": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "2504060032": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Dark Jade",
+          "size": "S",
+          "stock": true
+        },
+        "2504060030": {
+          "price": 83.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "XXL",
+          "stock": true
+        },
+        "2504060009": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "2504060008": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "2504060029": {
+          "price": 83.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "XL",
+          "stock": true
+        },
+        "2504060028": {
+          "price": 83.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "L",
+          "stock": true
+        },
+        "2504060027": {
+          "price": 83.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "M",
+          "stock": true
+        },
+        "2504060026": {
+          "price": 83.93,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Habitat",
+          "size": "S",
+          "stock": true
+        },
+        "2504060024": {
+          "price": 94.73,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Dark Stratus",
+          "size": "XXL",
+          "stock": true
+        },
+        "2504060023": {
+          "price": 94.73,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Dark Stratus",
+          "size": "XL",
+          "stock": false
+        },
+        "2504060022": {
+          "price": 94.73,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Dark Stratus",
+          "size": "L",
+          "stock": true
+        },
+        "2504060021": {
+          "price": 94.73,
+          "original": 120.0,
+          "currency": "USD",
+          "color": "Dark Stratus",
+          "size": "M",
+          "stock": false
+        },
+        "2504060020": {
+          "price": 86.83,
+          "original": 110.0,
+          "currency": "USD",
+          "color": "Dark Stratus",
+          "size": "S",
+          "stock": false
+        },
+        "2504060041": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "XL",
+          "stock": true
+        },
+        "2504060040": {
+          "price": 120.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sea Salt",
+          "size": "L",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/C01380/rei-co-op-microtrek-insulated-hoodie-mens": {
+      "title": "Microtrek Insulated Hoodie - Men's",
+      "url": "https://www.rei.com/product/C01380/rei-co-op-microtrek-insulated-hoodie-mens",
+      "updated": 1789472691,
+      "variants": {
+        "C013800019": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "L",
+          "stock": true
+        },
+        "C013800018": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "M",
+          "stock": true
+        },
+        "C013800017": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "S",
+          "stock": true
+        },
+        "C013800016": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "XXXL",
+          "stock": true
+        },
+        "C013800015": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013800014": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "XL",
+          "stock": true
+        },
+        "C013800013": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "L",
+          "stock": true
+        },
+        "C013800012": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "M",
+          "stock": false
+        },
+        "C013800034": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "XXXL",
+          "stock": true
+        },
+        "C013800011": {
+          "price": 99.83,
+          "original": 179.0,
+          "currency": "USD",
+          "color": "Echo Gray",
+          "size": "S",
+          "stock": true
+        },
+        "C013800033": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013800010": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "C013800032": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "XL",
+          "stock": true
+        },
+        "C013800031": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "L",
+          "stock": true
+        },
+        "C013800030": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "M",
+          "stock": true
+        },
+        "C013800008": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L Tall",
+          "stock": true
+        },
+        "C013800007": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M Tall",
+          "stock": true
+        },
+        "C013800029": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Shaded Spruce",
+          "size": "S",
+          "stock": true
+        },
+        "C013800006": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXXL",
+          "stock": true
+        },
+        "C013800028": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "XXXL",
+          "stock": true
+        },
+        "C013800005": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013800027": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013800004": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "C013800026": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "XL",
+          "stock": true
+        },
+        "C013800003": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "C013800025": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "L",
+          "stock": true
+        },
+        "C013800002": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "C013800024": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "M",
+          "stock": true
+        },
+        "C013800001": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "C013800023": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Stone Blue",
+          "size": "S",
+          "stock": true
+        },
+        "C013800022": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "XXXL",
+          "stock": true
+        },
+        "C013800021": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "XXL",
+          "stock": true
+        },
+        "C013800020": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Rei Red",
+          "size": "XL",
+          "stock": true
+        },
+        "C013800009": {
+          "price": 179.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL Tall",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/127853/vuori-strato-tech-t-shirt-mens": {
+      "title": "Strato Tech T-Shirt - Men's",
+      "url": "https://www.rei.com/product/127853/vuori-strato-tech-t-shirt-mens",
+      "updated": 1789472724,
+      "variants": {
+        "1278530121": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "S",
+          "stock": true
+        },
+        "1278530001": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530122": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "M",
+          "stock": true
+        },
+        "1278530002": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530123": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "L",
+          "stock": true
+        },
+        "1278530003": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530124": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530004": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530125": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530246": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530005": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530247": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530248": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530249": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530250": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530251": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Isle Blue Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530300": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530301": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530302": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "1278530303": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530304": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530305": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530306": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530307": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "L",
+          "stock": false
+        },
+        "1278530308": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530309": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530310": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Milkweed Heather",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530311": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530312": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530313": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530314": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530315": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530316": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530317": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sour Cherry Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "1278530318": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530319": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530320": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530321": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530322": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530323": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530324": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Sapphire Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "1278530297": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530298": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "S",
+          "stock": false
+        },
+        "1278530299": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Hemlock Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530011": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530012": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530013": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530014": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530015": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530258": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530259": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530260": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530261": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530141": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "S",
+          "stock": false
+        },
+        "1278530262": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530142": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "M",
+          "stock": false
+        },
+        "1278530263": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Storm Blue Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530143": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "L",
+          "stock": false
+        },
+        "1278530264": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530144": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "XL",
+          "stock": false
+        },
+        "1278530265": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "S",
+          "stock": true
+        },
+        "1278530145": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530266": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530267": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530268": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "XL",
+          "stock": false
+        },
+        "1278530269": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Sea Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "1278530270": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530271": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "S",
+          "stock": false
+        },
+        "1278530272": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "M",
+          "stock": false
+        },
+        "1278530273": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "L",
+          "stock": false
+        },
+        "1278530274": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "XL",
+          "stock": false
+        },
+        "1278530275": {
+          "price": 45.93,
+          "original": 58.0,
+          "currency": "USD",
+          "color": "Faded Rose Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "1278530276": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530277": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "S",
+          "stock": false
+        },
+        "1278530036": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "S",
+          "stock": true
+        },
+        "1278530278": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530037": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "M",
+          "stock": false
+        },
+        "1278530279": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530038": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "L",
+          "stock": true
+        },
+        "1278530039": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "XL",
+          "stock": false
+        },
+        "1278530280": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530281": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "1278530040": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "XXL",
+          "stock": false
+        },
+        "1278530282": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Heather",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530162": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Black",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530283": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530284": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "S",
+          "stock": false
+        },
+        "1278530285": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530165": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "1278530286": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530166": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Charcoal Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530287": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530167": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530288": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530168": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Heather Grey",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530289": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Dusk Heather",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530169": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "1278530290": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530170": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Navy Heather",
+          "size": "XS",
+          "stock": true
+        },
+        "1278530291": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "S",
+          "stock": false
+        },
+        "1278530292": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "M",
+          "stock": true
+        },
+        "1278530293": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "L",
+          "stock": true
+        },
+        "1278530173": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "XXXL",
+          "stock": false
+        },
+        "1278530294": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "1278530174": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "White",
+          "size": "XS",
+          "stock": false
+        },
+        "1278530295": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "XXL",
+          "stock": true
+        },
+        "1278530296": {
+          "price": 58.0,
+          "original": null,
+          "currency": "USD",
+          "color": "Fig Heather",
+          "size": "XXXL",
+          "stock": true
+        }
+      }
+    },
+    "auto:https://www.rei.com/product/250115/rei-co-op-campwell-flannel-shirt-mens": {
+      "title": "Campwell Flannel Shirt - Men's",
+      "url": "https://www.rei.com/product/250115/rei-co-op-campwell-flannel-shirt-mens",
+      "updated": 1789472752,
+      "variants": {
+        "2501150025": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "2501150102": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Marina Blue",
+          "size": "M",
+          "stock": true
+        },
+        "2501150024": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150101": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Marina Blue",
+          "size": "S",
+          "stock": true
+        },
+        "2501150023": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2501150022": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2501150029": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150028": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150027": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150104": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Marina Blue",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150026": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "XXXL",
+          "stock": false
+        },
+        "2501150103": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Marina Blue",
+          "size": "L",
+          "stock": true
+        },
+        "2501150060": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2501150021": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "S",
+          "stock": true
+        },
+        "2501150020": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2501150014": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "XL",
+          "stock": false
+        },
+        "2501150058": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150013": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "L",
+          "stock": false
+        },
+        "2501150057": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150012": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "M",
+          "stock": true
+        },
+        "2501150056": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2501150011": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "S",
+          "stock": false
+        },
+        "2501150055": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "XXL",
+          "stock": false
+        },
+        "2501150018": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150017": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150016": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2501150015": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "XXL",
+          "stock": false
+        },
+        "2501150059": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150050": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2501150094": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Army Cot Green",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150093": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Army Cot Green",
+          "size": "L",
+          "stock": true
+        },
+        "2501150092": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Army Cot Green",
+          "size": "M",
+          "stock": true
+        },
+        "2501150091": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Army Cot Green",
+          "size": "S",
+          "stock": true
+        },
+        "2501150010": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2501150054": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "XL",
+          "stock": false
+        },
+        "2501150053": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "L",
+          "stock": false
+        },
+        "2501150052": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "M",
+          "stock": false
+        },
+        "2501150051": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Delta Plaid Night Cove",
+          "size": "S",
+          "stock": false
+        },
+        "2501150095": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Army Cot Green",
+          "size": "XXL",
+          "stock": true
+        },
+        "2501150019": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Millet",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150003": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "L",
+          "stock": true
+        },
+        "2501150047": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150124": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray Heather",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150002": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "M",
+          "stock": true
+        },
+        "2501150046": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "XXXL",
+          "stock": true
+        },
+        "2501150123": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray Heather",
+          "size": "L",
+          "stock": true
+        },
+        "2501150001": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "S",
+          "stock": true
+        },
+        "2501150045": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "XXL",
+          "stock": false
+        },
+        "2501150122": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray Heather",
+          "size": "M",
+          "stock": true
+        },
+        "2501150044": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "XL",
+          "stock": false
+        },
+        "2501150121": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Stratus Gray Heather",
+          "size": "S",
+          "stock": true
+        },
+        "2501150007": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150006": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "XXXL",
+          "stock": false
+        },
+        "2501150005": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "XXL",
+          "stock": true
+        },
+        "2501150049": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150004": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150048": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150083": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Plaid Golden Amber",
+          "size": "L",
+          "stock": true
+        },
+        "2501150082": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Plaid Golden Amber",
+          "size": "M",
+          "stock": true
+        },
+        "2501150081": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Plaid Golden Amber",
+          "size": "S",
+          "stock": true
+        },
+        "2501150043": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "L",
+          "stock": false
+        },
+        "2501150042": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "M",
+          "stock": false
+        },
+        "2501150041": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Cherrywood Heather",
+          "size": "S",
+          "stock": false
+        },
+        "2501150040": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "XXL Tall",
+          "stock": false
+        },
+        "2501150084": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Acorn Plaid Golden Amber",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150009": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150008": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Aspen Plaid Blue Millet",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150036": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "XXXL",
+          "stock": false
+        },
+        "2501150113": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Oasis Plaid Blue Nights",
+          "size": "L",
+          "stock": true
+        },
+        "2501150035": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "XXL",
+          "stock": false
+        },
+        "2501150112": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Oasis Plaid Blue Nights",
+          "size": "M",
+          "stock": true
+        },
+        "2501150034": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150111": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Oasis Plaid Blue Nights",
+          "size": "S",
+          "stock": true
+        },
+        "2501150033": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "L",
+          "stock": true
+        },
+        "2501150039": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "XL Tall",
+          "stock": false
+        },
+        "2501150038": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "L Tall",
+          "stock": false
+        },
+        "2501150115": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Oasis Plaid Blue Nights",
+          "size": "XXL",
+          "stock": true
+        },
+        "2501150037": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "M Tall",
+          "stock": false
+        },
+        "2501150114": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Oasis Plaid Blue Nights",
+          "size": "XL",
+          "stock": true
+        },
+        "2501150032": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "M",
+          "stock": true
+        },
+        "2501150031": {
+          "price": 74.95,
+          "original": null,
+          "currency": "USD",
+          "color": "Buffalo Plaid Cherrywood",
+          "size": "S",
+          "stock": true
+        },
+        "2501150030": {
+          "price": 36.83,
+          "original": 74.95,
+          "currency": "USD",
+          "color": "Blue Nights Heather",
+          "size": "XXL Tall",
+          "stock": false
+        }
+      }
     }
   },
   "exchange_rates": {},
@@ -14728,8 +18266,8 @@
     }
   },
   "rotation": 0,
-  "position": 0,
-  "discovery_position": 18,
+  "position": 4,
+  "discovery_position": 24,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
