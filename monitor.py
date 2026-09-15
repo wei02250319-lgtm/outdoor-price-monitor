@@ -63,7 +63,7 @@ def fetch_page(url):
     return None
     def price_to_number(value):
         if value is None:
-        return None
+                return None
     text = str(value).replace(",", "")
     match = re.search(r"\d+(?:\.\d+)?", text)
 
