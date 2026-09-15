@@ -280,7 +280,7 @@
     "Arc'teryx Gamma Jacket - Men's": {
       "title": "Gamma Jacket - Men's",
       "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
-      "updated": 1789484442,
+      "updated": 1789486046,
       "variants": {
         "C010070030": {
           "price": 280.0,
@@ -431,7 +431,7 @@
     "Arc'teryx Gamma Pants - Men's": {
       "title": "Gamma Pants - Men's",
       "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
-      "updated": 1789484452,
+      "updated": 1789486056,
       "variants": {
         "2428530017": {
           "price": 200.0,
@@ -790,7 +790,7 @@
     "Patagonia R2 TechFace Jacket - Men's": {
       "title": "R2 TechFace Jacket - Men's",
       "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
-      "updated": 1789484461,
+      "updated": 1789486065,
       "variants": {
         "2221480011": {
           "price": 103.83,
@@ -853,7 +853,7 @@
     "Patagonia Capilene Cool Daily Graphic Hoody - Men's": {
       "title": "Capilene Cool Daily Graphic Hoody - Men's",
       "url": "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
-      "updated": 1789485071,
+      "updated": 1789486075,
       "variants": {
         "C009000070": {
           "price": 79.0,
@@ -19190,8 +19190,8 @@
     }
   },
   "rotation": 0,
-  "position": 1,
-  "discovery_position": 72,
+  "position": 5,
+  "discovery_position": 78,
   "discovered_products": [
     {
       "url": "https://www.rei.com/product/185196/rei-co-op-sahara-shade-hoodie-mens",
@@ -19326,316 +19326,6 @@
     {
       "url": "https://www.rei.com/product/228080/kuhl-renegade-rock-9-shorts-mens",
       "source": "REI",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/xxs",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/xs",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/s",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/m",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/l",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/xl",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/xxl",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/3xl",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/one-size",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/jackets-vests",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/fleece",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/shirts",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/pants",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/sweatshirts-hoodies",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/snow-pants",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/accessories",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/shorts",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/t-shirts",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/recycled",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/organic-cotton",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/synthetic-insulation",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/ripstop",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/netplus",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/regenerative-organic-cotton",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/canvas",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/goretex",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/water-resistant",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/insulated",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/hooded",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/quick-drying",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/stretch",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/breathable",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/windproof",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/packable",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/upf-sun-protection",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/waterproof",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/recco",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/two-way-zipper",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/moisture-wicking",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/helmet-compatible",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/reflectivity",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/heiq",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/powder-skirt",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/reversible",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/removable-hood",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/regular",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/slim",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/all",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/relaxed",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/formfitting",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/blue",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/green",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/brown",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/black",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/grey",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/white",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/yellow",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/red",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/neutral",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/orange",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/pink",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/purple",
-      "source": "Patagonia US",
       "currency": "USD"
     },
     {
@@ -20505,11 +20195,6 @@
     },
     {
       "url": "https://www.patagonia.com/on/demandware.static/Sites-patagonia-us-Site/-/en_US/v1788996374323/images/1x1.png)](https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-double-knee-work-pants-short/55291.html",
-      "source": "Patagonia US",
-      "currency": "USD"
-    },
-    {
-      "url": "https://www.patagonia.com/shop/web-specials/mens/fleece)—rely",
       "source": "Patagonia US",
       "currency": "USD"
     },
