@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789576322
+    "updated_at": 1789576858
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789576333
+    "updated_at": 1789576870
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789576344
+    "updated_at": 1789576881
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789576355
+    "updated_at": 1789576892
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,6 +62,6 @@
     "cny_price": 1340.28,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789576367
+    "updated_at": 1789576903
   }
 }
