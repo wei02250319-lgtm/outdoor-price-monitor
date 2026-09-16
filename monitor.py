@@ -1121,34 +1121,116 @@ def discover_products(source):
     links = extract_links_from_discovery(data)
 
     products = []
+    seen_urls = set()
 
     for url in links:
         low = url.lower()
 
         # 排除明显不是商品页的链接
-        if any(
-            word in low
-            for word in [
-                "/cart",
-                "/account",
-                "/login",
-                "/stores",
-                "/search",
-                "/help",
-                "/about",
-            ]
+        excluded_url_words = [
+            "/cart",
+            "/account",
+            "/login",
+            "/stores",
+            "/search",
+            "/help",
+            "/about",
+            "/vote",
+            "/ownership",
+            "/shipping",
+            "/returns",
+            "/privacy",
+            "/terms",
+            "/contact",
+            "/careers",
+            "/blog",
+            "/events",
+            "/community",
+            "/membership",
+            "/gift",
+            "/wishlist",
+        ]
+
+        if any(word in low for word in excluded_url_words):
+            continue
+
+        # 排除分类页 / 首页
+        bad_endings = [
+            "/mens",
+            "/men",
+            "/mens/",
+            "/men/",
+            "/shop/mens",
+            "/shop/men",
+        ]
+
+        if any(low.rstrip("/").endswith(x.rstrip("/")) for x in bad_endings):
+            continue
+
+        # 排除明显的非商品文件
+        if low.endswith(
+            (
+                ".html",
+                ".pdf",
+                ".jpg",
+                ".jpeg",
+                ".png",
+                ".gif",
+            )
         ):
+            continue
+
+        # 基础品牌判断
+        brand_ok = any(
+            normalize_name(brand) in normalize_name(url)
+            for brand in ALLOWED_BRANDS
+        )
+
+        # Patagonia / North Face 某些 URL 不一定带完整品牌名，
+        # 所以不在这里直接拒绝，只对明显不相关链接过滤。
+        if not brand_ok:
+            if not any(
+                word in low
+                for word in [
+                    "patagonia",
+                    "arcteryx",
+                    "arc-teryx",
+                    "northface",
+                    "north-face",
+                ]
+            ):
+                continue
+
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+
+        # 商品名先从 URL 生成，真正商品标题会在详情页重新读取
+        name = url.split("/")[-1]
+
+        name = (
+            name
+            .replace("-", " ")
+            .replace("_", " ")
+            .strip()
+        )
+
+        if not name:
             continue
 
         products.append(
             {
-                "name": url.split("/")[-1].replace("-", " ").strip(),
+                "name": name,
                 "url": url,
                 "source": source["name"],
             }
         )
 
-    return products[:DISCOVERY_LIMIT]
+        if len(products) >= DISCOVERY_LIMIT:
+            break
+
+    return products
 
 
 # ============================================================
