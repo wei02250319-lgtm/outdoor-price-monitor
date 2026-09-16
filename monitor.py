@@ -33,6 +33,8 @@ FIRECRAWL_DELAY = 10
 # 自动发现：不设置发现商品数量上限
 
 DATA_FILE = Path("data/prices.json")
+DISCOVERED_FILE = Path("data/discovered_products.json")
+RESET_MARKER_FILE = Path("data/.history_reset_v1_done")
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -89,7 +91,7 @@ DISCOVERY_SOURCES = [
     },
     {
         "name": "Arc'teryx Canada",
-        "url": "https://arcteryx.com/ca/en/c/mens",
+        "url": "https://arcteryx.com/ca/en/c/mens/p",
     },
     {
         "name": "Patagonia US",
@@ -98,14 +100,6 @@ DISCOVERY_SOURCES = [
     {
         "name": "Patagonia Canada",
         "url": "https://www.patagonia.ca/shop/mens",
-    },
-    {
-        "name": "The North Face US",
-        "url": "https://www.thenorthface.com/en-us/c/mens",
-    },
-    {
-        "name": "The North Face Canada",
-        "url": "https://www.thenorthface.com/en-ca/c/men",
     },
 ]
 
@@ -1064,8 +1058,6 @@ def get_dewu_reference_price(product_name):
 # 自动发现商品
 # ============================================================
 
-DISCOVERED_FILE = Path("data/discovered_products.json")
-
 # 每次运行只发现一个官网，避免 Firecrawl 触发限流。
 # 这里没有“最多发现几个商品”的限制；抓到多少符合条件的链接就保存多少。
 # 监控阶段会轮换历史发现商品，避免单次请求过多。
@@ -1254,8 +1246,22 @@ def _is_size_or_file(path):
     return last in EXCLUDED_LAST_PARTS
 
 
+def _source_kind(source):
+    host = _source_host(source)
+    name = normalize_name(source.get("name", ""))
+    if "rei.com" in host:
+        return "rei"
+    if "arcteryx" in host:
+        return "arcteryx"
+    if "patagonia" in host:
+        return "patagonia"
+    if "thenorthface" in host or "north face" in name:
+        return "tnf"
+    return "unknown"
+
+
 def _recognize_product_url(source, url):
-    """按各官网商品 URL 结构过滤，避免分类页、资讯页进入商品库。"""
+    """按各官网当前商品 URL 结构识别商品链接。"""
     host = _source_host(source)
     clean = _clean_discovery_url(url)
     parsed = urlparse(clean)
@@ -1265,46 +1271,56 @@ def _recognize_product_url(source, url):
     if not clean or _is_bad_common_url(low_path) or _is_size_or_file(low_path):
         return False
 
-    exact_bad = {
-        "/mens", "/men", "/womens", "/women",
-        "/c/mens", "/c/men", "/c/womens", "/c/women",
-        "/shop/mens", "/shop/men", "/shop/womens", "/shop/women",
-    }
-    if low_path.rstrip('/') in exact_bad:
-        return False
-
     if 'rei.com' in host:
         return bool(re.search(r'^/product/[a-z0-9]+(?:/[^/]*)?$', low_path, re.I))
 
-    if 'thenorthface.com' in host:
-        return bool(re.search(r'^/en-(?:us|ca)/p/[^/]+/nf0[a-z0-9]{4,}', low_path, re.I))
-
-    if 'patagonia.com' in host:
-        return bool(re.match(r'^/product/[^/]+(?:\.html)?$', low_path, re.I))
+    if 'outlet.arcteryx.com' in host:
+        # 例如 /us/en/shop/mens/alpha-jacket-9898
+        return bool(re.search(r'^/(?:us|ca)/en/shop/mens/[^/]+$', low_path, re.I))
 
     if 'arcteryx.com' in host:
-        if '/shop/' not in low_path:
-            return False
-        parts = [x for x in low_path.split('/') if x]
-        if len(parts) < 4:
-            return False
-        if parts[-1] in {'mens', 'men', 'womens', 'women', 'new', 'sale'}:
-            return False
-        return True
+        # 当前官网商品页常见形式：/ca/en/shop/mens/gamma-pant
+        # 也兼容其它国家/语言路径，只要明确落在 /shop/mens/ 商品目录下。
+        return bool(re.search(r'^/(?:[a-z]{2}/)?(?:en|fr|zh)/shop/mens/[^/]+$', low_path, re.I)) or \
+               bool(re.search(r'^/(?:[a-z]{2}/)+(?:en|fr|zh)/shop/mens/[^/]+$', low_path, re.I))
+
+    if 'patagonia.com' in host or 'patagonia.ca' in host:
+        # Patagonia 商品链接通常为 /product/<slug>.html
+        return bool(re.match(r'^/product/[^/]+(?:/[^/]+)?(?:\.html)?$', low_path, re.I))
 
     return False
 
-
 def candidate_matches_allowed_name(name, url, source=None):
-    """商品名/URL 的最终类别过滤；避免把非服装页面放入长期商品库。"""
+    """最终品牌、男装、品类过滤。REI 允许三品牌，其它官网只允许各自品牌。"""
     text = normalize_name(f"{name} {url}")
     host = _source_host(source or {}) if source else urlparse(url).netloc.lower().removeprefix('www.')
+    source_name = normalize_name((source or {}).get("name", ""))
 
+    # 女装明确排除
+    if any(x in text for x in ("women", "womens", "women's", "female")):
+        return False
+
+    # REI 自动发现：只允许始祖鸟、巴塔哥尼亚、北面。
+    if 'rei.com' in host:
+        rei_brand_ok = (
+            ("arc'teryx" in text or "arcteryx" in text)
+            or ("patagonia" in text)
+            or ("the north face" in text or "north face" in text)
+        )
+        if not rei_brand_ok:
+            return False
+    elif "arc'teryx" in source_name or "arcteryx" in source_name:
+        # Arc'teryx 官网本身已经限定品牌，不要求 slug 再出现品牌名。
+        pass
+    elif "patagonia" in source_name:
+        # Patagonia 官网本身已经限定品牌，不要求 slug 再出现品牌名。
+        pass
+
+    # 先排除明确不需要的品类
     if any(normalize_name(word) in text for word in EXCLUDED_CATEGORIES):
         return False
 
-    # Arc'teryx 的 Hoody 是其外套产品命名的一部分；这里仅对 Arc'teryx 放行，
-    # 避免把 Patagonia 等品牌的普通 hoodie/sweatshirt 当成外套。
+    # Arc'teryx 的 Hoody 是其外套命名的一部分，但普通 hoodie 要排除。
     arcteryx_outerwear = (
         ('arcteryx' in text or "arc'teryx" in text)
         and any(x in text for x in ('hoody', 'hooded', 'parka', 'shell', 'jacket', 'pants', 'pant'))
@@ -1314,45 +1330,29 @@ def candidate_matches_allowed_name(name, url, source=None):
     if not category_ok and not arcteryx_outerwear:
         return False
 
-    # 男装来源页已经限定为 men's；若商品标题/URL明确出现女装，排除。
-    if any(x in text for x in ('women', 'womens', "women's", 'female')):
-        return False
-
     return True
 
-
 def discover_products(source):
-    """发现当前官网符合条件的商品链接；不设置发现数量上限。"""
-    data = firecrawl_scrape(source["url"], formats=["markdown", "links"])
+    data = firecrawl_scrape(source["url"], formats=["markdown"])
     if not data:
         print("没有获得发现页数据")
         return []
-
     links = extract_links_from_discovery(data, source["url"])
-    products = []
-    seen_urls = set()
-
+    if isinstance(data, dict):
+        for key in ("markdown", "html", "rawHtml"):
+            links.extend(_extract_candidate_urls_from_text(data.get(key), source))
+    products, seen_urls = [], set()
     for raw_url in links:
         url = _clean_discovery_url(raw_url)
+        if not url or url in seen_urls:
+            continue
         if not _recognize_product_url(source, url):
             continue
-        if url in seen_urls:
-            continue
-
         seen_urls.add(url)
-        slug = urlparse(url).path.rstrip('/').split('/')[-1]
-        name = re.sub(r'\.(?:html?)$', '', slug, flags=re.I)
-        name = re.sub(r'[-_]+', ' ', name).strip()
-
+        name = _build_name_from_url(url)
         if not candidate_matches_allowed_name(name, url, source):
             continue
-
-        products.append({
-            "name": name,
-            "url": url,
-            "source": source["name"],
-        })
-
+        products.append({"name": name, "url": url, "source": source["name"]})
     return products
 
 
@@ -1670,7 +1670,34 @@ def check_product(product, history):
 # 主程序
 # ============================================================
 
+def reset_history_once():
+    """部署新版监控后，仅第一次运行清空旧价格和旧自动发现商品库。"""
+    if RESET_MARKER_FILE.exists():
+        return
+
+    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+    reset_files = [DATA_FILE, DISCOVERED_FILE]
+    for target in reset_files:
+        try:
+            if target.exists():
+                target.unlink()
+                print(f"🧹 已删除旧记录：{target}")
+        except Exception as exc:
+            print(f"删除旧记录失败 {target}: {exc}")
+
+    try:
+        RESET_MARKER_FILE.write_text(
+            "本版本第一次运行已完成历史记录重置。\n",
+            encoding="utf-8",
+        )
+        print("✅ 历史记录已重置：从本次运行开始重新建立价格基线")
+    except Exception as exc:
+        print("创建历史重置标记失败：", exc)
+
+
 def main():
+    reset_history_once()
+
     print("=" * 60)
     print("Outdoor Price Monitor")
     print("=" * 60)
