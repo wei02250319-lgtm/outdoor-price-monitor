@@ -31,7 +31,7 @@ FIXED_ROTATION = 5
 FIRECRAWL_DELAY = 10
 
 # 自动发现
-DISCOVERY_LIMIT = 5
+DISCOVERY_LIMIT = None
 
 DATA_FILE = Path("data/prices.json")
 
@@ -1064,132 +1064,159 @@ def get_dewu_reference_price(product_name):
 # ============================================================
 # 自动发现商品
 # ============================================================
-# 单个商品构建
-# ============================================================
 
-# 自动发现商品
-# ============================================================
-
-def extract_links_from_discovery(data, base_url=""):
-    """从 Firecrawl 返回的数据中提取链接，并把相对链接补成绝对 URL。"""
+def extract_links_from_discovery(data, source_url=""):
     links = []
 
     def add_link(value):
         if not isinstance(value, str):
             return
+
         value = html.unescape(value).strip()
+
         if not value:
             return
-        # 去掉 markdown / HTML 常见包裹
-        value = value.strip('<>')
-        if value.startswith('//'):
-            value = 'https:' + value
-        elif base_url and not value.startswith(('http://', 'https://')):
-            value = urljoin(base_url, value)
-        if not value.startswith(('http://', 'https://')):
+
+        if value.startswith("/"):
+            value = urljoin(source_url, value)
+        elif value.startswith("./"):
+            value = urljoin(source_url, value)
+
+        if not value.startswith("http"):
             return
-        value = value.split('#', 1)[0]
+
+        value = value.rstrip(",.;:)]}>")
+
         if value not in links:
             links.append(value)
 
     for _, key, value in walk_data(data):
         nk = normalize_key(key)
-        if nk in {"url", "link", "producturl", "product_url", "href"}:
+
+        if nk in {
+            "url",
+            "link",
+            "producturl",
+            "product_url",
+            "href",
+        }:
             add_link(value)
 
     if isinstance(data, dict):
         for key in ["markdown", "html", "rawHtml"]:
             text = data.get(key)
+
             if not isinstance(text, str):
                 continue
-            # 绝对 URL
-            for url in re.findall(r'https?://[^\s)"\'<>]+', text):
-                add_link(url)
-            # HTML href / markdown link 中的相对 URL
-            for url in re.findall(r'(?:href|src)=["\']([^"\']+)', text, flags=re.I):
-                add_link(url)
-            for url in re.findall(r'\]\(([^)\s]+)', text):
-                add_link(url)
+
+            # Markdown / HTML href
+            found_links = re.findall(
+                r'(?:href=["\']|\]\()([^"\'\s)<>]+)',
+                text,
+                flags=re.I,
+            )
+
+            for value in found_links:
+                add_link(value)
+
+            # 纯 URL
+            found_urls = re.findall(
+                r'https?://[^\s)"\'<>]+',
+                text,
+            )
+
+            for value in found_urls:
+                add_link(value)
 
     return links
 
 
-def _source_host(source):
-    return urlparse(source["url"]).netloc.lower()
+def discovery_url_looks_like_product(url, source):
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    path = parsed.path.lower().rstrip("/")
+    query = parsed.query.lower()
 
-
-def _clean_discovery_url(url):
-    return url.split('?', 1)[0].rstrip('/')
-
-
-def _is_bad_common_url(path):
-    low = path.lower()
-    bad = (
-        '/cart', '/account', '/login', '/stores', '/search', '/help',
-        '/about', '/shipping', '/returns', '/privacy', '/terms',
-        '/contact', '/careers', '/blog', '/events', '/community',
-        '/membership', '/gift', '/wishlist', '/filter', '/sort',
-        '/store-locator', '/progress-report', '/worth-it', '/stories/',
-        '/impact/', '/our-footprint', '/responsible-business',
-        '/collections/', '/category/', '/fair-trade', '/pfc-free',
-    )
-    return any(x in low for x in bad)
-
-
-def _is_size_or_file(path):
-    low = path.lower()
-    if low.endswith((
-        '.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg',
-        '.ico', '.pdf', '.mp4', '.webm', '.zip'
-    )):
-        return True
-    last = low.rstrip('/').split('/')[-1]
-    return last in {
-        'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl',
-        '3xl', '4xl', 'one-size', 'one_size'
-    }
-
-
-def _recognize_product_url(source, url):
-    """按不同官网自己的商品 URL 规则识别，避免把分类页/图片页当商品。"""
-    host = _source_host(source)
-    clean = _clean_discovery_url(url)
-    parsed = urlparse(clean)
-    path = parsed.path
-    low_path = path.lower()
-
-    if _is_bad_common_url(low_path) or _is_size_or_file(low_path):
+    if not path:
         return False
 
-    # REI：商品详情统一使用 /product/<ID>/，ID 可能是数字或字母数字。
-    if 'rei.com' in host:
-        return bool(re.search(r'/product/[a-z0-9]+(?:/[^/]*)?$', low_path, re.I))
+    clean_url = url.lower().split("?", 1)[0]
 
-    # The North Face：分类是 /c/，商品详情是 /p/。
-    if 'thenorthface.com' in host:
-        if not re.search(r'^/en-(?:us|ca)/p/', low_path, re.I):
-            return False
-        # TNF 商品页通常带 NF0... 商品款号；同时允许少数官网命名变化。
-        return bool(re.search(r'nf0[a-z0-9]{4,}', low_path, re.I))
+    if clean_url.endswith(EXCLUDED_EXTENSIONS):
+        return False
 
-    # Patagonia：shop/mens 是列表页；商品详情是 /product/...，通常带 .html。
-    if 'patagonia.com' in host:
-        if not low_path.startswith('/product/'):
-            return False
-        if low_path.rstrip('/') == '/product':
-            return False
-        return len(low_path.split('/')) >= 3
+    if any(word in url.lower() for word in DISCOVERY_EXCLUDED_WORDS):
+        return False
 
-    # Arc'teryx：商品页主要位于 /shop/ 下，排除明显分类页；Outlet 同样处理。
-    if 'arcteryx.com' in host:
-        if '/shop/' not in low_path:
+    if any(
+        item in query
+        for item in [
+            "filter=",
+            "sort=",
+            "size=",
+            "color=",
+            "category=",
+        ]
+    ):
+        return False
+
+    parts = [x for x in path.split("/") if x]
+    if not parts:
+        return False
+
+    last_part = parts[-1]
+
+    if last_part in FILTER_PATH_PARTS:
+        return False
+
+    exact_bad_paths = {
+        "/shop/mens",
+        "/shop/men",
+        "/c/mens",
+        "/c/men",
+        "/mens",
+        "/men",
+    }
+
+    if path in exact_bad_paths:
+        return False
+
+    # REI 商品页必须有 /product/ 路径。
+    if "rei.com" in host:
+        return "/product/" in path
+
+    # Patagonia 商品页通常是 /shop/mens/<product-slug>。
+    if "patagonia.com" in host:
+        if path.startswith("/shop/mens"):
+            return len(parts) >= 3 and len(last_part) >= 8
+        return False
+
+    if "patagonia.ca" in host:
+        if path.startswith("/shop/mens"):
+            return len(parts) >= 3 and len(last_part) >= 8
+        return False
+
+    # Arc'teryx 官方/Outlet。
+    if "arcteryx.com" in host:
+        if path.endswith(("/mens", "/men")):
             return False
-        parts = [x for x in low_path.split('/') if x]
-        if len(parts) < 4:
+        if any(
+            marker in path
+            for marker in ["/product/", "/products/", "/shop/"]
+        ):
+            return len(last_part) >= 8
+        return len(last_part) >= 12
+
+    # The North Face 分类页排除，具体商品页保留。
+    if "thenorthface.com" in host:
+        if path.endswith(("/en-us/c/mens", "/en-ca/c/men")):
             return False
-        if parts[-1] in {'mens', 'men', 'womens', 'women', 'new', 'sale'}:
-            return False
-        return True
+        if any(
+            marker in path
+            for marker in ["/product/", "/products/", "/p/"]
+        ):
+            return True
+        return len(last_part) >= 12
 
     return False
 
@@ -1201,40 +1228,75 @@ def discover_products(source):
     )
 
     if not data:
-        print("没有获得发现页数据")
         return []
 
-    links = extract_links_from_discovery(data, source["url"])
+    links = extract_links_from_discovery(
+        data,
+        source["url"],
+    )
+
     products = []
     seen_urls = set()
 
-    for raw_url in links:
-        url = _clean_discovery_url(raw_url)
-        if not _recognize_product_url(source, url):
+    for url in links:
+        if not discovery_url_looks_like_product(
+            url,
+            source,
+        ):
             continue
+
+        low = url.lower()
+        url_text = normalize_name(low)
+
+        # URL 明显属于非目标类别时直接过滤。
+        if any(
+            normalize_name(word) in url_text
+            for word in EXCLUDED_CATEGORIES
+        ):
+            continue
+
         if url in seen_urls:
             continue
 
         seen_urls.add(url)
-        name = urlparse(url).path.rstrip('/').split('/')[-1]
-        name = re.sub(r'\.(?:html?)$', '', name, flags=re.I)
-        name = name.replace('-', ' ').replace('_', ' ').strip()
+
+        name = (
+            url.rstrip("/")
+            .split("/")[-1]
+            .split("?", 1)[0]
+        )
+
+        name = (
+            name
+            .replace("-", " ")
+            .replace("_", " ")
+            .strip()
+        )
+
         if not name:
             continue
 
-        products.append({
+        item = {
             "name": name,
             "url": url,
             "source": source["name"],
-        })
+            "discovered": True,
+        }
 
-        if len(products) >= DISCOVERY_LIMIT:
+        products.append(item)
+
+        if (
+            DISCOVERY_LIMIT is not None
+            and len(products) >= DISCOVERY_LIMIT
+        ):
             break
 
     return products
 
 
-
+# ============================================================
+# 单个商品构建
+# ============================================================
 
 def build_current_product(product, data):
     name = extract_product_title(
@@ -1416,7 +1478,6 @@ def build_telegram_message(product, previous):
 
 
 # ============================================================
-
 # 商品检查
 # ============================================================
 
@@ -1440,6 +1501,18 @@ def check_product(product, history):
     if current_product is None:
         print("没有获取到有效价格")
         return
+
+    # 自动发现商品必须再次按真实商品标题过滤，防止分类/筛选页漏网。
+    if product.get("discovered"):
+        real_name = current_product.get("name", "")
+
+        if not product_matches_allowed_brand(real_name):
+            print("自动发现商品品牌不符合条件，跳过：", real_name)
+            return
+
+        if not product_matches_allowed_category(real_name):
+            print("自动发现商品类别不符合条件，跳过：", real_name)
+            return
 
     current_price = current_product["current_price"]
 
