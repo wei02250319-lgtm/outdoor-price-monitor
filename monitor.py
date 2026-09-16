@@ -98,7 +98,7 @@ DISCOVERY_SOURCES = [
     },
     {
         "name": "Arc'teryx Canada",
-        "url": "https://arcteryx.com/ca/en/c/mens/p",
+        "url": "https://arcteryx.com/ca/en/c/mens",
     },
     {
         "name": "Patagonia US",
@@ -1682,20 +1682,48 @@ def _build_name_from_url(url):
     return re.sub(r'\s+',' ',slug).strip().title()
 
 
-def discover_products(source):
-    data = firecrawl_scrape(source["url"], formats=["markdown"])
-    if not data:
-        print("没有获得发现页数据")
-        return []
-    links = extract_links_from_discovery(data, source["url"])
-    if isinstance(data, dict):
-        for key in ("markdown", "html", "rawHtml"):
-            links.extend(_extract_candidate_urls_from_text(data.get(key), source))
+def _next_rei_discovery_urls(source, existing_products):
+    """REI 商品页很多，按已有商品数量轮换分页，避免每次只抓第一页。"""
+    if _source_kind(source) != "rei":
+        return [source["url"]]
+
+    existing_rei = [
+        item for item in existing_products
+        if isinstance(item, dict) and _source_host(source) in urlparse(item.get("url", "")).netloc.lower()
+    ]
+    # 当前 REI 男装 deals 页支持 ?page=N；每页实际会返回一批商品。
+    # 以已有商品量估算下一批页面，连续跑任务时会自然向后推进。
+    base_page = max(1, (len(existing_rei) // 8) + 1)
+    return [
+        f"{source['url']}?page={base_page}",
+        f"{source['url']}?page={base_page + 1}",
+        f"{source['url']}?page={base_page + 2}",
+    ]
+
+
+def discover_products(source, existing_products=None):
+    existing_products = existing_products or []
+    discovery_urls = _next_rei_discovery_urls(source, existing_products)
+
+    all_links = []
+    for page_index, discovery_url in enumerate(discovery_urls, start=1):
+        if len(discovery_urls) > 1:
+            print(f"  发现页 {page_index}/{len(discovery_urls)}：{discovery_url}")
+        data = firecrawl_scrape(discovery_url, formats=["markdown"])
+        if not data:
+            continue
+        all_links.extend(extract_links_from_discovery(data, discovery_url))
+        if isinstance(data, dict):
+            for key in ("markdown", "html", "rawHtml"):
+                all_links.extend(_extract_candidate_urls_from_text(data.get(key), source))
+        if page_index < len(discovery_urls):
+            print(f"  等待 {FIRECRAWL_DELAY} 秒，避免 Firecrawl 限流...")
+            time.sleep(FIRECRAWL_DELAY)
 
     # 去重后再识别，避免同一商品被多个字段重复抓取。
     unique_links = []
     link_seen = set()
-    for raw_url in links:
+    for raw_url in all_links:
         clean_url = _clean_discovery_url(raw_url)
         if clean_url and clean_url not in EXCLUDED_PRODUCT_URLS and clean_url not in link_seen:
             link_seen.add(clean_url)
@@ -1751,14 +1779,19 @@ def merge_discovered_products(existing, discovered):
     return merged
 
 
-def choose_discovered_for_check(discovered_products, limit=DISCOVERED_CHECKS_PER_RUN):
-    """轮换检查历史发现商品；固定商品不占这里的名额。"""
+def choose_discovered_for_check(discovered_products, limit=DISCOVERED_CHECKS_PER_RUN, fixed_urls=None):
+    """轮换检查自动发现商品；固定商品先剔除，不占自动发现名额。"""
     if not discovered_products or limit <= 0:
         return []
 
-    # 优先最久没有检查的商品。
+    fixed_urls = fixed_urls or set()
+    candidates = [
+        item for item in discovered_products
+        if canonical_url(item.get("url", "")) not in fixed_urls
+    ]
+
     ordered = sorted(
-        discovered_products,
+        candidates,
         key=lambda x: int(x.get("last_checked", 0) or 0),
     )
 
@@ -2047,7 +2080,7 @@ def main():
     for source_index, source in enumerate(DISCOVERY_SOURCES, start=1):
         print(f"自动发现 {source_index}/{len(DISCOVERY_SOURCES)}：{source['name']}")
         try:
-            discovered_now = discover_products(source)
+            discovered_now = discover_products(source, discovered_pool)
             before_count = len(discovered_pool)
             discovered_pool = merge_discovered_products(
                 discovered_pool,
@@ -2056,7 +2089,7 @@ def main():
             added_now = max(0, len(discovered_pool) - before_count)
             total_new += added_now
             success_sources += 1
-            print(f"  发现 {len(discovered_now)} 个，新增 {added_now} 个")
+            print(f"  发现 {len(discovered_now)} 个商品链接，新增 {added_now} 个")
         except Exception as exc:
             print(f"  自动发现异常：{exc}")
 
@@ -2081,12 +2114,10 @@ def main():
     selected_discovered = choose_discovered_for_check(
         discovered_pool,
         DISCOVERED_CHECKS_PER_RUN,
+        fixed_urls=fixed_urls,
     )
 
-    for item in selected_discovered:
-        if canonical_url(item.get("url", "")) in fixed_urls:
-            continue
-        products.append(item)
+    products.extend(selected_discovered)
 
     print(
         f"本次实际检查商品：{len(products)} "
