@@ -359,7 +359,7 @@
     "cny_price": 1342.3,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789539245
+    "updated_at": 1789541108
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -372,7 +372,7 @@
     "cny_price": 696.86,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789539256
+    "updated_at": 1789541119
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -399,7 +399,7 @@
     "cny_price": 2012.31,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789528334
+    "updated_at": 1789541141
   },
   "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
     "name": "Delta Jacket - Men's",
@@ -409,11 +409,17 @@
     "currency": ""
   },
   "https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens": {
-    "name": "Rainier Rain Jacket - Men's",
+    "name": "REI Co-op Rainier Rain Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens",
     "source": "REI",
-    "current_min": 29.83,
-    "max_discount": 0.0,
-    "currency": ""
+    "currency": "USD",
+    "current_price": 29.83,
+    "original_price": 99.95,
+    "discount": 70.2,
+    "cny_price": 200.2,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789541152
   },
   "https://arcteryx.com/shop/mens/beta-ar-jacket-1062": {
     "name": "Beta AR Jacket Men's",
@@ -460,7 +466,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789539267
+    "updated_at": 1789541130
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
     "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
@@ -473,7 +479,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789539224
+    "updated_at": 1789541085
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -486,7 +492,7 @@
     "cny_price": 1321.7,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789539235
+    "updated_at": 1789541096
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
@@ -631,5 +637,18 @@
     "dewu_price": null,
     "variants": [],
     "updated_at": 1789536148
+  },
+  "https://www.rei.com/product/236065/rei-co-op-sahara-convertible-pants-mens": {
+    "name": "REI Co-op Sahara Convertible Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/236065/rei-co-op-sahara-convertible-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 66.93,
+    "original_price": 89.95,
+    "discount": 25.6,
+    "cny_price": 449.2,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789541163
   }
 }
