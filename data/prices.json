@@ -359,7 +359,7 @@
     "cny_price": 1341.42,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789574569
+    "updated_at": 1789575273
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -372,7 +372,7 @@
     "cny_price": 696.4,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789574580
+    "updated_at": 1789575284
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -396,10 +396,10 @@
     "current_price": 299.83,
     "original_price": 500.0,
     "discount": 40.0,
-    "cny_price": 2012.31,
+    "cny_price": 2010.99,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789566139
+    "updated_at": 1789575306
   },
   "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
     "name": "Delta Jacket - Men's",
@@ -416,10 +416,10 @@
     "current_price": 29.83,
     "original_price": 99.95,
     "discount": 70.2,
-    "cny_price": 200.2,
+    "cny_price": 200.07,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789566150
+    "updated_at": 1789575326
   },
   "https://arcteryx.com/shop/mens/beta-ar-jacket-1062": {
     "name": "Beta AR Jacket Men's",
@@ -466,7 +466,7 @@
     "cny_price": 1340.28,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789574591
+    "updated_at": 1789575295
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
     "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
@@ -479,7 +479,7 @@
     "cny_price": 1340.28,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789574548
+    "updated_at": 1789575251
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -492,7 +492,7 @@
     "cny_price": 1320.83,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789574559
+    "updated_at": 1789575262
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
@@ -646,9 +646,22 @@
     "current_price": 66.93,
     "original_price": 89.95,
     "discount": 25.6,
-    "cny_price": 449.2,
+    "cny_price": 448.91,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789566161
+    "updated_at": 1789575337
+  },
+  "https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens": {
+    "name": "KUHL Renegade Recon Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/228168/kuhl-renegade-recon-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 73.93,
+    "original_price": 99.0,
+    "discount": 25.3,
+    "cny_price": 495.86,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789575348
   }
 }
