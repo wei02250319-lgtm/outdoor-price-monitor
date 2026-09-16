@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789581221
+    "updated_at": 1789581790
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789581231
+    "updated_at": 1789581800
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789581242
+    "updated_at": 1789581811
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789581253
+    "updated_at": 1789581821
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789581264
+    "updated_at": 1789581832
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -284,5 +284,70 @@
     "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000010697-Cronin-AR-Pant-Black-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
     "variants": [],
     "updated_at": 1789581038
+  },
+  "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-ranch-jacket/27805.html": {
+    "name": "Patagonia Men's Iron Forge® Canvas Ranch Jacket",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-ranch-jacket/27805.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 49.75,
+    "original_price": 49.75,
+    "discount": 0.0,
+    "cny_price": 333.68,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwadf181a5/images/hi-res/27805_DKAS.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789581862
+  },
+  "https://www.patagonia.com/product/mens-isthmus-deck-jacket/27025.html": {
+    "name": "Patagonia Men's Isthmus Deck Jacket",
+    "url": "https://www.patagonia.com/product/mens-isthmus-deck-jacket/27025.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 49.75,
+    "original_price": 49.75,
+    "discount": 0.0,
+    "cny_price": 333.68,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3825e966/images/hi-res/27025_NENA.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789581875
+  },
+  "https://www.patagonia.com/product/mens-wind-shield-windbreaker-jacket/24093.html": {
+    "name": "Patagonia Men's Wind Shield Jacket - Windbreaker Jacket",
+    "url": "https://www.patagonia.com/product/mens-wind-shield-windbreaker-jacket/24093.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 49.75,
+    "original_price": 49.75,
+    "discount": 0.0,
+    "cny_price": 333.68,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbcb523a5/images/hi-res/24093_CIBN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789581888
+  },
+  "https://www.patagonia.com/product/mens-classic-retro-x-fleece-jacket/23057.html": {
+    "name": "Patagonia Men's Classic Retro-X® Fleece Jacket",
+    "url": "https://www.patagonia.com/product/mens-classic-retro-x-fleece-jacket/23057.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 64.75,
+    "original_price": 64.75,
+    "discount": 0.0,
+    "cny_price": 434.28,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw7c619750/images/hi-res/23057_DNLT.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789581916
+  },
+  "https://www.patagonia.ca/product/mens-point-reyes-cotton-canvas-gi-pants/22145.html": {
+    "name": "Patagonia Men's Point Reyes Canvas Gi Pants",
+    "url": "https://www.patagonia.ca/product/mens-point-reyes-cotton-canvas-gi-pants/22145.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 22.0,
+    "original_price": 22.0,
+    "discount": 0.0,
+    "cny_price": 105.86,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwf0695a66/images/hi-res/22145_WSTO.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789581939
   }
 }
