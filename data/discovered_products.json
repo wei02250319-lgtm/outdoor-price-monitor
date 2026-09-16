@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789593458,
+    "last_checked": 1789595167,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789593414,
+    "last_checked": 1789595123,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789593425,
+    "last_checked": 1789595134,
     "invalid_count": 0
   },
   {
@@ -465,21 +465,21 @@
     "name": "Patagonia Nano Puff Insulated Jacket )",
     "url": "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens)",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789595185,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Sima Hoody )",
     "url": "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens)",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789595201,
     "invalid_count": 0
   },
   {
     "name": "Patagonia Powder Town Pants )",
     "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens)",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789595217,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789593447,
+    "last_checked": 1789595156,
     "invalid_count": 0
   },
   {
@@ -2515,6 +2515,153 @@
   {
     "name": "30336",
     "url": "https://www.patagonia.ca/product/mens-powslayer-ski-snowboard-pants/30336.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Stormstride Pants",
+    "url": "https://www.rei.com/product/255544/patagonia-stormstride-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Bib Pants",
+    "url": "https://www.rei.com/product/236298/arcteryx-sabre-bib-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Rush Bib Pants",
+    "url": "https://www.rei.com/product/251488/arcteryx-rush-bib-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Stormstride Pants )",
+    "url": "https://www.rei.com/product/255544/patagonia-stormstride-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Bib Pants )",
+    "url": "https://www.rei.com/product/236298/arcteryx-sabre-bib-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Rush Bib Pants )",
+    "url": "https://www.rei.com/product/251488/arcteryx-rush-bib-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face 1996 Retro Nuptse Down Jacket",
+    "url": "https://www.rei.com/product/236708/the-north-face-1996-retro-nuptse-down-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Thermoball Snow Triclimate 3 In 1 Jacket",
+    "url": "https://www.rei.com/product/C11695/the-north-face-thermoball-snow-triclimate-3-in-1-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face 1996 Retro Nuptse Down Jacket )",
+    "url": "https://www.rei.com/product/236708/the-north-face-1996-retro-nuptse-down-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Thermoball Snow Triclimate 3 In 1 Jacket )",
+    "url": "https://www.rei.com/product/C11695/the-north-face-thermoball-snow-triclimate-3-in-1-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21880",
+    "url": "https://www.patagonia.ca/product/mens-lightweight-all-wear-gi-pants/21880.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82093",
+    "url": "https://www.patagonia.ca/product/mens-sandy-cay-wading-pants/82093.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55780",
+    "url": "https://www.patagonia.ca/product/mens-all-seasons-hemp-canvas-double-work-knee-pants-short/55780.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "84066",
+    "url": "https://www.patagonia.ca/product/mens-micro-puff-insulated-jacket/84066.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55785",
+    "url": "https://www.patagonia.ca/product/mens-all-seasons-hemp-canvas-double-work-knee-pants-regular/55785.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31745",
+    "url": "https://www.patagonia.ca/product/mens-storm-shift-ski-snowboard-jacket/31745.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "27025",
+    "url": "https://www.patagonia.ca/product/mens-isthmus-deck-jacket/27025.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31196",
+    "url": "https://www.patagonia.ca/product/mens-insulated-powder-town-ski-snowboard-jacket/31196.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26171",
+    "url": "https://www.patagonia.ca/product/mens-micro-d-fleece-jacket/26171.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "30306",
+    "url": "https://www.patagonia.ca/product/mens-powslayer-ski-snowboard-jacket/30306.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21475",
+    "url": "https://www.patagonia.ca/product/mens-daily-sweatpants/21475.html",
     "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
