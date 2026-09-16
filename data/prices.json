@@ -359,7 +359,7 @@
     "cny_price": 1342.3,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789527479
+    "updated_at": 1789527668
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -372,7 +372,7 @@
     "cny_price": 696.86,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789527490
+    "updated_at": 1789527679
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -389,11 +389,17 @@
     "currency": ""
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
-    "name": "Beta SL Jacket - Men's",
+    "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens",
     "source": "REI",
-    "current_min": 299.83,
-    "max_discount": 0.0,
-    "currency": ""
+    "currency": "USD",
+    "current_price": 299.83,
+    "original_price": 500.0,
+    "discount": 40.0,
+    "cny_price": 2012.31,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789527770
   },
   "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
     "name": "Delta Jacket - Men's",
@@ -448,7 +454,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789527500
+    "updated_at": 1789527690
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
     "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
@@ -461,7 +467,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789527457
+    "updated_at": 1789527646
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -474,7 +480,7 @@
     "cny_price": 1321.7,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789527468
+    "updated_at": 1789527657
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
