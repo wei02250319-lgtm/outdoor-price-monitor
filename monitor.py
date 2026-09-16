@@ -34,7 +34,6 @@ FIRECRAWL_DELAY = 10
 
 DATA_FILE = Path("data/prices.json")
 DISCOVERED_FILE = Path("data/discovered_products.json")
-RESET_MARKER_FILE = Path("data/.history_reset_v1_done")
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -74,6 +73,14 @@ FIXED_PRODUCTS = [
         "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     },
 ]
+
+
+# 已明确取消的商品：即使旧商品库中还残留，也不再监控。
+EXCLUDED_PRODUCT_URLS = {
+    "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens",
+    "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens",
+    "https://www.rei.com/product/240424/patagonia-r2-techface-hoody-mens",
+}
 
 
 # ============================================================
@@ -804,6 +811,72 @@ def product_matches_allowed_category(name):
 
 
 # ============================================================
+# 商品图片
+# ============================================================
+
+def extract_product_image(data, base_url=""):
+    """从 Firecrawl product/HTML/Markdown 中提取一张可直接给 Telegram 使用的商品图。"""
+    candidates = []
+
+    def add(value):
+        if not isinstance(value, str):
+            return
+        value = html.unescape(value).strip().strip('\"<>')
+        if not value:
+            return
+        if value.startswith('//'):
+            value = 'https:' + value
+        elif base_url and not value.startswith(('http://', 'https://')):
+            value = urljoin(base_url, value)
+        if not value.startswith(('http://', 'https://')):
+            return
+        if value not in candidates:
+            candidates.append(value)
+
+    preferred = {
+        'image', 'imageurl', 'image_url', 'primaryimage', 'primary_image',
+        'heroimage', 'hero_image', 'mainimage', 'main_image',
+        'thumbnail', 'thumbnailurl', 'thumbnail_url', 'contenturl', 'content_url',
+    }
+
+    for _, key, value in walk_data(data):
+        nk = normalize_key(key)
+        if nk not in preferred:
+            continue
+        if isinstance(value, str):
+            add(value)
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, str):
+                    add(item)
+                elif isinstance(item, dict):
+                    for k2, v2 in item.items():
+                        if normalize_key(k2) in preferred and isinstance(v2, str):
+                            add(v2)
+
+    texts = []
+    if isinstance(data, dict):
+        for key in ('markdown', 'html', 'rawHtml'):
+            if isinstance(data.get(key), str):
+                texts.append(data[key])
+    combined = '\n'.join(texts)
+
+    for value in re.findall(r'!\[[^\]]*\]\(\s*<?([^)>\s]+)', combined, re.I):
+        add(value)
+    for value in re.findall(r'<meta[^>]+(?:property|name)=[\"\'](?:og:image|twitter:image)[\"\'][^>]+content=[\"\']([^\"\']+)', combined, re.I):
+        add(value)
+    for value in re.findall(r'<img[^>]+(?:src|data-src|data-lazy-src)=[\"\']([^\"\']+)', combined, re.I):
+        add(value)
+
+    bad_words = ('logo', 'icon', 'sprite', 'avatar', '.svg', '.ico', '.css', '.js')
+    for value in candidates:
+        low = value.lower()
+        if not any(word in low for word in bad_words):
+            return value
+    return candidates[0] if candidates else None
+
+
+# ============================================================
 # 颜色 / 尺码 / 库存
 # ============================================================
 
@@ -1154,7 +1227,44 @@ def extract_variant_info(data):
         ):
             parse_json_string(html.unescape(script))
 
-    # 3. 去重 + 清理
+    # 3. 当官网只给出页面文本、没有结构化 variant 时，恢复基本颜色/尺码。
+    # 库存仍然只在页面明确给出时填写，不猜库存数量。
+    if isinstance(data, dict):
+        text_parts = []
+        for key in ("markdown", "html", "rawHtml"):
+            value = data.get(key)
+            if isinstance(value, str):
+                text_parts.append(value)
+        fallback_text = "\n".join(text_parts)
+    else:
+        fallback_text = ""
+
+    if not records and fallback_text:
+        color_matches = re.findall(
+            r"(?:Colour|Color|颜色)\s*[:：-]\s*([^\n\r<|]{1,80})",
+            fallback_text,
+            flags=re.I,
+        )
+        fallback_color = clean_text(color_matches[0]) if color_matches else ""
+
+        fallback_sizes = []
+        for match in re.findall(
+            r"(?<![A-Za-z])(XXXL|XXL|XL|XS|S|M|L|3XL|4XL)(?![A-Za-z])",
+            fallback_text,
+            flags=re.I,
+        ):
+            size = match.upper()
+            if size not in fallback_sizes:
+                fallback_sizes.append(size)
+
+        for size in fallback_sizes:
+            records.append({
+                "color": fallback_color,
+                "size": size,
+                "inventory": None,
+            })
+
+    # 4. 去重 + 清理
     cleaned = []
     seen = set()
 
@@ -1211,185 +1321,50 @@ def format_variant_text(variants):
         return "暂无"
 
     colors = {}
-
     size_order = {
-        "xxxs": 0,
-        "xxs": 1,
-        "xs": 2,
-        "s": 3,
-        "m": 4,
-        "l": 5,
-        "xl": 6,
-        "xxl": 7,
-        "xxxl": 8,
-        "3xl": 9,
-        "4xl": 10,
-        "os": 11,
-        "onesize": 12,
-        "one size": 12,
+        "xxxs": 0, "xxs": 1, "xs": 2, "s": 3, "m": 4, "l": 5,
+        "xl": 6, "xxl": 7, "xxxl": 8, "3xl": 9, "4xl": 10,
+        "os": 11, "onesize": 12, "one size": 12,
     }
 
     for item in variants:
         color = clean_text(item.get("color", "")) or "默认颜色"
         size = clean_text(item.get("size", "")) or "尺码未知"
         inventory = item.get("inventory")
+        colors.setdefault(color, {})[size] = inventory
 
-        if color not in colors:
-            colors[color] = {}
-
-        # 同颜色同尺码只保留一次。
-        colors[color][size] = inventory
-
-    def sort_size(item):
-        size, _ = item
-        s = size.strip().lower()
-        if s in size_order:
-            return (0, size_order[s], s)
-
-        m = re.fullmatch(r"(\d{2})(?:x(\d{2}))?", s)
+    def sort_size(pair):
+        size, _ = pair
+        sl = size.strip().lower()
+        if sl in size_order:
+            return (0, size_order[sl], sl)
+        m = re.fullmatch(r"(\d{2})(?:x(\d{2}))?", sl)
         if m:
             return (1, int(m.group(1)), int(m.group(2) or 0))
+        return (2, sl)
 
-        return (2, s)
+    def stock_text(value):
+        if isinstance(value, bool):
+            return "有货" if value else "缺货"
+        if isinstance(value, (int, float)):
+            return f"库存{int(value)}" if value > 0 else "缺货"
+        text = clean_text(value)
+        if not text:
+            return "库存未知"
+        low = text.lower()
+        if any(x in low for x in ("out of stock", "sold out", "unavailable", "false", "缺货")):
+            return "缺货"
+        if any(x in low for x in ("in stock", "available", "true", "有货")):
+            return "有货"
+        return text
 
     lines = []
-
-    for color, sizes_map in colors.items():
-        size_parts = []
-
-        for size, inventory in sorted(sizes_map.items(), key=sort_size):
-            if inventory is None:
-                stock_text = "库存未知"
-            elif inventory > 0:
-                stock_text = f"库存{inventory}"
-            else:
-                stock_text = "缺货"
-
-            size_parts.append(f"{size}({stock_text})")
-
-        lines.append(f"• {color}: " + ", ".join(size_parts))
-
+    for color, sizes in colors.items():
+        parts = []
+        for size, inventory in sorted(sizes.items(), key=sort_size):
+            parts.append(f"{size}({stock_text(inventory)})")
+        lines.append(f"• {color}: " + ", ".join(parts))
     return "\n".join(lines)
-
-
-# ============================================================
-# 得物参考价
-# ============================================================
-
-def get_dewu_reference_price(product_name):
-    """
-    得物参考价规则：
-    1. 优先 L 码
-    2. L 不可用 -> 最低可靠价格
-    3. 无可靠数据 -> None
-
-    注意：
-    得物公开接口并非稳定官方开放接口，因此这里采用尽力获取。
-    不会伪造价格。
-    """
-
-    try:
-        url = "https://app.dewu.com/api/v1/h5/search/fire/search/list"
-
-        params = {
-            "keyword": product_name,
-            "limit": 20,
-            "page": 1,
-        }
-
-        response = SESSION.get(
-            url,
-            params=params,
-            timeout=15,
-            headers={
-                "User-Agent": SESSION.headers["User-Agent"],
-                "Accept": "application/json",
-            },
-        )
-
-        if response.status_code != 200:
-            return None
-
-        data = response.json()
-
-        prices_l = []
-        prices_all = []
-
-        def walk_dewu(value):
-            if isinstance(value, dict):
-                for key, item in value.items():
-                    yield key, item
-                    yield from walk_dewu(item)
-
-            elif isinstance(value, list):
-                for item in value:
-                    yield from walk_dewu(item)
-
-        for key, value in walk_dewu(data):
-            nk = normalize_key(key)
-
-            if nk in {
-                "minsaleprice",
-                "min_sale_price",
-                "saleprice",
-                "sale_price",
-                "price",
-            }:
-                price = safe_float(value)
-
-                if price is None:
-                    continue
-
-                # 得物接口通常以分为单位
-                if price > 10000:
-                    price = price / 100
-
-                if not (50 <= price <= 50000):
-                    continue
-
-                prices_all.append(price)
-
-        # 尝试直接从返回 JSON 中寻找 L 码附近的价格
-        raw_text = json.dumps(
-            data,
-            ensure_ascii=False,
-        )
-
-        l_matches = re.findall(
-            r'.{0,300}"(?:size|尺码)".{0,80}"L".{0,300}',
-            raw_text,
-            flags=re.I,
-        )
-
-        for block in l_matches:
-            found = re.findall(
-                r'(?:price|minSalePrice|salePrice)["\']?\s*[:=]\s*["\']?([0-9]+(?:\.[0-9]+)?)',
-                block,
-                flags=re.I,
-            )
-
-            for value in found:
-                price = safe_float(value)
-
-                if price is None:
-                    continue
-
-                if price > 10000:
-                    price /= 100
-
-                if 50 <= price <= 50000:
-                    prices_l.append(price)
-
-        if prices_l:
-            return round(min(prices_l), 2)
-
-        if prices_all:
-            return round(min(prices_all), 2)
-
-    except Exception:
-        pass
-
-    return None
 
 
 # ============================================================
@@ -1467,7 +1442,7 @@ def load_discovered_products():
             url = canonical_url(item.get("url", ""))
             source_name = clean_text(item.get("source", ""))
             name = clean_text(item.get("name", ""))
-            if not url or url in seen:
+            if not url or url in seen or url in EXCLUDED_PRODUCT_URLS:
                 continue
 
             source_obj = next((x for x in DISCOVERY_SOURCES if x.get("name") == source_name), None)
@@ -1606,7 +1581,7 @@ def _recognize_product_url(source, url):
     path = parsed.path
     low_path = path.lower()
 
-    if not clean or _is_bad_common_url(low_path) or _is_size_or_file(low_path):
+    if not clean or clean in EXCLUDED_PRODUCT_URLS or _is_bad_common_url(low_path) or _is_size_or_file(low_path):
         return False
 
     if 'rei.com' in host:
@@ -1722,7 +1697,7 @@ def discover_products(source):
     link_seen = set()
     for raw_url in links:
         clean_url = _clean_discovery_url(raw_url)
-        if clean_url and clean_url not in link_seen:
+        if clean_url and clean_url not in EXCLUDED_PRODUCT_URLS and clean_url not in link_seen:
             link_seen.add(clean_url)
             unique_links.append(clean_url)
 
@@ -1751,7 +1726,7 @@ def merge_discovered_products(existing, discovered):
             continue
 
         url = canonical_url(item.get("url", ""))
-        if not url:
+        if not url or url in EXCLUDED_PRODUCT_URLS:
             continue
 
         if url in index:
@@ -1836,8 +1811,9 @@ def build_current_product(product, data):
         currency,
     )
 
-    dewu_price = get_dewu_reference_price(
-        name
+    image_url = extract_product_image(
+        data,
+        product.get("url", ""),
     )
 
     return {
@@ -1849,7 +1825,7 @@ def build_current_product(product, data):
         "original_price": round(original_price, 2),
         "discount": round(discount, 1),
         "cny_price": cny_price,
-        "dewu_price": dewu_price,
+        "image_url": image_url,
         "variants": variants,
         "updated_at": int(time.time()),
     }
@@ -1859,39 +1835,44 @@ def build_current_product(product, data):
 # Telegram
 # ============================================================
 
-def send_telegram_message(message):
+def send_telegram_message(message, image_url=None):
     if not TELEGRAM_BOT_TOKEN:
         print("没有 Telegram Bot Token")
         return False
-
     if not TELEGRAM_CHAT_ID:
         print("没有 Telegram Chat ID")
         return False
 
-    url = (
-        f"https://api.telegram.org/bot"
-        f"{TELEGRAM_BOT_TOKEN}/sendMessage"
-    )
-
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": message,
-        "disable_web_page_preview": False,
-    }
+    base = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 
     try:
+        if image_url:
+            response = SESSION.post(
+                f"{base}/sendPhoto",
+                json={
+                    "chat_id": TELEGRAM_CHAT_ID,
+                    "photo": image_url,
+                    "caption": message[:1024],
+                },
+                timeout=30,
+            )
+            if response.status_code == 200:
+                return True
+            print("Telegram 图片推送失败，改发纯文字：", response.text[:500])
+
         response = SESSION.post(
-            url,
-            json=payload,
+            f"{base}/sendMessage",
+            json={
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": message,
+                "disable_web_page_preview": True,
+            },
             timeout=20,
         )
-
         if response.status_code != 200:
             print("Telegram 推送失败：", response.text[:500])
             return False
-
         return True
-
     except Exception as exc:
         print("Telegram 推送异常：", exc)
         return False
@@ -1899,76 +1880,47 @@ def send_telegram_message(message):
 
 def build_telegram_message(product, previous):
     name = product["name"]
-
     current = product["current_price"]
     original = product["original_price"]
     discount = product["discount"]
-
     currency = product.get("currency") or ""
+    source = product.get("source") or "官网"
 
     previous_price = None
-
     if previous:
-        previous_price = safe_float(
-            previous.get("current_price")
-        )
+        previous_price = safe_float(previous.get("current_price"))
 
     if previous_price is not None:
         drop = previous_price - current
-
         price_line = (
-            f"💰 价格：{previous_price:.2f} "
-            f"→ {current:.2f} {currency}\n"
+            f"💰 价格：{previous_price:.2f} → {current:.2f} {currency}\n"
             f"📉 本次降价：{drop:.2f} {currency}"
         )
     else:
-        price_line = (
-            f"💰 当前价：{current:.2f} {currency}"
-        )
+        price_line = f"💰 当前价：{current:.2f} {currency}"
 
     lines = [
         "🔥 户外商品降价提醒",
         "",
         f"🏷️ 折扣：{discount:.1f}%",
         f"📦 商品：{name}",
+        f"🌐 官网：{source}",
         f"💵 原价：{original:.2f} {currency}",
         price_line,
     ]
 
     cny = product.get("cny_price")
-
     if cny is not None:
-        lines.extend(
-            [
-                "",
-                f"🇨🇳 人民币参考价：¥{cny:,.0f}",
-                "💱 按实时汇率换算",
-            ]
-        )
-
-    dewu = product.get("dewu_price")
-
-    if dewu is not None:
-        lines.append(
-            f"🛒 得物参考价：¥{dewu:,.0f}"
-        )
-    else:
-        lines.append(
-            "🛒 得物参考价：暂不可用"
-        )
+        lines.extend(["", f"🇨🇳 人民币参考价：¥{cny:,.0f}", "💱 按实时汇率换算"])
 
     variants = product.get("variants") or []
-
-    lines.extend(
-        [
-            "",
-            "🎨 颜色 / 尺码 / 库存：",
-            format_variant_text(variants),
-            "",
-            f"🔗 {product['url']}",
-        ]
-    )
-
+    lines.extend([
+        "",
+        "🎨 颜色 / 尺码 / 库存：",
+        format_variant_text(variants),
+        "",
+        f"🔗 官网商品链接：{product['url']}",
+    ])
     return "\n".join(lines)
 
 
@@ -2023,7 +1975,7 @@ def check_product(product, history):
                     previous,
                 )
 
-                send_telegram_message(message)
+                send_telegram_message(message, current_product.get("image_url"))
 
                 print("✅ 已推送降价提醒")
     else:
@@ -2034,7 +1986,7 @@ def check_product(product, history):
                 None,
             )
 
-            send_telegram_message(message)
+            send_telegram_message(message, current_product.get("image_url"))
 
             print("✅ 首次发现折扣商品，已推送提醒")
 
@@ -2066,33 +2018,7 @@ def check_product(product, history):
 # 主程序
 # ============================================================
 
-def reset_history_once():
-    """部署新版监控后，仅第一次运行清空旧价格和旧自动发现商品库。"""
-    if RESET_MARKER_FILE.exists():
-        return
-
-    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-    reset_files = [DATA_FILE, DISCOVERED_FILE]
-    for target in reset_files:
-        try:
-            if target.exists():
-                target.unlink()
-                print(f"🧹 已删除旧记录：{target}")
-        except Exception as exc:
-            print(f"删除旧记录失败 {target}: {exc}")
-
-    try:
-        RESET_MARKER_FILE.write_text(
-            "本版本第一次运行已完成历史记录重置。\n",
-            encoding="utf-8",
-        )
-        print("✅ 历史记录已重置：从本次运行开始重新建立价格基线")
-    except Exception as exc:
-        print("创建历史重置标记失败：", exc)
-
-
 def main():
-    reset_history_once()
 
     print("=" * 60)
     print("Outdoor Price Monitor")
