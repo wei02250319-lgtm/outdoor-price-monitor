@@ -1323,11 +1323,184 @@ def discover_products(source):
         last_part = path_only.split("/")[-1]
 
         if last_part in {
-            "xxs",
-            "xs",
-            "s",
-            "m",
-            "l",
+    "xxs",
+    "xs",
+    "s",
+    "m",
+    "l",
+    "xl",
+    "xxl",
+    "xxxl",
+    "3xl",
+    "4xl",
+    "one-size",
+    "one_size",
+}:
+    continue
+
+
+def discover_products(source):
+    data = firecrawl_scrape(
+        source["url"],
+        formats=["markdown"],
+    )
+
+    if not data:
+        return []
+
+    links = extract_links_from_discovery(data)
+
+    products = []
+    seen_urls = set()
+
+    excluded_words = [
+        "/cart",
+        "/account",
+        "/login",
+        "/stores",
+        "/search",
+        "/help",
+        "/about",
+        "/vote",
+        "/ownership",
+        "/shipping",
+        "/returns",
+        "/privacy",
+        "/terms",
+        "/contact",
+        "/careers",
+        "/blog",
+        "/events",
+        "/community",
+        "/membership",
+        "/gift",
+        "/wishlist",
+        "/size",
+        "/filter",
+        "/sort",
+    ]
+
+    excluded_extensions = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".webp",
+        ".avif",
+        ".svg",
+        ".ico",
+        ".pdf",
+        ".mp4",
+        ".webm",
+        ".zip",
+    )
+
+    excluded_last_parts = {
+        "xxs",
+        "xs",
+        "s",
+        "m",
+        "l",
+        "xl",
+        "xxl",
+        "xxxl",
+        "3xl",
+        "4xl",
+        "one-size",
+        "one_size",
+    }
+
+    for url in links:
+        if not url:
+            continue
+
+        low = url.lower().strip()
+
+        clean_url = low.split("?", 1)[0]
+        path = clean_url.rstrip("/")
+
+        if clean_url.endswith(excluded_extensions):
+            continue
+
+        if any(word in low for word in excluded_words):
+            continue
+
+        last_part = path.split("/")[-1]
+
+        if last_part in excluded_last_parts:
+            continue
+
+        if "/shop/mens" in path:
+            parts = [x for x in path.split("/") if x]
+
+            if len(parts) <= 2:
+                continue
+
+            if len(parts) == 3 and parts[-1] in excluded_last_parts:
+                continue
+
+        if not any(
+            brand in low
+            for brand in [
+                "patagonia",
+                "arcteryx",
+                "arc-teryx",
+                "northface",
+                "north-face",
+            ]
+        ):
+            continue
+
+        product_path = any(
+            keyword in path
+            for keyword in [
+                "/product/",
+                "/products/",
+                "/item/",
+                "/p/",
+            ]
+        )
+
+        if not product_path:
+            if path.endswith((
+                "/mens",
+                "/men",
+                "/c/mens",
+                "/c/men",
+            )):
+                continue
+
+            if len(last_part) < 5:
+                continue
+
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+
+        name = url.rstrip("/").split("/")[-1]
+        name = name.split("?", 1)[0]
+
+        name = (
+            name
+            .replace("-", " ")
+            .replace("_", " ")
+            .strip()
+        )
+
+        if not name:
+            continue
+
+        products.append({
+            "name": name,
+            "url": url,
+            "source": source["name"],
+        })
+
+        if len(products) >= DISCOVERY_LIMIT:
+            break
+
+    return products
 def discover_products(source):
     data = firecrawl_scrape(
         source["url"],
