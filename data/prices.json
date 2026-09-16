@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789580404
+    "updated_at": 1789580708
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789580415
+    "updated_at": 1789580718
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789580426
+    "updated_at": 1789580729
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789580436
+    "updated_at": 1789580740
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789580447
+    "updated_at": 1789580751
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -180,5 +180,70 @@
     "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000010695-Thorium-Jacket-Black-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
     "variants": [],
     "updated_at": 1789580514
+  },
+  "https://arcteryx.com/ca/en/shop/mens/gamma-pant-0481": {
+    "name": "Gamma Pant Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/gamma-pant-0481",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 260.0,
+    "original_price": 260.0,
+    "discount": 0.0,
+    "cny_price": 1251.02,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/S26-X000010481-Gamma-Pant-Tatsu-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580764
+  },
+  "https://arcteryx.com/ca/en/shop/mens/kragg-cotton-pant-9530": {
+    "name": "Kragg Cotton Pant Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/kragg-cotton-pant-9530",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 230.0,
+    "original_price": 230.0,
+    "discount": 0.0,
+    "cny_price": 1106.67,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000009530-Kragg-Cotton-Pant-Cloud-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580778
+  },
+  "https://arcteryx.com/ca/en/shop/mens/atom-hoody-9556": {
+    "name": "Atom Hoody Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/atom-hoody-9556",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 380.0,
+    "original_price": 380.0,
+    "discount": 0.0,
+    "cny_price": 1828.41,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000009556-Atom-Hoody-Stratus-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580792
+  },
+  "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9899": {
+    "name": "Alpha SV Jacket Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9899",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 1150.0,
+    "original_price": 1150.0,
+    "discount": 0.0,
+    "cny_price": 5533.34,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000009899-Alpha-SV-Jacket-Larch-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580806
+  },
+  "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9989": {
+    "name": "Alpha SV Jacket Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9989",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 1150.0,
+    "original_price": 1150.0,
+    "discount": 0.0,
+    "cny_price": 5533.34,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/S26-X000009899-Alpha-SV-Jacket-Sea-Salt-Black-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580825
   }
 }
