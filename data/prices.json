@@ -396,5 +396,33 @@
     "current_min": 29.83,
     "max_discount": 0.0,
     "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/beta-ar-jacket-1062": {
+    "name": "Beta AR Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 650.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/beta-sl-jacket-0854": {
+    "name": "Beta SL Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 500.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/beta-jacket-0868": {
+    "name": "Beta Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 400.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/thorium-jacket-0695": {
+    "name": "Thorium Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 450.0,
+    "max_discount": 0.0,
+    "currency": ""
   }
 }
