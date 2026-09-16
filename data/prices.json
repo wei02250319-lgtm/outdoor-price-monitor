@@ -349,18 +349,30 @@
     "discovery_rotation_index": 6
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
-    "name": "Gamma Pants - Men's",
-    "source": "REI",
-    "current_min": 200.0,
-    "max_discount": 0.0,
-    "currency": ""
+    "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
+    "source": "",
+    "currency": "USD",
+    "current_price": 200.0,
+    "original_price": 200.0,
+    "discount": 0.0,
+    "cny_price": 1342.3,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789520711
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
-    "name": "R2 TechFace Jacket - Men's",
-    "source": "REI",
-    "current_min": 103.83,
-    "max_discount": 0.0,
-    "currency": ""
+    "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+    "source": "",
+    "currency": "USD",
+    "current_price": 103.83,
+    "original_price": 209.0,
+    "discount": 50.3,
+    "cny_price": 696.86,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789520722
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -426,25 +438,43 @@
     "currency": ""
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
-    "name": "Atom Insulated Hoody - Men's",
-    "source": "REI",
-    "current_min": 199.83,
-    "max_discount": 0.0,
-    "currency": ""
+    "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
+    "source": "",
+    "currency": "USD",
+    "current_price": 199.83,
+    "original_price": 300.0,
+    "discount": 33.4,
+    "cny_price": 1341.16,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789520733
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
-    "name": "Gamma MX Hoody - Men's",
-    "source": "REI",
-    "current_min": 199.83,
-    "max_discount": 0.0,
-    "currency": ""
+    "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
+    "source": "",
+    "currency": "USD",
+    "current_price": 199.83,
+    "original_price": 400.0,
+    "discount": 50.0,
+    "cny_price": 1341.16,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789520690
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
-    "name": "Gamma Jacket - Men's",
-    "source": "REI",
-    "current_min": 196.93,
-    "max_discount": 0.0,
-    "currency": ""
+    "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
+    "source": "",
+    "currency": "USD",
+    "current_price": 196.93,
+    "original_price": 280.0,
+    "discount": 29.7,
+    "cny_price": 1321.7,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789520701
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
