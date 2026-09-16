@@ -809,16 +809,10 @@ def product_matches_allowed_category(name):
 
 def extract_variant_info(data):
     """
-    尽可能从 Firecrawl product 数据中提取颜色、尺码、库存。
-
-    兼容：
-    1. variants / skus / options 数组
-    2. 单层或多层嵌套的 color/size/stock 字段
-    3. JSON 字符串中嵌套的颜色/尺码/库存数据
-    4. Shopify / 商品页常见的 availability / quantity / inStock 字段
+    提取颜色 / 尺码 / 库存。
+    重点处理真正的 SKU / variant 对象，避免把页面其它 quantity/count
+    之类的字段误当成库存，也避免把 option 名称本身误当成尺码。
     """
-
-    variants = []
 
     COLOR_KEYS = {
         "color", "colour", "colorname", "colourname",
@@ -827,193 +821,389 @@ def extract_variant_info(data):
     SIZE_KEYS = {
         "size", "sizename", "variantsize", "optionsize",
     }
-    INVENTORY_KEYS = {
+    STOCK_KEYS = {
         "inventory", "inventoryquantity", "inventoryqty",
-        "quantity", "stock", "stockquantity",
-        "availablequantity", "availableqty",
-        "qty", "count",
+        "stock", "stockquantity", "availablequantity",
+        "availableqty", "inventorylevel", "onhand",
+        "quantityavailable", "quantityonhand",
+        "salablequantity", "availableinventory",
     }
     AVAILABILITY_KEYS = {
         "availability", "instock", "in_stock",
-        "available", "isavailable", "sellable",
+        "isavailable", "sellable", "available",
+        "availableforsale", "available_for_sale",
+        "currentlyavailable", "stockstatus",
+        "inventorypolicy",
     }
 
-    def normalize_value(value):
+    CONTAINER_KEYS = {
+        "variants", "variant", "skus", "sku",
+        "productvariants", "variantlist", "variantslist",
+        "merchandise", "variantitems",
+    }
+    OPTION_KEYS = {
+        "options", "optionvalues", "selectedoptions",
+        "selectedoption", "choices", "attributes",
+    }
+
+    records = []
+
+    def scalar(value):
         if value is None:
             return ""
         if isinstance(value, (str, int, float, bool)):
             return str(value).strip()
         return ""
 
-    def parse_variant_obj(obj, inherited_color="", inherited_size=""):
+    def parse_stock(value):
+        """把数字、布尔、库存文案、嵌套库存对象统一转换成库存数量。"""
+        if isinstance(value, bool):
+            return 1 if value else 0
+
+        if isinstance(value, (int, float)):
+            return max(0, int(value))
+
+        if isinstance(value, dict):
+            # 常见：{"quantityAvailable": 5}
+            priority_keys = (
+                "quantityAvailable", "quantityOnHand",
+                "availableQuantity", "availableQty",
+                "inventoryQuantity", "inventory",
+                "quantity", "stock", "count",
+            )
+            for key in priority_keys:
+                if key in value:
+                    parsed = parse_stock(value.get(key))
+                    if parsed is not None:
+                        return parsed
+
+            # 再扫描一次标准化键名
+            for key, item in value.items():
+                nk = normalize_key(key)
+                if nk in {
+                    "quantityavailable", "quantityonhand",
+                    "availablequantity", "availableqty",
+                    "inventoryquantity", "inventoryqty",
+                    "quantity", "stock", "count", "onhand",
+                }:
+                    parsed = parse_stock(item)
+                    if parsed is not None:
+                        return parsed
+
+            return None
+
+        if isinstance(value, str):
+            s = value.strip().lower()
+
+            # 先处理明确库存状态
+            if s in {
+                "true", "yes", "available", "instock",
+                "in stock", "instockstatus", "in stock now",
+                "available for sale", "availableforsale",
+            }:
+                return 1
+
+            if s in {
+                "false", "no", "unavailable", "outofstock",
+                "out of stock", "sold out", "soldout",
+            }:
+                return 0
+
+            # 文案中的数量：
+            # "5 available", "Only 2 left", "quantityAvailable: 7"
+            patterns = [
+                r"(?:only\s*)?(\d+(?:\.\d+)?)\s*(?:left|available|in stock)",
+                r"(?:available|stock|quantity)\s*[:：]?\s*(\d+(?:\.\d+)?)",
+                r"(\d+(?:\.\d+)?)\s*(?:units?|pcs?)\b",
+            ]
+            for pattern in patterns:
+                m = re.search(pattern, s, flags=re.I)
+                if m:
+                    try:
+                        return max(0, int(float(m.group(1))))
+                    except Exception:
+                        pass
+
+            # 单纯数字字符串
+            if re.fullmatch(r"\d+(?:\.\d+)?", s):
+                try:
+                    return max(0, int(float(s)))
+                except Exception:
+                    pass
+
+        return None
+
+
+    def parse_option_value(item):
+        """
+        把 Shopify/电商常见的：
+        {"name":"Color","value":"Black"}
+        {"name":"Size","value":"L"}
+        解析成 color/size。
+        """
+        if not isinstance(item, dict):
+            return None, None
+
+        name = ""
+        value = ""
+
+        for k, v in item.items():
+            nk = normalize_key(k)
+            if nk in {"name", "optionname", "attribute", "label", "key"}:
+                name = scalar(v)
+            elif nk in {"value", "optionvalue", "selectedvalue", "displayvalue"}:
+                value = scalar(v)
+
+        if not name or not value:
+            return None, None
+
+        nn = normalize_key(name)
+        if nn in {
+            "color", "colour", "colorname", "colourname",
+            "variantcolor", "variantcolour",
+        }:
+            return value, None
+        if nn in {
+            "size", "sizename", "variantsize",
+        }:
+            return None, value
+
+        return None, None
+
+    def inspect_variant(obj, inherited_color="", inherited_size=""):
         if not isinstance(obj, dict):
             return
 
         color = inherited_color
         size = inherited_size
-        inventory = None
-        availability = None
+        stock = None
 
-        # 先读取当前对象自己的字段
+        # 当前对象直接字段
         for key, value in obj.items():
             nk = normalize_key(key)
 
             if nk in COLOR_KEYS:
-                value_text = normalize_value(value)
+                value_text = scalar(value)
                 if value_text:
                     color = value_text
 
             elif nk in SIZE_KEYS:
-                value_text = normalize_value(value)
+                value_text = scalar(value)
                 if value_text:
                     size = value_text
 
-            elif nk in INVENTORY_KEYS:
-                number = safe_float(value)
-                if number is not None:
-                    inventory = int(number)
+            elif nk in STOCK_KEYS:
+                parsed = parse_stock(value)
+                if parsed is not None:
+                    stock = parsed
 
-            elif nk in AVAILABILITY_KEYS:
-                availability = value
+            elif nk in AVAILABILITY_KEYS and stock is None:
+                parsed = parse_stock(value)
+                if parsed is not None:
+                    stock = parsed
 
-        # availability=true / "InStock" 等信息可以补足库存状态
-        if inventory is None and availability is not None:
-            if isinstance(availability, bool):
-                inventory = 1 if availability else 0
-            else:
-                av = normalize_value(availability).lower()
-                if av in {
-                    "true", "1", "yes", "available",
-                    "instock", "in stock", "instockstatus"
-                }:
-                    inventory = 1
-                elif av in {
-                    "false", "0", "no", "unavailable",
-                    "outofstock", "out of stock"
-                }:
-                    inventory = 0
+            # 很多电商页面把库存藏在 inventory / availability 对象里，
+            # 例如 {"inventory": {"quantityAvailable": 3}}
+            elif isinstance(value, dict) and (
+                nk in {"inventory", "stock", "availability", "inventorydata",
+                       "inventorystatus", "quantity"}
+            ):
+                parsed = parse_stock(value)
+                if parsed is not None:
+                    stock = parsed
 
-        if color or size or inventory is not None:
-            variants.append(
-                {
-                    "color": color,
-                    "size": size,
-                    "inventory": inventory,
-                }
+        # 有些站点用 availableForSale=true/false 或 quantityAvailable，
+        # 但字段位于 variant 的下一层/更深层对象。递归查找。
+        if stock is None:
+            def find_nested_stock(node, depth=0):
+                if depth > 4:
+                    return None
+                if isinstance(node, dict):
+                    for k, v in node.items():
+                        nk = normalize_key(k)
+                        if nk in STOCK_KEYS or nk in AVAILABILITY_KEYS:
+                            parsed = parse_stock(v)
+                            if parsed is not None:
+                                return parsed
+                        if isinstance(v, (dict, list)):
+                            parsed = find_nested_stock(v, depth + 1)
+                            if parsed is not None:
+                                return parsed
+                elif isinstance(node, list):
+                    for v in node:
+                        parsed = find_nested_stock(v, depth + 1)
+                        if parsed is not None:
+                            return parsed
+                return None
+
+            stock = find_nested_stock(obj)
+
+        # selectedOptions / optionValues / options
+        for key, value in obj.items():
+            nk = normalize_key(key)
+            if nk not in OPTION_KEYS:
+                continue
+
+            option_items = value if isinstance(value, list) else [value]
+            for option in option_items:
+                c, s = parse_option_value(option)
+                if c:
+                    color = c
+                if s:
+                    size = s
+
+                # 有些站点是 {"Color":"Black","Size":"L"}
+                if isinstance(option, dict):
+                    for ok, ov in option.items():
+                        on = normalize_key(ok)
+                        val = scalar(ov)
+                        if not val:
+                            continue
+                        if on in COLOR_KEYS or on == "color":
+                            color = val
+                        elif on in SIZE_KEYS or on == "size":
+                            size = val
+
+        # 只有真正像 variant/SKU 的对象才作为一条记录
+        # 防止 product 根对象被保存成“未知尺码”。
+        looks_like_variant = (
+            bool(color or size or stock is not None)
+            and (
+                size
+                or stock is not None
+                or any(
+                    normalize_key(k) in CONTAINER_KEYS
+                    for k in obj.keys()
+                )
             )
+        )
 
-        # 继续向下递归，继承父级颜色/尺码
+        if looks_like_variant:
+            records.append({
+                "color": color,
+                "size": size,
+                "inventory": stock,
+            })
+
+        # 继续递归，但传递当前已识别的颜色/尺码
         for key, value in obj.items():
             nk = normalize_key(key)
 
-            if isinstance(value, dict):
-                parse_variant_obj(
-                    value,
-                    inherited_color=color,
-                    inherited_size=size,
-                )
-
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        parse_variant_obj(
-                            item,
-                            inherited_color=color,
-                            inherited_size=size,
-                        )
+            if nk in CONTAINER_KEYS:
+                if isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, dict):
+                            inspect_variant(
+                                item,
+                                inherited_color=color,
+                                inherited_size=size,
+                            )
+                elif isinstance(value, dict):
+                    inspect_variant(
+                        value,
+                        inherited_color=color,
+                        inherited_size=size,
+                    )
 
     def parse_json_string(value):
         if not isinstance(value, str):
             return
-        stripped = value.strip()
-        if not stripped or stripped[0] not in "[{":
+        s = value.strip()
+        if not s or s[0] not in "[{":
             return
         try:
-            parsed = json.loads(stripped)
+            parsed = json.loads(s)
         except Exception:
             return
-        if isinstance(parsed, (dict, list)):
-            if isinstance(parsed, dict):
-                parse_variant_obj(parsed)
-            else:
-                for item in parsed:
-                    if isinstance(item, dict):
-                        parse_variant_obj(item)
+        if isinstance(parsed, dict):
+            inspect_variant(parsed)
+        elif isinstance(parsed, list):
+            for item in parsed:
+                if isinstance(item, dict):
+                    inspect_variant(item)
 
-    # 第一轮：递归扫描整个 Firecrawl 数据。
-    # 不再只依赖 key 必须叫 variants/skus/options。
-    for _, key, value in walk_data(data):
-        nk = normalize_key(key)
-
-        if nk in {
-            "variants", "variant",
-            "skus", "sku",
-            "options", "option",
-            "variantslist", "productvariants",
-            "variantoptions",
-        }:
-            if isinstance(value, dict):
-                parse_variant_obj(value)
-            elif isinstance(value, list):
-                for item in value:
-                    if isinstance(item, dict):
-                        parse_variant_obj(item)
-
-        elif isinstance(value, str):
-            parse_json_string(value)
-
-    # 第二轮：直接扫描每个 dict。
-    # 这一层用于处理部分官网把 color/size/stock 直接放在对象里，
-    # 但外层并没有 variants/skus 字段名的情况。
+    # 1. 直接处理明确的 variant/SKU 容器
     if isinstance(data, dict):
-        parse_variant_obj(data)
+        for _, key, value in walk_data(data):
+            nk = normalize_key(key)
+            if nk in CONTAINER_KEYS:
+                if isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, dict):
+                            inspect_variant(item)
+                        elif isinstance(item, str):
+                            parse_json_string(item)
+                elif isinstance(value, dict):
+                    inspect_variant(value)
+                elif isinstance(value, str):
+                    parse_json_string(value)
 
-    # 第三轮：从 markdown / html / rawHtml 中寻找 JSON-LD
-    # 里的颜色、尺码、库存字段。
-    text_parts = []
+    # 2. JSON-LD / 页面文本中的变体数据
     if isinstance(data, dict):
+        text_parts = []
         for key in ("markdown", "html", "rawHtml"):
             value = data.get(key)
             if isinstance(value, str):
                 text_parts.append(value)
 
-    combined_text = "\n".join(text_parts)
-    if combined_text:
-        # <script type="application/ld+json">...</script>
+        combined = "\n".join(text_parts)
         for script in re.findall(
             r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
-            combined_text,
+            combined,
             flags=re.I | re.S,
         ):
             parse_json_string(html.unescape(script))
 
-    # 去重，并清理明显无效记录
-    result = []
+    # 3. 去重 + 清理
+    cleaned = []
     seen = set()
 
-    for item in variants:
+    for item in records:
         color = clean_text(item.get("color", ""))
         size = clean_text(item.get("size", ""))
         inventory = item.get("inventory")
 
-        key = (color.lower(), size.lower(), inventory)
+        # 修复常见脏尺码：
+        # "Size: L" -> "L"
+        # "size-L" -> "L"
+        size = re.sub(r"^(?:size|尺码)\s*[:：\-]?\s*", "", size, flags=re.I)
+        size = clean_text(size)
 
-        if not (color or size or inventory is not None):
+        # 只接受合理的服装尺码，避免把颜色/选项文本当成尺码。
+        # 同时保留数字腰围等常见男裤尺码。
+        if size:
+            normalized_size = normalize_key(size)
+            valid_size = (
+                normalized_size in {
+                    "xxxs", "xxs", "xs", "s", "m", "l", "xl",
+                    "xxl", "xxxl", "3xl", "4xl",
+                    "onesize", "os",
+                }
+                or bool(re.fullmatch(r"\d{2}(?:x\d{2})?", size.strip(), re.I))
+                or bool(re.fullmatch(r"\d{2}(?:\.\d)?", size.strip()))
+            )
+            if not valid_size:
+                size = ""
+
+        if not color and not size:
             continue
 
+        key = (
+            color.lower(),
+            size.lower(),
+            inventory,
+        )
         if key in seen:
             continue
 
         seen.add(key)
-        result.append(
-            {
-                "color": color,
-                "size": size,
-                "inventory": inventory,
-            }
-        )
+        cleaned.append({
+            "color": color,
+            "size": size,
+            "inventory": inventory,
+        })
 
-    return result
+    return cleaned
 
 
 def format_variant_text(variants):
@@ -1022,31 +1212,62 @@ def format_variant_text(variants):
 
     colors = {}
 
+    size_order = {
+        "xxxs": 0,
+        "xxs": 1,
+        "xs": 2,
+        "s": 3,
+        "m": 4,
+        "l": 5,
+        "xl": 6,
+        "xxl": 7,
+        "xxxl": 8,
+        "3xl": 9,
+        "4xl": 10,
+        "os": 11,
+        "onesize": 12,
+        "one size": 12,
+    }
+
     for item in variants:
-        color = item.get("color") or "默认颜色"
-        size = item.get("size") or "未知尺码"
+        color = clean_text(item.get("color", "")) or "默认颜色"
+        size = clean_text(item.get("size", "")) or "尺码未知"
         inventory = item.get("inventory")
 
         if color not in colors:
-            colors[color] = []
+            colors[color] = {}
 
-        if inventory is None:
-            stock_text = "库存未知"
-        elif inventory > 0:
-            stock_text = f"库存{inventory}"
-        else:
-            stock_text = "缺货"
+        # 同颜色同尺码只保留一次。
+        colors[color][size] = inventory
 
-        colors[color].append(
-            f"{size}({stock_text})"
-        )
+    def sort_size(item):
+        size, _ = item
+        s = size.strip().lower()
+        if s in size_order:
+            return (0, size_order[s], s)
+
+        m = re.fullmatch(r"(\d{2})(?:x(\d{2}))?", s)
+        if m:
+            return (1, int(m.group(1)), int(m.group(2) or 0))
+
+        return (2, s)
 
     lines = []
 
-    for color, sizes in colors.items():
-        lines.append(
-            f"• {color}: " + ", ".join(sizes)
-        )
+    for color, sizes_map in colors.items():
+        size_parts = []
+
+        for size, inventory in sorted(sizes_map.items(), key=sort_size):
+            if inventory is None:
+                stock_text = "库存未知"
+            elif inventory > 0:
+                stock_text = f"库存{inventory}"
+            else:
+                stock_text = "缺货"
+
+            size_parts.append(f"{size}({stock_text})")
+
+        lines.append(f"• {color}: " + ", ".join(size_parts))
 
     return "\n".join(lines)
 
@@ -1827,6 +2048,17 @@ def check_product(product, history):
 
     print(
         f"折扣：{current_product['discount']:.1f}%"
+    )
+
+    variants = current_product.get("variants") or []
+    known_stock = sum(
+        1 for item in variants
+        if item.get("inventory") is not None
+    )
+
+    print(
+        f"变体信息：{len(variants)} 条，"
+        f"其中已识别库存 {known_stock} 条"
     )
 
 
