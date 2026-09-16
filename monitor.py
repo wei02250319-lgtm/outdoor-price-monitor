@@ -2,8 +2,9 @@ import os
 import re
 import json
 import time
+import html
 from pathlib import Path
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -13,30 +14,37 @@ from bs4 import BeautifulSoup
 # 基础配置
 # ============================================================
 
+FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY", "").strip()
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
-FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY", "").strip()
-
 FIRECRAWL_URL = "https://api.firecrawl.dev/v2/scrape"
 
-FIRECRAWL_DELAY = 10
-RATE_LIMIT_WAIT = 35
-FIRECRAWL_TIMEOUT = 90
-
-DATA_DIR = Path("data")
-DATA_FILE = DATA_DIR / "prices.json"
-
-# 折扣达到 20% 才符合条件
 MIN_DISCOUNT = 20
 IMPORTANT_DISCOUNT = 20
 SUPER_DISCOUNT = 50
 
+# 每30分钟检查一次时，5个固定商品全部检查
+FIXED_ROTATION = 5
+
+# Firecrawl 限流保护
+FIRECRAWL_DELAY = 10
+
 # 自动发现
 DISCOVERY_LIMIT = 5
 
-# 固定商品轮换数量
-FIXED_ROTATION = 4
+DATA_FILE = Path("data/prices.json")
+
+SESSION = requests.Session()
+SESSION.headers.update(
+    {
+        "User-Agent": (
+            "Mozilla/5.0 (Linux; Android 16) "
+            "AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/140.0 Mobile Safari/537.36"
+        )
+    }
+)
 
 
 # ============================================================
@@ -104,21 +112,74 @@ DISCOVERY_SOURCES = [
 
 
 # ============================================================
-# Session
+# 允许品牌 / 分类
 # ============================================================
 
-SESSION = requests.Session()
+ALLOWED_BRANDS = [
+    "arc'teryx",
+    "arcteryx",
+    "patagonia",
+    "the north face",
+    "north face",
+]
 
-SESSION.headers.update(
-    {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/131.0.0.0 Safari/537.36"
-        ),
-        "Accept-Language": "en-US,en;q=0.9",
-    }
-)
+ALLOWED_CATEGORIES = [
+    "jacket",
+    "jackets",
+    "softshell",
+    "soft shell",
+    "hardshell",
+    "hard shell",
+    "rain shell",
+    "rain jacket",
+    "down jacket",
+    "down jackets",
+    "pants",
+    "pant",
+    "softshell pants",
+    "soft shell pants",
+    "hardshell pants",
+    "hard shell pants",
+    "rain pants",
+]
+
+EXCLUDED_CATEGORIES = [
+    "shoe",
+    "shoes",
+    "footwear",
+    "sandal",
+    "sandals",
+    "boot",
+    "boots",
+    "bag",
+    "bags",
+    "backpack",
+    "backpacks",
+    "luggage",
+    "travel",
+    "tent",
+    "tents",
+    "sleeping bag",
+    "camping",
+    "equipment",
+    "gear",
+    "glove",
+    "gloves",
+    "hat",
+    "hats",
+    "beanie",
+    "sock",
+    "socks",
+    "t-shirt",
+    "tshirts",
+    "tee",
+    "sweatshirt",
+    "sweatshirts",
+    "hoodie",
+    "hoodies",
+    "polo",
+    "polos",
+]
 
 
 # ============================================================
@@ -131,69 +192,70 @@ EXCHANGE_RATE_CACHE_SECONDS = 1800
 
 
 # ============================================================
-# 基础工具
+# 通用函数
 # ============================================================
 
 def clean_text(value):
     if value is None:
         return ""
 
-    text = str(value)
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+    if isinstance(value, (dict, list)):
+        return ""
+
+    return str(value).strip()
 
 
 def safe_float(value):
     if value is None:
         return None
 
+    if isinstance(value, bool):
+        return None
+
     if isinstance(value, (int, float)):
+        number = float(value)
+    else:
+        text = str(value).strip()
+
+        if not text:
+            return None
+
+        text = text.replace(",", "")
+        text = text.replace("$", "")
+        text = text.replace("CA$", "")
+        text = text.replace("CAD", "")
+        text = text.replace("USD", "")
+        text = text.replace("C$", "")
+        text = text.replace("US$", "")
+        text = text.replace("€", "")
+        text = text.replace("£", "")
+        text = text.replace("¥", "")
+
+        match = re.search(r"-?\d+(?:\.\d+)?", text)
+
+        if not match:
+            return None
+
         try:
-            return float(value)
+            number = float(match.group(0))
         except Exception:
             return None
 
-    text = clean_text(value)
-
-    if not text:
+    if number <= 0:
         return None
 
-    text = (
-        text.replace(",", "")
-        .replace("￥", "")
-        .replace("¥", "")
-        .replace("$", "")
-        .replace("€", "")
-        .replace("£", "")
-    )
-
-    match = re.search(r"-?\d+(?:\.\d+)?", text)
-
-    if not match:
+    # 防止把商品编号、评分等误识别为价格
+    if number > 20000:
         return None
 
-    try:
-        return float(match.group())
-    except Exception:
-        return None
+    return number
 
 
-def title_from_url(url):
-    path = urlparse(url).path.rstrip("/")
-
-    if not path:
-        return ""
-
-    slug = path.split("/")[-1]
-
-    slug = re.sub(r"\.[a-zA-Z0-9]+$", "", slug)
-
-    slug = slug.replace("-", " ")
-    slug = slug.replace("_", " ")
-
-    slug = re.sub(r"\s+", " ", slug)
-
-    return slug.strip().title()
+def normalize_name(text):
+    text = clean_text(text).lower()
+    text = text.replace("’", "'")
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
 
 # ============================================================
@@ -201,13 +263,13 @@ def title_from_url(url):
 # ============================================================
 
 def load_history():
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     if not DATA_FILE.exists():
         return {}
 
     try:
-        with DATA_FILE.open("r", encoding="utf-8") as f:
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         if isinstance(data, dict):
@@ -220,17 +282,12 @@ def load_history():
 
 
 def save_history(history):
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     temp_file = DATA_FILE.with_suffix(".tmp")
 
-    with temp_file.open("w", encoding="utf-8") as f:
-        json.dump(
-            history,
-            f,
-            ensure_ascii=False,
-            indent=2,
-        )
+    with open(temp_file, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
 
     temp_file.replace(DATA_FILE)
 
@@ -241,7 +298,7 @@ def save_history(history):
 
 def firecrawl_scrape(url, formats=None):
     if not FIRECRAWL_API_KEY:
-        print("FIRECRAWL_API_KEY 未设置")
+        print("错误：没有设置 FIRECRAWL_API_KEY")
         return None
 
     if formats is None:
@@ -262,23 +319,25 @@ def firecrawl_scrape(url, formats=None):
             FIRECRAWL_URL,
             headers=headers,
             json=payload,
-            timeout=FIRECRAWL_TIMEOUT,
+            timeout=60,
         )
 
         print(f"Firecrawl HTTP {response.status_code}: {url}")
 
         if response.status_code == 429:
-            print("Firecrawl 限流，等待 35 秒...")
-            time.sleep(RATE_LIMIT_WAIT)
+            print("Firecrawl 达到请求限制，本次跳过")
             return None
 
         if response.status_code != 200:
-            print("Firecrawl 请求失败：", response.text[:500])
+            print("Firecrawl 返回错误：", response.text[:500])
             return None
 
-        data = response.json()
+        result = response.json()
 
-        return data.get("data", data)
+        if isinstance(result, dict):
+            return result.get("data", result)
+
+        return result
 
     except Exception as exc:
         print("Firecrawl 请求异常：", exc)
@@ -286,347 +345,339 @@ def firecrawl_scrape(url, formats=None):
 
 
 # ============================================================
-# 价格 / 折扣提取
+# 递归遍历数据
 # ============================================================
 
-def extract_currency(product):
-    if not isinstance(product, dict):
-        return ""
+def walk_data(value, path=()):
+    """
+    递归遍历 Firecrawl 返回的数据。
+    返回：
+        path, key, value
+    """
 
-    keys = [
-        "currency",
-        "currencyCode",
-        "currency_code",
-    ]
-
-    for key in keys:
-        value = product.get(key)
-
-        if value:
-            return clean_text(value).upper()
-
-    return ""
-
-
-def infer_currency(product, item):
-    currency = extract_currency(product)
-
-    if currency:
-        return currency
-
-    url = clean_text(
-        item.get("url", "") if isinstance(item, dict) else ""
-    ).lower()
-
-    source = clean_text(
-        item.get("source", "") if isinstance(item, dict) else ""
-    ).lower()
-
-    if (
-        "patagonia.ca" in url
-        or "arcteryx.com/ca/" in url
-        or "thenorthface.com/en-ca/" in url
-        or "canada" in source
-    ):
-        return "CAD"
-
-    return "USD"
-
-
-def extract_price_from_value(value):
     if isinstance(value, dict):
-        for key in [
-            "price",
-            "salePrice",
-            "currentPrice",
-            "amount",
-            "value",
-        ]:
-            result = safe_float(value.get(key))
+        for key, item in value.items():
+            yield path, str(key), item
 
-            if result is not None:
-                return result
+            yield from walk_data(
+                item,
+                path + (str(key),),
+            )
 
-    return safe_float(value)
+    elif isinstance(value, list):
+        for index, item in enumerate(value):
+            yield from walk_data(
+                item,
+                path + (str(index),),
+            )
 
 
-def extract_prices(product):
-    if not isinstance(product, dict):
-        return []
+# ============================================================
+# 价格提取
+# ============================================================
 
+CURRENT_PRICE_KEYS = {
+    "price",
+    "saleprice",
+    "sale_price",
+    "currentprice",
+    "current_price",
+    "sellingprice",
+    "selling_price",
+    "discountprice",
+    "discount_price",
+    "finalprice",
+    "final_price",
+    "nowprice",
+    "now_price",
+    "minsaleprice",
+    "min_sale_price",
+}
+
+ORIGINAL_PRICE_KEYS = {
+    "originalprice",
+    "original_price",
+    "listprice",
+    "list_price",
+    "regularprice",
+    "regular_price",
+    "compareatprice",
+    "compare_at_price",
+    "wasprice",
+    "was_price",
+    "fullprice",
+    "full_price",
+    "msrp",
+}
+
+
+def normalize_key(key):
+    return re.sub(r"[^a-z0-9]", "", str(key).lower())
+
+
+def collect_price_candidates(data, wanted_keys):
     candidates = []
 
-    # 常见字段
-    keys = [
-        "price",
-        "salePrice",
-        "currentPrice",
-        "sellingPrice",
-        "sale_price",
-        "current_price",
+    for path, key, value in walk_data(data):
+        normalized_key = normalize_key(key)
+
+        if normalized_key not in wanted_keys:
+            continue
+
+        number = safe_float(value)
+
+        if number is None:
+            continue
+
+        candidates.append(
+            {
+                "price": number,
+                "key": key,
+                "path": path,
+            }
+        )
+
+    return candidates
+
+
+def collect_offer_prices(data):
+    candidates = []
+
+    for path, key, value in walk_data(data):
+        normalized_key = normalize_key(key)
+
+        if normalized_key not in {
+            "offers",
+            "offer",
+            "price",
+            "lowprice",
+            "highprice",
+        }:
+            continue
+
+        if isinstance(value, dict):
+            for k, v in value.items():
+                nk = normalize_key(k)
+
+                if nk in {
+                    "price",
+                    "lowprice",
+                    "highprice",
+                }:
+                    number = safe_float(v)
+
+                    if number is not None:
+                        candidates.append(number)
+
+        else:
+            number = safe_float(value)
+
+            if number is not None:
+                candidates.append(number)
+
+    return candidates
+
+
+def extract_prices(data):
+    """
+    从 Firecrawl product 数据中尽可能稳健地提取当前价格。
+    """
+
+    candidates = collect_price_candidates(
+        data,
+        {normalize_key(x) for x in CURRENT_PRICE_KEYS},
+    )
+
+    prices = [item["price"] for item in candidates]
+
+    # 再检查 offers / price 等结构
+    prices.extend(collect_offer_prices(data))
+
+    prices = [
+        p for p in prices
+        if 1 <= p <= 20000
     ]
 
-    for key in keys:
-        if key in product:
-            value = extract_price_from_value(product.get(key))
-
-            if value is not None:
-                candidates.append(value)
-
-    # product price 列表
-    for key in [
-        "prices",
-        "priceRange",
-        "price_range",
-    ]:
-        value = product.get(key)
-
-        if isinstance(value, list):
-            for item in value:
-                price = extract_price_from_value(item)
-
-                if price is not None:
-                    candidates.append(price)
-
-        elif isinstance(value, dict):
-            for item in value.values():
-                price = extract_price_from_value(item)
-
-                if price is not None:
-                    candidates.append(price)
+    if not prices:
+        return []
 
     # 去重
-    result = []
+    unique = []
 
-    for price in candidates:
-        if price > 0 and price < 1000000:
-            if price not in result:
-                result.append(price)
+    for price in prices:
+        if not any(abs(price - x) < 0.01 for x in unique):
+            unique.append(price)
 
-    return result
+    return unique
 
 
-def extract_original_price(product):
-    if not isinstance(product, dict):
-        return None
+def extract_original_price(data):
+    candidates = collect_price_candidates(
+        data,
+        {normalize_key(x) for x in ORIGINAL_PRICE_KEYS},
+    )
 
-    keys = [
-        "originalPrice",
-        "listPrice",
-        "regularPrice",
-        "compareAtPrice",
-        "original_price",
-        "list_price",
+    prices = [
+        item["price"]
+        for item in candidates
+        if 1 <= item["price"] <= 20000
     ]
 
-    for key in keys:
-        value = extract_price_from_value(product.get(key))
+    unique = []
 
-        if value is not None and value > 0:
-            return value
+    for price in prices:
+        if not any(abs(price - x) < 0.01 for x in unique):
+            unique.append(price)
+
+    if unique:
+        return max(unique)
 
     return None
 
 
-def extract_discount(product, current_price, original_price):
-    if current_price is None:
-        return None
-
-    if original_price is not None and original_price > current_price:
-        return round(
-            (original_price - current_price)
-            / original_price
-            * 100,
-            1,
-        )
-
-    if isinstance(product, dict):
-        for key in [
-            "discountPercent",
-            "discountPercentage",
-            "discount",
-        ]:
-            value = safe_float(product.get(key))
-
-            if value is not None:
-                if value <= 1:
-                    value *= 100
-
-                return round(value, 1)
-
-    return 0.0
-
-
 # ============================================================
-# 产品颜色 / 尺码 / 库存
+# JSON-LD / Markdown 价格备用提取
 # ============================================================
 
-def extract_variant_info(product):
-    colors = []
-
-    if not isinstance(product, dict):
-        return colors
-
-    variants = []
-
-    for key in [
-        "variants",
-        "variantOptions",
-        "options",
-        "skus",
-    ]:
-        value = product.get(key)
-
-        if isinstance(value, list):
-            variants.extend(value)
-
-    for item in variants:
-        if not isinstance(item, dict):
-            continue
-
-        color = clean_text(
-            item.get("color")
-            or item.get("colour")
-            or item.get("colorName")
-        )
-
-        size = clean_text(
-            item.get("size")
-            or item.get("sizeName")
-        )
-
-        inventory = (
-            item.get("inventory")
-            if item.get("inventory") is not None
-            else item.get("stock")
-        )
-
-        if color:
-            found = None
-
-            for group in colors:
-                if group["color"].lower() == color.lower():
-                    found = group
-                    break
-
-            if found is None:
-                found = {
-                    "color": color,
-                    "sizes": [],
-                    "inventory": None,
-                }
-                colors.append(found)
-
-            if size and size not in found["sizes"]:
-                found["sizes"].append(size)
-
-            if inventory is not None:
-                found["inventory"] = inventory
-
-    return colors
-
-
-# ============================================================
-# 产品数据整理
-# ============================================================
-
-def build_current_product(item, product):
-    if not isinstance(product, dict):
-        product = {}
-
-    url = clean_text(item.get("url", ""))
-
-    title = clean_text(
-        product.get("title")
-        or product.get("name")
-        or item.get("name")
-        or title_from_url(url)
-    )
-
-    prices = extract_prices(product)
-
-    current_price = min(prices) if prices else None
-
-    original_price = extract_original_price(product)
-
-    if original_price is None and prices:
-        possible_original = max(prices)
-
-        if possible_original > current_price:
-            original_price = possible_original
-
-    discount = extract_discount(
-        product,
-        current_price,
-        original_price,
-    )
-
-    currency = infer_currency(product, item)
-
-    variants = extract_variant_info(product)
-
-    return {
-        "name": title,
-        "url": url,
-        "current_price": current_price,
-        "original_price": original_price,
-        "discount": discount or 0,
-        "currency": currency,
-        "variants": variants,
-        "source": item.get("source", ""),
-        "raw": product,
-    }
-
-
-# ============================================================
-# 价格组
-# ============================================================
-
-def get_min_actual_price(product):
-    return safe_float(product.get("current_price"))
-
-
-def get_max_discount(product):
-    return safe_float(product.get("discount")) or 0
-
-
-def build_price_groups(product):
-    variants = product.get("variants", [])
-
-    if not variants:
+def extract_prices_from_text(text):
+    if not text:
         return []
 
-    groups = []
+    text = html.unescape(str(text))
 
-    for item in variants:
-        if not isinstance(item, dict):
-            continue
+    results = []
 
-        color = clean_text(item.get("color"))
+    patterns = [
+        r'"price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"price"\s*:\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"salePrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"currentPrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+    ]
 
-        if not color:
-            continue
+    for pattern in patterns:
+        for match in re.findall(pattern, text, flags=re.I):
+            number = safe_float(match)
 
-        sizes = item.get("sizes", [])
+            if number is not None and 1 <= number <= 20000:
+                results.append(number)
 
-        if not isinstance(sizes, list):
-            sizes = []
+    unique = []
 
-        inventory = item.get("inventory")
+    for price in results:
+        if not any(abs(price - x) < 0.01 for x in unique):
+            unique.append(price)
 
-        groups.append(
-            {
-                "color": color,
-                "sizes": sizes,
-                "inventory": inventory,
-            }
-        )
-
-    return groups
+    return unique
 
 
 # ============================================================
-# 人民币汇率
+# 原价 / 当前价
+# ============================================================
+
+def choose_current_price(data):
+    prices = extract_prices(data)
+
+    if prices:
+        # product 数据里如果有多个价格，优先较低价格作为实际当前价
+        return min(prices)
+
+    # 尝试从 markdown / html / json 文本中提取
+    text_parts = []
+
+    if isinstance(data, dict):
+        for key in ["markdown", "html", "rawHtml"]:
+            value = data.get(key)
+
+            if isinstance(value, str):
+                text_parts.append(value)
+
+    text = "\n".join(text_parts)
+
+    prices = extract_prices_from_text(text)
+
+    if prices:
+        return min(prices)
+
+    return None
+
+
+def choose_original_price(data, current_price):
+    original = extract_original_price(data)
+
+    if original is not None:
+        if current_price is None:
+            return original
+
+        if original >= current_price:
+            return original
+
+    prices = extract_prices(data)
+
+    if prices:
+        larger = [
+            p for p in prices
+            if current_price is None or p >= current_price
+        ]
+
+        if larger:
+            return max(larger)
+
+    return None
+
+
+# ============================================================
+# 币种
+# ============================================================
+
+def extract_currency(data, url=""):
+    currency_keys = {
+        "currency",
+        "currencycode",
+        "currency_code",
+    }
+
+    for _, key, value in walk_data(data):
+        nk = normalize_key(key)
+
+        if nk in currency_keys:
+            text = clean_text(value).upper()
+
+            if text in {"USD", "CAD", "CNY", "EUR", "GBP", "JPY", "DKK"}:
+                return text
+
+    # 根据官网自动推断
+    host = urlparse(url).netloc.lower()
+    path = urlparse(url).path.lower()
+
+    if "rei.com" in host:
+        return "USD"
+
+    if "outlet.arcteryx.com" in host:
+        if "/ca/" in path:
+            return "CAD"
+        return "USD"
+
+    if "arcteryx.com" in host:
+        if "/ca/" in path:
+            return "CAD"
+        return "USD"
+
+    if "patagonia.ca" in host:
+        return "CAD"
+
+    if "patagonia.com" in host:
+        return "USD"
+
+    if "thenorthface.com" in host:
+        if "/en-ca/" in path:
+            return "CAD"
+        return "USD"
+
+    return None
+
+
+# ============================================================
+# 汇率
 # ============================================================
 
 def get_exchange_rate(currency):
@@ -641,11 +692,7 @@ def get_exchange_rate(currency):
     now = time.time()
 
     cached_rate = EXCHANGE_RATE_CACHE.get(currency)
-
-    cached_time = EXCHANGE_RATE_CACHE_TIME.get(
-        currency,
-        0,
-    )
+    cached_time = EXCHANGE_RATE_CACHE_TIME.get(currency, 0)
 
     if (
         cached_rate is not None
@@ -664,15 +711,10 @@ def get_exchange_rate(currency):
         )
 
         if response.status_code != 200:
-            print(
-                "汇率获取失败：",
-                response.status_code,
-            )
-
+            print("汇率获取失败：", response.status_code)
             return cached_rate
 
         data = response.json()
-
         rates = data.get("rates", {})
 
         rate = safe_float(rates.get("CNY"))
@@ -681,19 +723,12 @@ def get_exchange_rate(currency):
             return cached_rate
 
         EXCHANGE_RATE_CACHE[currency] = rate
-
         EXCHANGE_RATE_CACHE_TIME[currency] = now
-
-        print(
-            f"当前汇率：1 {currency} = "
-            f"{rate:.4f} CNY"
-        )
 
         return rate
 
     except Exception as exc:
         print("汇率获取异常：", exc)
-
         return cached_rate
 
 
@@ -711,436 +746,475 @@ def convert_to_cny(price, currency):
     if rate is None:
         return None
 
-    return round(
-        float(price) * rate,
-        2,
+    return round(float(price) * rate, 2)
+
+
+# ============================================================
+# 商品信息
+# ============================================================
+
+def extract_product_title(data, fallback_name=""):
+    title_keys = {
+        "title",
+        "name",
+        "productname",
+        "product_name",
+    }
+
+    candidates = []
+
+    for _, key, value in walk_data(data):
+        nk = normalize_key(key)
+
+        if nk not in title_keys:
+            continue
+
+        text = clean_text(value)
+
+        if len(text) < 3:
+            continue
+
+        if len(text) > 300:
+            continue
+
+        candidates.append(text)
+
+    if candidates:
+        # 通常第一个就是商品标题
+        return candidates[0]
+
+    return fallback_name
+
+
+def product_matches_allowed_brand(name):
+    text = normalize_name(name)
+
+    return any(
+        normalize_name(brand) in text
+        for brand in ALLOWED_BRANDS
+    )
+
+
+def product_matches_allowed_category(name):
+    text = normalize_name(name)
+
+    if any(
+        normalize_name(word) in text
+        for word in EXCLUDED_CATEGORIES
+    ):
+        return False
+
+    return any(
+        normalize_name(word) in text
+        for word in ALLOWED_CATEGORIES
     )
 
 
 # ============================================================
-# 得物
+# 颜色 / 尺码 / 库存
 # ============================================================
 
-def normalize_product_name(text):
-    text = clean_text(text).lower()
-
-    replacements = [
-        ("arc'teryx", ""),
-        ("arcteryx", ""),
-        ("patagonia", ""),
-        ("the north face", ""),
-        ("north face", ""),
-        ("men's", ""),
-        ("mens", ""),
-        ("men’s", ""),
-        ("男款", ""),
-        ("男士", ""),
-    ]
-
-    for old, new in replacements:
-        text = text.replace(old, new)
-
-    text = re.sub(
-        r"[^a-z0-9]+",
-        " ",
-        text,
-    )
-
-    return clean_text(text)
-
-
-def search_dewu_products(keyword):
+def extract_variant_info(data):
     """
-    得物搜索。
-
-    注意：
-    这里使用的是公开可观察到的 H5 搜索接口，
-    不是稳定的官方开放平台 API。
-    如果接口变化，程序会自动返回不可用，
-    不会影响主监控。
+    尽可能从 Firecrawl product 数据中读取颜色、尺码、库存。
     """
 
-    try:
-        response = SESSION.get(
-            "https://app.dewu.com/api/v1/h5/search/fire/search/list",
-            params={
-                "title": keyword,
-                "page": 0,
-                "sortType": 0,
-                "sortMode": 1,
-                "limit": 20,
-                "showHot": -1,
-            },
-            timeout=20,
-        )
+    variants = []
 
-        if response.status_code != 200:
-            print(
-                "得物搜索失败：",
-                response.status_code,
-            )
-            return []
+    def parse_variant(obj):
+        if not isinstance(obj, dict):
+            return
 
-        data = response.json()
+        color = ""
+        size = ""
+        inventory = None
 
-        root = data.get("data", {})
+        for key, value in obj.items():
+            nk = normalize_key(key)
 
-        products = root.get(
-            "productList",
-            [],
-        )
+            if nk in {
+                "color",
+                "colour",
+                "colorname",
+                "colourname",
+            }:
+                color = clean_text(value)
 
-        if not isinstance(products, list):
-            return []
+            elif nk in {
+                "size",
+                "sizename",
+            }:
+                size = clean_text(value)
 
-        return products
+            elif nk in {
+                "inventory",
+                "inventoryquantity",
+                "inventory_qty",
+                "quantity",
+                "stock",
+                "stockquantity",
+                "availablequantity",
+            }:
+                number = safe_float(value)
 
-    except Exception as exc:
-        print("得物搜索异常：", exc)
+                if number is not None:
+                    inventory = int(number)
 
-        return []
-
-
-def match_dewu_product(title, products):
-    target = normalize_product_name(title)
-
-    if not target:
-        return None
-
-    target_words = set(target.split())
-
-    best = None
-    best_score = 0
-
-    for item in products:
-        if not isinstance(item, dict):
-            continue
-
-        item_title = clean_text(
-            item.get("title")
-        )
-
-        if not item_title:
-            continue
-
-        candidate = normalize_product_name(
-            item_title
-        )
-
-        candidate_words = set(
-            candidate.split()
-        )
-
-        if not candidate_words:
-            continue
-
-        overlap = len(
-            target_words & candidate_words
-        ) / max(
-            len(target_words),
-            1,
-        )
-
-        # 产品匹配至少达到一定程度
-        if overlap < 0.35:
-            continue
-
-        if overlap > best_score:
-            best_score = overlap
-            best = item
-
-    return best
-
-
-def get_dewu_spu_id(item):
-    if not isinstance(item, dict):
-        return None
-
-    return (
-        item.get("spuId")
-        or item.get("spuid")
-        or item.get("productId")
-    )
-
-
-def get_dewu_search_price(item):
-    if not isinstance(item, dict):
-        return None
-
-    for key in [
-        "minSalePrice",
-        "spuMinSalePrice",
-        "price",
-    ]:
-        value = safe_float(
-            item.get(key)
-        )
-
-        if value is None:
-            continue
-
-        # 得物部分接口价格单位为分
-        if value >= 10000:
-            value = value / 100
-
-        if value > 0:
-            return value
-
-    return None
-
-
-def extract_dewu_size_prices(data):
-    """
-    尝试从得物返回的数据里找：
-    尺码 -> 价格。
-
-    不同版本接口字段可能不同，因此采用
-    多种字段兼容方式。
-    """
-
-    results = []
-
-    def walk(value):
-        if isinstance(value, dict):
-
-            size = clean_text(
-                value.get("size")
-                or value.get("sizeName")
-                or value.get("skuName")
-                or value.get("propertyValue")
+        if color or size or inventory is not None:
+            variants.append(
+                {
+                    "color": color,
+                    "size": size,
+                    "inventory": inventory,
+                }
             )
 
-            price = None
+    for _, key, value in walk_data(data):
+        nk = normalize_key(key)
 
-            for key in [
-                "minPrice",
-                "salePrice",
-                "price",
-                "minSalePrice",
-                "spuMinSalePrice",
-            ]:
-                price = safe_float(
-                    value.get(key)
-                )
+        if nk in {
+            "variants",
+            "variant",
+            "options",
+            "skus",
+            "sku",
+        }:
+            if isinstance(value, list):
+                for item in value:
+                    parse_variant(item)
 
-                if price is not None:
-                    break
-
-            if (
-                size
-                and price is not None
-                and price > 0
-            ):
-                if price >= 10000:
-                    price = price / 100
-
-                results.append(
-                    (
-                        size.upper(),
-                        price,
-                    )
-                )
-
-            for child in value.values():
-                walk(child)
-
-        elif isinstance(value, list):
-            for child in value:
-                walk(child)
-
-    walk(data)
+            elif isinstance(value, dict):
+                parse_variant(value)
 
     # 去重
-    output = []
-
+    result = []
     seen = set()
 
-    for size, price in results:
+    for item in variants:
         key = (
-            size,
-            round(price, 2),
+            item.get("color", ""),
+            item.get("size", ""),
+            item.get("inventory"),
         )
 
         if key in seen:
             continue
 
         seen.add(key)
+        result.append(item)
 
-        output.append(
-            (
-                size,
-                price,
-            )
+    return result
+
+
+def format_variant_text(variants):
+    if not variants:
+        return "暂无"
+
+    colors = {}
+
+    for item in variants:
+        color = item.get("color") or "默认颜色"
+        size = item.get("size") or "未知尺码"
+        inventory = item.get("inventory")
+
+        if color not in colors:
+            colors[color] = []
+
+        if inventory is None:
+            stock_text = "库存未知"
+        elif inventory > 0:
+            stock_text = f"库存{inventory}"
+        else:
+            stock_text = "缺货"
+
+        colors[color].append(
+            f"{size}({stock_text})"
         )
 
-    return output
+    lines = []
+
+    for color, sizes in colors.items():
+        lines.append(
+            f"• {color}: " + ", ".join(sizes)
+        )
+
+    return "\n".join(lines)
 
 
-def get_dewu_size_prices(spu_id):
+# ============================================================
+# 得物参考价
+# ============================================================
+
+def get_dewu_reference_price(product_name):
     """
-    尝试查询得物商品 SKU/尺码价格。
+    得物参考价规则：
+    1. 优先 L 码
+    2. L 不可用 -> 最低可靠价格
+    3. 无可靠数据 -> None
 
-    由于该接口可能需要签名、风控或动态参数，
-    失败时直接返回空，不影响主监控。
+    注意：
+    得物公开接口并非稳定官方开放接口，因此这里采用尽力获取。
+    不会伪造价格。
     """
-
-    if not spu_id:
-        return []
 
     try:
+        url = "https://app.dewu.com/api/v1/h5/search/fire/search/list"
+
+        params = {
+            "keyword": product_name,
+            "limit": 20,
+            "page": 1,
+        }
+
         response = SESSION.get(
-            "https://dewu.pdd.is/api/search/prices/now",
-            params={
-                "spuid": spu_id,
+            url,
+            params=params,
+            timeout=15,
+            headers={
+                "User-Agent": SESSION.headers["User-Agent"],
+                "Accept": "application/json",
             },
-            timeout=20,
         )
 
         if response.status_code != 200:
-            return []
+            return None
 
         data = response.json()
 
-        return extract_dewu_size_prices(
-            data
+        prices_l = []
+        prices_all = []
+
+        def walk_dewu(value):
+            if isinstance(value, dict):
+                for key, item in value.items():
+                    yield key, item
+                    yield from walk_dewu(item)
+
+            elif isinstance(value, list):
+                for item in value:
+                    yield from walk_dewu(item)
+
+        for key, value in walk_dewu(data):
+            nk = normalize_key(key)
+
+            if nk in {
+                "minsaleprice",
+                "min_sale_price",
+                "saleprice",
+                "sale_price",
+                "price",
+            }:
+                price = safe_float(value)
+
+                if price is None:
+                    continue
+
+                # 得物接口通常以分为单位
+                if price > 10000:
+                    price = price / 100
+
+                if not (50 <= price <= 50000):
+                    continue
+
+                prices_all.append(price)
+
+        # 尝试直接从返回 JSON 中寻找 L 码附近的价格
+        raw_text = json.dumps(
+            data,
+            ensure_ascii=False,
         )
 
-    except Exception as exc:
-        print(
-            "得物尺码价格查询异常：",
-            exc,
+        l_matches = re.findall(
+            r'.{0,300}"(?:size|尺码)".{0,80}"L".{0,300}',
+            raw_text,
+            flags=re.I,
         )
 
-        return []
+        for block in l_matches:
+            found = re.findall(
+                r'(?:price|minSalePrice|salePrice)["\']?\s*[:=]\s*["\']?([0-9]+(?:\.[0-9]+)?)',
+                block,
+                flags=re.I,
+            )
 
+            for value in found:
+                price = safe_float(value)
 
-def get_dewu_price(title):
-    """
-    得物价格规则：
+                if price is None:
+                    continue
 
-    1. 优先 L 码
-    2. L 码不可用 -> 所有可靠尺码中的最低价
-    3. 无可靠匹配 -> None
-    """
+                if price > 10000:
+                    price /= 100
 
-    if not title:
-        return None
+                if 50 <= price <= 50000:
+                    prices_l.append(price)
 
-    keyword = clean_text(title)
+        if prices_l:
+            return round(min(prices_l), 2)
 
-    products = search_dewu_products(
-        keyword
-    )
+        if prices_all:
+            return round(min(prices_all), 2)
 
-    if not products:
-        return None
-
-    target = match_dewu_product(
-        title,
-        products,
-    )
-
-    if target is None:
-        print(
-            "得物没有找到可靠的同款匹配"
-        )
-        return None
-
-    spu_id = get_dewu_spu_id(
-        target
-    )
-
-    # --------------------------------------------------------
-    # 第一优先：L 码
-    # --------------------------------------------------------
-
-    size_prices = get_dewu_size_prices(
-        spu_id
-    )
-
-    l_prices = []
-
-    all_prices = []
-
-    for size, price in size_prices:
-
-        if price is None:
-            continue
-
-        if price <= 0:
-            continue
-
-        all_prices.append(price)
-
-        normalized_size = (
-            clean_text(size)
-            .upper()
-            .replace(" ", "")
-        )
-
-        if normalized_size in [
-            "L",
-            "L码",
-            "L号",
-        ]:
-            l_prices.append(price)
-
-    if l_prices:
-        price = min(l_prices)
-
-        print(
-            f"得物 L 码参考价：¥{price:.0f}"
-        )
-
-        return round(
-            price,
-            2,
-        )
-
-    # --------------------------------------------------------
-    # 第二优先：所有尺码最低价
-    # --------------------------------------------------------
-
-    if all_prices:
-        price = min(all_prices)
-
-        print(
-            f"得物 L 码不可用，"
-            f"改取最低价：¥{price:.0f}"
-        )
-
-        return round(
-            price,
-            2,
-        )
-
-    # --------------------------------------------------------
-    # 最后才使用搜索结果最低价
-    # --------------------------------------------------------
-
-    fallback_price = (
-        get_dewu_search_price(
-            target
-        )
-    )
-
-    if fallback_price is not None:
-        print(
-            f"得物尺码数据不可用，"
-            f"使用搜索最低参考价："
-            f"¥{fallback_price:.0f}"
-        )
-
-        return round(
-            fallback_price,
-            2,
-        )
-
-    print(
-        "得物没有找到可靠价格"
-    )
+    except Exception:
+        pass
 
     return None
+
+
+# ============================================================
+# 自动发现商品
+# ============================================================
+
+def extract_links_from_discovery(data):
+    links = []
+
+    def add_link(value):
+        if not isinstance(value, str):
+            return
+
+        value = value.strip()
+
+        if not value.startswith("http"):
+            return
+
+        if value not in links:
+            links.append(value)
+
+    for _, key, value in walk_data(data):
+        nk = normalize_key(key)
+
+        if nk in {
+            "url",
+            "link",
+            "producturl",
+            "product_url",
+            "href",
+        }:
+            add_link(value)
+
+    # markdown / html 里的 URL
+    if isinstance(data, dict):
+        for key in ["markdown", "html", "rawHtml"]:
+            text = data.get(key)
+
+            if isinstance(text, str):
+                found = re.findall(
+                    r'https?://[^\s)"\'<>]+',
+                    text,
+                )
+
+                for url in found:
+                    add_link(url)
+
+    return links
+
+
+def discover_products(source):
+    data = firecrawl_scrape(
+        source["url"],
+        formats=["markdown"],
+    )
+
+    if not data:
+        return []
+
+    links = extract_links_from_discovery(data)
+
+    products = []
+
+    for url in links:
+        low = url.lower()
+
+        # 排除明显不是商品页的链接
+        if any(
+            word in low
+            for word in [
+                "/cart",
+                "/account",
+                "/login",
+                "/stores",
+                "/search",
+                "/help",
+                "/about",
+            ]
+        ):
+            continue
+
+        products.append(
+            {
+                "name": url.split("/")[-1].replace("-", " ").strip(),
+                "url": url,
+                "source": source["name"],
+            }
+        )
+
+    return products[:DISCOVERY_LIMIT]
+
+
+# ============================================================
+# 单个商品构建
+# ============================================================
+
+def build_current_product(product, data):
+    name = extract_product_title(
+        data,
+        product.get("name", ""),
+    )
+
+    current_price = choose_current_price(data)
+
+    original_price = choose_original_price(
+        data,
+        current_price,
+    )
+
+    currency = extract_currency(
+        data,
+        product.get("url", ""),
+    )
+
+    variants = extract_variant_info(data)
+
+    if current_price is None:
+        return None
+
+    if original_price is None:
+        original_price = current_price
+
+    if original_price < current_price:
+        original_price = current_price
+
+    if original_price > 0:
+        discount = (
+            (original_price - current_price)
+            / original_price
+            * 100
+        )
+    else:
+        discount = 0
+
+    cny_price = convert_to_cny(
+        current_price,
+        currency,
+    )
+
+    dewu_price = get_dewu_reference_price(
+        name
+    )
+
+    return {
+        "name": name,
+        "url": product.get("url", ""),
+        "source": product.get("source", ""),
+        "currency": currency,
+        "current_price": round(current_price, 2),
+        "original_price": round(original_price, 2),
+        "discount": round(discount, 1),
+        "cny_price": cny_price,
+        "dewu_price": dewu_price,
+        "variants": variants,
+        "updated_at": int(time.time()),
+    }
 
 
 # ============================================================
@@ -1149,17 +1223,16 @@ def get_dewu_price(title):
 
 def send_telegram_message(message):
     if not TELEGRAM_BOT_TOKEN:
-        print("TELEGRAM_BOT_TOKEN 未设置")
+        print("没有 Telegram Bot Token")
         return False
 
     if not TELEGRAM_CHAT_ID:
-        print("TELEGRAM_CHAT_ID 未设置")
+        print("没有 Telegram Chat ID")
         return False
 
     url = (
-        "https://api.telegram.org/bot"
-        f"{TELEGRAM_BOT_TOKEN}"
-        "/sendMessage"
+        f"https://api.telegram.org/bot"
+        f"{TELEGRAM_BOT_TOKEN}/sendMessage"
     )
 
     payload = {
@@ -1172,775 +1245,161 @@ def send_telegram_message(message):
         response = SESSION.post(
             url,
             json=payload,
-            timeout=30,
+            timeout=20,
         )
 
         if response.status_code != 200:
-            print(
-                "Telegram 推送失败：",
-                response.text[:500],
-            )
+            print("Telegram 推送失败：", response.text[:500])
             return False
-
-        print("Telegram 推送成功")
 
         return True
 
     except Exception as exc:
-        print(
-            "Telegram 推送异常：",
-            exc,
-        )
-
+        print("Telegram 推送异常：", exc)
         return False
 
 
-# ============================================================
-# Telegram 商品消息
-# ============================================================
+def build_telegram_message(product, previous):
+    name = product["name"]
 
-def build_product_message(
-    product,
-    previous_price=None,
-):
-    title = clean_text(
-        product.get("name")
-    )
+    current = product["current_price"]
+    original = product["original_price"]
+    discount = product["discount"]
 
-    current_price = get_min_actual_price(
-        product
-    )
+    currency = product.get("currency") or ""
 
-    original_price = safe_float(
-        product.get("original_price")
-    )
+    previous_price = None
 
-    max_discount = get_max_discount(
-        product
-    )
-
-    currency = clean_text(
-        product.get("currency")
-    )
-
-    url = clean_text(
-        product.get("url")
-    )
-
-    lines = []
-
-    if max_discount >= SUPER_DISCOUNT:
-        lines.append("🔥🔥 超级折扣")
-
-    elif max_discount >= IMPORTANT_DISCOUNT:
-        lines.append("🔥 重要折扣")
-
-    else:
-        lines.append("🛍️ 商品价格变化")
-
-    lines.append("")
-    lines.append(f"📦 {title}")
-
-    # --------------------------------------------------------
-    # 人民币参考价
-    # --------------------------------------------------------
-
-    cny_price = convert_to_cny(
-        current_price,
-        currency,
-    )
-
-    if cny_price is not None:
-        lines.append(
-            f"🇨🇳 人民币参考价："
-            f"¥{cny_price:,.0f}"
+    if previous:
+        previous_price = safe_float(
+            previous.get("current_price")
         )
-        lines.append(
-            "💱 按实时汇率换算"
+
+    if previous_price is not None:
+        drop = previous_price - current
+
+        price_line = (
+            f"💰 价格：{previous_price:.2f} "
+            f"→ {current:.2f} {currency}\n"
+            f"📉 本次降价：{drop:.2f} {currency}"
         )
     else:
-        lines.append(
-            "🇨🇳 人民币参考价：暂不可用"
+        price_line = (
+            f"💰 当前价：{current:.2f} {currency}"
         )
 
-    # --------------------------------------------------------
-    # 得物参考价
-    # --------------------------------------------------------
+    lines = [
+        "🔥 户外商品降价提醒",
+        "",
+        f"🏷️ 折扣：{discount:.1f}%",
+        f"📦 商品：{name}",
+        f"💵 原价：{original:.2f} {currency}",
+        price_line,
+    ]
 
-    dewu_price = get_dewu_price(
-        title
-    )
+    cny = product.get("cny_price")
 
-    if dewu_price is not None:
+    if cny is not None:
+        lines.extend(
+            [
+                "",
+                f"🇨🇳 人民币参考价：¥{cny:,.0f}",
+                "💱 按实时汇率换算",
+            ]
+        )
+
+    dewu = product.get("dewu_price")
+
+    if dewu is not None:
         lines.append(
-            f"🛒 得物参考价："
-            f"¥{dewu_price:,.0f}"
+            f"🛒 得物参考价：¥{dewu:,.0f}"
         )
     else:
         lines.append(
             "🛒 得物参考价：暂不可用"
         )
 
-    lines.append("")
+    variants = product.get("variants") or []
 
-    # --------------------------------------------------------
-    # 折扣
-    # --------------------------------------------------------
-
-    lines.append(
-        f"🏷️ 折扣："
-        f"{max_discount:.1f}%"
+    lines.extend(
+        [
+            "",
+            "🎨 颜色 / 尺码 / 库存：",
+            format_variant_text(variants),
+            "",
+            f"🔗 {product['url']}",
+        ]
     )
-
-    if original_price is not None:
-        lines.append(
-            f"💰 原价："
-            f"{currency} "
-            f"{original_price:,.2f}"
-        )
-
-    if current_price is not None:
-        lines.append(
-            f"💵 当前实际价："
-            f"{currency} "
-            f"{current_price:,.2f}"
-        )
-
-    # --------------------------------------------------------
-    # 价格下降
-    # --------------------------------------------------------
-
-    if (
-        previous_price is not None
-        and current_price is not None
-        and current_price < previous_price
-    ):
-        drop = previous_price - current_price
-
-        lines.append(
-            f"📉 价格下降："
-            f"{currency} "
-            f"{drop:,.2f}"
-        )
-
-        lines.append(
-            f"🔻 {previous_price:,.2f}"
-            f" → "
-            f"{current_price:,.2f}"
-        )
-
-    # --------------------------------------------------------
-    # 颜色 / 尺码 / 库存
-    # --------------------------------------------------------
-
-    groups = build_price_groups(
-        product
-    )
-
-    if groups:
-        lines.append("")
-        lines.append("🎨 颜色 / 尺码 / 库存：")
-
-        for group in groups:
-            color = group.get(
-                "color",
-                "",
-            )
-
-            sizes = group.get(
-                "sizes",
-                [],
-            )
-
-            inventory = group.get(
-                "inventory"
-            )
-
-            size_text = (
-                ", ".join(
-                    sizes
-                )
-                if sizes
-                else "暂无"
-            )
-
-            inventory_text = (
-                str(inventory)
-                if inventory is not None
-                else "暂无"
-            )
-
-            lines.append(
-                f"• {color}"
-            )
-
-            lines.append(
-                f"  尺码：{size_text}"
-            )
-
-            lines.append(
-                f"  库存：{inventory_text}"
-            )
-
-    # --------------------------------------------------------
-    # 商品链接
-    # --------------------------------------------------------
-
-    if url:
-        lines.append("")
-        lines.append(
-            f"🔗 {url}"
-        )
 
     return "\n".join(lines)
 
 
 # ============================================================
-# 推送判断
+# 商品检查
 # ============================================================
 
-def should_alert(
-    product,
-    previous_price,
-):
-    current_price = get_min_actual_price(
-        product
-    )
-
-    discount = get_max_discount(
-        product
-    )
-
-    if current_price is None:
-        print(
-            "没有当前实际价格：不推送"
-        )
-        return False
-
-    if discount < MIN_DISCOUNT:
-        print(
-            f"折扣不足 {MIN_DISCOUNT}%："
-            f"不推送"
-        )
-        return False
-
-    if previous_price is None:
-        print(
-            "首次发现商品：不推送"
-        )
-        return False
-
-    if current_price < previous_price:
-        print(
-            "实际价格下降：准备推送"
-        )
-        return True
-
-    if current_price == previous_price:
-        print(
-            "实际现价没有变化：不推送"
-        )
-        return False
-
-    if current_price > previous_price:
-        print(
-            "实际价格上涨：不推送"
-        )
-        return False
-
-    return False
-
-
-# ============================================================
-# 保存历史
-# ============================================================
-
-def save_product_history(
-    history,
-    product,
-):
-    url = clean_text(
-        product.get("url")
-    )
-
-    current_price = get_min_actual_price(
-        product
-    )
-
-    if not url or current_price is None:
-        return
-
-    history[url] = {
-        "name": product.get("name", ""),
-        "price": current_price,
-        "currency": product.get(
-            "currency",
-            "",
-        ),
-        "updated_at": int(
-            time.time()
-        ),
-    }
-
-
-# ============================================================
-# 单商品检查
-# ============================================================
-
-def check_product(
-    item,
-    history,
-):
-    print(
-        "检查：",
-        item.get("name", ""),
-    )
-
-    product_data = firecrawl_scrape(
-        item["url"],
-        formats=["product"],
-    )
-
-    if not product_data:
-        print(
-            "没有获取到商品数据"
-        )
-        return
-
-    product = build_current_product(
-        item,
-        product_data,
-    )
-
-    current_price = get_min_actual_price(
-        product
-    )
-
-    if current_price is None:
-        print(
-            "没有获取到有效价格"
-        )
-        return
-
-    print(
-        f"当前最低实际价格："
-        f"{current_price}"
-    )
-
-    old = history.get(
-        item["url"]
-    )
-
-    previous_price = None
-
-    if isinstance(old, dict):
-        previous_price = safe_float(
-            old.get("price")
-        )
-
-    if previous_price is not None:
-        print(
-            f"上次实际价格："
-            f"{previous_price}"
-        )
-
-    if should_alert(
-        product,
-        previous_price,
-    ):
-        message = build_product_message(
-            product,
-            previous_price,
-        )
-
-        send_telegram_message(
-            message
-        )
-
-    save_product_history(
-        history,
-        product,
-    )
-
-
-# ============================================================
-# 自动发现链接
-# ============================================================
-
-ALLOWED_BRANDS = [
-    "arcteryx",
-    "arc'teryx",
-    "patagonia",
-    "the north face",
-    "thenorthface",
-]
-
-
-def is_allowed_discovery_product(
-    url,
-):
-    text = clean_text(url).lower()
-
-    # 排除包 / 行李
-    excluded = [
-        "bag",
-        "bags",
-        "backpack",
-        "luggage",
-        "duffel",
-        "travel",
-        "suitcase",
-        "gear",
-        "equipment",
-        "camping",
-        "tent",
-        "sleeping",
-        "chair",
-        "stove",
-        "cooler",
-        "accessories",
-        "accessory",
-        "footwear",
-        "shoes",
-        "shoe",
-        "sandals",
-        "boots",
-        "hat",
-        "hats",
-        "gloves",
-        "socks",
-    ]
-
-    if any(
-        word in text
-        for word in excluded
-    ):
-        return False
-
-    # 排除明显的非目标服装
-    excluded_clothing = [
-        "t-shirt",
-        "tshirt",
-        "tee",
-        "polo",
-        "sweatshirt",
-        "hoodie",
-    ]
-
-    if any(
-        word in text
-        for word in excluded_clothing
-    ):
-        return False
-
-    # 男装
-    mens_ok = (
-        "mens" in text
-        or "men's" in text
-        or "/mens/" in text
-        or "/men/" in text
-        or "-mens" in text
-        or "-men-" in text
-    )
-
-    if not mens_ok:
-        return False
-
-    # 目标类别
-    allowed_category = [
-        "jacket",
-        "jackets",
-        "softshell",
-        "soft-shell",
-        "hardshell",
-        "hard-shell",
-        "rain",
-        "down",
-        "pants",
-        "pant",
-        "trouser",
-    ]
-
-    if not any(
-        word in text
-        for word in allowed_category
-    ):
-        return False
-
-    return True
-
-
-def is_allowed_brand(
-    url,
-    source_name="",
-):
-    text = (
-        clean_text(url)
-        + " "
-        + clean_text(source_name)
-    ).lower()
-
-    return any(
-        brand in text
-        for brand in ALLOWED_BRANDS
-    )
-
-
-def is_product_url(
-    url,
-    source_name="",
-):
-    parsed = urlparse(url)
-
-    host = parsed.netloc.lower()
-
-    if not host:
-        return False
-
-    allowed_hosts = [
-        "rei.com",
-        "arcteryx.com",
-        "outlet.arcteryx.com",
-        "patagonia.com",
-        "patagonia.ca",
-        "thenorthface.com",
-    ]
-
-    if not any(
-        host.endswith(
-            allowed
-        )
-        for allowed in allowed_hosts
-    ):
-        return False
-
-    if not is_allowed_brand(
-        url,
-        source_name,
-    ):
-        # REI 本身可能没有品牌写进 URL，
-        # 由后续商品标题再做品牌判断。
-        if "rei.com" not in host:
-            return False
-
-    return is_allowed_discovery_product(
-        url
-    )
-
-
-def discover_links(source):
-    source_name = source["name"]
-    source_url = source["url"]
-
-    print(
-        "自动发现：",
-        source_name,
-    )
+def check_product(product, history):
+    print("检查：", product["name"])
 
     data = firecrawl_scrape(
-        source_url,
-        formats=["markdown"],
+        product["url"],
+        formats=["product", "markdown"],
     )
 
     if not data:
-        return []
+        print("没有获得商品数据")
+        return
 
-    markdown = clean_text(
-        data.get("markdown", "")
+    current_product = build_current_product(
+        product,
+        data,
     )
 
-    html = clean_text(
-        data.get("html", "")
-    )
+    if current_product is None:
+        print("没有获取到有效价格")
+        return
 
-    links = set()
+    current_price = current_product["current_price"]
 
-    # Markdown 链接
-    for match in re.findall(
-        r"\[[^\]]*\]\((https?://[^)\s]+)\)",
-        markdown,
-    ):
-        links.add(match)
+    key = product["url"]
 
-    # HTML 链接
-    if html:
-        try:
-            soup = BeautifulSoup(
-                html,
-                "lxml",
+    previous = history.get(key)
+
+    if previous:
+        previous_price = safe_float(
+            previous.get("current_price")
+        )
+
+        if previous_price is not None:
+            # 只有实际降价才可能推送
+            price_changed_down = current_price < previous_price
+
+            discount_ok = (
+                current_product["discount"]
+                >= MIN_DISCOUNT
             )
 
-            for a in soup.find_all(
-                "a",
-                href=True,
-            ):
-                href = a.get("href")
+            if price_changed_down and discount_ok:
+                message = build_telegram_message(
+                    current_product,
+                    previous,
+                )
 
-                if href.startswith("/"):
-                    href = urljoin(
-                        source_url,
-                        href,
-                    )
+                send_telegram_message(message)
 
-                if href.startswith(
-                    "http://"
-                ) or href.startswith(
-                    "https://"
-                ):
-                    links.add(href)
+                print("✅ 已推送降价提醒")
 
-        except Exception as exc:
-            print(
-                "解析 HTML 失败：",
-                exc,
-            )
+    # 无论是否推送，都保存最新价格
+    history[key] = current_product
 
-    # 原始 URL
-    for url in re.findall(
-        r"https?://[^\s\"'<>]+",
-        markdown + " " + html,
-    ):
-        links.add(url)
-
-    result = []
-
-    for url in links:
-        url = url.rstrip(
-            ".,);]}>\"'"
-        )
-
-        if not is_product_url(
-            url,
-            source_name,
-        ):
-            continue
-
-        result.append(
-            {
-                "name": title_from_url(
-                    url
-                ),
-                "url": url,
-                "source": source_name,
-            }
-        )
-
-    return result
-
-
-# ============================================================
-# 自动发现商品详情过滤
-# ============================================================
-
-def product_matches_allowed_brand(
-    product,
-):
-    text = clean_text(
-        product.get("name", "")
-    ).lower()
-
-    if not text:
-        return False
-
-    return any(
-        brand in text
-        for brand in ALLOWED_BRANDS
+    print(
+        f"当前价格：{current_price:.2f} "
+        f"{current_product.get('currency') or ''}"
     )
 
-
-def discovery_products():
-    results = []
-
-    # 每次运行轮换少量来源，
-    # 避免 Firecrawl 超过限制。
-    timestamp = int(
-        time.time()
-        / 1800
+    print(
+        f"折扣：{current_product['discount']:.1f}%"
     )
-
-    source_count = len(
-        DISCOVERY_SOURCES
-    )
-
-    if source_count == 0:
-        return []
-
-    start = (
-        timestamp
-        % source_count
-    )
-
-    selected = []
-
-    for i in range(
-        min(2, source_count)
-    ):
-        selected.append(
-            DISCOVERY_SOURCES[
-                (start + i)
-                % source_count
-            ]
-        )
-
-    for source in selected:
-        links = discover_links(
-            source
-        )
-
-        for item in links:
-            if len(results) >= DISCOVERY_LIMIT:
-                break
-
-            results.append(item)
-
-        if len(results) >= DISCOVERY_LIMIT:
-            break
-
-        time.sleep(
-            FIRECRAWL_DELAY
-        )
-
-    return results
-
-
-# ============================================================
-# 固定商品轮换
-# ============================================================
-
-def get_rotation_products():
-    timestamp = int(
-        time.time()
-        / 1800
-    )
-
-    total = len(
-        FIXED_PRODUCTS
-    )
-
-    if total == 0:
-        return []
-
-    start = (
-        timestamp
-        % total
-    )
-
-    selected = []
-
-    for i in range(
-        min(
-            FIXED_ROTATION,
-            total,
-        )
-    ):
-        selected.append(
-            FIXED_PRODUCTS[
-                (start + i)
-                % total
-            ]
-        )
-
-    return selected
 
 
 # ============================================================
@@ -1952,126 +1411,96 @@ def main():
     print("Outdoor Price Monitor")
     print("=" * 60)
 
-    if not FIRECRAWL_API_KEY:
-        print(
-            "警告：FIRECRAWL_API_KEY 未设置"
-        )
-
-    if not TELEGRAM_BOT_TOKEN:
-        print(
-            "警告：TELEGRAM_BOT_TOKEN 未设置"
-        )
-
-    if not TELEGRAM_CHAT_ID:
-        print(
-            "警告：TELEGRAM_CHAT_ID 未设置"
-        )
-
     history = load_history()
 
     # --------------------------------------------------------
-    # 固定商品
+    # 固定5个商品全部检查
     # --------------------------------------------------------
 
-    fixed_products = get_rotation_products()
+    products = list(FIXED_PRODUCTS)
 
     print(
-        f"本次检查固定商品："
-        f"{len(fixed_products)}"
+        f"本次检查固定商品：{len(FIXED_PRODUCTS)}"
     )
-
-    all_products = []
-
-    for item in fixed_products:
-        all_products.append(item)
 
     # --------------------------------------------------------
     # 自动发现
     # --------------------------------------------------------
 
-    discovered = discovery_products()
+    # 根据当前时间轮换发现来源
+    rotation_index = (
+        int(time.time() / 1800)
+        % len(DISCOVERY_SOURCES)
+    )
 
-    fixed_urls = {
-        item["url"]
-        for item in fixed_products
-    }
-
-    for item in discovered:
-        if item["url"] in fixed_urls:
-            continue
-
-        all_products.append(item)
-
-    # 去重
-    unique = []
-
-    seen = set()
-
-    for item in all_products:
-        url = item.get("url")
-
-        if not url:
-            continue
-
-        if url in seen:
-            continue
-
-        seen.add(url)
-
-        unique.append(item)
-
-    all_products = unique
+    source = DISCOVERY_SOURCES[rotation_index]
 
     print(
-        f"本次实际检查商品："
-        f"{len(all_products)}"
+        "自动发现：",
+        source["name"],
+    )
+
+    try:
+        discovered = discover_products(source)
+
+        fixed_urls = {
+            item["url"]
+            for item in FIXED_PRODUCTS
+        }
+
+        for item in discovered:
+            if item["url"] in fixed_urls:
+                continue
+
+            # 先根据 URL 做基础过滤
+            url_text = normalize_name(
+                item["url"]
+            )
+
+            if any(
+                normalize_name(word) in url_text
+                for word in EXCLUDED_CATEGORIES
+            ):
+                continue
+
+            products.append(item)
+
+    except Exception as exc:
+        print("自动发现异常：", exc)
+
+    print(
+        f"本次实际检查商品：{len(products)}"
     )
 
     # --------------------------------------------------------
     # 开始检查
     # --------------------------------------------------------
 
-    for index, item in enumerate(
-        all_products,
-        start=1,
-    ):
-        print("")
+    for index, product in enumerate(products, start=1):
+        print()
         print(
-            f"========== "
-            f"{index}/{len(all_products)} "
-            f"=========="
+            f"========== {index}/{len(products)} =========="
         )
 
-        try:
-            check_product(
-                item,
-                history,
-            )
+        check_product(
+            product,
+            history,
+        )
 
-        except Exception as exc:
+        if index < len(products):
             print(
-                "检查商品出现异常：",
-                exc,
-            )
-
-        # Firecrawl 限流保护
-        if index < len(all_products):
-            print(
-                "等待 10 秒，"
+                f"等待 {FIRECRAWL_DELAY} 秒，"
                 "避免 Firecrawl 限流..."
             )
-
-            time.sleep(
-                FIRECRAWL_DELAY
-            )
+            time.sleep(FIRECRAWL_DELAY)
 
     # --------------------------------------------------------
-    # 保存价格历史
+    # 保存历史
     # --------------------------------------------------------
 
     save_history(history)
 
-    print("")
+    print()
     print("=" * 60)
     print("本次监控完成")
     print("=" * 60)
