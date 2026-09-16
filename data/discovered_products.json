@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789589776,
+    "last_checked": 1789591570,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789589734,
+    "last_checked": 1789591526,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789589744,
+    "last_checked": 1789591537,
     "invalid_count": 0
   },
   {
@@ -395,35 +395,35 @@
     "name": "Patagonia Daily Quilted Insulated Jacket",
     "url": "https://www.rei.com/product/249272/patagonia-daily-quilted-insulated-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789591586,
     "invalid_count": 0
   },
   {
     "name": "Patagonia Houdini Stash Half Zip Jacket",
     "url": "https://www.rei.com/product/228564/patagonia-houdini-stash-half-zip-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789591600,
     "invalid_count": 0
   },
   {
     "name": "Patagonia Nano Puff Insulated Jacket",
     "url": "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789591622,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Sima Hoody",
     "url": "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789591636,
     "invalid_count": 0
   },
   {
     "name": "Patagonia Powder Town Pants",
     "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789591651,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789589765,
+    "last_checked": 1789591559,
     "invalid_count": 0
   },
   {
@@ -2096,6 +2096,174 @@
     "name": "20320",
     "url": "https://www.patagonia.ca/product/mens-windsweep-lightweight-windbreaker-jacket/20320.html",
     "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Ar Pants",
+    "url": "https://www.rei.com/product/C11802/arcteryx-gamma-ar-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Ar Pants )",
+    "url": "https://www.rei.com/product/C11802/arcteryx-gamma-ar-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Glacier Fleece Jacket",
+    "url": "https://www.rei.com/product/C11862/the-north-face-glacier-fleece-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Hke Kalix Down Hooded Jacket",
+    "url": "https://www.rei.com/product/C11860/the-north-face-hke-kalix-down-hooded-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Yumiori Off Peak Full Zip Jacket",
+    "url": "https://www.rei.com/product/C01571/the-north-face-yumiori-off-peak-full-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Polartec Powergrid Stormgap Jacket",
+    "url": "https://www.rei.com/product/C01565/the-north-face-polartec-powergrid-stormgap-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Cedar Trail Grid Fleece Full Zip Jacket",
+    "url": "https://www.rei.com/product/254035/the-north-face-cedar-trail-grid-fleece-full-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Glacier Fleece Jacket )",
+    "url": "https://www.rei.com/product/C11862/the-north-face-glacier-fleece-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Hke Kalix Down Hooded Jacket )",
+    "url": "https://www.rei.com/product/C11860/the-north-face-hke-kalix-down-hooded-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Yumiori Off Peak Full Zip Jacket )",
+    "url": "https://www.rei.com/product/C01571/the-north-face-yumiori-off-peak-full-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Polartec Powergrid Stormgap Jacket )",
+    "url": "https://www.rei.com/product/C01565/the-north-face-polartec-powergrid-stormgap-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Cedar Trail Grid Fleece Full Zip Jacket )",
+    "url": "https://www.rei.com/product/254035/the-north-face-cedar-trail-grid-fleece-full-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia M10 Storm Jacket",
+    "url": "https://www.rei.com/product/C09308/patagonia-m10-storm-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Jacket",
+    "url": "https://www.rei.com/product/236295/arcteryx-sabre-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia M10 Storm Jacket )",
+    "url": "https://www.rei.com/product/C09308/patagonia-m10-storm-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Jacket )",
+    "url": "https://www.rei.com/product/236295/arcteryx-sabre-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31686",
+    "url": "https://www.patagonia.com/product/mens-powder-town-ski-snowboard-pants-short/31686.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "30306",
+    "url": "https://www.patagonia.com/product/mens-powslayer-ski-snowboard-jacket/30306.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85670",
+    "url": "https://www.patagonia.com/product/mens-houdini-climbing-jacket/85670.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85415",
+    "url": "https://www.patagonia.com/product/mens-granite-crest-waterproof-rain-jacket/85415.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85680",
+    "url": "https://www.patagonia.com/product/houdini-climbing-pants/85680.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "81772",
+    "url": "https://www.patagonia.com/product/mens-swiftcurrent-wading-fishing-jacket/81772.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "40580",
+    "url": "https://www.patagonia.com/product/mens-r1-thermal-fleece-jacket/40580.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20271",
+    "url": "https://www.patagonia.com/product/mens-daily-quilted-jacket/20271.html",
+    "source": "Patagonia US",
     "last_checked": 0,
     "invalid_count": 0
   }

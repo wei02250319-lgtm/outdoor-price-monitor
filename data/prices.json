@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789589734
+    "updated_at": 1789591526
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789589744
+    "updated_at": 1789591537
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789589755
+    "updated_at": 1789591548
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789589765
+    "updated_at": 1789591559
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789589776
+    "updated_at": 1789591570
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -892,5 +892,70 @@
     "image_url": "https://www.rei.com/media/718f0131-ddc5-47d9-a039-dad515015b27.jpg?size=784x588",
     "variants": [],
     "updated_at": 1789589851
+  },
+  "https://www.rei.com/product/249272/patagonia-daily-quilted-insulated-jacket-mens": {
+    "name": "Patagonia Daily Quilted Insulated Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/249272/patagonia-daily-quilted-insulated-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 139.93,
+    "original_price": 189.0,
+    "discount": 26.0,
+    "cny_price": 938.52,
+    "image_url": "https://www.rei.com/media/0354b09b-9f1b-4324-9318-ba43c3b6abfd.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789591584
+  },
+  "https://www.rei.com/product/228564/patagonia-houdini-stash-half-zip-jacket-mens": {
+    "name": "Patagonia Houdini Stash Half-Zip Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/228564/patagonia-houdini-stash-half-zip-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 100.93,
+    "original_price": 145.0,
+    "discount": 30.4,
+    "cny_price": 676.95,
+    "image_url": "https://www.rei.com/media/70b8c0d4-0cf9-4872-b870-27bf5443caf7.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789591599
+  },
+  "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens": {
+    "name": "Patagonia Nano Puff Insulated Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 148.73,
+    "original_price": 229.0,
+    "discount": 35.1,
+    "cny_price": 997.55,
+    "image_url": "https://www.rei.com/media/75e2000c-2d46-444d-8459-3b0c3b90cc4c.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789591620
+  },
+  "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens": {
+    "name": "Arc'teryx Sima Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 119.93,
+    "original_price": 160.0,
+    "discount": 25.0,
+    "cny_price": 804.38,
+    "image_url": "https://www.rei.com/media/d3903401-fb78-46af-8eca-5e6573c39b15.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789591635
+  },
+  "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens": {
+    "name": "Patagonia Powder Town Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 123.83,
+    "original_price": 249.0,
+    "discount": 50.3,
+    "cny_price": 830.54,
+    "image_url": "https://www.rei.com/media/ed25439a-827f-4170-8e7e-3df7a4fd260d.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789591650
   }
 }
