@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789598814,
+    "last_checked": 1789600537,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789598770,
+    "last_checked": 1789600495,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789598781,
+    "last_checked": 1789600506,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789598802,
+    "last_checked": 1789600527,
     "invalid_count": 0
   },
   {
@@ -2817,6 +2817,20 @@
     "name": "83460",
     "url": "https://www.patagonia.ca/product/mens-mixed-alpine-pants/83460.html",
     "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Glacier Fleece Quarter Zip Jacket",
+    "url": "https://www.rei.com/product/C11727/the-north-face-glacier-fleece-quarter-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Glacier Fleece Quarter Zip Jacket )",
+    "url": "https://www.rei.com/product/C11727/the-north-face-glacier-fleece-quarter-zip-jacket-mens)",
+    "source": "REI",
     "last_checked": 0,
     "invalid_count": 0
   }
