@@ -8,9 +8,9 @@
     "original_price": 400.0,
     "discount": 50.0,
     "cny_price": 1340.28,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577591
+    "updated_at": 1789578512
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -21,9 +21,9 @@
     "original_price": 280.0,
     "discount": 29.7,
     "cny_price": 1320.83,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577602
+    "updated_at": 1789578522
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -34,9 +34,9 @@
     "original_price": 200.0,
     "discount": 0.0,
     "cny_price": 1341.42,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577613
+    "updated_at": 1789578533
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -47,9 +47,9 @@
     "original_price": 209.0,
     "discount": 50.3,
     "cny_price": 696.4,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577624
+    "updated_at": 1789578544
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -60,9 +60,9 @@
     "original_price": 300.0,
     "discount": 33.4,
     "cny_price": 1340.28,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577635
+    "updated_at": 1789578554
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -73,9 +73,9 @@
     "original_price": 500.0,
     "discount": 40.0,
     "cny_price": 2010.99,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/8abb4f62-dc62-48b4-8255-6483def9a05c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577646
+    "updated_at": 1789578565
   },
   "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
     "name": "Arc'teryx Delta Jacket - Men's | REI Co-op",
@@ -86,9 +86,9 @@
     "original_price": 200.0,
     "discount": 50.1,
     "cny_price": 669.57,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/d401d650-9674-4f4d-a4c9-f2bf068dd1e0.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577657
+    "updated_at": 1789578576
   },
   "https://www.rei.com/product/243241/patagonia-r1-jacket-mens": {
     "name": "Patagonia R1 Jacket - Men's | REI Co-op",
@@ -99,9 +99,9 @@
     "original_price": 179.0,
     "discount": 40.3,
     "cny_price": 717.19,
-    "dewu_price": null,
+    "image_url": "https://www.rei.com/media/c96eef07-779e-4d31-a27b-e76f748f998d.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789577668
+    "updated_at": 1789578587
   },
   "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
     "name": "Arc'teryx Atom Insulated Jacket - Men's | REI Co-op",
