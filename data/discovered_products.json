@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789586116,
+    "last_checked": 1789587862,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789586072,
+    "last_checked": 1789587818,
     "invalid_count": 0
   },
   {
@@ -318,42 +318,42 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/C11803/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789587873,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Solano Hoody",
     "url": "https://www.rei.com/product/C11809/arcteryx-solano-hoody-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789587890,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789586083,
+    "last_checked": 1789587829,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Atom Sl Insulated Jacket",
     "url": "https://www.rei.com/product/C01004/arcteryx-atom-sl-insulated-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789587907,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Norvan Windshell Hoody",
     "url": "https://www.rei.com/product/C01308/arcteryx-norvan-windshell-hoody-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789587924,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Gamma Lightweight Jacket",
     "url": "https://www.rei.com/product/248250/arcteryx-gamma-lightweight-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789587941,
     "invalid_count": 0
   },
   {
@@ -1480,6 +1480,307 @@
     "name": "27230",
     "url": "https://www.patagonia.ca/product/mens-lightweight-stormshadow-jacket/27230.html",
     "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tekware Quarter Zip Jacket",
+    "url": "https://www.rei.com/product/C11729/the-north-face-tekware-quarter-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tekware Jacket",
+    "url": "https://www.rei.com/product/C11869/the-north-face-tekware-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Atom Sl Insulated Hoody",
+    "url": "https://www.rei.com/product/C11798/arcteryx-atom-sl-insulated-hoody-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia 3 In 1 Powder Town Jacket",
+    "url": "https://www.rei.com/product/C09278/patagonia-3-in-1-powder-town-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Re Tool Jacket",
+    "url": "https://www.rei.com/product/255567/patagonia-re-tool-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Beta Sl Jacket",
+    "url": "https://www.rei.com/product/C11800/arcteryx-beta-sl-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Insulated Powder Town Jacket",
+    "url": "https://www.rei.com/product/C09279/patagonia-insulated-powder-town-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tekware Quarter Zip Jacket )",
+    "url": "https://www.rei.com/product/C11729/the-north-face-tekware-quarter-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tekware Jacket )",
+    "url": "https://www.rei.com/product/C11869/the-north-face-tekware-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Atom Sl Insulated Hoody )",
+    "url": "https://www.rei.com/product/C11798/arcteryx-atom-sl-insulated-hoody-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia 3 In 1 Powder Town Jacket )",
+    "url": "https://www.rei.com/product/C09278/patagonia-3-in-1-powder-town-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Re Tool Jacket )",
+    "url": "https://www.rei.com/product/255567/patagonia-re-tool-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Beta Sl Jacket )",
+    "url": "https://www.rei.com/product/C11800/arcteryx-beta-sl-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Insulated Powder Town Jacket )",
+    "url": "https://www.rei.com/product/C09279/patagonia-insulated-powder-town-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Reclaimed Fleece Jacket",
+    "url": "https://www.rei.com/product/C09311/patagonia-reclaimed-fleece-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Better Sweater Jacket",
+    "url": "https://www.rei.com/product/C09305/patagonia-better-sweater-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Hampi Rock Pants",
+    "url": "https://www.rei.com/product/223546/patagonia-hampi-rock-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Mountain Utility Pants",
+    "url": "https://www.rei.com/product/255542/patagonia-mountain-utility-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Front Range Fleece Jacket",
+    "url": "https://www.rei.com/product/254037/the-north-face-front-range-fleece-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Light Gust Insulated Jacket",
+    "url": "https://www.rei.com/product/C00636/patagonia-light-gust-insulated-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia R2 Techface Jacket",
+    "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
+    "source": "REI",
+    "last_checked": 1789587851,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Reclaimed Fleece Jacket )",
+    "url": "https://www.rei.com/product/C09311/patagonia-reclaimed-fleece-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Better Sweater Jacket )",
+    "url": "https://www.rei.com/product/C09305/patagonia-better-sweater-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Hampi Rock Pants )",
+    "url": "https://www.rei.com/product/223546/patagonia-hampi-rock-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Mountain Utility Pants )",
+    "url": "https://www.rei.com/product/255542/patagonia-mountain-utility-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Front Range Fleece Jacket )",
+    "url": "https://www.rei.com/product/254037/the-north-face-front-range-fleece-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Light Gust Insulated Jacket )",
+    "url": "https://www.rei.com/product/C00636/patagonia-light-gust-insulated-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia R2 Techface Jacket )",
+    "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31166",
+    "url": "https://www.patagonia.com/product/mens-insulated-powder-town-ski-snowboard-pants-short/31166.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83072",
+    "url": "https://www.patagonia.com/product/mens-rps-climbing-pants-regular/83072.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26992",
+    "url": "https://www.patagonia.com/product/mens-isthmus-jacket/26992.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55257",
+    "url": "https://www.patagonia.com/product/mens-quandary-convertible-hiking-pants/55257.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "25668",
+    "url": "https://www.patagonia.com/product/mens-shelled-insulator-fishing-pants/25668.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "29535",
+    "url": "https://www.patagonia.com/product/mens-nano-air-shirt-jacket/29535.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55905",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-fleece-lined-5-pocket-work-pants-short/55905.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85335",
+    "url": "https://www.patagonia.com/product/das-light-belay-pants/85335.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "56340",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-5-pocket-work-pants-long/56340.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26520",
+    "url": "https://www.patagonia.com/product/mens-fleece-pile-lined-trucker-jacket/26520.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "22780",
+    "url": "https://www.patagonia.com/product/mens-retro-pile-fleece-patch-jacket/22780.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "23125",
+    "url": "https://www.patagonia.com/product/mens-retro-x-fleece-hoody-jacket/23125.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "86995",
+    "url": "https://www.patagonia.com/product/mens-hydropeak-stretch-thermal-surf-pants/86995.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "24260",
+    "url": "https://www.patagonia.com/product/mens-dirt-roamer-storm-mountain-bike-jacket/24260.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "27230",
+    "url": "https://www.patagonia.com/product/mens-lightweight-stormshadow-jacket/27230.html",
+    "source": "Patagonia US",
     "last_checked": 0,
     "invalid_count": 0
   }
