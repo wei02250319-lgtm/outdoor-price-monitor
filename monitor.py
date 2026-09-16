@@ -1198,6 +1198,16 @@ def extract_links_from_discovery(data, base_url=""):
             seen.add(url)
             links.append(url)
 
+    # Firecrawl 的 links 格式通常会直接返回 links 数组；
+    # 这里单独处理，避免 walk_data 遍历列表时丢失字段名。
+    if isinstance(data, dict):
+        direct_links = data.get("links")
+        if isinstance(direct_links, list):
+            for value in direct_links:
+                add_link(value)
+        elif isinstance(direct_links, str):
+            add_link(direct_links)
+
     for _, key, value in walk_data(data):
         nk = normalize_key(key)
         if nk in {"url", "link", "producturl", "product_url", "href"}:
@@ -1313,7 +1323,7 @@ def candidate_matches_allowed_name(name, url, source=None):
 
 def discover_products(source):
     """发现当前官网符合条件的商品链接；不设置发现数量上限。"""
-    data = firecrawl_scrape(source["url"], formats=["markdown"])
+    data = firecrawl_scrape(source["url"], formats=["markdown", "links"])
     if not data:
         print("没有获得发现页数据")
         return []
@@ -1676,32 +1686,40 @@ def main():
     print(f"本次检查固定商品：{len(FIXED_PRODUCTS)}")
 
     # --------------------------------------------------------
-    # 自动发现：每30分钟轮换一个官网
+    # 自动发现：本次依次测试全部官网
     # --------------------------------------------------------
-    rotation_index = (
-        int(time.time() / 1800)
-        % len(DISCOVERY_SOURCES)
+    # 发现阶段也使用统一的 Firecrawl 间隔，避免 7 个官网连续请求
+    # 触发限流。固定 5 个商品仍然全部检查。
+    print("自动发现：本次检查全部官网")
+
+    total_new = 0
+    success_sources = 0
+
+    for source_index, source in enumerate(DISCOVERY_SOURCES, start=1):
+        print(f"自动发现 {source_index}/{len(DISCOVERY_SOURCES)}：{source['name']}")
+        try:
+            discovered_now = discover_products(source)
+            before_count = len(discovered_pool)
+            discovered_pool = merge_discovered_products(
+                discovered_pool,
+                discovered_now,
+            )
+            added_now = max(0, len(discovered_pool) - before_count)
+            total_new += added_now
+            success_sources += 1
+            print(f"  发现 {len(discovered_now)} 个，新增 {added_now} 个")
+        except Exception as exc:
+            print(f"  自动发现异常：{exc}")
+
+        if source_index < len(DISCOVERY_SOURCES):
+            print(f"  等待 {FIRECRAWL_DELAY} 秒，避免 Firecrawl 限流...")
+            time.sleep(FIRECRAWL_DELAY)
+
+    save_discovered_products(discovered_pool)
+    print(
+        f"自动发现完成：成功 {success_sources}/{len(DISCOVERY_SOURCES)} 个官网，"
+        f"本次新增 {total_new} 个，累计商品库 {len(discovered_pool)} 个"
     )
-    source = DISCOVERY_SOURCES[rotation_index]
-
-    print("自动发现：", source["name"])
-
-    try:
-        discovered_now = discover_products(source)
-        before_count = len(discovered_pool)
-        discovered_pool = merge_discovered_products(
-            discovered_pool,
-            discovered_now,
-        )
-        save_discovered_products(discovered_pool)
-
-        print(
-            f"自动发现完成：本次新增 {max(0, len(discovered_pool) - before_count)} 个，"
-            f"累计商品库 {len(discovered_pool)} 个"
-        )
-
-    except Exception as exc:
-        print("自动发现异常：", exc)
 
     # --------------------------------------------------------
     # 固定5个 + 历史自动发现商品（轮换）
