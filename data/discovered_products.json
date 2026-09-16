@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789595167,
+    "last_checked": 1789596946,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789595123,
+    "last_checked": 1789596904,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789595134,
+    "last_checked": 1789596915,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789595156,
+    "last_checked": 1789596936,
     "invalid_count": 0
   },
   {
@@ -2662,6 +2662,90 @@
   {
     "name": "21475",
     "url": "https://www.patagonia.ca/product/mens-daily-sweatpants/21475.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Reign On Jacket",
+    "url": "https://www.rei.com/product/C05392/the-north-face-reign-on-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Afterburner Insulated Flannel Jacket",
+    "url": "https://www.rei.com/product/C11855/the-north-face-afterburner-insulated-flannel-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Synchilla Fleece Shirt Jacket",
+    "url": "https://www.rei.com/product/255715/patagonia-synchilla-fleece-shirt-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Reign On Jacket )",
+    "url": "https://www.rei.com/product/C05392/the-north-face-reign-on-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Afterburner Insulated Flannel Jacket )",
+    "url": "https://www.rei.com/product/C11855/the-north-face-afterburner-insulated-flannel-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Synchilla Fleece Shirt Jacket )",
+    "url": "https://www.rei.com/product/255715/patagonia-synchilla-fleece-shirt-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "27921",
+    "url": "https://www.patagonia.ca/product/mens-jackson-glacier-waterproof-down-jacket/27921.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82157",
+    "url": "https://www.patagonia.ca/product/mens-r1-fleece-pants/82157.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "29931",
+    "url": "https://www.patagonia.ca/product/mens-upstride-backcountry-ski-jacket/29931.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "84346",
+    "url": "https://www.patagonia.ca/product/mens-nano-air-light-hybrid-insulated-jacket/84346.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85140",
+    "url": "https://www.patagonia.ca/product/mens-boulder-fork-waterproof-rain-jacket/85140.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85695",
+    "url": "https://www.patagonia.ca/product/mens-free-wall-climbing-pants/85695.html",
     "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
