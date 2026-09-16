@@ -347,5 +347,54 @@
     "fixed_rotation_index": 2,
     "version": 3,
     "discovery_rotation_index": 6
+  },
+  "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
+    "name": "Gamma Pants - Men's",
+    "source": "REI",
+    "current_min": 200.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
+    "name": "R2 TechFace Jacket - Men's",
+    "source": "REI",
+    "current_min": 103.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
+    "name": "Capilene Cool Daily Graphic Hoody - Men's",
+    "source": "REI",
+    "current_min": 54.93,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/243256/arcteryx-atom-insulated-jacket-mens": {
+    "name": "Atom Insulated Jacket - Men's",
+    "source": "REI",
+    "current_min": 179.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
+    "name": "Beta SL Jacket - Men's",
+    "source": "REI",
+    "current_min": 299.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/236237/arcteryx-delta-jacket-mens": {
+    "name": "Delta Jacket - Men's",
+    "source": "REI",
+    "current_min": 99.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/227570/rei-co-op-rainier-rain-jacket-mens": {
+    "name": "Rainier Rain Jacket - Men's",
+    "source": "REI",
+    "current_min": 29.83,
+    "max_discount": 0.0,
+    "currency": ""
   }
 }
