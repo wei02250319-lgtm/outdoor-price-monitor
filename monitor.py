@@ -1328,32 +1328,158 @@ def discover_products(source):
             "s",
             "m",
             "l",
-            "xl",
-            "xxl",
-            "xxxl",
-        }:
+def discover_products(source):
+    data = firecrawl_scrape(
+        source["url"],
+        formats=["markdown"],
+    )
+
+    if not data:
+        return []
+
+    links = extract_links_from_discovery(data)
+
+    products = []
+    seen_urls = set()
+
+    # 明确排除的页面/路径
+    excluded_words = [
+        "/cart",
+        "/account",
+        "/login",
+        "/stores",
+        "/search",
+        "/help",
+        "/about",
+        "/vote",
+        "/ownership",
+        "/shipping",
+        "/returns",
+        "/privacy",
+        "/terms",
+        "/contact",
+        "/careers",
+        "/blog",
+        "/events",
+        "/community",
+        "/membership",
+        "/gift",
+        "/wishlist",
+        "/size",
+        "/filter",
+        "/sort",
+    ]
+
+    # 图片、视频、文件全部排除
+    excluded_extensions = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".webp",
+        ".avif",
+        ".svg",
+        ".ico",
+        ".pdf",
+        ".mp4",
+        ".webm",
+        ".zip",
+    )
+
+    # 尺码、颜色等筛选页面
+    excluded_last_parts = {
+        "xxs",
+        "xs",
+        "s",
+        "m",
+        "l",
+        "xl",
+        "xxl",
+        "xxxl",
+        "3xl",
+        "4xl",
+        "one-size",
+        "one_size",
+    }
+
+    for url in links:
+        if not url:
             continue
 
-        # 6. 排除已经发现的重复链接
+        low = url.lower().strip()
+
+        # 去掉查询参数，只用于判断路径
+        clean_url = low.split("?", 1)[0]
+        path = clean_url.rstrip("/")
+
+        # ① 图片/文件直接排除
+        if clean_url.endswith(excluded_extensions):
+            continue
+
+        # ② 非商品页面排除
+        if any(word in low for word in excluded_words):
+            continue
+
+        # ③ 最后一段是尺码，排除
+        last_part = path.split("/")[-1]
+
+        if last_part in excluded_last_parts:
+            continue
+
+        # ④ Patagonia 的 shop/mens、shop/mens/xxs 等分类页面排除
+        if "/shop/mens" in path:
+            parts = [x for x in path.split("/") if x]
+
+            # /shop/mens 本身
+            if len(parts) <= 2:
+                continue
+
+            # /shop/mens/xxs、/shop/mens/xs 等
+            if len(parts) == 3 and parts[-1] in excluded_last_parts:
+                continue
+
+        # ⑤ 必须是允许品牌
+        if not any(
+            brand in low
+            for brand in [
+                "patagonia",
+                "arcteryx",
+                "arc-teryx",
+                "northface",
+                "north-face",
+            ]
+        ):
+            continue
+
+        # ⑥ 必须有商品页面特征
+        product_path = any(
+            keyword in path
+            for keyword in [
+                "/product/",
+                "/products/",
+                "/item/",
+                "/p/",
+            ]
+        )
+
+        # Patagonia 等网站有些商品页面不一定使用 /product/
+        # 这种情况下，至少要求 URL 看起来像具体商品，而不是分类页
+        if not product_path:
+            if path.endswith(("/mens", "/men", "/c/mens", "/c/men")):
+                continue
+
+            # 最后一段太短，通常是筛选条件
+            if len(last_part) < 5:
+                continue
+
+        # ⑦ 去重
         if url in seen_urls:
             continue
 
         seen_urls.add(url)
 
-        # 7. 商品 URL 至少应该有比较明确的商品特征
-        product_keywords = [
-            "/product/",
-            "/products/",
-            "/shop/",
-            "/item/",
-            "/p/",
-        ]
-
-        if not any(keyword in low for keyword in product_keywords):
-            continue
-
-        # 8. 从 URL 生成临时商品名称
-        name = url.split("/")[-1]
+        # ⑧ 生成临时商品名称
+        name = url.rstrip("/").split("/")[-1]
         name = name.split("?", 1)[0]
 
         name = (
