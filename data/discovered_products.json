@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789581832,
+    "last_checked": 1789582783,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789581790,
+    "last_checked": 1789582741,
     "invalid_count": 0
   },
   {
@@ -213,35 +213,35 @@
     "name": "22802",
     "url": "https://www.patagonia.ca/product/mens-retro-pile-fleece-jacket/22802.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1789582795,
     "invalid_count": 0
   },
   {
     "name": "23235",
     "url": "https://www.patagonia.ca/product/mens-micro-d-fleece-patch-pocket-jacket/23235.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1789582814,
     "invalid_count": 0
   },
   {
     "name": "85241",
     "url": "https://www.patagonia.ca/product/mens-torrentshell-3-layer-rain-jacket/85241.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1789582837,
     "invalid_count": 0
   },
   {
     "name": "20270",
     "url": "https://www.patagonia.ca/product/mens-daily-quilted-insulated-jacket/20270.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1789582860,
     "invalid_count": 0
   },
   {
     "name": "40275",
     "url": "https://www.patagonia.ca/product/mens-r1-air-fleece-midlayer-jacket/40275.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1789582883,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789581800,
+    "last_checked": 1789582751,
     "invalid_count": 0
   },
   {
@@ -423,6 +423,538 @@
     "name": "Patagonia Powder Town Pants",
     "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens",
     "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Light Variable Jacket )",
+    "url": "https://www.rei.com/product/C00639/patagonia-light-variable-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Kragg Cotton Pants )",
+    "url": "https://www.rei.com/product/242918/arcteryx-kragg-cotton-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Basin Pants )",
+    "url": "https://www.rei.com/product/235663/the-north-face-basin-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Daily Quilted Insulated Jacket )",
+    "url": "https://www.rei.com/product/249272/patagonia-daily-quilted-insulated-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Houdini Stash Half Zip Jacket )",
+    "url": "https://www.rei.com/product/228564/patagonia-houdini-stash-half-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Nano Puff Insulated Jacket )",
+    "url": "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sima Hoody )",
+    "url": "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Powder Town Pants )",
+    "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Sperro Sv Jacket 0 0667)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/sperro-sv-jacket-0-0667)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Thorium Jacket 0695)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/thorium-jacket-0695)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Gamma Pant 0481)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/gamma-pant-0481)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Kragg Cotton Pant 9530)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/kragg-cotton-pant-9530)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Atom Hoody 9556)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/atom-hoody-9556)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Alpha Sv Jacket 9899)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9899)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Alpha Sv Jacket 9989)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/alpha-sv-jacket-9989)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Gamma Mx Hoody 8485)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/gamma-mx-hoody-8485)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Beta Ar Jacket 1062)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/beta-ar-jacket-1062)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Cronin Ar Pant 0697)",
+    "url": "https://arcteryx.com/ca/en/shop/mens/cronin-ar-pant-0697)",
+    "source": "Arc'teryx Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55183",
+    "url": "https://www.patagonia.com/product/mens-quandary-hiking-pants-regular/55183.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85266",
+    "url": "https://www.patagonia.com/product/mens-torrentshell-3-layer-rain-pants-regular/85266.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20250",
+    "url": "https://www.patagonia.com/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21166",
+    "url": "https://www.patagonia.com/product/mens-terravia-trail-pants-short/21166.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85261",
+    "url": "https://www.patagonia.com/product/mens-torrentshell-3-layer-rain-pants-short/85261.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31196",
+    "url": "https://www.patagonia.com/product/mens-insulated-powder-town-ski-snowboard-jacket/31196.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85220",
+    "url": "https://www.patagonia.com/product/mens-insulated-boulder-fork-rain-jacket/85220.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83627",
+    "url": "https://www.patagonia.com/product/mens-r2-techface-jacket/83627.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82870",
+    "url": "https://www.patagonia.com/product/mens-nano-air-insulated-light-jacket/82870.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20455",
+    "url": "https://www.patagonia.com/product/mens-isthmus-unlined-jacket/20455.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82460",
+    "url": "https://www.patagonia.com/product/mens-swiftcurrent-traverse-wading-pants/82460.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21330",
+    "url": "https://www.patagonia.com/product/mens-lightweight-all-wear-5-pocket-pants-regular/21330.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "23310",
+    "url": "https://www.patagonia.com/product/mens-textured-fleece-jacket/23310.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83403",
+    "url": "https://www.patagonia.com/product/mens-triolet-alpine-jacket/83403.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26171",
+    "url": "https://www.patagonia.com/product/mens-micro-d-fleece-jacket/26171.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "80300",
+    "url": "https://www.patagonia.com/product/mens-big-water-foul-weather-jacket/80300.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85301",
+    "url": "https://www.patagonia.com/product/mens-das-light-hoody-belay-jacket/85301.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "56290",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-5-pocket-work-pants-regular/56290.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26491",
+    "url": "https://www.patagonia.com/product/mens-windshadow-waterproof-jacket/26491.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26775",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-hooded-work-jacket/26775.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21171",
+    "url": "https://www.patagonia.com/product/mens-terravia-trail-pants-regular/21171.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "84066",
+    "url": "https://www.patagonia.com/product/mens-micro-puff-insulated-jacket/84066.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "30066",
+    "url": "https://www.patagonia.com/product/mens-snowdrifter-ski-snowboard-jacket/30066.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85920",
+    "url": "https://www.patagonia.com/product/mens-m10-storm-waterproof-alpine-pants/85920.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21325",
+    "url": "https://www.patagonia.com/product/mens-lightweight-all-wear-5-pocket-pants-short/21325.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21665",
+    "url": "https://www.patagonia.com/product/mens-synchilla-fleece-pants/21665.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20445",
+    "url": "https://www.patagonia.com/product/mens-isthmus-lined-jacket/20445.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31691",
+    "url": "https://www.patagonia.com/product/mens-powder-town-ski-snowboard-pants-regular/31691.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85266",
+    "url": "https://www.patagonia.ca/product/mens-torrentshell-3-layer-rain-pants-regular/85266.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20250",
+    "url": "https://www.patagonia.ca/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21166",
+    "url": "https://www.patagonia.ca/product/mens-terravia-trail-pants-short/21166.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85220",
+    "url": "https://www.patagonia.ca/product/mens-insulated-boulder-fork-rain-jacket/85220.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83627",
+    "url": "https://www.patagonia.ca/product/mens-r2-techface-jacket/83627.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82870",
+    "url": "https://www.patagonia.ca/product/mens-nano-air-insulated-light-jacket/82870.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "23057",
+    "url": "https://www.patagonia.ca/product/mens-classic-retro-x-fleece-jacket/23057.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85750",
+    "url": "https://www.patagonia.ca/product/mens-super-free-alpine-jacket/85750.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "23310",
+    "url": "https://www.patagonia.ca/product/mens-textured-fleece-jacket/23310.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55790",
+    "url": "https://www.patagonia.ca/product/mens-all-seasons-hemp-canvas-double-knee-work-pants-long/55790.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "80300",
+    "url": "https://www.patagonia.ca/product/mens-big-water-foul-weather-jacket/80300.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21330",
+    "url": "https://www.patagonia.ca/product/mens-lightweight-all-wear-5-pocket-pants-regular/21330.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85301",
+    "url": "https://www.patagonia.ca/product/mens-das-light-hoody-belay-jacket/85301.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "56290",
+    "url": "https://www.patagonia.ca/product/mens-iron-forge-5-pocket-work-pants-regular/56290.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "26491",
+    "url": "https://www.patagonia.ca/product/mens-windshadow-waterproof-jacket/26491.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20585",
+    "url": "https://www.patagonia.ca/product/mens-light-gust-insulated-shirt-jacket/20585.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85920",
+    "url": "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-pants/85920.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21665",
+    "url": "https://www.patagonia.ca/product/mens-synchilla-fleece-pants/21665.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20445",
+    "url": "https://www.patagonia.ca/product/mens-isthmus-lined-jacket/20445.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21146",
+    "url": "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-short/21146.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55183",
+    "url": "https://www.patagonia.ca/product/mens-quandary-hiking-pants-regular/55183.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "24104",
+    "url": "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-pants/24104.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82971",
+    "url": "https://www.patagonia.ca/product/mens-terravia-alpine-pants-short/82971.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20366",
+    "url": "https://www.patagonia.ca/product/mens-pile-lined-fjord-shirt-jacket/20366.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20235",
+    "url": "https://www.patagonia.ca/product/mens-heyes-peak-jacket/20235.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21151",
+    "url": "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-regular/21151.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21716",
+    "url": "https://www.patagonia.ca/product/mens-r2-techface-pants/21716.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "25528",
+    "url": "https://www.patagonia.ca/product/mens-better-sweater-fleece-jacket/25528.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20240",
+    "url": "https://www.patagonia.ca/product/mens-daily-quilted-shirt-jacket/20240.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82961",
+    "url": "https://www.patagonia.ca/product/mens-terravia-alpine-pants-regular/82961.html",
+    "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
   }
