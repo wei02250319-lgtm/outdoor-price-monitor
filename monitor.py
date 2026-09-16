@@ -809,49 +809,89 @@ def product_matches_allowed_category(name):
 
 def extract_variant_info(data):
     """
-    尽可能从 Firecrawl product 数据中读取颜色、尺码、库存。
+    尽可能从 Firecrawl product 数据中提取颜色、尺码、库存。
+
+    兼容：
+    1. variants / skus / options 数组
+    2. 单层或多层嵌套的 color/size/stock 字段
+    3. JSON 字符串中嵌套的颜色/尺码/库存数据
+    4. Shopify / 商品页常见的 availability / quantity / inStock 字段
     """
 
     variants = []
 
-    def parse_variant(obj):
+    COLOR_KEYS = {
+        "color", "colour", "colorname", "colourname",
+        "variantcolor", "variantcolour", "optioncolor",
+    }
+    SIZE_KEYS = {
+        "size", "sizename", "variantsize", "optionsize",
+    }
+    INVENTORY_KEYS = {
+        "inventory", "inventoryquantity", "inventoryqty",
+        "quantity", "stock", "stockquantity",
+        "availablequantity", "availableqty",
+        "qty", "count",
+    }
+    AVAILABILITY_KEYS = {
+        "availability", "instock", "in_stock",
+        "available", "isavailable", "sellable",
+    }
+
+    def normalize_value(value):
+        if value is None:
+            return ""
+        if isinstance(value, (str, int, float, bool)):
+            return str(value).strip()
+        return ""
+
+    def parse_variant_obj(obj, inherited_color="", inherited_size=""):
         if not isinstance(obj, dict):
             return
 
-        color = ""
-        size = ""
+        color = inherited_color
+        size = inherited_size
         inventory = None
+        availability = None
 
+        # 先读取当前对象自己的字段
         for key, value in obj.items():
             nk = normalize_key(key)
 
-            if nk in {
-                "color",
-                "colour",
-                "colorname",
-                "colourname",
-            }:
-                color = clean_text(value)
+            if nk in COLOR_KEYS:
+                value_text = normalize_value(value)
+                if value_text:
+                    color = value_text
 
-            elif nk in {
-                "size",
-                "sizename",
-            }:
-                size = clean_text(value)
+            elif nk in SIZE_KEYS:
+                value_text = normalize_value(value)
+                if value_text:
+                    size = value_text
 
-            elif nk in {
-                "inventory",
-                "inventoryquantity",
-                "inventory_qty",
-                "quantity",
-                "stock",
-                "stockquantity",
-                "availablequantity",
-            }:
+            elif nk in INVENTORY_KEYS:
                 number = safe_float(value)
-
                 if number is not None:
                     inventory = int(number)
+
+            elif nk in AVAILABILITY_KEYS:
+                availability = value
+
+        # availability=true / "InStock" 等信息可以补足库存状态
+        if inventory is None and availability is not None:
+            if isinstance(availability, bool):
+                inventory = 1 if availability else 0
+            else:
+                av = normalize_value(availability).lower()
+                if av in {
+                    "true", "1", "yes", "available",
+                    "instock", "in stock", "instockstatus"
+                }:
+                    inventory = 1
+                elif av in {
+                    "false", "0", "no", "unavailable",
+                    "outofstock", "out of stock"
+                }:
+                    inventory = 0
 
         if color or size or inventory is not None:
             variants.append(
@@ -862,39 +902,116 @@ def extract_variant_info(data):
                 }
             )
 
+        # 继续向下递归，继承父级颜色/尺码
+        for key, value in obj.items():
+            nk = normalize_key(key)
+
+            if isinstance(value, dict):
+                parse_variant_obj(
+                    value,
+                    inherited_color=color,
+                    inherited_size=size,
+                )
+
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        parse_variant_obj(
+                            item,
+                            inherited_color=color,
+                            inherited_size=size,
+                        )
+
+    def parse_json_string(value):
+        if not isinstance(value, str):
+            return
+        stripped = value.strip()
+        if not stripped or stripped[0] not in "[{":
+            return
+        try:
+            parsed = json.loads(stripped)
+        except Exception:
+            return
+        if isinstance(parsed, (dict, list)):
+            if isinstance(parsed, dict):
+                parse_variant_obj(parsed)
+            else:
+                for item in parsed:
+                    if isinstance(item, dict):
+                        parse_variant_obj(item)
+
+    # 第一轮：递归扫描整个 Firecrawl 数据。
+    # 不再只依赖 key 必须叫 variants/skus/options。
     for _, key, value in walk_data(data):
         nk = normalize_key(key)
 
         if nk in {
-            "variants",
-            "variant",
-            "options",
-            "skus",
-            "sku",
+            "variants", "variant",
+            "skus", "sku",
+            "options", "option",
+            "variantslist", "productvariants",
+            "variantoptions",
         }:
-            if isinstance(value, list):
+            if isinstance(value, dict):
+                parse_variant_obj(value)
+            elif isinstance(value, list):
                 for item in value:
-                    parse_variant(item)
+                    if isinstance(item, dict):
+                        parse_variant_obj(item)
 
-            elif isinstance(value, dict):
-                parse_variant(value)
+        elif isinstance(value, str):
+            parse_json_string(value)
 
-    # 去重
+    # 第二轮：直接扫描每个 dict。
+    # 这一层用于处理部分官网把 color/size/stock 直接放在对象里，
+    # 但外层并没有 variants/skus 字段名的情况。
+    if isinstance(data, dict):
+        parse_variant_obj(data)
+
+    # 第三轮：从 markdown / html / rawHtml 中寻找 JSON-LD
+    # 里的颜色、尺码、库存字段。
+    text_parts = []
+    if isinstance(data, dict):
+        for key in ("markdown", "html", "rawHtml"):
+            value = data.get(key)
+            if isinstance(value, str):
+                text_parts.append(value)
+
+    combined_text = "\n".join(text_parts)
+    if combined_text:
+        # <script type="application/ld+json">...</script>
+        for script in re.findall(
+            r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+            combined_text,
+            flags=re.I | re.S,
+        ):
+            parse_json_string(html.unescape(script))
+
+    # 去重，并清理明显无效记录
     result = []
     seen = set()
 
     for item in variants:
-        key = (
-            item.get("color", ""),
-            item.get("size", ""),
-            item.get("inventory"),
-        )
+        color = clean_text(item.get("color", ""))
+        size = clean_text(item.get("size", ""))
+        inventory = item.get("inventory")
+
+        key = (color.lower(), size.lower(), inventory)
+
+        if not (color or size or inventory is not None):
+            continue
 
         if key in seen:
             continue
 
         seen.add(key)
-        result.append(item)
+        result.append(
+            {
+                "color": color,
+                "size": size,
+                "inventory": inventory,
+            }
+        )
 
     return result
 
@@ -1332,6 +1449,43 @@ def candidate_matches_allowed_name(name, url, source=None):
 
     return True
 
+def _extract_candidate_urls_from_text(text, source):
+    """从 Markdown / HTML / rawHtml 中提取商品 URL。"""
+    if not isinstance(text, str) or not text:
+        return []
+    base_url = source.get("url", "")
+    urls=[]; seen=set()
+    def add(value):
+        if not isinstance(value,str): return
+        value=html.unescape(value).strip().strip('<>')
+        value=value.replace('\\/','/')
+        if not value: return
+        if value.startswith('//'): value='https:'+value
+        elif not value.startswith(('http://','https://')): value=urljoin(base_url,value)
+        clean=canonical_url(value)
+        if clean and clean not in seen:
+            seen.add(clean); urls.append(clean)
+    for value in re.findall(r'https?://[^\s"\'<>\\)]+', text, flags=re.I): add(value)
+    for value in re.findall(r'(?:href|data-href|data-url|data-product-url|producturl|product_url)=["\']([^"\']+)', text, flags=re.I): add(value)
+    for value in re.findall(r'\]\(\s*<?([^\)\s>]+)', text): add(value)
+    for value in re.findall(r'["\']((?:/[^"\']+))["\']', text, flags=re.I):
+        low=value.lower()
+        if any(x in low for x in ('/product/','/shop/','/p/')): add(value)
+    return urls
+
+
+def _build_name_from_url(url):
+    """从商品 URL 生成备用商品名；商品页抓到标题后会覆盖它。"""
+    parts=[x for x in urlparse(url).path.strip('/').split('/') if x]
+    if not parts: return ''
+    slug=parts[-1]
+    if re.fullmatch(r'nf[a-z0-9-]+', slug, re.I) and len(parts)>=2: slug=parts[-2]
+    if slug.lower().endswith('.html'): slug=slug[:-5]
+    slug=re.sub(r'[-_]+',' ',slug)
+    slug=re.sub(r'\b(?:mens|men|womens|women|male|female)\b','',slug,flags=re.I)
+    return re.sub(r'\s+',' ',slug).strip().title()
+
+
 def discover_products(source):
     data = firecrawl_scrape(source["url"], formats=["markdown"])
     if not data:
@@ -1341,8 +1495,18 @@ def discover_products(source):
     if isinstance(data, dict):
         for key in ("markdown", "html", "rawHtml"):
             links.extend(_extract_candidate_urls_from_text(data.get(key), source))
-    products, seen_urls = [], set()
+
+    # 去重后再识别，避免同一商品被多个字段重复抓取。
+    unique_links = []
+    link_seen = set()
     for raw_url in links:
+        clean_url = _clean_discovery_url(raw_url)
+        if clean_url and clean_url not in link_seen:
+            link_seen.add(clean_url)
+            unique_links.append(clean_url)
+
+    products, seen_urls = [], set()
+    for raw_url in unique_links:
         url = _clean_discovery_url(raw_url)
         if not url or url in seen_urls:
             continue
