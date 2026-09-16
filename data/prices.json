@@ -359,7 +359,7 @@
     "cny_price": 1342.3,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789521530
+    "updated_at": 1789522268
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -372,7 +372,7 @@
     "cny_price": 696.86,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789521541
+    "updated_at": 1789522279
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -448,7 +448,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789521552
+    "updated_at": 1789522290
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
     "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
@@ -461,7 +461,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789521508
+    "updated_at": 1789522247
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -474,7 +474,7 @@
     "cny_price": 1321.7,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789521519
+    "updated_at": 1789522258
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
@@ -496,5 +496,57 @@
     "current_min": 900.0,
     "max_discount": 0.0,
     "currency": ""
+  },
+  "https://www.patagonia.ca/shop/mens": {
+    "name": "Men's Outdoor Clothing & Gear by Patagonia",
+    "url": "https://www.patagonia.ca/shop/mens",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 99.0,
+    "original_price": 99.0,
+    "discount": 0.0,
+    "cny_price": 477.34,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789522319
+  },
+  "https://www.patagonia.ca/shop/mens/3xl": {
+    "name": "Men's Outdoor Clothing & Gear by Patagonia",
+    "url": "https://www.patagonia.ca/shop/mens/3xl",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 99.0,
+    "original_price": 99.0,
+    "discount": 0.0,
+    "cny_price": 477.34,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789522357
+  },
+  "https://www.patagonia.ca/shop/mens/one-size": {
+    "name": "Men's Outdoor Clothing & Gear by Patagonia",
+    "url": "https://www.patagonia.ca/shop/mens/one-size",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 23.99,
+    "original_price": 49.0,
+    "discount": 51.0,
+    "cny_price": 115.67,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789522376
+  },
+  "https://www.patagonia.ca/shop/mens/2rm?index=0": {
+    "name": "Men's Outdoor Clothing & Gear by Patagonia",
+    "url": "https://www.patagonia.ca/shop/mens/2rm?index=0",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 959.0,
+    "original_price": 959.0,
+    "discount": 0.0,
+    "cny_price": 4623.91,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789522418
   }
 }
