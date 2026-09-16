@@ -424,5 +424,47 @@
     "current_min": 450.0,
     "max_discount": 0.0,
     "currency": ""
+  },
+  "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
+    "name": "Atom Insulated Hoody - Men's",
+    "source": "REI",
+    "current_min": 199.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
+    "name": "Gamma MX Hoody - Men's",
+    "source": "REI",
+    "current_min": 199.83,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
+    "name": "Gamma Jacket - Men's",
+    "source": "REI",
+    "current_min": 196.93,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
+    "name": "Atom SL Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 220.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/sperro-sv-jacket-0-0667": {
+    "name": "Sperro SV Jacket - 0 Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 1200.0,
+    "max_discount": 0.0,
+    "currency": ""
+  },
+  "https://arcteryx.com/shop/mens/alpha-sv-jacket-9899": {
+    "name": "Alpha SV Jacket Men's",
+    "source": "Arc'teryx Canada",
+    "current_min": 900.0,
+    "max_discount": 0.0,
+    "currency": ""
   }
 }
