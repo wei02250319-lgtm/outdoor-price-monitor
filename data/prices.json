@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789579177
+    "updated_at": 1789580404
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789579187
+    "updated_at": 1789580415
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789579198
+    "updated_at": 1789580426
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789579209
+    "updated_at": 1789580436
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789579220
+    "updated_at": 1789580447
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -115,5 +115,70 @@
     "dewu_price": null,
     "variants": [],
     "updated_at": 1789577679
+  },
+  "https://www.rei.com/product/C01005/arcteryx-squamish-hoody-mens": {
+    "name": "Arc'teryx Squamish Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C01005/arcteryx-squamish-hoody-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 119.83,
+    "original_price": 200.0,
+    "discount": 40.1,
+    "cny_price": 803.71,
+    "image_url": "https://www.rei.com/media/bd42950b-8cc3-4c7f-86a7-36fd83327593.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789580458
+  },
+  "https://www.rei.com/product/249477/arcteryx-gamma-hoody-mens": {
+    "name": "Arc'teryx Gamma Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/249477/arcteryx-gamma-hoody-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 179.83,
+    "original_price": 300.0,
+    "discount": 40.1,
+    "cny_price": 1206.14,
+    "image_url": "https://www.rei.com/media/3075c7e3-50e7-4862-8480-963f9044c5ab.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789580471
+  },
+  "https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens": {
+    "name": "Arc'teryx Cormac Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C01310/arcteryx-cormac-hoody-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 66.93,
+    "original_price": 90.0,
+    "discount": 25.6,
+    "cny_price": 448.91,
+    "image_url": "https://www.rei.com/media/569af230-dab8-4f2a-a405-eff5e2575a4c.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789580483
+  },
+  "https://arcteryx.com/ca/en/shop/mens/sperro-sv-jacket-0-0667": {
+    "name": "Sperro SV Jacket - 0 Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/sperro-sv-jacket-0-0667",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 1500.0,
+    "original_price": 1500.0,
+    "discount": 0.0,
+    "cny_price": 7217.4,
+    "image_url": "https://cdn.sanity.io/images/inkbj32c/production/4b5cf9b2ecba8f61ef4392507b71ff9a957df2bb-674x674.jpg?q=75&fit=max&auto=format",
+    "variants": [],
+    "updated_at": 1789580500
+  },
+  "https://arcteryx.com/ca/en/shop/mens/thorium-jacket-0695": {
+    "name": "Thorium Jacket Men's | Arc'teryx Canada",
+    "url": "https://arcteryx.com/ca/en/shop/mens/thorium-jacket-0695",
+    "source": "Arc'teryx Canada",
+    "currency": "CAD",
+    "current_price": 580.0,
+    "original_price": 580.0,
+    "discount": 0.0,
+    "cny_price": 2790.73,
+    "image_url": "https://images-dynamic-arcteryx.imgix.net/details/1350x1710/F26-X000010695-Thorium-Jacket-Black-Front-View.jpg?auto=format&q=70&fit=crop&fill=white&max-w=1350&max-h=1710&ixlib=react-9.10.0",
+    "variants": [],
+    "updated_at": 1789580514
   }
 }
