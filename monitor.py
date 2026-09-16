@@ -4,7 +4,7 @@ import json
 import time
 import html
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -1065,7 +1065,12 @@ def get_dewu_reference_price(product_name):
 # 自动发现商品
 # ============================================================
 
-def extract_links_from_discovery(data):
+def extract_links_from_discovery(data, base_url=""):
+    """从 Firecrawl 的发现页结果中提取链接。
+
+    同时支持绝对 URL 和相对 URL，避免 REI 分类页里的
+    /product/123456/... 链接因为是相对路径而被漏掉。
+    """
     links = []
 
     def add_link(value):
@@ -1073,9 +1078,22 @@ def extract_links_from_discovery(data):
             return
 
         value = value.strip()
-
-        if not value.startswith("http"):
+        if not value:
             return
+
+        # 处理 //www.rei.com/...、/product/... 等相对链接
+        if value.startswith("//"):
+            value = "https:" + value
+        elif base_url and value.startswith("/"):
+            value = urljoin(base_url, value)
+        elif base_url and not value.startswith(("http://", "https://")):
+            value = urljoin(base_url, value)
+
+        if not value.startswith(("http://", "https://")):
+            return
+
+        # 去掉锚点，保留查询参数
+        value = value.split("#", 1)[0]
 
         if value not in links:
             links.append(value)
@@ -1092,394 +1110,217 @@ def extract_links_from_discovery(data):
         }:
             add_link(value)
 
-    # markdown / html 里的 URL
+    # markdown / html 中的 URL
     if isinstance(data, dict):
         for key in ["markdown", "html", "rawHtml"]:
             text = data.get(key)
 
-            if isinstance(text, str):
-                found = re.findall(
-                    r'https?://[^\s)"\'<>]+',
-                    text,
-                )
+            if not isinstance(text, str):
+                continue
 
-                for url in found:
-                    add_link(url)
+            # 绝对 URL
+            for found in re.findall(
+                r'https?://[^\s)"\'<>]+',
+                text,
+            ):
+                add_link(found)
+
+            # HTML href / Markdown 相对链接
+            for found in re.findall(
+                r'href=["\']([^"\']+)["\']',
+                text,
+                flags=re.I,
+            ):
+                add_link(found)
+
+            for found in re.findall(
+                r'\]\(([^)\s]+)',
+                text,
+            ):
+                add_link(found)
 
     return links
 
 
 def discover_products(source):
+    """从分类/折扣列表页发现具体商品详情页。
+
+    关键规则：
+    1. REI 的 /c/.../scd-deals 是商品列表页，不能直接当商品检查。
+    2. REI 只接受 /product/<数字ID>/... 这种具体商品页。
+    3. 其他品牌继续接受常见 /product/、/products/、/item/、/p/ 路径。
+    4. 统一排除购物车、搜索、尺码筛选、图片等非商品链接。
+    """
+    source_url = source.get("url", "")
+    source_name = source.get("name", "")
+
     data = firecrawl_scrape(
-        source["url"],
-        formats=["markdown"],
+        source_url,
+        formats=["markdown", "html"],
     )
 
     if not data:
         return []
 
-    links = extract_links_from_discovery(data)
+    links = extract_links_from_discovery(
+        data,
+        base_url=source_url,
+    )
 
     products = []
     seen_urls = set()
 
+    excluded_words = [
+        "/cart",
+        "/account",
+        "/login",
+        "/stores",
+        "/search",
+        "/help",
+        "/about",
+        "/vote",
+        "/ownership",
+        "/shipping",
+        "/returns",
+        "/privacy",
+        "/terms",
+        "/contact",
+        "/careers",
+        "/blog",
+        "/events",
+        "/community",
+        "/membership",
+        "/gift",
+        "/wishlist",
+        "/size",
+        "/filter",
+        "/sort",
+    ]
+
+    excluded_extensions = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".webp",
+        ".avif",
+        ".svg",
+        ".ico",
+        ".pdf",
+        ".mp4",
+        ".webm",
+        ".zip",
+    )
+
+    excluded_last_parts = {
+        "xxs",
+        "xs",
+        "s",
+        "m",
+        "l",
+        "xl",
+        "xxl",
+        "xxxl",
+        "3xl",
+        "4xl",
+        "one-size",
+        "one_size",
+    }
+
+    source_host = urlparse(source_url).netloc.lower()
+    is_rei = "rei.com" in source_host
+
     for url in links:
-        low = url.lower()
-
-        # 排除明显不是商品页的链接
-        excluded_url_words = [
-            "/cart",
-            "/account",
-            "/login",
-            "/stores",
-            "/search",
-            "/help",
-            "/about",
-            "/vote",
-            "/ownership",
-            "/shipping",
-            "/returns",
-            "/privacy",
-            "/terms",
-            "/contact",
-            "/careers",
-            "/blog",
-            "/events",
-            "/community",
-            "/membership",
-            "/gift",
-            "/wishlist",
-        ]
-
-        if any(word in low for word in excluded_url_words):
+        if not url:
             continue
 
-        # 排除分类页 / 首页
-        bad_endings = [
-            "/mens",
-            "/men",
-            "/mens/",
-            "/men/",
-            "/shop/mens",
-            "/shop/men",
-        ]
+        low = url.lower().strip()
+        clean_url = low.split("?", 1)[0]
+        path = urlparse(clean_url).path.rstrip("/")
 
-        if any(low.rstrip("/").endswith(x.rstrip("/")) for x in bad_endings):
+        # ① 只接受 http/https
+        if not low.startswith(("http://", "https://")):
             continue
 
-        # 排除明显的非商品文件
-        if low.endswith(
-            (
-                ".html",
-                ".pdf",
-                ".jpg",
-                ".jpeg",
-                ".png",
-                ".gif",
+        # ② 图片、视频、文件直接排除
+        if clean_url.endswith(excluded_extensions):
+            continue
+
+        # ③ 明显非商品页面排除
+        if any(word in low for word in excluded_words):
+            continue
+
+        # ④ REI 专门规则：必须是具体商品 /product/数字ID/ 页面
+        if is_rei:
+            rei_product_match = re.search(
+                r"/product/(\d+)/",
+                path,
+                flags=re.I,
             )
-        ):
-            continue
 
-        # 基础品牌判断
-        brand_ok = any(
-            normalize_name(brand) in normalize_name(url)
-            for brand in ALLOWED_BRANDS
-        )
+            if not rei_product_match:
+                continue
 
-        # Patagonia / North Face 某些 URL 不一定带完整品牌名，
-        # 所以不在这里直接拒绝，只对明显不相关链接过滤。
-        if not brand_ok:
-            if not any(
-                word in low
-                for word in [
+            # 列表页、分类页、首页自然不会通过上面的规则
+            product_id = rei_product_match.group(1)
+            if not product_id:
+                continue
+
+        else:
+            # ⑤ 非 REI：允许常见商品路径
+            product_path = any(
+                keyword in path
+                for keyword in [
+                    "/product/",
+                    "/products/",
+                    "/item/",
+                    "/p/",
+                ]
+            )
+
+            last_part = path.split("/")[-1]
+
+            if last_part in excluded_last_parts:
+                continue
+
+            if "/shop/mens" in path:
+                parts = [x for x in path.split("/") if x]
+                if len(parts) <= 2:
+                    continue
+                if len(parts) == 3 and parts[-1] in excluded_last_parts:
+                    continue
+
+            # 必须能证明是允许品牌，避免把导航页加入监控
+            brand_ok = any(
+                brand in low
+                for brand in [
                     "patagonia",
                     "arcteryx",
                     "arc-teryx",
                     "northface",
                     "north-face",
                 ]
-            ):
+            )
+
+            if not brand_ok:
                 continue
 
-        if url in seen_urls:
+            if not product_path:
+                if path.endswith(("/mens", "/men", "/c/mens", "/c/men")):
+                    continue
+
+                if len(last_part) < 5:
+                    continue
+
+        # ⑥ 去重
+        normalized_url = url.rstrip("/")
+        if normalized_url in seen_urls:
             continue
 
-        seen_urls.add(url)
+        seen_urls.add(normalized_url)
 
-        # 商品名先从 URL 生成，真正商品标题会在详情页重新读取
-        name = url.split("/")[-1]
-def discover_products(source):
-    data = firecrawl_scrape(
-        source["url"],
-        formats=["markdown"],
-    )
-
-    if not data:
-        return []
-
-    links = extract_links_from_discovery(data)
-
-    products = []
-    seen_urls = set()
-
-    excluded_url_words = [
-        "/cart",
-        "/account",
-        "/login",
-        "/stores",
-        "/search",
-        "/help",
-        "/about",
-        "/vote",
-        "/ownership",
-        "/shipping",
-        "/returns",
-        "/privacy",
-        "/terms",
-        "/contact",
-        "/careers",
-        "/blog",
-        "/events",
-        "/community",
-        "/membership",
-        "/gift",
-        "/wishlist",
-        "/size",
-        "/mens/xxs",
-        "/mens/xs",
-        "/mens/s",
-        "/mens/m",
-        "/mens/l",
-        "/mens/xl",
-        "/mens/xxl",
-    ]
-
-    excluded_file_extensions = (
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".gif",
-        ".webp",
-        ".avif",
-        ".svg",
-        ".ico",
-        ".pdf",
-        ".mp4",
-        ".webm",
-        ".zip",
-    )
-
-    excluded_exact_paths = [
-        "/shop/mens",
-        "/shop/men",
-        "/c/mens",
-        "/c/men",
-        "/mens",
-        "/men",
-    ]
-
-    for url in links:
-        if not url:
-            continue
-
-        low = url.lower().strip()
-
-        # 1. 排除图片、视频、文件
-        clean_url = low.split("?", 1)[0]
-
-        if clean_url.endswith(excluded_file_extensions):
-            continue
-
-        # 2. 排除明显的非商品页面
-        if any(word in low for word in excluded_url_words):
-            continue
-
-        # 3. 排除分类页
-        path_only = clean_url.rstrip("/")
-
-        if path_only in excluded_exact_paths:
-            continue
-
-        # 4. 必须属于允许的品牌
-        brand_ok = any(
-            normalize_name(brand) in normalize_name(low)
-            for brand in ALLOWED_BRANDS
-        )
-
-        if not brand_ok:
-            if not any(
-                word in low
-                for word in [
-                    "patagonia",
-                    "arcteryx",
-                    "arc-teryx",
-                    "northface",
-                    "north-face",
-                ]
-            ):
-                continue
-
-        # 5. 排除尺码路径
-        last_part = path_only.split("/")[-1]
-
-        if last_part in {
-            "xxs",
-            "xs",
-            "s",
-            "m",
-            "l",
-            "xl",
-            "xxl",
-            "xxxl",
-            "3xl",
-            "4xl",
-            "one-size",
-            "one_size",
-        }:
-            continue
-
-
-def discover_products(source):
-    data = firecrawl_scrape(
-        source["url"],
-        formats=["markdown"],
-    )
-
-    if not data:
-        return []
-    links = extract_links_from_discovery(data)
-
-    products = []
-    seen_urls = set()
-
-    excluded_words = [
-        "/cart",
-        "/account",
-        "/login",
-        "/stores",
-        "/search",
-        "/help",
-        "/about",
-        "/vote",
-        "/ownership",
-        "/shipping",
-        "/returns",
-        "/privacy",
-        "/terms",
-        "/contact",
-        "/careers",
-        "/blog",
-        "/events",
-        "/community",
-        "/membership",
-        "/gift",
-        "/wishlist",
-        "/size",
-        "/filter",
-        "/sort",
-    ]
-
-    excluded_extensions = (
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".gif",
-        ".webp",
-        ".avif",
-        ".svg",
-        ".ico",
-        ".pdf",
-        ".mp4",
-        ".webm",
-        ".zip",
-    )
-
-    excluded_last_parts = {
-        "xxs",
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl",
-        "xxl",
-        "xxxl",
-        "3xl",
-        "4xl",
-        "one-size",
-        "one_size",
-    }
-
-    for url in links:
-        if not url:
-            continue
-
-        low = url.lower().strip()
-
-        clean_url = low.split("?", 1)[0]
-        path = clean_url.rstrip("/")
-
-        if clean_url.endswith(excluded_extensions):
-            continue
-
-        if any(word in low for word in excluded_words):
-            continue
-
-        last_part = path.split("/")[-1]
-
-        if last_part in excluded_last_parts:
-            continue
-
-        if "/shop/mens" in path:
-            parts = [x for x in path.split("/") if x]
-
-            if len(parts) <= 2:
-                continue
-
-            if len(parts) == 3 and parts[-1] in excluded_last_parts:
-                continue
-
-        if not any(
-            brand in low
-            for brand in [
-                "patagonia",
-                "arcteryx",
-                "arc-teryx",
-                "northface",
-                "north-face",
-            ]
-        ):
-            continue
-
-        product_path = any(
-            keyword in path
-            for keyword in [
-                "/product/",
-                "/products/",
-                "/item/",
-                "/p/",
-            ]
-        )
-
-        if not product_path:
-            if path.endswith((
-                "/mens",
-                "/men",
-                "/c/mens",
-                "/c/men",
-            )):
-                continue
-
-            if len(last_part) < 5:
-                continue
-
-        if url in seen_urls:
-            continue
-
-        seen_urls.add(url)
-
-        name = url.rstrip("/").split("/")[-1]
-        name = name.split("?", 1)[0]
-
+        # ⑦ 商品名先从 URL 生成，详情页会再次读取真实标题
+        name = path.split("/")[-1]
         name = (
             name
             .replace("-", " ")
@@ -1488,192 +1329,28 @@ def discover_products(source):
         )
 
         if not name:
-            continue
-
-        products.append({
-            "name": name,
-            "url": url,
-            "source": source["name"],
-        })
-
-        if len(products) >= DISCOVERY_LIMIT:
-            break
-
-    return products
-def discover_products(source):
-    data = firecrawl_scrape(
-        source["url"],
-        formats=["markdown"],
-    )
-
-    if not data:
-        return []
-
-    links = extract_links_from_discovery(data)
-
-    products = []
-    seen_urls = set()
-
-    # 明确排除的页面/路径
-    excluded_words = [
-        "/cart",
-        "/account",
-        "/login",
-        "/stores",
-        "/search",
-        "/help",
-        "/about",
-        "/vote",
-        "/ownership",
-        "/shipping",
-        "/returns",
-        "/privacy",
-        "/terms",
-        "/contact",
-        "/careers",
-        "/blog",
-        "/events",
-        "/community",
-        "/membership",
-        "/gift",
-        "/wishlist",
-        "/size",
-        "/filter",
-        "/sort",
-    ]
-
-    # 图片、视频、文件全部排除
-    excluded_extensions = (
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".gif",
-        ".webp",
-        ".avif",
-        ".svg",
-        ".ico",
-        ".pdf",
-        ".mp4",
-        ".webm",
-        ".zip",
-    )
-
-    # 尺码、颜色等筛选页面
-    excluded_last_parts = {
-        "xxs",
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl",
-        "xxl",
-        "xxxl",
-        "3xl",
-        "4xl",
-        "one-size",
-        "one_size",
-    }
-
-    for url in links:
-        if not url:
-            continue
-
-        low = url.lower().strip()
-
-        # 去掉查询参数，只用于判断路径
-        clean_url = low.split("?", 1)[0]
-        path = clean_url.rstrip("/")
-
-        # ① 图片/文件直接排除
-        if clean_url.endswith(excluded_extensions):
-            continue
-
-        # ② 非商品页面排除
-        if any(word in low for word in excluded_words):
-            continue
-
-        # ③ 最后一段是尺码，排除
-        last_part = path.split("/")[-1]
-
-        if last_part in excluded_last_parts:
-            continue
-
-        # ④ Patagonia 的 shop/mens、shop/mens/xxs 等分类页面排除
-        if "/shop/mens" in path:
-            parts = [x for x in path.split("/") if x]
-
-            # /shop/mens 本身
-            if len(parts) <= 2:
-                continue
-
-            # /shop/mens/xxs、/shop/mens/xs 等
-            if len(parts) == 3 and parts[-1] in excluded_last_parts:
-                continue
-
-        # ⑤ 必须是允许品牌
-        if not any(
-            brand in low
-            for brand in [
-                "patagonia",
-                "arcteryx",
-                "arc-teryx",
-                "northface",
-                "north-face",
-            ]
-        ):
-            continue
-
-        # ⑥ 必须有商品页面特征
-        product_path = any(
-            keyword in path
-            for keyword in [
-                "/product/",
-                "/products/",
-                "/item/",
-                "/p/",
-            ]
-        )
-
-        # Patagonia 等网站有些商品页面不一定使用 /product/
-        # 这种情况下，至少要求 URL 看起来像具体商品，而不是分类页
-        if not product_path:
-            if path.endswith(("/mens", "/men", "/c/mens", "/c/men")):
-                continue
-
-            # 最后一段太短，通常是筛选条件
-            if len(last_part) < 5:
-                continue
-
-        # ⑦ 去重
-        if url in seen_urls:
-            continue
-
-        seen_urls.add(url)
-
-        # ⑧ 生成临时商品名称
-        name = url.rstrip("/").split("/")[-1]
-        name = name.split("?", 1)[0]
-
-        name = (
-            name
-            .replace("-", " ")
-            .replace("_", " ")
-            .strip()
-        )
-
-        if not name:
-            continue
+            name = f"{source_name} 商品"
 
         products.append(
             {
                 "name": name,
                 "url": url,
-                "source": source["name"],
+                "source": source_name,
             }
         )
 
         if len(products) >= DISCOVERY_LIMIT:
             break
+
+    print(
+        f"自动发现到具体商品：{len(products)} 个"
+    )
+
+    for item in products:
+        print(
+            f"  → {item['name']}"
+            f" | {item['url']}"
+        )
 
     return products
 
