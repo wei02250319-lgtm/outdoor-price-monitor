@@ -314,34 +314,48 @@ def firecrawl_scrape(url, formats=None):
         "formats": formats,
     }
 
-    try:
-        response = SESSION.post(
-            FIRECRAWL_URL,
-            headers=headers,
-            json=payload,
-            timeout=60,
-        )
+    # Firecrawl 偶发 500/502/503/504，尤其是 ERR_TUNNEL_CONNECTION_FAILED。
+    # 这种情况允许有限次数重试；429 不重试，避免进一步触发限流。
+    max_attempts = 2
+    for attempt in range(1, max_attempts + 1):
+        try:
+            response = SESSION.post(
+                FIRECRAWL_URL,
+                headers=headers,
+                json=payload,
+                timeout=60,
+            )
 
-        print(f"Firecrawl HTTP {response.status_code}: {url}")
+            print(f"Firecrawl HTTP {response.status_code}: {url}")
 
-        if response.status_code == 429:
-            print("Firecrawl 达到请求限制，本次跳过")
+            if response.status_code == 429:
+                print("Firecrawl 达到请求限制，本次跳过")
+                return None
+
+            if response.status_code != 200:
+                print("Firecrawl 返回错误：", response.text[:500])
+                if response.status_code in {500, 502, 503, 504} and attempt < max_attempts:
+                    print("Firecrawl 上游临时错误，15 秒后重试一次...")
+                    time.sleep(15)
+                    continue
+                return None
+
+            result = response.json()
+        
+            if isinstance(result, dict):
+                return result.get("data", result)
+
+            return result
+
+        except Exception as exc:
+            print("Firecrawl 请求异常：", exc)
+            if attempt < max_attempts:
+                print("Firecrawl 请求异常，15 秒后重试一次...")
+                time.sleep(15)
+                continue
             return None
 
-        if response.status_code != 200:
-            print("Firecrawl 返回错误：", response.text[:500])
-            return None
-
-        result = response.json()
-
-        if isinstance(result, dict):
-            return result.get("data", result)
-
-        return result
-
-    except Exception as exc:
-        print("Firecrawl 请求异常：", exc)
-        return None
+    return None
 
 
 # ============================================================
@@ -549,9 +563,13 @@ def extract_prices_from_text(text):
 
     patterns = [
         r'"price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
-        r'"price"\s*:\s*([0-9]+(?:\.[0-9]+)?)',
         r'"salePrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
         r'"currentPrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"sale_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"current_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        # Patagonia 页面有时只把价格呈现在 Markdown/HTML 可见文本中。
+        r'(?:US\$|USD\s*|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|US\$)',
     ]
 
     for pattern in patterns:
@@ -1589,7 +1607,7 @@ def _recognize_product_url(source, url):
 
     if 'outlet.arcteryx.com' in host:
         # 例如 /us/en/shop/mens/alpha-jacket-9898
-        return bool(re.search(r'^/(?:us|ca)/en/shop/mens/[^/]+$', low_path, re.I))
+        return bool(re.search(r'^/(?:us|ca)/en/shop/mens/[a-z0-9][^/]*(?:/[^/]*)?$', low_path, re.I))
 
     if 'arcteryx.com' in host:
         # 当前官网商品页常见形式：/ca/en/shop/mens/gamma-pant
