@@ -1322,7 +1322,7 @@ def discover_products(source):
         # 5. 排除尺码路径
         last_part = path_only.split("/")[-1]
 
-        if last_part in {
+    if last_part in {
     "xxs",
     "xs",
     "s",
