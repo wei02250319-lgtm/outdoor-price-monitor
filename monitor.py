@@ -1322,21 +1322,21 @@ def discover_products(source):
         # 5. 排除尺码路径
         last_part = path_only.split("/")[-1]
 
-if last_part in {
-    "xxs",
-    "xs",
-    "s",
-    "m",
-    "l",
-    "xl",
-    "xxl",
-    "xxxl",
-    "3xl",
-    "4xl",
-    "one-size",
-    "one_size",
-}:
-    continue
+        if last_part in {
+            "xxs",
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "xxxl",
+            "3xl",
+            "4xl",
+            "one-size",
+            "one_size",
+        }:
+            continue
 
 
 def discover_products(source):
@@ -1347,7 +1347,6 @@ def discover_products(source):
 
     if not data:
         return []
-
     links = extract_links_from_discovery(data)
 
     products = []
