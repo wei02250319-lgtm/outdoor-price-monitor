@@ -1305,8 +1305,31 @@ def discover_products(source):
             if not brand_ok:
                 continue
 
+            # Patagonia / Arc'teryx / The North Face 的分类、专题、
+            # 门店、品牌故事等页面，即使 URL 中带品牌名，也不能当商品。
+            non_product_paths = [
+                "/progress-report",
+                "/worth-it",
+                "/store-locator",
+                "/fair-trade",
+                "/pfc-free",
+                "/stories/",
+                "/impact/",
+                "/our-footprint",
+                "/responsible-business",
+                "/collections/",
+                "/category/",
+            ]
+            if any(marker in path for marker in non_product_paths):
+                continue
+
             if not product_path:
                 if path.endswith(("/mens", "/men", "/c/mens", "/c/men")):
+                    continue
+
+                # 目录页通常只有 1~2 层路径；没有明显商品详情结构时，
+                # 仅凭一个分类词不能进入监控。
+                if path.count("/") < 3:
                     continue
 
                 if len(last_part) < 5:
