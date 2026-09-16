@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789587818
+    "updated_at": 1789589734
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789587829
+    "updated_at": 1789589744
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789587840
+    "updated_at": 1789589755
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789587851
+    "updated_at": 1789589765
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789587862
+    "updated_at": 1789589776
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -827,5 +827,70 @@
     "image_url": "https://www.rei.com/media/e784ff6c-cb1a-45df-94f2-19fe6c94167e.jpg?size=784x588",
     "variants": [],
     "updated_at": 1789587940
+  },
+  "https://www.rei.com/product/236398/the-north-face-alta-vista-rain-jacket-mens": {
+    "name": "The North Face Alta Vista Rain Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/236398/the-north-face-alta-vista-rain-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 79.83,
+    "original_price": 160.0,
+    "discount": 50.1,
+    "cny_price": 535.43,
+    "image_url": "https://www.rei.com/media/8fe61817-fac8-4145-a27c-721dabedadd3.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789589790
+  },
+  "https://www.rei.com/product/236506/the-north-face-crest-full-zip-jacket-mens": {
+    "name": "The North Face Crest Full-Zip Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/236506/the-north-face-crest-full-zip-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 76.93,
+    "original_price": 110.0,
+    "discount": 30.1,
+    "cny_price": 515.98,
+    "image_url": "https://www.rei.com/media/935c330b-b1d4-41d5-b3aa-703506e039cc.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789589805
+  },
+  "https://www.rei.com/product/C00639/patagonia-light-variable-jacket-mens": {
+    "name": "Patagonia Light & Variable Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C00639/patagonia-light-variable-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 61.83,
+    "original_price": 125.0,
+    "discount": 50.5,
+    "cny_price": 414.7,
+    "image_url": "https://www.rei.com/media/acd45aa5-679b-42ef-826d-eadc9cb8d4f6.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789589820
+  },
+  "https://www.rei.com/product/242918/arcteryx-kragg-cotton-pants-mens": {
+    "name": "Arc'teryx Kragg Cotton Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/242918/arcteryx-kragg-cotton-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 125.93,
+    "original_price": 180.0,
+    "discount": 30.0,
+    "cny_price": 844.63,
+    "image_url": "https://www.rei.com/media/4c67cad6-7113-40ee-8f01-99d1d3608193.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789589834
+  },
+  "https://www.rei.com/product/235663/the-north-face-basin-pants-mens": {
+    "name": "The North Face Basin Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/235663/the-north-face-basin-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 74.93,
+    "original_price": 100.0,
+    "discount": 25.1,
+    "cny_price": 502.56,
+    "image_url": "https://www.rei.com/media/718f0131-ddc5-47d9-a039-dad515015b27.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789589851
   }
 }

@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789587862,
+    "last_checked": 1789589776,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789587818,
+    "last_checked": 1789589734,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789587829,
+    "last_checked": 1789589744,
     "invalid_count": 0
   },
   {
@@ -360,35 +360,35 @@
     "name": "The North Face Alta Vista Rain Jacket",
     "url": "https://www.rei.com/product/236398/the-north-face-alta-vista-rain-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789589792,
     "invalid_count": 0
   },
   {
     "name": "The North Face Crest Full Zip Jacket",
     "url": "https://www.rei.com/product/236506/the-north-face-crest-full-zip-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789589806,
     "invalid_count": 0
   },
   {
     "name": "Patagonia Light Variable Jacket",
     "url": "https://www.rei.com/product/C00639/patagonia-light-variable-jacket-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789589821,
     "invalid_count": 0
   },
   {
     "name": "Arcteryx Kragg Cotton Pants",
     "url": "https://www.rei.com/product/242918/arcteryx-kragg-cotton-pants-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789589835,
     "invalid_count": 0
   },
   {
     "name": "The North Face Basin Pants",
     "url": "https://www.rei.com/product/235663/the-north-face-basin-pants-mens",
     "source": "REI",
-    "last_checked": 0,
+    "last_checked": 1789589852,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789587851,
+    "last_checked": 1789589765,
     "invalid_count": 0
   },
   {
@@ -1781,6 +1781,321 @@
     "name": "27230",
     "url": "https://www.patagonia.com/product/mens-lightweight-stormshadow-jacket/27230.html",
     "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Beta Insulated Jacket",
+    "url": "https://www.rei.com/product/C11799/arcteryx-beta-insulated-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Gordon Lyons Full Zip Jacket",
+    "url": "https://www.rei.com/product/C01857/the-north-face-gordon-lyons-full-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Atom Insulated Hoody",
+    "url": "https://www.rei.com/product/C11797/arcteryx-atom-insulated-hoody-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tek Approach Jacket",
+    "url": "https://www.rei.com/product/243267/the-north-face-tek-approach-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Pants",
+    "url": "https://www.rei.com/product/C11748/arcteryx-gamma-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Beta Insulated Jacket )",
+    "url": "https://www.rei.com/product/C11799/arcteryx-beta-insulated-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Gordon Lyons Full Zip Jacket )",
+    "url": "https://www.rei.com/product/C01857/the-north-face-gordon-lyons-full-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Atom Insulated Hoody )",
+    "url": "https://www.rei.com/product/C11797/arcteryx-atom-insulated-hoody-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Tek Approach Jacket )",
+    "url": "https://www.rei.com/product/243267/the-north-face-tek-approach-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Pants )",
+    "url": "https://www.rei.com/product/C11748/arcteryx-gamma-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Snowdrifter Jacket",
+    "url": "https://www.rei.com/product/255543/patagonia-snowdrifter-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Shop Uprisal Sweatpants",
+    "url": "https://www.rei.com/product/C09425/patagonia-shop-uprisal-sweatpants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Powder Town Pants",
+    "url": "https://www.rei.com/product/223582/patagonia-powder-town-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Aconcagua 3 Down Jacket",
+    "url": "https://www.rei.com/product/C01854/the-north-face-aconcagua-3-down-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Cabin Fleece Full Zip Jacket",
+    "url": "https://www.rei.com/product/C11858/the-north-face-cabin-fleece-full-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Snowdrifter Jacket )",
+    "url": "https://www.rei.com/product/255543/patagonia-snowdrifter-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Shop Uprisal Sweatpants )",
+    "url": "https://www.rei.com/product/C09425/patagonia-shop-uprisal-sweatpants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Powder Town Pants )",
+    "url": "https://www.rei.com/product/223582/patagonia-powder-town-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Aconcagua 3 Down Jacket )",
+    "url": "https://www.rei.com/product/C01854/the-north-face-aconcagua-3-down-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Cabin Fleece Full Zip Jacket )",
+    "url": "https://www.rei.com/product/C11858/the-north-face-cabin-fleece-full-zip-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Ossa Half Zip Hoody",
+    "url": "https://www.rei.com/product/C01370/arcteryx-ossa-half-zip-hoody-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Insulated Powder Town Pants",
+    "url": "https://www.rei.com/product/C09280/patagonia-insulated-powder-town-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Delta Hoody",
+    "url": "https://www.rei.com/product/C05661/arcteryx-delta-hoody-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Upstride Jacket",
+    "url": "https://www.rei.com/product/255545/patagonia-upstride-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Rush Jacket",
+    "url": "https://www.rei.com/product/C14373/arcteryx-rush-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Mx Jacket",
+    "url": "https://www.rei.com/product/C11804/arcteryx-gamma-mx-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Ossa Half Zip Hoody )",
+    "url": "https://www.rei.com/product/C01370/arcteryx-ossa-half-zip-hoody-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Insulated Powder Town Pants )",
+    "url": "https://www.rei.com/product/C09280/patagonia-insulated-powder-town-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Delta Hoody )",
+    "url": "https://www.rei.com/product/C05661/arcteryx-delta-hoody-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Upstride Jacket )",
+    "url": "https://www.rei.com/product/255545/patagonia-upstride-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Rush Jacket )",
+    "url": "https://www.rei.com/product/C14373/arcteryx-rush-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Gamma Mx Jacket )",
+    "url": "https://www.rei.com/product/C11804/arcteryx-gamma-mx-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "82093",
+    "url": "https://www.patagonia.com/product/mens-sandy-cay-wading-pants/82093.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21147",
+    "url": "https://www.patagonia.com/product/mens-terravia-peak-pants-short/21147.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21152",
+    "url": "https://www.patagonia.com/product/mens-terravia-peak-pants-regular/21152.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20465",
+    "url": "https://www.patagonia.com/product/mens-lightweight-all-wear-unlined-jacket/20465.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "23345",
+    "url": "https://www.patagonia.com/product/mens-shearling-recrafted-jacket/23345.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "29986",
+    "url": "https://www.patagonia.com/product/mens-stormstride-ski-snowboard-shell-pants/29986.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83210",
+    "url": "https://www.patagonia.com/product/mens-alpine-guide-pants-short/83210.html",
+    "source": "Patagonia US",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "29986",
+    "url": "https://www.patagonia.ca/product/mens-stormstride-ski-snowboard-shell-pants/29986.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83210",
+    "url": "https://www.patagonia.ca/product/mens-alpine-guide-pants-short/83210.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21171",
+    "url": "https://www.patagonia.ca/product/mens-terravia-trail-pants-regular/21171.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "55296",
+    "url": "https://www.patagonia.ca/product/mens-iron-forge-hemp-canvas-double-knee-work-pants-regular/55296.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21147",
+    "url": "https://www.patagonia.ca/product/mens-terravia-peak-pants-short/21147.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20320",
+    "url": "https://www.patagonia.ca/product/mens-windsweep-lightweight-windbreaker-jacket/20320.html",
+    "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
   }
