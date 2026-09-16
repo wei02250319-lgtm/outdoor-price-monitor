@@ -1208,6 +1208,153 @@ def discover_products(source):
 
         # 商品名先从 URL 生成，真正商品标题会在详情页重新读取
         name = url.split("/")[-1]
+def discover_products(source):
+    data = firecrawl_scrape(
+        source["url"],
+        formats=["markdown"],
+    )
+
+    if not data:
+        return []
+
+    links = extract_links_from_discovery(data)
+
+    products = []
+    seen_urls = set()
+
+    excluded_url_words = [
+        "/cart",
+        "/account",
+        "/login",
+        "/stores",
+        "/search",
+        "/help",
+        "/about",
+        "/vote",
+        "/ownership",
+        "/shipping",
+        "/returns",
+        "/privacy",
+        "/terms",
+        "/contact",
+        "/careers",
+        "/blog",
+        "/events",
+        "/community",
+        "/membership",
+        "/gift",
+        "/wishlist",
+        "/size",
+        "/mens/xxs",
+        "/mens/xs",
+        "/mens/s",
+        "/mens/m",
+        "/mens/l",
+        "/mens/xl",
+        "/mens/xxl",
+    ]
+
+    excluded_file_extensions = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".webp",
+        ".avif",
+        ".svg",
+        ".ico",
+        ".pdf",
+        ".mp4",
+        ".webm",
+        ".zip",
+    )
+
+    excluded_exact_paths = [
+        "/shop/mens",
+        "/shop/men",
+        "/c/mens",
+        "/c/men",
+        "/mens",
+        "/men",
+    ]
+
+    for url in links:
+        if not url:
+            continue
+
+        low = url.lower().strip()
+
+        # 1. 排除图片、视频、文件
+        clean_url = low.split("?", 1)[0]
+
+        if clean_url.endswith(excluded_file_extensions):
+            continue
+
+        # 2. 排除明显的非商品页面
+        if any(word in low for word in excluded_url_words):
+            continue
+
+        # 3. 排除分类页
+        path_only = clean_url.rstrip("/")
+
+        if path_only in excluded_exact_paths:
+            continue
+
+        # 4. 必须属于允许的品牌
+        brand_ok = any(
+            normalize_name(brand) in normalize_name(low)
+            for brand in ALLOWED_BRANDS
+        )
+
+        if not brand_ok:
+            if not any(
+                word in low
+                for word in [
+                    "patagonia",
+                    "arcteryx",
+                    "arc-teryx",
+                    "northface",
+                    "north-face",
+                ]
+            ):
+                continue
+
+        # 5. 排除尺码路径
+        last_part = path_only.split("/")[-1]
+
+        if last_part in {
+            "xxs",
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "xxxl",
+        }:
+            continue
+
+        # 6. 排除已经发现的重复链接
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+
+        # 7. 商品 URL 至少应该有比较明确的商品特征
+        product_keywords = [
+            "/product/",
+            "/products/",
+            "/shop/",
+            "/item/",
+            "/p/",
+        ]
+
+        if not any(keyword in low for keyword in product_keywords):
+            continue
+
+        # 8. 从 URL 生成临时商品名称
+        name = url.split("/")[-1]
+        name = name.split("?", 1)[0]
 
         name = (
             name
