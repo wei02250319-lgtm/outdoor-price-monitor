@@ -1245,6 +1245,75 @@ def extract_variant_info(data):
         ):
             parse_json_string(html.unescape(script))
 
+    # 3. 处理“options / attributes”只有选项值、但没有显式 variants 的页面。
+    #    例如：{"options": [{"name":"Color","values":["Black","Stratus"]},
+    #    {"name":"Size","values":["S","M","L"]}]}
+    #    这里不虚构库存；只恢复官网明确出现的颜色/尺码。
+    if isinstance(data, dict):
+        option_colors = []
+        option_sizes = []
+
+        def add_option_value(target, value):
+            if isinstance(value, str):
+                value = clean_text(value)
+                if value and value not in target:
+                    target.append(value)
+            elif isinstance(value, (int, float)) and not isinstance(value, bool):
+                value = str(value)
+                if value not in target:
+                    target.append(value)
+
+        for _, key, value in walk_data(data):
+            nk = normalize_key(key)
+            if nk not in OPTION_KEYS:
+                continue
+
+            option_items = value if isinstance(value, list) else [value]
+            for option in option_items:
+                if not isinstance(option, dict):
+                    continue
+
+                option_name = ""
+                option_values = None
+                for ok, ov in option.items():
+                    on = normalize_key(ok)
+                    if on in {"name", "optionname", "attribute", "label", "key"}:
+                        option_name = scalar(ov)
+                    elif on in {"values", "options", "value", "optionvalues", "valueslist"}:
+                        option_values = ov
+
+                nn = normalize_key(option_name)
+                values_list = option_values if isinstance(option_values, list) else [option_values]
+
+                if nn in {"color", "colour", "colorname", "colourname"}:
+                    for ov in values_list:
+                        if isinstance(ov, dict):
+                            ov = ov.get("value", ov.get("name", ov.get("label")))
+                        add_option_value(option_colors, ov)
+                elif nn in {"size", "sizename", "variantsize"}:
+                    for ov in values_list:
+                        if isinstance(ov, dict):
+                            ov = ov.get("value", ov.get("name", ov.get("label")))
+                        add_option_value(option_sizes, ov)
+
+        # 如果同时存在明确颜色和尺码，但没有 SKU 对应关系，只做“颜色 + 尺码”展示，
+        # 库存保持未知，不把它误报成具体库存。
+        if not records and option_colors and option_sizes:
+            for color in option_colors:
+                for size in option_sizes:
+                    records.append({
+                        "color": color,
+                        "size": size,
+                        "inventory": None,
+                    })
+        elif not records and option_colors:
+            for color in option_colors:
+                records.append({
+                    "color": color,
+                    "size": "",
+                    "inventory": None,
+                })
+
     # 3. 当官网只给出页面文本、没有结构化 variant 时，恢复基本颜色/尺码。
     # 库存仍然只在页面明确给出时填写，不猜库存数量。
     if isinstance(data, dict):
@@ -1664,27 +1733,68 @@ def candidate_matches_allowed_name(name, url, source=None):
     return True
 
 def _extract_candidate_urls_from_text(text, source):
-    """从 Markdown / HTML / rawHtml 中提取商品 URL。"""
+    """从 Markdown / HTML / rawHtml / 内嵌 JSON 中提取商品 URL。"""
     if not isinstance(text, str) or not text:
         return []
+
     base_url = source.get("url", "")
-    urls=[]; seen=set()
+    urls = []
+    seen = set()
+
     def add(value):
-        if not isinstance(value,str): return
-        value=html.unescape(value).strip().strip('<>')
-        value=value.replace('\\/','/')
-        if not value: return
-        if value.startswith('//'): value='https:'+value
-        elif not value.startswith(('http://','https://')): value=urljoin(base_url,value)
-        clean=canonical_url(value)
+        if not isinstance(value, str):
+            return
+        value = html.unescape(value).strip().strip('<>"\'')
+        value = value.replace('\\/', '/')
+        if not value:
+            return
+        if value.startswith('//'):
+            value = 'https:' + value
+        elif not value.startswith(('http://', 'https://')):
+            value = urljoin(base_url, value)
+        clean = canonical_url(value)
         if clean and clean not in seen:
-            seen.add(clean); urls.append(clean)
-    for value in re.findall(r'https?://[^\s"\'<>\\)]+', text, flags=re.I): add(value)
-    for value in re.findall(r'(?:href|data-href|data-url|data-product-url|producturl|product_url)=["\']([^"\']+)', text, flags=re.I): add(value)
-    for value in re.findall(r'\]\(\s*<?([^\)\s>]+)', text): add(value)
-    for value in re.findall(r'["\']((?:/[^"\']+))["\']', text, flags=re.I):
-        low=value.lower()
-        if any(x in low for x in ('/product/','/shop/','/p/')): add(value)
+            seen.add(clean)
+            urls.append(clean)
+
+    # 1. 完整绝对 URL
+    for value in re.findall(r'https?://[^\s"\'<>\\)]+', text, flags=re.I):
+        add(value)
+
+    # 2. HTML 属性 / JSON 属性
+    for value in re.findall(
+        r'(?:href|src|data-href|data-url|data-product-url|producturl|product_url|url|link)'
+        r'\s*[:=]\s*["\']([^"\']+)',
+        text,
+        flags=re.I,
+    ):
+        add(value)
+
+    # 3. Markdown 链接
+    for value in re.findall(r'\]\(\s*<?([^\)\s>]+)', text):
+        add(value)
+
+    # 4. 直接出现在文本中的相对商品路径。
+    #    这是 Arc'teryx / Patagonia 页面经常使用、而旧代码漏掉的情况。
+    path_patterns = [
+        r'/(?:us|ca)/en/shop/mens/[a-z0-9][^\s"\'<>\\)]+',
+        r'/(?:[a-z]{2}/)+(?:en|fr|zh)/shop/mens/[a-z0-9][^\s"\'<>\\)]+',
+        r'/product/[a-z0-9][^\s"\'<>\\)]+(?:\.html)?',
+    ]
+    for pattern in path_patterns:
+        for value in re.findall(pattern, text, flags=re.I):
+            value = re.split(r'[?#&]|[,.;:]+$', value)[0]
+            add(value)
+
+    # 5. JSON 中常见的 escaped URL
+    for value in re.findall(
+        r'(?:(?:https?:)?\\?/\\?/|\\?/)'
+        r'(?:[^"\'\\\s]|\\/){8,}',
+        text,
+        flags=re.I,
+    ):
+        add(value.replace('\\/', '/'))
+
     return urls
 
 
@@ -1701,23 +1811,35 @@ def _build_name_from_url(url):
 
 
 def _next_rei_discovery_urls(source, existing_products):
-    """REI 商品页很多，按已有商品数量轮换分页，避免每次只抓第一页。"""
-    if _source_kind(source) != "rei":
-        return [source["url"]]
+    """按官网分别轮换分页，避免每次都只抓第一批商品。"""
+    kind = _source_kind(source)
 
-    existing_rei = [
+    source_name = clean_text(source.get("name", ""))
+    source_items = [
         item for item in existing_products
-        if isinstance(item, dict) and _source_host(source) in urlparse(item.get("url", "")).netloc.lower()
-    ]
-    # 当前 REI 男装 deals 页支持 ?page=N；每页实际会返回一批商品。
-    # 以已有商品量估算下一批页面，连续跑任务时会自然向后推进。
-    base_page = max(1, (len(existing_rei) // 8) + 1)
-    return [
-        f"{source['url']}?page={base_page}",
-        f"{source['url']}?page={base_page + 1}",
-        f"{source['url']}?page={base_page + 2}",
+        if isinstance(item, dict) and clean_text(item.get("source", "")) == source_name
     ]
 
+    # 这些官网的男装列表都可能分页。每次抓连续 3 页，
+    # 页码由该官网已有商品数量决定，因此不会永远停在第一页。
+    if kind in {"rei", "arcteryx", "patagonia"}:
+        # 不同官网每页数量不完全一样，使用保守估计避免推进过快。
+        estimated_per_page = {
+            "rei": 8,
+            "arcteryx": 12,
+            "patagonia": 10,
+        }.get(kind, 10)
+
+        base_page = max(1, (len(source_items) // estimated_per_page) + 1)
+        base_url = source["url"]
+        separator = "&" if "?" in base_url else "?"
+        return [
+            f"{base_url}{separator}page={base_page}",
+            f"{base_url}{separator}page={base_page + 1}",
+            f"{base_url}{separator}page={base_page + 2}",
+        ]
+
+    return [source["url"]]
 
 def discover_products(source, existing_products=None):
     existing_products = existing_products or []
@@ -1984,12 +2106,12 @@ def check_product(product, history):
 
     data = firecrawl_scrape(
         product["url"],
-        formats=["product", "markdown"],
+        formats=["product", "markdown", "html", "rawHtml"],
     )
 
     if not data:
         print("没有获得商品数据")
-        return
+        return False
 
     current_product = build_current_product(
         product,
@@ -1998,7 +2120,7 @@ def check_product(product, history):
 
     if current_product is None:
         print("没有获取到有效价格")
-        return
+        return False
 
     current_price = current_product["current_price"]
 
@@ -2063,6 +2185,8 @@ def check_product(product, history):
         f"变体信息：{len(variants)} 条，"
         f"其中已识别库存 {known_stock} 条"
     )
+
+    return True
 
 
 # ============================================================
@@ -2157,10 +2281,12 @@ def main():
         print()
         print(f"========== {index}/{len(products)} ==========")
 
-        check_product(product, history)
+        check_ok = check_product(product, history)
 
-        # 更新自动发现商品的轮换时间
-        if url:
+        # 只有真正成功获取到有效商品数据，才更新轮换时间。
+        # Firecrawl 临时 500 / 无价格时不要把商品标记为“已检查”，
+        # 否则它可能长期被跳过。
+        if check_ok and url:
             for item in discovered_pool:
                 if canonical_url(item.get("url", "")) == url:
                     item["last_checked"] = int(time.time())
