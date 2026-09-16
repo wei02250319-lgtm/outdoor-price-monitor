@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789584475
+    "updated_at": 1789586072
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789584485
+    "updated_at": 1789586083
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789584496
+    "updated_at": 1789586094
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789584506
+    "updated_at": 1789586105
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789584517
+    "updated_at": 1789586116
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -697,5 +697,70 @@
     "image_url": "https://www.rei.com/media/d8598a09-6165-4ea5-8e89-21bfc058611a.jpg?size=784x588",
     "variants": [],
     "updated_at": 1789584640
+  },
+  "https://www.rei.com/product/C01307/arcteryx-incendo-hybrid-hoody-mens": {
+    "name": "Arc'teryx Incendo Hybrid Hoody - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C01307/arcteryx-incendo-hybrid-hoody-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 194.93,
+    "original_price": 260.0,
+    "discount": 25.0,
+    "cny_price": 1307.42,
+    "image_url": "https://www.rei.com/media/abb5f7a3-08a7-4bbd-b31a-da6bdce11552.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789586138
+  },
+  "https://www.rei.com/product/217942/arcteryx-kyanite-lightweight-fleece-jacket-mens": {
+    "name": "Arc'teryx Kyanite Lightweight Fleece Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/217942/arcteryx-kyanite-lightweight-fleece-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 98.93,
+    "original_price": 140.0,
+    "discount": 29.3,
+    "cny_price": 663.53,
+    "image_url": "https://www.rei.com/media/ae90a0a0-3c2e-4179-8dc2-8e1db27a660e.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789586156
+  },
+  "https://www.rei.com/product/228617/arcteryx-beta-jacket-mens": {
+    "name": "Arc'teryx Beta Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/228617/arcteryx-beta-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 249.83,
+    "original_price": 400.0,
+    "discount": 37.5,
+    "cny_price": 1675.63,
+    "image_url": "https://www.rei.com/media/6dccec76-daed-4a70-9058-352b9f5cf7f9.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789586168
+  },
+  "https://www.rei.com/product/143470/patagonia-houdini-jacket-mens": {
+    "name": "Patagonia Houdini Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/143470/patagonia-houdini-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 82.93,
+    "original_price": 119.0,
+    "discount": 30.3,
+    "cny_price": 556.22,
+    "image_url": "https://www.rei.com/media/252fa619-cf52-4f54-8969-cb4ed233963f.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789586185
+  },
+  "https://www.rei.com/product/236060/arcteryx-cronin-cotton-pants-mens": {
+    "name": "Arc'teryx Cronin Cotton Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/236060/arcteryx-cronin-cotton-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 125.93,
+    "original_price": 180.0,
+    "discount": 30.0,
+    "cny_price": 844.63,
+    "image_url": "https://www.rei.com/media/bf58bc26-213e-43b3-a1be-066a30bf1d85.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789586206
   }
 }
