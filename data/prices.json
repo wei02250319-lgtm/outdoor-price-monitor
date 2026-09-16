@@ -359,7 +359,7 @@
     "cny_price": 1342.3,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789530089
+    "updated_at": 1789531874
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -372,7 +372,7 @@
     "cny_price": 696.86,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789530100
+    "updated_at": 1789531884
   },
   "https://www.rei.com/product/C00900/patagonia-capilene-cool-daily-graphic-hoody-mens": {
     "name": "Capilene Cool Daily Graphic Hoody - Men's",
@@ -437,11 +437,17 @@
     "currency": ""
   },
   "https://arcteryx.com/shop/mens/thorium-jacket-0695": {
-    "name": "Thorium Jacket Men's",
+    "name": "Thorium Jacket Men's | Arc'teryx United States",
+    "url": "https://arcteryx.com/shop/mens/thorium-jacket-0695",
     "source": "Arc'teryx Canada",
-    "current_min": 450.0,
-    "max_discount": 0.0,
-    "currency": ""
+    "currency": "USD",
+    "current_price": 450.0,
+    "original_price": 450.0,
+    "discount": 0.0,
+    "cny_price": 3020.18,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789531917
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -454,7 +460,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789530111
+    "updated_at": 1789531895
   },
   "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens": {
     "name": "Arc'teryx Gamma MX Hoody - Men's | REI Co-op",
@@ -467,7 +473,7 @@
     "cny_price": 1341.16,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789530067
+    "updated_at": 1789531852
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -480,7 +486,7 @@
     "cny_price": 1321.7,
     "dewu_price": null,
     "variants": [],
-    "updated_at": 1789530078
+    "updated_at": 1789531863
   },
   "https://arcteryx.com/shop/mens/atom-sl-jacket-0282": {
     "name": "Atom SL Jacket Men's",
@@ -490,11 +496,17 @@
     "currency": ""
   },
   "https://arcteryx.com/shop/mens/sperro-sv-jacket-0-0667": {
-    "name": "Sperro SV Jacket - 0 Men's",
+    "name": "Sperro SV Jacket - 0 Men's | Arc'teryx United States",
+    "url": "https://arcteryx.com/shop/mens/sperro-sv-jacket-0-0667",
     "source": "Arc'teryx Canada",
-    "current_min": 1200.0,
-    "max_discount": 0.0,
-    "currency": ""
+    "currency": "USD",
+    "current_price": 1200.0,
+    "original_price": 1200.0,
+    "discount": 0.0,
+    "cny_price": 8053.8,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789531906
   },
   "https://arcteryx.com/shop/mens/alpha-sv-jacket-9899": {
     "name": "Alpha SV Jacket Men's",
@@ -554,5 +566,44 @@
     "dewu_price": null,
     "variants": [],
     "updated_at": 1789522418
+  },
+  "https://arcteryx.com/shop/mens/kragg-sl-cotton-jug-shirt-0700": {
+    "name": "Kragg SL Cotton Jug Shirt SS Men's | Arc'teryx United States",
+    "url": "https://arcteryx.com/shop/mens/kragg-sl-cotton-jug-shirt-0700",
+    "source": "Arc'teryx Canada",
+    "currency": "USD",
+    "current_price": 70.0,
+    "original_price": 70.0,
+    "discount": 0.0,
+    "cny_price": 469.81,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789531931
+  },
+  "https://arcteryx.com/shop/mens/cormac-crew-neck-shirt-ls-0291": {
+    "name": "Cormac Crew Neck Shirt LS Men's | Arc'teryx United Kingdom",
+    "url": "https://arcteryx.com/shop/mens/cormac-crew-neck-shirt-ls-0291",
+    "source": "Arc'teryx Canada",
+    "currency": "GBP",
+    "current_price": 70.0,
+    "original_price": 70.0,
+    "discount": 0.0,
+    "cny_price": 633.45,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789531964
+  },
+  "https://arcteryx.com/shop/mens/gamma-pant-0481": {
+    "name": "Gamma Pant Men's | Arc'teryx United States",
+    "url": "https://arcteryx.com/shop/mens/gamma-pant-0481",
+    "source": "Arc'teryx Canada",
+    "currency": "USD",
+    "current_price": 200.0,
+    "original_price": 200.0,
+    "discount": 0.0,
+    "cny_price": 1342.3,
+    "dewu_price": null,
+    "variants": [],
+    "updated_at": 1789531975
   }
 }
