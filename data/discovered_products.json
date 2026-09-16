@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789596946,
+    "last_checked": 1789598814,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789596904,
+    "last_checked": 1789598770,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789596915,
+    "last_checked": 1789598781,
     "invalid_count": 0
   },
   {
@@ -1627,7 +1627,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1789596936,
+    "last_checked": 1789598802,
     "invalid_count": 0
   },
   {
@@ -2746,6 +2746,76 @@
   {
     "name": "85695",
     "url": "https://www.patagonia.ca/product/mens-free-wall-climbing-pants/85695.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Print Pants",
+    "url": "https://www.rei.com/product/C14375/arcteryx-sabre-print-pants-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Highrail Fleece Jacket",
+    "url": "https://www.rei.com/product/C11863/the-north-face-highrail-fleece-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sabre Print Pants )",
+    "url": "https://www.rei.com/product/C14375/arcteryx-sabre-print-pants-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Highrail Fleece Jacket )",
+    "url": "https://www.rei.com/product/C11863/the-north-face-highrail-fleece-jacket-mens)",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "84213",
+    "url": "https://www.patagonia.ca/product/mens-nano-puff-insulated-jacket/84213.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83180",
+    "url": "https://www.patagonia.ca/product/mens-alpine-guide-pants-regular/83180.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83110",
+    "url": "https://www.patagonia.ca/product/mens-venga-climbing-pants-short/83110.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21340",
+    "url": "https://www.patagonia.ca/product/mens-lightweight-all-wear-5-pocket-pants-long/21340.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "22991",
+    "url": "https://www.patagonia.ca/product/mens-synchilla-fleece-jacket/22991.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83460",
+    "url": "https://www.patagonia.ca/product/mens-mixed-alpine-pants/83460.html",
     "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
