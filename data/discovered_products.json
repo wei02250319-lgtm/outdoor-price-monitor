@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1789580751,
+    "last_checked": 1789580994,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789580708,
+    "last_checked": 1789580952,
     "invalid_count": 0
   },
   {
@@ -108,35 +108,35 @@
     "name": "Gamma Mx Hoody 8485",
     "url": "https://arcteryx.com/ca/en/shop/mens/gamma-mx-hoody-8485",
     "source": "Arc'teryx Canada",
-    "last_checked": 0,
+    "last_checked": 1789581008,
     "invalid_count": 0
   },
   {
     "name": "Beta Ar Jacket 1062",
     "url": "https://arcteryx.com/ca/en/shop/mens/beta-ar-jacket-1062",
     "source": "Arc'teryx Canada",
-    "last_checked": 0,
+    "last_checked": 1789581025,
     "invalid_count": 0
   },
   {
     "name": "Cronin Ar Pant 0697",
     "url": "https://arcteryx.com/ca/en/shop/mens/cronin-ar-pant-0697",
     "source": "Arc'teryx Canada",
-    "last_checked": 0,
+    "last_checked": 1789581038,
     "invalid_count": 0
   },
   {
     "name": "22145",
     "url": "https://www.patagonia.com/product/mens-point-reyes-cotton-canvas-gi-pants/22145.html",
     "source": "Patagonia US",
-    "last_checked": 0,
+    "last_checked": 1789581049,
     "invalid_count": 0
   },
   {
     "name": "22802",
     "url": "https://www.patagonia.com/product/mens-retro-pile-fleece-jacket/22802.html",
     "source": "Patagonia US",
-    "last_checked": 0,
+    "last_checked": 1789581071,
     "invalid_count": 0
   },
   {
@@ -332,7 +332,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1789580718,
+    "last_checked": 1789580962,
     "invalid_count": 0
   },
   {
@@ -394,6 +394,34 @@
   {
     "name": "Patagonia Daily Quilted Insulated Jacket",
     "url": "https://www.rei.com/product/249272/patagonia-daily-quilted-insulated-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Houdini Stash Half Zip Jacket",
+    "url": "https://www.rei.com/product/228564/patagonia-houdini-stash-half-zip-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Nano Puff Insulated Jacket",
+    "url": "https://www.rei.com/product/C09309/patagonia-nano-puff-insulated-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Arcteryx Sima Hoody",
+    "url": "https://www.rei.com/product/C01372/arcteryx-sima-hoody-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Patagonia Powder Town Pants",
+    "url": "https://www.rei.com/product/248867/patagonia-powder-town-pants-mens",
     "source": "REI",
     "last_checked": 0,
     "invalid_count": 0
