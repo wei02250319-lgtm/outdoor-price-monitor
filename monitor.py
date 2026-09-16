@@ -4,7 +4,7 @@ import json
 import time
 import html
 from pathlib import Path
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -30,8 +30,7 @@ FIXED_ROTATION = 5
 # Firecrawl 限流保护
 FIRECRAWL_DELAY = 10
 
-# 自动发现
-DISCOVERY_LIMIT = None
+# 自动发现：不设置发现商品数量上限
 
 DATA_FILE = Path("data/prices.json")
 
@@ -1065,236 +1064,315 @@ def get_dewu_reference_price(product_name):
 # 自动发现商品
 # ============================================================
 
-def extract_links_from_discovery(data, source_url=""):
+DISCOVERED_FILE = Path("data/discovered_products.json")
+
+# 每次运行只发现一个官网，避免 Firecrawl 触发限流。
+# 这里没有“最多发现几个商品”的限制；抓到多少符合条件的链接就保存多少。
+# 监控阶段会轮换历史发现商品，避免单次请求过多。
+DISCOVERED_CHECKS_PER_RUN = 5
+
+EXCLUDED_URL_WORDS = (
+    "/cart", "/account", "/login", "/stores", "/search", "/help",
+    "/about", "/vote", "/ownership", "/shipping", "/returns",
+    "/privacy", "/terms", "/contact", "/careers", "/blog", "/events",
+    "/community", "/membership", "/gift", "/wishlist", "/size",
+    "/filter", "/sort", "/reviews", "/faq",
+)
+
+EXCLUDED_EXTENSIONS = (
+    ".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif", ".svg",
+    ".ico", ".pdf", ".mp4", ".webm", ".zip", ".css", ".js",
+)
+
+EXCLUDED_LAST_PARTS = {
+    "xxs", "xs", "s", "m", "l", "xl", "xxl", "xxxl", "3xl", "4xl",
+    "one-size", "one_size", "men", "mens", "women", "womens",
+}
+
+
+def canonical_url(url):
+    """规范化商品 URL，用于去重。"""
+    if not isinstance(url, str):
+        return ""
+
+    url = html.unescape(url).strip()
+    if not url.startswith(("http://", "https://")):
+        return ""
+
+    # 去掉片段；查询参数保留与否通常不影响商品身份，因此统一去掉。
+    parsed = urlparse(url)
+    if not parsed.netloc:
+        return ""
+
+    clean_path = re.sub(r"/{2,}", "/", parsed.path).rstrip("/")
+    return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{clean_path}"
+
+
+def load_discovered_products():
+    DISCOVERED_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    if not DISCOVERED_FILE.exists():
+        return []
+
+    try:
+        with open(DISCOVERED_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if not isinstance(data, list):
+            return []
+
+        result = []
+        seen = set()
+
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+
+            url = canonical_url(item.get("url", ""))
+            if not url or url in seen:
+                continue
+
+            seen.add(url)
+            result.append({
+                "name": clean_text(item.get("name", "")),
+                "url": url,
+                "source": clean_text(item.get("source", "")),
+                "last_checked": int(item.get("last_checked", 0) or 0),
+                "invalid_count": int(item.get("invalid_count", 0) or 0),
+            })
+
+        return result
+
+    except Exception as exc:
+        print("读取自动发现商品库失败：", exc)
+        return []
+
+
+def save_discovered_products(products):
+    DISCOVERED_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    temp_file = DISCOVERED_FILE.with_suffix(".tmp")
+
+    with open(temp_file, "w", encoding="utf-8") as f:
+        json.dump(products, f, ensure_ascii=False, indent=2)
+
+    temp_file.replace(DISCOVERED_FILE)
+
+
+def extract_links_from_discovery(data):
+    """从 Firecrawl markdown/html/结构化数据中提取所有 URL。"""
     links = []
+    seen = set()
 
     def add_link(value):
-        if not isinstance(value, str):
+        url = canonical_url(value)
+        if not url or url in seen:
             return
-
-        value = html.unescape(value).strip()
-
-        if not value:
-            return
-
-        if value.startswith("/"):
-            value = urljoin(source_url, value)
-        elif value.startswith("./"):
-            value = urljoin(source_url, value)
-
-        if not value.startswith("http"):
-            return
-
-        value = value.rstrip(",.;:)]}>")
-
-        if value not in links:
-            links.append(value)
+        seen.add(url)
+        links.append(url)
 
     for _, key, value in walk_data(data):
         nk = normalize_key(key)
-
-        if nk in {
-            "url",
-            "link",
-            "producturl",
-            "product_url",
-            "href",
-        }:
+        if nk in {"url", "link", "producturl", "product_url", "href"}:
             add_link(value)
 
     if isinstance(data, dict):
-        for key in ["markdown", "html", "rawHtml"]:
+        for key in ("markdown", "html", "rawHtml"):
             text = data.get(key)
-
             if not isinstance(text, str):
                 continue
 
-            # Markdown / HTML href
-            found_links = re.findall(
-                r'(?:href=["\']|\]\()([^"\'\s)<>]+)',
-                text,
-                flags=re.I,
-            )
+            text = html.unescape(text)
 
-            for value in found_links:
-                add_link(value)
+            # Markdown/HTML 中的完整 URL
+            for match in re.findall(r'https?://[^\s)"\'<>]+', text):
+                add_link(match)
 
-            # 纯 URL
-            found_urls = re.findall(
-                r'https?://[^\s)"\'<>]+',
-                text,
-            )
-
-            for value in found_urls:
-                add_link(value)
+            # 相对链接也可能出现在 markdown 中；根据来源 URL 在上层补全。
 
     return links
 
 
-def discovery_url_looks_like_product(url, source):
+def source_domain_ok(source, url):
+    """确保发现结果仍属于当前官网，避免页面中的外链污染商品库。"""
+    source_host = urlparse(source.get("url", "")).netloc.lower()
+    result_host = urlparse(url).netloc.lower()
+
+    if not source_host or not result_host:
+        return False
+
+    # www / 非 www 视为同一站点；官方站点之间不互相接受。
+    source_host = source_host.removeprefix("www.")
+    result_host = result_host.removeprefix("www.")
+
+    return result_host == source_host or result_host.endswith("." + source_host)
+
+
+def url_looks_like_product(source, url):
+    """站点无关的基础 URL 过滤。真正商品名会在详情页再次验证。"""
+    low = url.lower()
     parsed = urlparse(url)
-    host = parsed.netloc.lower()
     path = parsed.path.lower().rstrip("/")
-    query = parsed.query.lower()
+
+    if not source_domain_ok(source, url):
+        return False
 
     if not path:
         return False
 
-    clean_url = url.lower().split("?", 1)[0]
-
-    if clean_url.endswith(EXCLUDED_EXTENSIONS):
+    if path.endswith(EXCLUDED_EXTENSIONS):
         return False
 
-    if any(word in url.lower() for word in DISCOVERY_EXCLUDED_WORDS):
+    if any(word in low for word in EXCLUDED_URL_WORDS):
         return False
 
-    if any(
-        item in query
-        for item in [
-            "filter=",
-            "sort=",
-            "size=",
-            "color=",
-            "category=",
-        ]
-    ):
+    last_part = path.split("/")[-1]
+    if last_part in EXCLUDED_LAST_PARTS:
         return False
 
-    parts = [x for x in path.split("/") if x]
-    if not parts:
-        return False
-
-    last_part = parts[-1]
-
-    if last_part in FILTER_PATH_PARTS:
-        return False
-
-    exact_bad_paths = {
-        "/shop/mens",
-        "/shop/men",
-        "/c/mens",
-        "/c/men",
-        "/mens",
-        "/men",
+    # 明确的分类/首页路径
+    exact_bad = {
+        "/mens", "/men", "/womens", "/women",
+        "/c/mens", "/c/men", "/c/womens", "/c/women",
+        "/shop/mens", "/shop/men", "/shop/womens", "/shop/women",
     }
-
-    if path in exact_bad_paths:
+    if path in exact_bad:
         return False
 
-    # REI 商品页必须有 /product/ 路径。
-    if "rei.com" in host:
-        return "/product/" in path
-
-    # Patagonia 商品页通常是 /shop/mens/<product-slug>。
-    if "patagonia.com" in host:
-        if path.startswith("/shop/mens"):
-            return len(parts) >= 3 and len(last_part) >= 8
+    # 常见筛选页
+    if "?" in url and any(x in low for x in ("filter=", "sort=", "size=", "color=")):
         return False
 
-    if "patagonia.ca" in host:
-        if path.startswith("/shop/mens"):
-            return len(parts) >= 3 and len(last_part) >= 8
+    # 有明确商品路径特征，直接认为是候选商品页。
+    product_markers = (
+        "/product/", "/products/", "/item/", "/p/",
+        "/productpage/", "/product-detail/",
+    )
+    if any(marker in path for marker in product_markers):
+        return True
+
+    # 品牌官网经常使用 /shop/mens/<slug> 或 /mens/<slug>。
+    # 最后一段需要像商品 slug，而不是简单的分类词。
+    if len(last_part) < 8:
         return False
 
-    # Arc'teryx 官方/Outlet。
-    if "arcteryx.com" in host:
-        if path.endswith(("/mens", "/men")):
+    category_words = {
+        "jackets", "jacket", "pants", "pant", "mens", "men",
+        "clothing", "apparel", "sale", "deals", "new", "featured",
+        "softshell", "hardshell", "outerwear",
+    }
+    if last_part in category_words:
+        return False
+
+    return True
+
+
+def candidate_matches_allowed_name(name, url):
+    """最终商品过滤：品牌 + 男装服饰类别 + 排除类别。"""
+    text = normalize_name(f"{name} {url}")
+
+    if any(normalize_name(word) in text for word in EXCLUDED_CATEGORIES):
+        return False
+
+    if not any(normalize_name(brand) in text for brand in ALLOWED_BRANDS):
+        # REI 等商品页标题可能只返回商品名；来源本身已经限定品牌时由 URL/来源补足。
+        brand_tokens = {
+            "rei.com": True,
+            "outlet.arcteryx.com": "arc'teryx" in text or "arcteryx" in text,
+            "arcteryx.com": "arc'teryx" in text or "arcteryx" in text,
+            "patagonia.com": "patagonia" in text,
+            "patagonia.ca": "patagonia" in text,
+            "thenorthface.com": "north face" in text or "northface" in text,
+        }
+        host = urlparse(url).netloc.lower().removeprefix("www.")
+        if not brand_tokens.get(host, False):
             return False
-        if any(
-            marker in path
-            for marker in ["/product/", "/products/", "/shop/"]
-        ):
-            return len(last_part) >= 8
-        return len(last_part) >= 12
 
-    # The North Face 分类页排除，具体商品页保留。
-    if "thenorthface.com" in host:
-        if path.endswith(("/en-us/c/mens", "/en-ca/c/men")):
-            return False
-        if any(
-            marker in path
-            for marker in ["/product/", "/products/", "/p/"]
-        ):
-            return True
-        return len(last_part) >= 12
-
-    return False
+    # 只允许男装相关商品。
+    return any(normalize_name(word) in text for word in ALLOWED_CATEGORIES)
 
 
 def discover_products(source):
-    data = firecrawl_scrape(
-        source["url"],
-        formats=["markdown"],
-    )
-
+    """发现当前官网所有符合基础 URL 条件的商品链接，不设置商品数量上限。"""
+    data = firecrawl_scrape(source["url"], formats=["markdown"])
     if not data:
         return []
 
-    links = extract_links_from_discovery(
-        data,
-        source["url"],
-    )
-
+    links = extract_links_from_discovery(data)
     products = []
     seen_urls = set()
 
     for url in links:
-        if not discovery_url_looks_like_product(
-            url,
-            source,
-        ):
-            continue
-
-        low = url.lower()
-        url_text = normalize_name(low)
-
-        # URL 明显属于非目标类别时直接过滤。
-        if any(
-            normalize_name(word) in url_text
-            for word in EXCLUDED_CATEGORIES
-        ):
+        if not url_looks_like_product(source, url):
             continue
 
         if url in seen_urls:
             continue
-
         seen_urls.add(url)
 
-        name = (
-            url.rstrip("/")
-            .split("/")[-1]
-            .split("?", 1)[0]
-        )
+        slug = urlparse(url).path.rstrip("/").split("/")[-1]
+        name = re.sub(r"[-_]+", " ", slug).strip()
 
-        name = (
-            name
-            .replace("-", " ")
-            .replace("_", " ")
-            .strip()
-        )
-
-        if not name:
-            continue
-
-        item = {
+        # URL 本身没有品牌/类别时，先保留候选；详情页 check_product/build_current_product
+        # 会再次确认是否有真实价格。这里不做数量截断。
+        products.append({
             "name": name,
             "url": url,
             "source": source["name"],
-            "discovered": True,
-        }
-
-        products.append(item)
-
-        if (
-            DISCOVERY_LIMIT is not None
-            and len(products) >= DISCOVERY_LIMIT
-        ):
-            break
+        })
 
     return products
 
 
-# ============================================================
+def merge_discovered_products(existing, discovered):
+    """把本次发现合并到长期商品池，按规范化 URL 去重。"""
+    merged = []
+    index = {}
+
+    for item in existing + discovered:
+        if not isinstance(item, dict):
+            continue
+
+        url = canonical_url(item.get("url", ""))
+        if not url:
+            continue
+
+        if url in index:
+            # 新发现的名称更完整时更新名称/来源
+            pos = index[url]
+            if len(clean_text(item.get("name", ""))) > len(clean_text(merged[pos].get("name", ""))):
+                merged[pos]["name"] = item.get("name", "")
+            if item.get("source"):
+                merged[pos]["source"] = item.get("source")
+            continue
+
+        clean_item = {
+            "name": clean_text(item.get("name", "")),
+            "url": url,
+            "source": clean_text(item.get("source", "")),
+            "last_checked": int(item.get("last_checked", 0) or 0),
+            "invalid_count": int(item.get("invalid_count", 0) or 0),
+        }
+        index[url] = len(merged)
+        merged.append(clean_item)
+
+    return merged
+
+
+def choose_discovered_for_check(discovered_products, limit=DISCOVERED_CHECKS_PER_RUN):
+    """轮换检查历史发现商品；固定商品不占这里的名额。"""
+    if not discovered_products or limit <= 0:
+        return []
+
+    # 优先最久没有检查的商品。
+    ordered = sorted(
+        discovered_products,
+        key=lambda x: int(x.get("last_checked", 0) or 0),
+    )
+
+    return ordered[:limit]
+
+
 # 单个商品构建
 # ============================================================
 
@@ -1502,18 +1580,6 @@ def check_product(product, history):
         print("没有获取到有效价格")
         return
 
-    # 自动发现商品必须再次按真实商品标题过滤，防止分类/筛选页漏网。
-    if product.get("discovered"):
-        real_name = current_product.get("name", "")
-
-        if not product_matches_allowed_brand(real_name):
-            print("自动发现商品品牌不符合条件，跳过：", real_name)
-            return
-
-        if not product_matches_allowed_category(real_name):
-            print("自动发现商品类别不符合条件，跳过：", real_name)
-            return
-
     current_price = current_product["current_price"]
 
     key = product["url"]
@@ -1567,80 +1633,89 @@ def main():
     print("=" * 60)
 
     history = load_history()
+    discovered_pool = load_discovered_products()
 
     # --------------------------------------------------------
-    # 固定5个商品全部检查
+    # 固定5个商品始终检查
     # --------------------------------------------------------
-
     products = list(FIXED_PRODUCTS)
 
-    print(
-        f"本次检查固定商品：{len(FIXED_PRODUCTS)}"
-    )
+    print(f"本次检查固定商品：{len(FIXED_PRODUCTS)}")
 
     # --------------------------------------------------------
-    # 自动发现
+    # 自动发现：每30分钟轮换一个官网
     # --------------------------------------------------------
-
-    # 根据当前时间轮换发现来源
     rotation_index = (
         int(time.time() / 1800)
         % len(DISCOVERY_SOURCES)
     )
-
     source = DISCOVERY_SOURCES[rotation_index]
 
-    print(
-        "自动发现：",
-        source["name"],
-    )
+    print("自动发现：", source["name"])
 
     try:
-        discovered = discover_products(source)
+        discovered_now = discover_products(source)
+        before_count = len(discovered_pool)
+        discovered_pool = merge_discovered_products(
+            discovered_pool,
+            discovered_now,
+        )
+        save_discovered_products(discovered_pool)
 
-        fixed_urls = {
-            item["url"]
-            for item in FIXED_PRODUCTS
-        }
-
-        for item in discovered:
-            if item["url"] in fixed_urls:
-                continue
-
-            # 先根据 URL 做基础过滤
-            url_text = normalize_name(
-                item["url"]
-            )
-
-            if any(
-                normalize_name(word) in url_text
-                for word in EXCLUDED_CATEGORIES
-            ):
-                continue
-
-            products.append(item)
+        print(
+            f"自动发现完成：本次新增 {max(0, len(discovered_pool) - before_count)} 个，"
+            f"累计商品库 {len(discovered_pool)} 个"
+        )
 
     except Exception as exc:
         print("自动发现异常：", exc)
 
+    # --------------------------------------------------------
+    # 固定5个 + 历史自动发现商品（轮换）
+    # --------------------------------------------------------
+    fixed_urls = {
+        canonical_url(item["url"])
+        for item in FIXED_PRODUCTS
+    }
+
+    selected_discovered = choose_discovered_for_check(
+        discovered_pool,
+        DISCOVERED_CHECKS_PER_RUN,
+    )
+
+    for item in selected_discovered:
+        if canonical_url(item.get("url", "")) in fixed_urls:
+            continue
+        products.append(item)
+
     print(
-        f"本次实际检查商品：{len(products)}"
+        f"本次实际检查商品：{len(products)} "
+        f"（固定 {len(FIXED_PRODUCTS)} + 自动发现轮换 {len(products) - len(FIXED_PRODUCTS)}）"
     )
 
     # --------------------------------------------------------
     # 开始检查
     # --------------------------------------------------------
+    checked_urls = set()
 
     for index, product in enumerate(products, start=1):
-        print()
-        print(
-            f"========== {index}/{len(products)} =========="
-        )
+        url = canonical_url(product.get("url", ""))
+        if url and url in checked_urls:
+            continue
+        if url:
+            checked_urls.add(url)
 
-        check_product(
-            product,
-            history,
-        )
+        print()
+        print(f"========== {index}/{len(products)} ==========")
+
+        check_product(product, history)
+
+        # 更新自动发现商品的轮换时间
+        if url:
+            for item in discovered_pool:
+                if canonical_url(item.get("url", "")) == url:
+                    item["last_checked"] = int(time.time())
+                    break
 
         if index < len(products):
             print(
@@ -1650,10 +1725,10 @@ def main():
             time.sleep(FIRECRAWL_DELAY)
 
     # --------------------------------------------------------
-    # 保存历史
+    # 保存历史和自动发现商品库
     # --------------------------------------------------------
-
     save_history(history)
+    save_discovered_products(discovered_pool)
 
     print()
     print("=" * 60)
