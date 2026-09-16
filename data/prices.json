@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789582741
+    "updated_at": 1789584475
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789582751
+    "updated_at": 1789584485
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789582762
+    "updated_at": 1789584496
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789582772
+    "updated_at": 1789584506
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789582783
+    "updated_at": 1789584517
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -589,5 +589,113 @@
       }
     ],
     "updated_at": 1789582883
+  },
+  "https://www.patagonia.ca/product/mens-nomader-hoody-jacket/20440.html": {
+    "name": "Patagonia Men's Nomader Hoody Jacket",
+    "url": "https://www.patagonia.ca/product/mens-nomader-hoody-jacket/20440.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 10.0,
+    "original_price": 10.0,
+    "discount": 0.0,
+    "cny_price": 48.12,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb72993b4/images/hi-res/20440_WSTO.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Weathered Stone",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789584543
+  },
+  "https://www.patagonia.ca/product/mens-quandary-hiking-pants-short/55178.html": {
+    "name": "Patagonia Men's Quandary Hiking Pants - Short",
+    "url": "https://www.patagonia.ca/product/mens-quandary-hiking-pants-short/55178.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 10.0,
+    "original_price": 10.0,
+    "discount": 0.0,
+    "cny_price": 48.12,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbeeaf794/images/hi-res/55178_CSC.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789584566
+  },
+  "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-jacket/24093.html": {
+    "name": "Patagonia Men's Wind Shield Jacket - Windbreaker Jacket",
+    "url": "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-jacket/24093.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 10.0,
+    "original_price": 10.0,
+    "discount": 0.0,
+    "cny_price": 48.12,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbcb523a5/images/hi-res/24093_CIBN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Cinnamon Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789584588
+  },
+  "https://www.patagonia.ca/product/mens-iron-forge-hemp-canvas-ranch-jacket/27805.html": {
+    "name": "Patagonia Men's Iron Forge® Canvas Ranch Jacket",
+    "url": "https://www.patagonia.ca/product/mens-iron-forge-hemp-canvas-ranch-jacket/27805.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 10.0,
+    "original_price": 10.0,
+    "discount": 0.0,
+    "cny_price": 48.12,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwadf181a5/images/hi-res/27805_DKAS.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Dark Ash",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Ink Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Coriander Brown",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789584613
+  },
+  "https://www.rei.com/product/249473/arcteryx-alpha-sv-jacket-mens": {
+    "name": "Arc'teryx Alpha SV Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/249473/arcteryx-alpha-sv-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 449.83,
+    "original_price": 900.0,
+    "discount": 50.0,
+    "cny_price": 3017.05,
+    "image_url": "https://www.rei.com/media/d8598a09-6165-4ea5-8e89-21bfc058611a.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1789584640
   }
 }
