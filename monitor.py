@@ -4,7 +4,7 @@ import json
 import time
 import html
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlparse, urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -1066,502 +1066,169 @@ def get_dewu_reference_price(product_name):
 # ============================================================
 
 def extract_links_from_discovery(data, base_url=""):
-    """从 Firecrawl 的发现页结果中提取链接。
-
-    同时支持绝对 URL 和相对 URL，避免 REI 分类页里的
-    /product/123456/... 链接因为是相对路径而被漏掉。
-    """
+    """从 Firecrawl 返回的数据中提取链接，并把相对链接补成绝对 URL。"""
     links = []
 
     def add_link(value):
         if not isinstance(value, str):
             return
-
-        value = value.strip()
+        value = html.unescape(value).strip()
         if not value:
             return
-
-        # 处理 //www.rei.com/...、/product/... 等相对链接
-        if value.startswith("//"):
-            value = "https:" + value
-        elif base_url and value.startswith("/"):
+        # 去掉 markdown / HTML 常见包裹
+        value = value.strip('<>')
+        if value.startswith('//'):
+            value = 'https:' + value
+        elif base_url and not value.startswith(('http://', 'https://')):
             value = urljoin(base_url, value)
-        elif base_url and not value.startswith(("http://", "https://")):
-            value = urljoin(base_url, value)
-
-        if not value.startswith(("http://", "https://")):
+        if not value.startswith(('http://', 'https://')):
             return
-
-        # 去掉锚点，保留查询参数
-        value = value.split("#", 1)[0]
-
+        value = value.split('#', 1)[0]
         if value not in links:
             links.append(value)
 
     for _, key, value in walk_data(data):
         nk = normalize_key(key)
-
-        if nk in {
-            "url",
-            "link",
-            "producturl",
-            "product_url",
-            "href",
-        }:
+        if nk in {"url", "link", "producturl", "product_url", "href"}:
             add_link(value)
 
-    # markdown / html 中的 URL
     if isinstance(data, dict):
         for key in ["markdown", "html", "rawHtml"]:
             text = data.get(key)
-
             if not isinstance(text, str):
                 continue
-
             # 绝对 URL
-            for found in re.findall(
-                r'https?://[^\s)"\'<>]+',
-                text,
-            ):
-                add_link(found)
-
-            # HTML href / Markdown 相对链接
-            for found in re.findall(
-                r'href=["\']([^"\']+)["\']',
-                text,
-                flags=re.I,
-            ):
-                add_link(found)
-
-            for found in re.findall(
-                r'\]\(([^)\s]+)',
-                text,
-            ):
-                add_link(found)
+            for url in re.findall(r'https?://[^\s)"\'<>]+', text):
+                add_link(url)
+            # HTML href / markdown link 中的相对 URL
+            for url in re.findall(r'(?:href|src)=["\']([^"\']+)', text, flags=re.I):
+                add_link(url)
+            for url in re.findall(r'\]\(([^)\s]+)', text):
+                add_link(url)
 
     return links
 
 
+def _source_host(source):
+    return urlparse(source["url"]).netloc.lower()
+
+
+def _clean_discovery_url(url):
+    return url.split('?', 1)[0].rstrip('/')
+
+
+def _is_bad_common_url(path):
+    low = path.lower()
+    bad = (
+        '/cart', '/account', '/login', '/stores', '/search', '/help',
+        '/about', '/shipping', '/returns', '/privacy', '/terms',
+        '/contact', '/careers', '/blog', '/events', '/community',
+        '/membership', '/gift', '/wishlist', '/filter', '/sort',
+        '/store-locator', '/progress-report', '/worth-it', '/stories/',
+        '/impact/', '/our-footprint', '/responsible-business',
+        '/collections/', '/category/', '/fair-trade', '/pfc-free',
+    )
+    return any(x in low for x in bad)
+
+
+def _is_size_or_file(path):
+    low = path.lower()
+    if low.endswith((
+        '.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg',
+        '.ico', '.pdf', '.mp4', '.webm', '.zip'
+    )):
+        return True
+    last = low.rstrip('/').split('/')[-1]
+    return last in {
+        'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl',
+        '3xl', '4xl', 'one-size', 'one_size'
+    }
+
+
+def _recognize_product_url(source, url):
+    """按不同官网自己的商品 URL 规则识别，避免把分类页/图片页当商品。"""
+    host = _source_host(source)
+    clean = _clean_discovery_url(url)
+    parsed = urlparse(clean)
+    path = parsed.path
+    low_path = path.lower()
+
+    if _is_bad_common_url(low_path) or _is_size_or_file(low_path):
+        return False
+
+    # REI：商品详情统一使用 /product/<ID>/，ID 可能是数字或字母数字。
+    if 'rei.com' in host:
+        return bool(re.search(r'/product/[a-z0-9]+(?:/[^/]*)?$', low_path, re.I))
+
+    # The North Face：分类是 /c/，商品详情是 /p/。
+    if 'thenorthface.com' in host:
+        if not re.search(r'^/en-(?:us|ca)/p/', low_path, re.I):
+            return False
+        # TNF 商品页通常带 NF0... 商品款号；同时允许少数官网命名变化。
+        return bool(re.search(r'nf0[a-z0-9]{4,}', low_path, re.I))
+
+    # Patagonia：shop/mens 是列表页；商品详情是 /product/...，通常带 .html。
+    if 'patagonia.com' in host:
+        if not low_path.startswith('/product/'):
+            return False
+        if low_path.rstrip('/') == '/product':
+            return False
+        return len(low_path.split('/')) >= 3
+
+    # Arc'teryx：商品页主要位于 /shop/ 下，排除明显分类页；Outlet 同样处理。
+    if 'arcteryx.com' in host:
+        if '/shop/' not in low_path:
+            return False
+        parts = [x for x in low_path.split('/') if x]
+        if len(parts) < 4:
+            return False
+        if parts[-1] in {'mens', 'men', 'womens', 'women', 'new', 'sale'}:
+            return False
+        return True
+
+    return False
+
+
 def discover_products(source):
-    """从分类/折扣列表页发现具体商品详情页。
-
-    关键规则：
-    1. REI 的 /c/.../scd-deals 是商品列表页，不能直接当商品检查。
-    2. REI 只接受 /product/<数字ID>/... 这种具体商品页。
-    3. 其他品牌继续接受常见 /product/、/products/、/item/、/p/ 路径。
-    4. 统一排除购物车、搜索、尺码筛选、图片等非商品链接。
-    """
-    source_url = source.get("url", "")
-    source_name = source.get("name", "")
-
     data = firecrawl_scrape(
-        source_url,
-        formats=["markdown", "html"],
+        source["url"],
+        formats=["markdown"],
     )
 
     if not data:
+        print("没有获得发现页数据")
         return []
 
-    links = extract_links_from_discovery(
-        data,
-        base_url=source_url,
-    )
-
+    links = extract_links_from_discovery(data, source["url"])
     products = []
     seen_urls = set()
 
-    excluded_words = [
-        "/cart",
-        "/account",
-        "/login",
-        "/stores",
-        "/search",
-        "/help",
-        "/about",
-        "/vote",
-        "/ownership",
-        "/shipping",
-        "/returns",
-        "/privacy",
-        "/terms",
-        "/contact",
-        "/careers",
-        "/blog",
-        "/events",
-        "/community",
-        "/membership",
-        "/gift",
-        "/wishlist",
-        "/size",
-        "/filter",
-        "/sort",
-    ]
-
-    excluded_extensions = (
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".gif",
-        ".webp",
-        ".avif",
-        ".svg",
-        ".ico",
-        ".pdf",
-        ".mp4",
-        ".webm",
-        ".zip",
-    )
-
-    excluded_last_parts = {
-        "xxs",
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl",
-        "xxl",
-        "xxxl",
-        "3xl",
-        "4xl",
-        "one-size",
-        "one_size",
-    }
-
-    source_host = urlparse(source_url).netloc.lower()
-    is_rei = "rei.com" in source_host
-
-    for url in links:
-        if not url:
+    for raw_url in links:
+        url = _clean_discovery_url(raw_url)
+        if not _recognize_product_url(source, url):
+            continue
+        if url in seen_urls:
             continue
 
-        low = url.lower().strip()
-        clean_url = low.split("?", 1)[0]
-        path = urlparse(clean_url).path.rstrip("/")
-
-        # ① 只接受 http/https
-        if not low.startswith(("http://", "https://")):
-            continue
-
-        # ② 图片、视频、文件直接排除
-        if clean_url.endswith(excluded_extensions):
-            continue
-
-        # ③ 明显非商品页面排除
-        if any(word in low for word in excluded_words):
-            continue
-
-        # ④ REI 专门规则：必须是具体商品 /product/数字ID/ 页面
-        if is_rei:
-            rei_product_match = re.search(
-                r"/product/(\d+)/",
-                path,
-                flags=re.I,
-            )
-
-            if not rei_product_match:
-                continue
-
-            # 列表页、分类页、首页自然不会通过上面的规则
-            product_id = rei_product_match.group(1)
-            if not product_id:
-                continue
-
-        else:
-            # ⑤ 非 REI：允许常见商品路径
-            product_path = any(
-                keyword in path
-                for keyword in [
-                    "/product/",
-                    "/products/",
-                    "/item/",
-                    "/p/",
-                ]
-            )
-
-            last_part = path.split("/")[-1]
-
-            if last_part in excluded_last_parts:
-                continue
-
-            if "/shop/mens" in path:
-                parts = [x for x in path.split("/") if x]
-                if len(parts) <= 2:
-                    continue
-                if len(parts) == 3 and parts[-1] in excluded_last_parts:
-                    continue
-
-            # 必须能证明是允许品牌，避免把导航页加入监控
-            brand_ok = any(
-                brand in low
-                for brand in [
-                    "patagonia",
-                    "arcteryx",
-                    "arc-teryx",
-                    "northface",
-                    "north-face",
-                ]
-            )
-
-            if not brand_ok:
-                continue
-
-            # Patagonia / Arc'teryx / The North Face 的分类、专题、
-            # 门店、品牌故事等页面，即使 URL 中带品牌名，也不能当商品。
-            non_product_paths = [
-                "/progress-report",
-                "/worth-it",
-                "/store-locator",
-                "/fair-trade",
-                "/pfc-free",
-                "/stories/",
-                "/impact/",
-                "/our-footprint",
-                "/responsible-business",
-                "/collections/",
-                "/category/",
-            ]
-            if any(marker in path for marker in non_product_paths):
-                continue
-
-            if not product_path:
-                if path.endswith(("/mens", "/men", "/c/mens", "/c/men")):
-                    continue
-
-                # 目录页通常只有 1~2 层路径；没有明显商品详情结构时，
-                # 仅凭一个分类词不能进入监控。
-                if path.count("/") < 3:
-                    continue
-
-                if len(last_part) < 5:
-                    continue
-
-        # ⑥ 去重
-        normalized_url = url.rstrip("/")
-        if normalized_url in seen_urls:
-            continue
-
-        seen_urls.add(normalized_url)
-
-        # ⑦ 商品名先从 URL 生成，详情页会再次读取真实标题
-        name = path.split("/")[-1]
-        name = (
-            name
-            .replace("-", " ")
-            .replace("_", " ")
-            .strip()
-        )
-
+        seen_urls.add(url)
+        name = urlparse(url).path.rstrip('/').split('/')[-1]
+        name = re.sub(r'\.(?:html?)$', '', name, flags=re.I)
+        name = name.replace('-', ' ').replace('_', ' ').strip()
         if not name:
-            name = f"{source_name} 商品"
+            continue
 
-        products.append(
-            {
-                "name": name,
-                "url": url,
-                "source": source_name,
-            }
-        )
+        products.append({
+            "name": name,
+            "url": url,
+            "source": source["name"],
+        })
 
         if len(products) >= DISCOVERY_LIMIT:
             break
 
-    print(
-        f"自动发现到具体商品：{len(products)} 个"
-    )
-
-    for item in products:
-        print(
-            f"  → {item['name']}"
-            f" | {item['url']}"
-        )
-
     return products
 
 
-# ============================================================
-# 单个商品构建
-# ============================================================
-
-def build_current_product(product, data):
-    name = extract_product_title(
-        data,
-        product.get("name", ""),
-    )
-
-    current_price = choose_current_price(data)
-
-    original_price = choose_original_price(
-        data,
-        current_price,
-    )
-
-    currency = extract_currency(
-        data,
-        product.get("url", ""),
-    )
-
-    variants = extract_variant_info(data)
-
-    if current_price is None:
-        return None
-
-    if original_price is None:
-        original_price = current_price
-
-    if original_price < current_price:
-        original_price = current_price
-
-    if original_price > 0:
-        discount = (
-            (original_price - current_price)
-            / original_price
-            * 100
-        )
-    else:
-        discount = 0
-
-    cny_price = convert_to_cny(
-        current_price,
-        currency,
-    )
-
-    dewu_price = get_dewu_reference_price(
-        name
-    )
-
-    return {
-        "name": name,
-        "url": product.get("url", ""),
-        "source": product.get("source", ""),
-        "currency": currency,
-        "current_price": round(current_price, 2),
-        "original_price": round(original_price, 2),
-        "discount": round(discount, 1),
-        "cny_price": cny_price,
-        "dewu_price": dewu_price,
-        "variants": variants,
-        "updated_at": int(time.time()),
-    }
-
-
-# ============================================================
-# Telegram
-# ============================================================
-
-def send_telegram_message(message):
-    if not TELEGRAM_BOT_TOKEN:
-        print("没有 Telegram Bot Token")
-        return False
-
-    if not TELEGRAM_CHAT_ID:
-        print("没有 Telegram Chat ID")
-        return False
-
-    url = (
-        f"https://api.telegram.org/bot"
-        f"{TELEGRAM_BOT_TOKEN}/sendMessage"
-    )
-
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": message,
-        "disable_web_page_preview": False,
-    }
-
-    try:
-        response = SESSION.post(
-            url,
-            json=payload,
-            timeout=20,
-        )
-
-        if response.status_code != 200:
-            print("Telegram 推送失败：", response.text[:500])
-            return False
-
-        return True
-
-    except Exception as exc:
-        print("Telegram 推送异常：", exc)
-        return False
-
-
-def build_telegram_message(product, previous):
-    name = product["name"]
-
-    current = product["current_price"]
-    original = product["original_price"]
-    discount = product["discount"]
-
-    currency = product.get("currency") or ""
-
-    previous_price = None
-
-    if previous:
-        previous_price = safe_float(
-            previous.get("current_price")
-        )
-
-    if previous_price is not None:
-        drop = previous_price - current
-
-        price_line = (
-            f"💰 价格：{previous_price:.2f} "
-            f"→ {current:.2f} {currency}\n"
-            f"📉 本次降价：{drop:.2f} {currency}"
-        )
-    else:
-        price_line = (
-            f"💰 当前价：{current:.2f} {currency}"
-        )
-
-    lines = [
-        "🔥 户外商品降价提醒",
-        "",
-        f"🏷️ 折扣：{discount:.1f}%",
-        f"📦 商品：{name}",
-        f"💵 原价：{original:.2f} {currency}",
-        price_line,
-    ]
-
-    cny = product.get("cny_price")
-
-    if cny is not None:
-        lines.extend(
-            [
-                "",
-                f"🇨🇳 人民币参考价：¥{cny:,.0f}",
-                "💱 按实时汇率换算",
-            ]
-        )
-
-    dewu = product.get("dewu_price")
-
-    if dewu is not None:
-        lines.append(
-            f"🛒 得物参考价：¥{dewu:,.0f}"
-        )
-    else:
-        lines.append(
-            "🛒 得物参考价：暂不可用"
-        )
-
-    variants = product.get("variants") or []
-
-    lines.extend(
-        [
-            "",
-            "🎨 颜色 / 尺码 / 库存：",
-            format_variant_text(variants),
-            "",
-            f"🔗 {product['url']}",
-        ]
-    )
-
-    return "\n".join(lines)
-
-
-# ============================================================
 # 商品检查
 # ============================================================
 
