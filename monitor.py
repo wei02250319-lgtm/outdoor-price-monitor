@@ -1634,7 +1634,7 @@ def is_allowed_discovery_product(
         return False
 
     # 男装
-    men's_ok = (
+    mens_ok = (
         "mens" in text
         or "men's" in text
         or "/mens/" in text
@@ -1643,7 +1643,7 @@ def is_allowed_discovery_product(
         or "-men-" in text
     )
 
-    if not men's_ok:
+    if not mens_ok:
         return False
 
     # 目标类别
