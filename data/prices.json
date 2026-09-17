@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789622012
+    "updated_at": 1789623814
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789622023
+    "updated_at": 1789623825
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789622034
+    "updated_at": 1789623837
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789622045
+    "updated_at": 1789623848
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789622056
+    "updated_at": 1789623860
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -2027,5 +2027,81 @@
     "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwed4cad3c/images/hi-res/21330_PLCN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789622191
+  },
+  "https://www.patagonia.ca/product/mens-das-light-hoody-belay-jacket/85301.html": {
+    "name": "Patagonia Men's DAS® Light Hoody - Belay Jacket",
+    "url": "https://www.patagonia.ca/product/mens-das-light-hoody-belay-jacket/85301.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 249.0,
+    "original_price": 9219.0,
+    "discount": 97.3,
+    "cny_price": 1198.09,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwdc4ea855/images/hi-res/85301_CIBN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Cinnamon Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Forge Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Glacial Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789623905
+  },
+  "https://www.patagonia.ca/product/mens-iron-forge-5-pocket-work-pants-regular/56290.html": {
+    "name": "Patagonia Men's Iron Forge® 5-Pocket Work Pants - Regular",
+    "url": "https://www.patagonia.ca/product/mens-iron-forge-5-pocket-work-pants-regular/56290.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 99.0,
+    "original_price": 9006.0,
+    "discount": 98.9,
+    "cny_price": 476.35,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbfbc035a/images/hi-res/56290_DKAS.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789623930
+  },
+  "https://www.patagonia.ca/product/mens-windshadow-waterproof-jacket/26491.html": {
+    "name": "Patagonia Men's Windshadow Waterproof Jacket",
+    "url": "https://www.patagonia.ca/product/mens-windshadow-waterproof-jacket/26491.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 239.0,
+    "original_price": 5066.0,
+    "discount": 95.3,
+    "cny_price": 1149.97,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw478ace5b/images/hi-res/26491_WNGY.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Wing Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "New Navy",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Treeline Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789623955
   }
 }
