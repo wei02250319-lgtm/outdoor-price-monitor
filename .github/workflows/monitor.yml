@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: "*/30 * * * *"
 
+# 同一时间只允许一个监控任务写价格历史，避免两个运行同时修改 JSON。
 concurrency:
   group: outdoor-price-monitor
   cancel-in-progress: false
@@ -45,7 +46,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/prices.json data/discovered_products.json
+          git add data/prices.json data/discovered_products.json data/correction_queue.json
 
           if git diff --cached --quiet; then
             echo "价格历史没有变化，不需要提交"
@@ -55,28 +56,39 @@ jobs:
           git commit -m "Update price history"
 
           echo "准备同步远程 main 分支"
+          git fetch origin main
+
+          # 不再使用 rebase。
+          # 价格历史是 JSON 快照，两个运行同时更新同一文件时很容易产生
+          # rebase 冲突。当前工作流已经通过 concurrency 保证单实例运行，
+          # 如果远程在本次运行期间出现变化，则把本次运行的最新价格历史
+          # 保留为当前提交，再把远程其它代码变更合并进来。
+          if git merge origin/main --no-edit -X ours; then
+            echo "远程分支同步成功"
+          else
+            echo "普通合并失败，执行一次中止并重试"
+            git merge --abort || true
+            git fetch origin main
+            git merge origin/main --no-edit -X ours
+          fi
 
           for i in 1 2 3 4 5; do
-            echo "同步尝试第 $i 次"
-
-            git fetch origin main
-
-            if git rebase origin/main; then
-              echo "远程分支同步成功"
-            else
-              echo "Rebase 失败，尝试中止并重新获取"
-              git rebase --abort || true
-              sleep $((10 * i))
-              continue
-            fi
-
             if git push origin HEAD:main; then
               echo "价格历史推送成功"
               exit 0
             fi
 
             echo "推送失败，第 $i 次重试..."
-            sleep $((20 * i))
+            git fetch origin main
+
+            # 如果远程又前进了，先合并再推送；JSON 冲突继续保留本次运行结果。
+            git merge origin/main --no-edit -X ours || {
+              git merge --abort || true
+              sleep $((10 * i))
+              continue
+            }
+
+            sleep $((10 * i))
           done
 
           echo "连续 5 次推送失败"
