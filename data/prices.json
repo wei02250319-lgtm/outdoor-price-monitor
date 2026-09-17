@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789620270
+    "updated_at": 1789622012
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789620281
+    "updated_at": 1789622023
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789620292
+    "updated_at": 1789622034
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789620303
+    "updated_at": 1789622045
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789620315
+    "updated_at": 1789622056
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -1982,5 +1982,50 @@
       }
     ],
     "updated_at": 1789620409
+  },
+  "https://www.patagonia.ca/product/mens-all-seasons-hemp-canvas-double-knee-work-pants-long/55790.html": {
+    "name": "Patagonia Men's All Seasons Double Knee Work Pants - Long",
+    "url": "https://www.patagonia.ca/product/mens-all-seasons-hemp-canvas-double-knee-work-pants-long/55790.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 48.99,
+    "original_price": 4256.0,
+    "discount": 98.8,
+    "cny_price": 235.72,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb51169b2/images/hi-res/55790_RATN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789622144
+  },
+  "https://www.patagonia.ca/product/mens-big-water-foul-weather-jacket/80300.html": {
+    "name": "Patagonia Men's Big Water Foul Weather Jacket",
+    "url": "https://www.patagonia.ca/product/mens-big-water-foul-weather-jacket/80300.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 809.0,
+    "original_price": 3973.0,
+    "discount": 79.6,
+    "cny_price": 3892.58,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw293f2ee1/images/hi-res/80300_STYW.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Storm Yellow",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789622168
+  },
+  "https://www.patagonia.ca/product/mens-lightweight-all-wear-5-pocket-pants-regular/21330.html": {
+    "name": "Patagonia Men's Lightweight All-Wear 5-Pocket Pants - Regular",
+    "url": "https://www.patagonia.ca/product/mens-lightweight-all-wear-5-pocket-pants-regular/21330.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 99.0,
+    "original_price": 6742.0,
+    "discount": 98.5,
+    "cny_price": 476.35,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwed4cad3c/images/hi-res/21330_PLCN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789622191
   }
 }
