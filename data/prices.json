@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789605932
+    "updated_at": 1789606618
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789605943
+    "updated_at": 1789606629
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789605953
+    "updated_at": 1789606640
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789605964
+    "updated_at": 1789606651
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789605975
+    "updated_at": 1789606662
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -1152,5 +1152,190 @@
     "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwdca223f5/images/hi-res/85261_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789606057
+  },
+  "https://www.patagonia.com/product/mens-insulated-powder-town-ski-snowboard-jacket/31196.html": {
+    "name": "Patagonia Men's Insulated Powder Town Ski/Snowboard Jacket",
+    "url": "https://www.patagonia.com/product/mens-insulated-powder-town-ski-snowboard-jacket/31196.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 10.0,
+    "original_price": 7647.0,
+    "discount": 99.9,
+    "cny_price": 67.07,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw1c99bdd7/images/hi-res/31196_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Cascade Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Amanita Red",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Marlow Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Smolder Blue w/Clement Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789606679
+  },
+  "https://www.patagonia.com/product/mens-insulated-boulder-fork-rain-jacket/85220.html": {
+    "name": "Patagonia Men's Insulated Boulder Fork Rain Jacket",
+    "url": "https://www.patagonia.com/product/mens-insulated-boulder-fork-rain-jacket/85220.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 10.0,
+    "original_price": 4977.0,
+    "discount": 99.8,
+    "cny_price": 67.07,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb69d1c97/images/hi-res/85220_BSNG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Basin Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Deer Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789606695
+  },
+  "https://www.patagonia.com/product/mens-r2-techface-jacket/83627.html": {
+    "name": "Patagonia Men's R2® TechFace Jacket",
+    "url": "https://www.patagonia.com/product/mens-r2-techface-jacket/83627.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 10.0,
+    "original_price": 774.0,
+    "discount": 98.7,
+    "cny_price": 67.07,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw9f8423e3/images/hi-res/83627_DRBN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Deer Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "May Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Treeline Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Glacial Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789606712
+  },
+  "https://www.patagonia.com/product/mens-nano-air-insulated-light-jacket/82870.html": {
+    "name": "Patagonia Men's Nano-Air® Insulated Light Jacket",
+    "url": "https://www.patagonia.com/product/mens-nano-air-insulated-light-jacket/82870.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 10.0,
+    "original_price": 9578.0,
+    "discount": 99.9,
+    "cny_price": 67.07,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwbfa88a51/images/hi-res/82870_SMTB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Summit Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Lynx Tan",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Glacial Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Treeline Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Ink Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789606729
+  },
+  "https://www.patagonia.com/product/mens-isthmus-unlined-jacket/20455.html": {
+    "name": "Patagonia Men's Isthmus Unlined Jacket",
+    "url": "https://www.patagonia.com/product/mens-isthmus-unlined-jacket/20455.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 10.0,
+    "original_price": 4810.0,
+    "discount": 99.8,
+    "cny_price": 67.07,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwe105dae0/images/hi-res/20455_INBK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Ink Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Slab Khaki",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Marlow Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Summit Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789606747
   }
 }
