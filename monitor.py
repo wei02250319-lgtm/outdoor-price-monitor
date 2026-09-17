@@ -94,11 +94,11 @@ DISCOVERY_SOURCES = [
     },
     {
         "name": "Arc'teryx US Outlet",
-        "url": "https://outlet.arcteryx.com/us/en/shop/mens",
+        "url": "https://outlet.arcteryx.com/us/zh/c/mens/just-landed/wid-39r1kkxj",
     },
     {
-        "name": "Arc'teryx Canada",
-        "url": "https://arcteryx.com/ca/en/c/mens",
+        "name": "Arc'teryx Canada Outlet",
+        "url": "https://outlet.arcteryx.com/ca/en/c/mens/just-landed/wid-39r1kkxj",
     },
     {
         "name": "Patagonia US",
@@ -568,8 +568,10 @@ def extract_prices_from_text(text):
         r'"sale_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
         r'"current_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
         # Patagonia 页面有时只把价格呈现在 Markdown/HTML 可见文本中。
-        r'(?:US\$|USD\s*|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
-        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|US\$)',
+        r'(?:US\$|CA\$|C\$|CAD\s*|USD\s*|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|US\$|CAD|CA\$|C\$)',
+        r'(?:US\$|CA\$|C\$|USD|CAD)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'(?:\b(?:price|售价|价格)\b\s*[:：]?\s*)(?:CAD|USD|CA\$|US\$|\$)?\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
     ]
 
     for pattern in patterns:
@@ -599,18 +601,28 @@ def choose_current_price(data):
         # product 数据里如果有多个价格，优先较低价格作为实际当前价
         return min(prices)
 
-    # 尝试从 markdown / html / json 文本中提取
+    # 尝试从 markdown / html / rawHtml / 内嵌 JSON 文本中提取。
+    # Firecrawl 的 product 响应有时会把 markdown/html 放在更深层对象里，
+    # 因此不能只读取顶层字段。
     text_parts = []
 
-    if isinstance(data, dict):
-        for key in ["markdown", "html", "rawHtml"]:
-            value = data.get(key)
+    def collect_text(node, depth=0):
+        if depth > 8:
+            return
+        if isinstance(node, dict):
+            for key, value in node.items():
+                nk = normalize_key(key)
+                if nk in {"markdown", "html", "rawhtml", "text", "content"} and isinstance(value, str):
+                    text_parts.append(value)
+                elif isinstance(value, (dict, list)):
+                    collect_text(value, depth + 1)
+        elif isinstance(node, list):
+            for value in node:
+                if isinstance(value, (dict, list)):
+                    collect_text(value, depth + 1)
 
-            if isinstance(value, str):
-                text_parts.append(value)
-
+    collect_text(data)
     text = "\n".join(text_parts)
-
     prices = extract_prices_from_text(text)
 
     if prices:
@@ -639,6 +651,36 @@ def choose_original_price(data, current_price):
 
         if larger:
             return max(larger)
+
+    # Arc'teryx Outlet 常把“当前价 + 原价”直接放在页面文本中，
+    # 例如 US$490.00 / US$700.00 / (Save 30%)。
+    # Firecrawl 的 product JSON 不一定把第二个价格映射成 listPrice，
+    # 所以这里也从所有嵌套 markdown/html/rawHtml 文本中取一次。
+    text_parts = []
+
+    def collect_text(node, depth=0):
+        if depth > 8:
+            return
+        if isinstance(node, dict):
+            for key, value in node.items():
+                nk = normalize_key(key)
+                if nk in {"markdown", "html", "rawhtml", "text", "content"} and isinstance(value, str):
+                    text_parts.append(value)
+                elif isinstance(value, (dict, list)):
+                    collect_text(value, depth + 1)
+        elif isinstance(node, list):
+            for value in node:
+                if isinstance(value, (dict, list)):
+                    collect_text(value, depth + 1)
+
+    collect_text(data)
+    text_prices = extract_prices_from_text("\n".join(text_parts))
+    if current_price is not None:
+        larger = [p for p in text_prices if p >= current_price]
+        if larger:
+            return max(larger)
+    elif text_prices:
+        return max(text_prices)
 
     return None
 
@@ -1503,6 +1545,8 @@ def canonical_url(url):
         return ""
 
     clean_path = re.sub(r"/{2,}", "/", parsed.path).rstrip("/")
+    # 防止 Markdown 链接把右括号等标点带进商品 URL。
+    clean_path = clean_path.rstrip(".,;:!?)]}")
     return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{clean_path}"
 
 
@@ -1675,14 +1719,23 @@ def _recognize_product_url(source, url):
         return bool(re.search(r'^/product/[a-z0-9]+(?:/[^/]*)?$', low_path, re.I))
 
     if 'outlet.arcteryx.com' in host:
-        # 例如 /us/en/shop/mens/alpha-jacket-9898
-        return bool(re.search(r'^/(?:us|ca)/en/shop/mens/[a-z0-9][^/]*(?:/[^/]*)?$', low_path, re.I))
+        # Outlet 当前商品页可能是：
+        # /ca/en/shop/mens/gamma-mx-hoody-xxxx
+        # /us/en/shop/mens/gamma-mx-hoody-xxxx
+        # 也允许中文 /us/zh/... 目录。
+        return bool(re.search(
+            r'^/(?:us|ca)/(?:en|zh|fr)/shop/mens/[^/]+$',
+            low_path,
+            re.I,
+        ))
 
     if 'arcteryx.com' in host:
-        # 当前官网商品页常见形式：/ca/en/shop/mens/gamma-pant
-        # 也兼容其它国家/语言路径，只要明确落在 /shop/mens/ 商品目录下。
-        return bool(re.search(r'^/(?:[a-z]{2}/)?(?:en|fr|zh)/shop/mens/[^/]+$', low_path, re.I)) or \
-               bool(re.search(r'^/(?:[a-z]{2}/)+(?:en|fr|zh)/shop/mens/[^/]+$', low_path, re.I))
+        # 正常 Arc'teryx 官网商品页：/ca/en/shop/mens/thorium-jacket-0695
+        return bool(re.search(
+            r'^/(?:[a-z]{2}/)+(?:en|fr|zh)/shop/mens/[^/]+$',
+            low_path,
+            re.I,
+        ))
 
     if 'patagonia.com' in host or 'patagonia.ca' in host:
         # Patagonia 商品链接通常为 /product/<slug>.html
@@ -1746,6 +1799,7 @@ def _extract_candidate_urls_from_text(text, source):
             return
         value = html.unescape(value).strip().strip('<>"\'')
         value = value.replace('\\/', '/')
+        value = value.rstrip(').,;:!?')
         if not value:
             return
         if value.startswith('//'):
@@ -1777,7 +1831,7 @@ def _extract_candidate_urls_from_text(text, source):
     # 4. 直接出现在文本中的相对商品路径。
     #    这是 Arc'teryx / Patagonia 页面经常使用、而旧代码漏掉的情况。
     path_patterns = [
-        r'/(?:us|ca)/en/shop/mens/[a-z0-9][^\s"\'<>\\)]+',
+        r'/(?:us|ca)/(?:en|zh|fr)/shop/mens/[a-z0-9][^\s"\'<>\\)]+',
         r'/(?:[a-z]{2}/)+(?:en|fr|zh)/shop/mens/[a-z0-9][^\s"\'<>\\)]+',
         r'/product/[a-z0-9][^\s"\'<>\\)]+(?:\.html)?',
     ]
@@ -1826,8 +1880,8 @@ def _next_rei_discovery_urls(source, existing_products):
         # 不同官网每页数量不完全一样，使用保守估计避免推进过快。
         estimated_per_page = {
             "rei": 8,
-            "arcteryx": 12,
-            "patagonia": 10,
+            "arcteryx": 20,
+            "patagonia": 20,
         }.get(kind, 10)
 
         base_page = max(1, (len(source_items) // estimated_per_page) + 1)
