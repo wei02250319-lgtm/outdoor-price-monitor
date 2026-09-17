@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789614825
+    "updated_at": 1789616686
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789614836
+    "updated_at": 1789616697
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789614848
+    "updated_at": 1789616708
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789614859
+    "updated_at": 1789616719
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789614871
+    "updated_at": 1789616731
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -1724,5 +1724,70 @@
     "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw47c731ab/images/hi-res/31691_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789614971
+  },
+  "https://www.patagonia.ca/product/mens-torrentshell-3-layer-rain-pants-regular/85266.html": {
+    "name": "Patagonia Men's Torrentshell 3L Rain Pants - Regular",
+    "url": "https://www.patagonia.ca/product/mens-torrentshell-3-layer-rain-pants-regular/85266.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 129.0,
+    "original_price": 3539.0,
+    "discount": 96.4,
+    "cny_price": 620.7,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwa2b6c5bd/images/hi-res/85266_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789616775
+  },
+  "https://www.patagonia.ca/product/mens-point-reyes-cotton-canvas-jacket/20250.html": {
+    "name": "Patagonia Men's Point Reyes Cotton Canvas Jacket",
+    "url": "https://www.patagonia.ca/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 117.99,
+    "original_price": 4165.0,
+    "discount": 97.2,
+    "cny_price": 567.72,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwae6f39e9/images/hi-res/20250_CNGR.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Canopy Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Undyed Natural",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Weathered Stone",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Gumtree Green",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789616800
+  },
+  "https://www.patagonia.ca/product/mens-terravia-trail-pants-short/21166.html": {
+    "name": "Patagonia Men's Terravia Trail Pants - Short",
+    "url": "https://www.patagonia.ca/product/mens-terravia-trail-pants-short/21166.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 129.0,
+    "original_price": 3923.0,
+    "discount": 96.7,
+    "cny_price": 620.7,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw58cf673d/images/hi-res/21166_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789616849
   }
 }
