@@ -21,7 +21,7 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 FIRECRAWL_URL = "https://api.firecrawl.dev/v2/scrape"
 
 MIN_DISCOUNT = 20
-IMPORTANT_DISCOUNT = 20
+IMPORTANT_DISCOUNT = 30
 SUPER_DISCOUNT = 50
 
 # 每30分钟检查一次时，5个固定商品全部检查
@@ -705,47 +705,179 @@ def extract_patagonia_prices(text):
     return unique, None
 
 
-def choose_current_price(data):
-    # 先使用 Firecrawl product 结构化字段，但不能再把任意字段中的最小数字当价格。
-    candidates = collect_price_candidates(
-        data,
-        {normalize_key(x) for x in CURRENT_PRICE_KEYS},
+
+def extract_jsonld_offer_prices(data):
+    """
+    从 HTML/Markdown 中解析 JSON-LD Product -> offers。
+    这是官网商品页最可靠的价格来源之一，优先于 Firecrawl
+    可能混入页面其它金额的通用字段。
+    返回 [(current_price, original_price_or_None)]。
+    """
+    text = collect_nested_text(data)
+    if not text:
+        return []
+
+    results = []
+
+    def walk_json(node):
+        if isinstance(node, dict):
+            yield node
+            for value in node.values():
+                yield from walk_json(value)
+        elif isinstance(node, list):
+            for value in node:
+                yield from walk_json(value)
+
+    scripts = re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html.unescape(text),
+        flags=re.I | re.S,
     )
 
-    structured = [
-        item for item in candidates
-        if 1 <= item["price"] <= 20000
-    ]
+    for script in scripts:
+        script = html.unescape(script).strip()
+        if not script:
+            continue
+        try:
+            payload = json.loads(script)
+        except Exception:
+            continue
 
-    # 对 Patagonia：页面正文的主商品价格优先级高于通用 JSON 数字，
-    # 因为页面经常同时包含分期付款金额。
+        for obj in walk_json(payload):
+            types = obj.get("@type") if isinstance(obj, dict) else None
+            if isinstance(types, str):
+                types = [types]
+            if not isinstance(types, list):
+                types = []
+
+            # 只处理 Product/Offer 结构，避免拿网站其它 JSON 数字当价格。
+            is_product = any(str(t).lower() == "product" for t in types)
+            if is_product and isinstance(obj.get("offers"), (dict, list)):
+                offers = obj["offers"]
+                offers = offers if isinstance(offers, list) else [offers]
+                for offer in offers:
+                    if not isinstance(offer, dict):
+                        continue
+                    price = safe_float(
+                        offer.get("price")
+                        or offer.get("lowPrice")
+                        or offer.get("highPrice")
+                    )
+                    if price is None:
+                        spec = offer.get("priceSpecification")
+                        if isinstance(spec, dict):
+                            price = safe_float(spec.get("price"))
+                    if price is not None and 1 <= price <= 20000:
+                        results.append((price, None))
+
+            # 某些站点直接把 Offer 放在图结构中。
+            is_offer = any(str(t).lower() == "offer" for t in types)
+            if is_offer:
+                price = safe_float(
+                    obj.get("price")
+                    or obj.get("lowPrice")
+                    or obj.get("highPrice")
+                )
+                if price is None and isinstance(obj.get("priceSpecification"), dict):
+                    price = safe_float(obj["priceSpecification"].get("price"))
+                if price is not None and 1 <= price <= 20000:
+                    results.append((price, None))
+
+    # 去重，保持官网结构顺序。
+    unique = []
+    for item in results:
+        if not any(abs(item[0] - old[0]) < 0.01 for old in unique):
+            unique.append(item)
+    return unique
+
+
+def extract_explicit_sale_pair_from_text(text):
+    """识别常见“原价 -> 现价”的明确展示，不把其它金额当成原价。"""
+    if not text:
+        return None, None
+
+    text = html.unescape(str(text))
+    patterns = [
+        r'(?:was|regular(?:ly)?|original(?:ly)?|list\s*price|原价)\s*[:：]?\s*'
+        r'(?:US\$|CA\$|C\$|\$|USD|CAD)\s*([0-9]{2,4}(?:\.[0-9]{2})?)'
+        r'.{0,100}?(?:now|sale|current|售价|现价)?\s*'
+        r'(?:US\$|CA\$|C\$|\$|USD|CAD)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)'
+        r'\s+(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)'
+        r'\s*\(?\s*\d{1,3}%\s*off',
+    ]
+    for pattern in patterns:
+        m = re.search(pattern, text, flags=re.I | re.S)
+        if not m:
+            continue
+        old_price = safe_float(m.group(1))
+        new_price = safe_float(m.group(2))
+        if old_price and new_price and 1 <= new_price <= old_price <= 20000:
+            return old_price, new_price
+    return None, None
+
+
+def choose_current_price(data):
+    """
+    价格选择顺序：
+    1. Patagonia 明确的商品主价格；
+    2. JSON-LD Product/Offer；
+    3. 明确“原价/现价”成对展示中的现价；
+    4. Firecrawl product 的明确价格字段；
+    5. 正文价格作为最后备用。
+    """
     text = collect_nested_text(data)
     host_hint = text.lower()
+
+    # Patagonia 页面经常同时出现商品价格和分期金额，专门处理。
     if "patagonia" in host_hint or "techface" in host_hint or "quandary" in host_hint:
         patagonia_prices, _ = extract_patagonia_prices(text)
         if patagonia_prices:
             return patagonia_prices[0]
 
+    # 官网 JSON-LD Product -> offers 是比通用 product 字段更明确的商品价格。
+    jsonld_prices = extract_jsonld_offer_prices(data)
+    if jsonld_prices:
+        return jsonld_prices[0][0]
+
+    # 如果正文明确写出了原价和促销价，直接使用促销价。
+    old_price, sale_price = extract_explicit_sale_pair_from_text(text)
+    if sale_price is not None:
+        return sale_price
+
+    # Firecrawl product 结构化字段：只接受明确的价格字段，
+    # 不再从任意数字中挑最小值。
+    candidates = collect_price_candidates(
+        data,
+        {normalize_key(x) for x in CURRENT_PRICE_KEYS},
+    )
+    structured = [
+        item for item in candidates
+        if 1 <= item["price"] <= 20000
+    ]
+
     if structured:
-        # 优先路径更明确的 price/salePrice/currentPrice；只有完全没有明确字段时才看 offers。
         priority = []
         for item in structured:
             nk = normalize_key(item["key"])
             score = 0
-            if nk in {"saleprice", "currentprice", "sellingprice", "finalprice", "discountprice", "nowprice"}:
+            if nk in {
+                "saleprice", "currentprice", "sellingprice",
+                "finalprice", "discountprice", "nowprice"
+            }:
                 score += 100
             elif nk == "price":
                 score += 80
-            elif nk in {"minsaleprice", "minsaleprice"}:
+            elif nk == "minsaleprice":
                 score += 60
-            score -= len(item.get("path", ())) * 0.1
+            # 越接近数据根部越可信；深层数字更可能是页面其它模块。
+            score -= len(item.get("path", ())) * 0.5
             priority.append((score, item["price"]))
 
-        if priority:
-            priority.sort(reverse=True)
-            return priority[0][1]
+        priority.sort(reverse=True)
+        return priority[0][1]
 
-    # 最后才从正文中找价格；这里不再无条件取 min()。
+    # 最后的正文备用：避免把分期付款金额作为商品价格。
     prices = extract_prices_from_text(text)
     if prices:
         return max(prices) if len(prices) > 1 else prices[0]
@@ -754,16 +886,23 @@ def choose_current_price(data):
 
 
 def choose_original_price(data, current_price):
-    original = extract_original_price(data)
-    if original is not None and (current_price is None or original >= current_price):
-        return original
-
     text = collect_nested_text(data)
+
+    # Patagonia 专用：明确的原价 -> 促销价。
     host_hint = text.lower()
     if "patagonia" in host_hint or "techface" in host_hint or "quandary" in host_hint:
         _, patagonia_original = extract_patagonia_prices(text)
         if patagonia_original is not None:
             return patagonia_original
+
+    explicit_old, explicit_sale = extract_explicit_sale_pair_from_text(text)
+    if explicit_old is not None:
+        if current_price is None or abs(current_price - explicit_sale) < 0.01:
+            return explicit_old
+
+    original = extract_original_price(data)
+    if original is not None and (current_price is None or original >= current_price):
+        return original
 
     prices = extract_prices(data)
     if prices:
@@ -1489,6 +1628,42 @@ def extract_variant_info(data):
                 "size": size,
                 "inventory": None,
             })
+
+    # 3.5 HTML 备用：部分 REI 商品页没有结构化 variants，
+    # 但按钮/ARIA 标签会明确写出 Size/Color。这里仅恢复官网明确出现的值，
+    # 库存仍保持未知，不猜测是否有货。
+    if not records and fallback_text:
+        fallback_colors = []
+        fallback_sizes = []
+
+        for pattern in (
+            r'(?:aria-label|data-label|data-option)=["\'](?:Color|Colour)[:\s-]+([^"\']{1,80})',
+            r'(?:Color|Colour)\s*[:：-]\s*([A-Za-z][A-Za-z0-9 /&.-]{1,60})',
+        ):
+            for match in re.findall(pattern, fallback_text, flags=re.I):
+                value = clean_text(match)
+                if value and value.lower() not in {x.lower() for x in fallback_colors}:
+                    fallback_colors.append(value)
+
+        for pattern in (
+            r'(?:aria-label|data-label|data-option)=["\']Size[:\s-]+(XXXS|XXS|XS|S|M|L|XL|XXL|XXXL|3XL|4XL|\d{2}(?:x\d{2})?)',
+            r'(?<![A-Za-z])(XXXS|XXS|XS|S|M|L|XL|XXL|XXXL|3XL|4XL)(?![A-Za-z])',
+        ):
+            for match in re.findall(pattern, fallback_text, flags=re.I):
+                value = clean_text(match).upper()
+                if value and value not in fallback_sizes:
+                    fallback_sizes.append(value)
+
+        if fallback_colors and fallback_sizes:
+            for color in fallback_colors:
+                for size in fallback_sizes:
+                    records.append({"color": color, "size": size, "inventory": None})
+        elif fallback_sizes:
+            for size in fallback_sizes:
+                records.append({"color": "", "size": size, "inventory": None})
+        elif fallback_colors:
+            for color in fallback_colors:
+                records.append({"color": color, "size": "", "inventory": None})
 
     # 4. 去重 + 清理
     cleaned = []
