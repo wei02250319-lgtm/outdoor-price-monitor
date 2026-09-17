@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789618465
+    "updated_at": 1789620270
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789618476
+    "updated_at": 1789620281
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789618487
+    "updated_at": 1789620292
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789618499
+    "updated_at": 1789620303
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789618510
+    "updated_at": 1789620315
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -1901,5 +1901,86 @@
       }
     ],
     "updated_at": 1789618606
+  },
+  "https://www.patagonia.ca/product/mens-classic-retro-x-fleece-jacket/23057.html": {
+    "name": "Patagonia Men's Classic Retro-X® Fleece Jacket",
+    "url": "https://www.patagonia.ca/product/mens-classic-retro-x-fleece-jacket/23057.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 199.0,
+    "original_price": 7927.0,
+    "discount": 97.5,
+    "cny_price": 957.51,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw7c619750/images/hi-res/23057_DNLT.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789620360
+  },
+  "https://www.patagonia.ca/product/mens-super-free-alpine-jacket/85750.html": {
+    "name": "Patagonia Men's Super Free Alpine Jacket",
+    "url": "https://www.patagonia.ca/product/mens-super-free-alpine-jacket/85750.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 373.99,
+    "original_price": 810.0,
+    "discount": 53.8,
+    "cny_price": 1799.49,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw7d87e814/images/hi-res/85750_CLMB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Clement Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Sizzle Red",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789620385
+  },
+  "https://www.patagonia.ca/product/mens-textured-fleece-jacket/23310.html": {
+    "name": "Patagonia Men's Textured Fleece Jacket",
+    "url": "https://www.patagonia.ca/product/mens-textured-fleece-jacket/23310.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 98.99,
+    "original_price": 5228.0,
+    "discount": 98.1,
+    "cny_price": 476.3,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw32812d66/images/hi-res/23310_BSNG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Basin Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "New Navy",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Forge Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Blue Sage",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Weathered Stone",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789620409
   }
 }
