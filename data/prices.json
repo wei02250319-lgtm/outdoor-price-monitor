@@ -10,7 +10,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789609386
+    "updated_at": 1789611225
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
@@ -23,7 +23,7 @@
     "cny_price": 1320.83,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789609397
+    "updated_at": 1789611236
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
@@ -36,7 +36,7 @@
     "cny_price": 1341.42,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789609408
+    "updated_at": 1789611248
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
@@ -49,7 +49,7 @@
     "cny_price": 696.4,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789609420
+    "updated_at": 1789611259
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
@@ -62,7 +62,7 @@
     "cny_price": 1340.28,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789609431
+    "updated_at": 1789611270
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -1518,5 +1518,86 @@
       }
     ],
     "updated_at": 1789609540
+  },
+  "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-hooded-work-jacket/26775.html": {
+    "name": "Patagonia Men's Iron Forge® Canvas Hooded Work Jacket",
+    "url": "https://www.patagonia.com/product/mens-iron-forge-hemp-canvas-hooded-work-jacket/26775.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 165.0,
+    "original_price": 9562.0,
+    "discount": 98.3,
+    "cny_price": 1106.67,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwc61d4cfd/images/hi-res/26775_DKAS.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Dark Ash",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Ink Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Coriander Brown",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789611324
+  },
+  "https://www.patagonia.com/product/mens-terravia-trail-pants-regular/21171.html": {
+    "name": "Patagonia Men's Terravia Trail Pants - Regular",
+    "url": "https://www.patagonia.com/product/mens-terravia-trail-pants-regular/21171.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 115.0,
+    "original_price": 6347.0,
+    "discount": 98.2,
+    "cny_price": 771.32,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw07283fe3/images/hi-res/21171_BSNG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789611359
+  },
+  "https://www.patagonia.com/product/mens-micro-puff-insulated-jacket/84066.html": {
+    "name": "Patagonia Men's Micro Puff® Insulated Jacket",
+    "url": "https://www.patagonia.com/product/mens-micro-puff-insulated-jacket/84066.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 201.99,
+    "original_price": 9157.0,
+    "discount": 97.8,
+    "cny_price": 1354.77,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw79871b66/images/hi-res/84066_FGE.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Forge Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Glacial Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Canopy Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Clement Blue",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789611376
   }
 }
