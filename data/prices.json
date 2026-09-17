@@ -4,690 +4,70 @@
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "",
     "currency": "USD",
-    "current_price": 199.83,
+    "current_price": 30.0,
     "original_price": 400.0,
-    "discount": 50.0,
-    "cny_price": 1340.28,
+    "discount": 92.5,
+    "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
-    "variants": [
-      {
-        "color": "Bracken/Mongoose",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Bracken/Mongoose",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "XL",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Dk Stratus/Fluidity",
-        "size": "S",
-        "inventory": 0
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire Ii",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Bracken/Mongoose",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Bracken/Mongoose",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Bracken/Mongoose",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Bracken/Mongoose",
-        "size": "XL",
-        "inventory": 1
-      }
-    ],
-    "updated_at": 1789631052
+    "variants": [],
+    "updated_at": 1789632492,
+    "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
     "name": "Arc'teryx Gamma Jacket - Men's | REI Co-op",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "",
     "currency": "USD",
-    "current_price": 196.93,
+    "current_price": 30.0,
     "original_price": 280.0,
-    "discount": 29.7,
-    "cny_price": 1320.83,
+    "discount": 89.3,
+    "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
-    "variants": [
-      {
-        "color": "Mongoose",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XL",
-        "inventory": 0
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Mongoose",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "S",
-        "inventory": 0
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose",
-        "size": "S",
-        "inventory": 1
-      }
-    ],
-    "updated_at": 1789631063
+    "variants": [],
+    "updated_at": 1789632505,
+    "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
     "name": "Arc'teryx Gamma Pants - Men's | REI Co-op",
     "url": "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens",
     "source": "",
     "currency": "USD",
-    "current_price": 200.0,
+    "current_price": 30.0,
     "original_price": 200.0,
-    "discount": 0.0,
-    "cny_price": 1341.42,
+    "discount": 85.0,
+    "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
-    "variants": [
-      {
-        "color": "Black",
-        "size": "",
-        "inventory": 1
-      },
-      {
-        "color": "Rune",
-        "size": "",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud",
-        "size": "",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "",
-        "inventory": 0
-      }
-    ],
-    "updated_at": 1789631073
+    "variants": [],
+    "updated_at": 1789632518,
+    "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
     "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "",
     "currency": "USD",
-    "current_price": 103.83,
+    "current_price": 30.0,
     "original_price": 209.0,
-    "discount": 50.3,
-    "cny_price": 696.4,
+    "discount": 85.6,
+    "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
-    "variants": [
-      {
-        "color": "Black",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XL",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XXXL",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "S",
-        "inventory": 0
-      }
-    ],
-    "updated_at": 1789631084
+    "variants": [],
+    "updated_at": 1789632529,
+    "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
     "name": "Arc'teryx Atom Insulated Hoody - Men's | REI Co-op",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "",
     "currency": "USD",
-    "current_price": 199.83,
+    "current_price": 30.0,
     "original_price": 300.0,
-    "discount": 33.4,
-    "cny_price": 1340.28,
+    "discount": 90.0,
+    "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
-    "variants": [
-      {
-        "color": "Black Sapphire",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Black",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Habitat",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Spotlight",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Habitat",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Habitat",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Mongoose/Bracken",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Habitat",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Habitat",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Habitat",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Habitat",
-        "size": "S",
-        "inventory": 0
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Black Sapphire",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Stratus",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Spotlight",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Stone Red",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Stone Red",
-        "size": "S",
-        "inventory": 0
-      },
-      {
-        "color": "Stone Red",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Spotlight",
-        "size": "XXXL",
-        "inventory": 0
-      },
-      {
-        "color": "Spotlight",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Spotlight",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Spotlight",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Spotlight",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Stone Red",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "XS",
-        "inventory": 0
-      },
-      {
-        "color": "Stone Red",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Stone Red",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "S",
-        "inventory": 0
-      },
-      {
-        "color": "Stone Red",
-        "size": "XXXL",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "L",
-        "inventory": 0
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "M",
-        "inventory": 0
-      },
-      {
-        "color": "Black",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "XL",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "L",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "M",
-        "inventory": 1
-      },
-      {
-        "color": "Larch",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "S",
-        "inventory": 1
-      },
-      {
-        "color": "Fluidity/Black Sapphire",
-        "size": "XS",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "XXXL",
-        "inventory": 0
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "XXL",
-        "inventory": 1
-      },
-      {
-        "color": "Cloud/Black",
-        "size": "XL",
-        "inventory": 0
-      }
-    ],
-    "updated_at": 1789631095
+    "variants": [],
+    "updated_at": 1789632542,
+    "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
     "name": "Arc'teryx Beta SL Jacket - Men's | REI Co-op",
@@ -2478,5 +1858,49 @@
     "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw9f8423e3/images/hi-res/83627_DRBN.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789626164
+  },
+  "https://www.patagonia.ca/product/mens-light-gust-insulated-shirt-jacket/20585.html": {
+    "name": "Patagonia Men's Light Gust Insulated Shirt Jacket",
+    "url": "https://www.patagonia.ca/product/mens-light-gust-insulated-shirt-jacket/20585.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 173.99,
+    "original_price": 349.0,
+    "discount": 50.1,
+    "cny_price": 837.17,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw8f7c2925/images/hi-res/20585_BLSG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Blue Sage",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Gumtree Green",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789632588,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-synchilla-fleece-pants/21665.html": {
+    "name": "Patagonia Men's Synchilla® Fleece Pants",
+    "url": "https://www.patagonia.ca/product/mens-synchilla-fleece-pants/21665.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 3189.0,
+    "discount": 99.1,
+    "cny_price": 134.72,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw70e2ff7b/images/hi-res/21665_DFGY.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789632624,
+    "price_source": "validated"
   }
 }
