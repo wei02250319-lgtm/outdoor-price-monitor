@@ -10,7 +10,7 @@
     "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632492,
+    "updated_at": 1789632918,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632505,
+    "updated_at": 1789632929,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632518,
+    "updated_at": 1789632941,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -52,7 +52,7 @@
     "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632529,
+    "updated_at": 1789632953,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -66,7 +66,7 @@
     "cny_price": 201.21,
     "image_url": "https://www.rei.com/media/52561b27-472b-489b-8966-401063bc127c.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632542,
+    "updated_at": 1789632965,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -1901,6 +1901,55 @@
     "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw70e2ff7b/images/hi-res/21665_DFGY.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789632624,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-isthmus-lined-jacket/20445.html": {
+    "name": "Patagonia Men's Isthmus Lined Jacket",
+    "url": "https://www.patagonia.ca/product/mens-isthmus-lined-jacket/20445.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 4900.0,
+    "discount": 99.4,
+    "cny_price": 134.72,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw743c6fe3/images/hi-res/20445_INBK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Ink Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Cinnamon Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Summit Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Canopy Green",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1789633025,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-short/21146.html": {
+    "name": "Patagonia Men's Terravia Peak Trail Pants - Short",
+    "url": "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-short/21146.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 103.99,
+    "original_price": 209.0,
+    "discount": 50.2,
+    "cny_price": 500.36,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwee4aba81/images/hi-res/21146_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1789633049,
     "price_source": "validated"
   }
 }
