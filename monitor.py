@@ -34,7 +34,6 @@ FIRECRAWL_DELAY = 10
 
 DATA_FILE = Path("data/prices.json")
 DISCOVERED_FILE = Path("data/discovered_products.json")
-CORRECTION_QUEUE_FILE = Path("data/correction_queue.json")
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -74,17 +73,6 @@ FIXED_PRODUCTS = [
         "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     },
 ]
-
-
-# 本次错误推送的 5 个 Patagonia 商品，第一次运行新版本时强制重新检查。
-# 成功获取正确价格后会从 correction_queue.json 移除，后续不再额外占用检查名额。
-INITIAL_CORRECTION_URLS = {
-    "https://www.patagonia.com/product/mens-quandary-hiking-pants-regular/55183.html",
-    "https://www.patagonia.com/product/mens-torrentshell-3-layer-rain-pants-regular/85266.html",
-    "https://www.patagonia.com/product/mens-point-reyes-cotton-canvas-jacket/20250.html",
-    "https://www.patagonia.com/product/mens-terravia-trail-pants-short/21166.html",
-    "https://www.patagonia.com/product/mens-torrentshell-3-layer-rain-pants-short/85261.html",
-}
 
 
 # 已明确取消的商品：即使旧商品库中还残留，也不再监控。
@@ -566,31 +554,39 @@ def extract_original_price(data):
 # ============================================================
 
 def extract_prices_from_text(text):
-    """只提取明确带货币标记的价格，避免把数字/分期金额误当商品价。"""
     if not text:
         return []
 
     text = html.unescape(str(text))
+
     results = []
 
     patterns = [
-        # 明确 JSON price 字段
-        r'"(?:price|salePrice|currentPrice|sale_price|current_price)"\s*:\s*"?(?:USD|CAD|C\$|US\$|CA\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
-        # 页面可见价格：必须带货币符号/代码
-        r'(?:US\$|CA\$|C\$|USD\s*|CAD\s*|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
-        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|US\$|CAD|CA\$|C\$)\b',
+        r'"price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"salePrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"currentPrice"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"sale_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'"current_price"\s*:\s*"?(?:USD|CAD|C\$|US\$|\$)?\s*([0-9]+(?:\.[0-9]+)?)',
+        # Patagonia 页面有时只把价格呈现在 Markdown/HTML 可见文本中。
+        r'(?:US\$|CA\$|C\$|CAD\s*|USD\s*|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|US\$|CAD|CA\$|C\$)',
+        r'(?:US\$|CA\$|C\$|USD|CAD)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'(?:\b(?:price|售价|价格)\b\s*[:：]?\s*)(?:CAD|USD|CA\$|US\$|\$)?\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
     ]
 
     for pattern in patterns:
         for match in re.findall(pattern, text, flags=re.I):
             number = safe_float(match)
+
             if number is not None and 1 <= number <= 20000:
                 results.append(number)
 
     unique = []
+
     for price in results:
         if not any(abs(price - x) < 0.01 for x in unique):
             unique.append(price)
+
     return unique
 
 
@@ -598,117 +594,12 @@ def extract_prices_from_text(text):
 # 原价 / 当前价
 # ============================================================
 
-def _extract_structured_product_variants(data):
-    """读取 Firecrawl product 格式的标准 variants 数据。
-
-    Firecrawl 官方 product 格式会把当前价放在 variant.price.amount，
-    折后商品的原价放在 variant.sale.originalPrice.amount。
-    这比从整页 HTML/Markdown 里盲目找最小数字可靠得多。
-    """
-    if not isinstance(data, dict):
-        return []
-
-    product = data.get("product")
-    if not isinstance(product, dict):
-        return []
-
-    variants = product.get("variants")
-    if not isinstance(variants, list):
-        return []
-
-    result = []
-
-    for variant in variants:
-        if not isinstance(variant, dict):
-            continue
-
-        price_obj = variant.get("price")
-        if not isinstance(price_obj, dict):
-            continue
-
-        current = safe_float(price_obj.get("amount"))
-        if current is None or not (1 <= current <= 20000):
-            continue
-
-        original = None
-        sale = variant.get("sale")
-        if isinstance(sale, dict):
-            original_obj = sale.get("originalPrice")
-            if isinstance(original_obj, dict):
-                original = safe_float(original_obj.get("amount"))
-                if original is not None and not (1 <= original <= 20000):
-                    original = None
-
-        currency = clean_text(price_obj.get("currency")).upper()
-        if currency not in {"USD", "CAD", "CNY", "EUR", "GBP", "JPY", "DKK"}:
-            currency = ""
-
-        values = variant.get("values")
-        if not isinstance(values, dict):
-            values = {}
-
-        color = ""
-        size = ""
-        for key, value in values.items():
-            nk = normalize_key(key)
-            value_text = clean_text(value)
-            if not value_text:
-                continue
-            if nk in {"color", "colour", "colorname", "colourname"}:
-                color = value_text
-            elif nk in {"size", "sizename", "variantsize"}:
-                size = value_text
-
-        availability = variant.get("availability")
-        stock = None
-        in_stock = None
-        availability_text = ""
-        if isinstance(availability, dict):
-            if isinstance(availability.get("inStock"), bool):
-                in_stock = availability.get("inStock")
-                stock = 1 if in_stock else 0
-            availability_text = clean_text(availability.get("text"))
-        elif isinstance(availability, bool):
-            in_stock = availability
-            stock = 1 if availability else 0
-        else:
-            availability_text = clean_text(availability)
-
-        result.append({
-            "current_price": current,
-            "original_price": original,
-            "currency": currency,
-            "color": color,
-            "size": size,
-            "inventory": stock,
-            "in_stock": in_stock,
-            "availability_text": availability_text,
-            "title": clean_text(variant.get("title")),
-            "image_url": "",
-        })
-
-    return result
-
-
-def choose_current_price(data):
-    """优先使用 Firecrawl product.variants.price.amount。"""
-    structured = _extract_structured_product_variants(data)
-    if structured:
-        # 商品页可能有多个颜色/尺码价格；页面通常展示最低可售价格。
-        return min(item["current_price"] for item in structured)
-
-    # 只有 product 格式没有拿到价格时，才退回结构化字段。
-    prices = extract_prices(data)
-    if prices:
-        # 不再直接把整份 JSON 里的最小数字当作价格；这里仅作为兜底。
-        return min(prices)
-
-    # 最后的文本兜底。注意：文本价格必须带货币符号/代码，避免把
-    # “$10/月”“10 条评论”等非商品价格当成商品价格。
+def collect_nested_text(data):
+    """收集 Firecrawl product 响应中所有可能包含商品正文的文本。"""
     text_parts = []
 
-    def collect_text(node, depth=0):
-        if depth > 8:
+    def collect(node, depth=0):
+        if depth > 10:
             return
         if isinstance(node, dict):
             for key, value in node.items():
@@ -716,82 +607,171 @@ def choose_current_price(data):
                 if nk in {"markdown", "html", "rawhtml", "text", "content"} and isinstance(value, str):
                     text_parts.append(value)
                 elif isinstance(value, (dict, list)):
-                    collect_text(value, depth + 1)
+                    collect(value, depth + 1)
         elif isinstance(node, list):
             for value in node:
                 if isinstance(value, (dict, list)):
-                    collect_text(value, depth + 1)
+                    collect(value, depth + 1)
 
-    collect_text(data)
-    prices = extract_prices_from_text("\n".join(text_parts))
+    collect(data)
+    return "\n".join(text_parts)
+
+
+def _remove_patagonia_payment_text(text):
+    """删除 Patagonia 页面中的分期付款金额，但保留商品主价格。"""
+    if not text:
+        return ""
+
+    text = html.unescape(str(text))
+
+    # 只删除“付款方式 + 分期金额”本身，不删除前面的商品价格。
+    patterns = [
+        r'(?is)(?:pay|paid)\s+in\s+(?:3|4|6|12)\s+(?:interest[- ]free\s+)?payments?\s*(?:of|x)?\s*(?:US\$|CA\$|C\$|\$)\s*[0-9]+(?:\.[0-9]{2})?',
+        r'(?is)(?:pay|paid)\s+over\s+(?:3|4|6|12)\s+(?:interest[- ]free\s+)?payments?\s*(?:of|x)?\s*(?:US\$|CA\$|C\$|\$)\s*[0-9]+(?:\.[0-9]{2})?',
+        r'(?is)(?:3|4|6|12)\s*(?:interest[- ]free\s+)?payments?\s*(?:of|x)?\s*(?:US\$|CA\$|C\$|\$)\s*[0-9]+(?:\.[0-9]{2})?',
+        r'(?is)(?:klarna|afterpay|affirm|shop\s*pay|sezzle)[^\n]{0,160}',
+        r'(?is)(?:monthly|per\s*month|installment|installments|分期|期付款)[^\n]{0,120}(?:US\$|CA\$|C\$|\$)\s*[0-9]+(?:\.[0-9]{2})?',
+    ]
+
+    for pattern in patterns:
+        text = re.sub(pattern, " ", text)
+
+    return text
+
+
+def extract_patagonia_prices(text):
+    """按 Patagonia 商品页的实际展示方式提取价格。
+
+    关键点：
+    1. 优先识别“原价 -> 促销价”成对价格；
+    2. 排除 Klarna/Afterpay 等分期金额；
+    3. 普通页面只保留商品主价格，不再简单取所有金额中的最小值。
+    """
+    if not text:
+        return [], None
+
+    text = _remove_patagonia_payment_text(text)
+
+    # Patagonia 折扣页常见：~~ $209 ~~ $103.99 / (50% Off)
+    sale_pairs = []
+    pair_patterns = [
+        r'~~\s*(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)\s*~~\s*(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)\s+(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)\s*\(?\s*\d{1,3}%\s*Off',
+    ]
+    for pattern in pair_patterns:
+        for match in re.finditer(pattern, text, flags=re.I):
+            old_price = safe_float(match.group(1))
+            new_price = safe_float(match.group(2))
+            if old_price and new_price and 1 <= new_price <= old_price <= 20000:
+                sale_pairs.append((old_price, new_price))
+
+    if sale_pairs:
+        # 页面上同一商品可能重复出现在多个结构块；选择折扣幅度最合理的主商品价格。
+        sale_pairs = list(dict.fromkeys(sale_pairs))
+        old_price, new_price = max(
+            sale_pairs,
+            key=lambda pair: (pair[0] - pair[1], pair[0]),
+        )
+        return [new_price], old_price
+
+    # 非促销页：只从明确的美元/加元商品金额中取候选。
+    patterns = [
+        r'(?:US\$|CA\$|C\$|\$)\s*([0-9]{2,4}(?:\.[0-9]{2})?)',
+        r'([0-9]{2,4}(?:\.[0-9]{2})?)\s*(?:USD|CAD|US\$|CA\$|C\$)',
+    ]
+    candidates = []
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, flags=re.I):
+            value = safe_float(match.group(1))
+            if value is None or not 1 <= value <= 20000:
+                continue
+
+            # 再检查金额附近是否仍是付款/分期语境。
+            left = text[max(0, match.start() - 100):match.start()].lower()
+            right = text[match.end():match.end() + 100].lower()
+            context = left + " " + right
+            if any(word in context for word in (
+                "payment", "payments", "installment", "installments",
+                "monthly", "per month", "klarna", "afterpay", "affirm",
+            )):
+                continue
+            candidates.append(value)
+
+    unique = []
+    for value in candidates:
+        if not any(abs(value - x) < 0.01 for x in unique):
+            unique.append(value)
+
+    return unique, None
+
+
+def choose_current_price(data):
+    # 先使用 Firecrawl product 结构化字段，但不能再把任意字段中的最小数字当价格。
+    candidates = collect_price_candidates(
+        data,
+        {normalize_key(x) for x in CURRENT_PRICE_KEYS},
+    )
+
+    structured = [
+        item for item in candidates
+        if 1 <= item["price"] <= 20000
+    ]
+
+    # 对 Patagonia：页面正文的主商品价格优先级高于通用 JSON 数字，
+    # 因为页面经常同时包含分期付款金额。
+    text = collect_nested_text(data)
+    host_hint = text.lower()
+    if "patagonia" in host_hint or "techface" in host_hint or "quandary" in host_hint:
+        patagonia_prices, _ = extract_patagonia_prices(text)
+        if patagonia_prices:
+            return patagonia_prices[0]
+
+    if structured:
+        # 优先路径更明确的 price/salePrice/currentPrice；只有完全没有明确字段时才看 offers。
+        priority = []
+        for item in structured:
+            nk = normalize_key(item["key"])
+            score = 0
+            if nk in {"saleprice", "currentprice", "sellingprice", "finalprice", "discountprice", "nowprice"}:
+                score += 100
+            elif nk == "price":
+                score += 80
+            elif nk in {"minsaleprice", "minsaleprice"}:
+                score += 60
+            score -= len(item.get("path", ())) * 0.1
+            priority.append((score, item["price"]))
+
+        if priority:
+            priority.sort(reverse=True)
+            return priority[0][1]
+
+    # 最后才从正文中找价格；这里不再无条件取 min()。
+    prices = extract_prices_from_text(text)
     if prices:
-        return min(prices)
+        return max(prices) if len(prices) > 1 else prices[0]
 
     return None
 
 
 def choose_original_price(data, current_price):
-    """优先使用 Firecrawl product.variant.sale.originalPrice.amount。"""
-    structured = _extract_structured_product_variants(data)
-    if structured:
-        originals = [
-            item["original_price"]
-            for item in structured
-            if item.get("original_price") is not None
-            and item["original_price"] >= item["current_price"]
-        ]
-        if originals:
-            # 与最低当前价对应的原价优先；没有对应关系时再取最大原价。
-            min_current = min(item["current_price"] for item in structured)
-            matching = [
-                item["original_price"]
-                for item in structured
-                if item.get("original_price") is not None
-                and abs(item["current_price"] - min_current) < 0.01
-                and item["original_price"] >= item["current_price"]
-            ]
-            if matching:
-                return max(matching)
-            return max(originals)
-
-        # Firecrawl 已经成功识别 product/variants，但页面没有 sale.originalPrice。
-        # 这时应视为“无结构化折扣”，不要再去整页 HTML 里找其它大数字。
-        return current_price
-
     original = extract_original_price(data)
-    if original is not None:
-        if current_price is None or original >= current_price:
-            return original
+    if original is not None and (current_price is None or original >= current_price):
+        return original
+
+    text = collect_nested_text(data)
+    host_hint = text.lower()
+    if "patagonia" in host_hint or "techface" in host_hint or "quandary" in host_hint:
+        _, patagonia_original = extract_patagonia_prices(text)
+        if patagonia_original is not None:
+            return patagonia_original
 
     prices = extract_prices(data)
     if prices:
-        larger = [
-            p for p in prices
-            if current_price is None or p >= current_price
-        ]
+        larger = [p for p in prices if current_price is None or p >= current_price]
         if larger:
             return max(larger)
 
-    # Arc'teryx Outlet 等页面可能只在 markdown/html 中出现当前价+原价。
-    text_parts = []
-
-    def collect_text(node, depth=0):
-        if depth > 8:
-            return
-        if isinstance(node, dict):
-            for key, value in node.items():
-                nk = normalize_key(key)
-                if nk in {"markdown", "html", "rawhtml", "text", "content"} and isinstance(value, str):
-                    text_parts.append(value)
-                elif isinstance(value, (dict, list)):
-                    collect_text(value, depth + 1)
-        elif isinstance(node, list):
-            for value in node:
-                if isinstance(value, (dict, list)):
-                    collect_text(value, depth + 1)
-
-    collect_text(data)
-    text_prices = extract_prices_from_text("\n".join(text_parts))
+    text_prices = extract_prices_from_text(text)
     if current_price is not None:
         larger = [p for p in text_prices if p >= current_price]
         if larger:
@@ -1097,17 +1077,6 @@ def extract_variant_info(data):
     }
 
     records = []
-
-    # Firecrawl product 格式的标准 variants 是最可靠的来源。
-    # 每个 variant 都带 values / price / availability / images。
-    structured_variants = _extract_structured_product_variants(data)
-    for item in structured_variants:
-        if item.get("color") or item.get("size") or item.get("inventory") is not None:
-            records.append({
-                "color": item.get("color", ""),
-                "size": item.get("size", ""),
-                "inventory": item.get("inventory"),
-            })
 
     def scalar(value):
         if value is None:
@@ -1728,28 +1697,6 @@ def load_discovered_products():
         return []
 
 
-def load_correction_queue():
-    CORRECTION_QUEUE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    if not CORRECTION_QUEUE_FILE.exists():
-        return {canonical_url(url) for url in INITIAL_CORRECTION_URLS}
-    try:
-        with open(CORRECTION_QUEUE_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, list):
-            return {canonical_url(x) for x in data if canonical_url(x)}
-    except Exception as exc:
-        print("读取纠错队列失败：", exc)
-    return set()
-
-
-def save_correction_queue(queue):
-    CORRECTION_QUEUE_FILE.parent.mkdir(parents=True, exist_ok=True)
-    temp_file = CORRECTION_QUEUE_FILE.with_suffix(".tmp")
-    with open(temp_file, "w", encoding="utf-8") as f:
-        json.dump(sorted(queue), f, ensure_ascii=False, indent=2)
-    temp_file.replace(CORRECTION_QUEUE_FILE)
-
-
 def save_discovered_products(products):
     DISCOVERED_FILE.parent.mkdir(parents=True, exist_ok=True)
 
@@ -2183,22 +2130,6 @@ def build_current_product(product, data):
     else:
         discount = 0
 
-    # 没有 Firecrawl product.sale.originalPrice 支撑时，极端折扣很可能是
-    # 页面中的分期金额、商品编号或其它数字误识别。对这类结果直接丢弃，
-    # 不写入历史，也不推送。
-    structured_variants = _extract_structured_product_variants(data)
-    has_structured_sale = any(
-        item.get("original_price") is not None
-        and item.get("original_price") >= item.get("current_price", 0)
-        for item in structured_variants
-    )
-    if discount > 80 and not has_structured_sale:
-        print(
-            f"⚠️ 疑似错误价格：当前 {current_price:.2f} / 原价 {original_price:.2f} "
-            f"/ 折扣 {discount:.1f}%，未检测到结构化促销原价，跳过本次结果"
-        )
-        return None
-
     cny_price = convert_to_cny(
         current_price,
         currency,
@@ -2221,6 +2152,7 @@ def build_current_product(product, data):
         "image_url": image_url,
         "variants": variants,
         "updated_at": int(time.time()),
+        "price_source": "validated",
     }
 
 
@@ -2321,12 +2253,71 @@ def build_telegram_message(product, previous):
 # 商品检查
 # ============================================================
 
-def check_product(product, history, correction_queue=None):
+def is_suspicious_old_price(product, previous):
+    """识别上一版本已经记录的明显错误低价，允许修复后主动纠错推送。"""
+    if not previous or not isinstance(previous, dict):
+        return False
+
+    source = normalize_name(product.get("source", ""))
+    if "patagonia" not in source:
+        return False
+
+    old_current = safe_float(previous.get("current_price"))
+    old_original = safe_float(previous.get("original_price"))
+    old_discount = safe_float(previous.get("discount"))
+
+    if old_current is None or old_original is None:
+        return False
+
+    # Patagonia 官方页正常商品大幅低于原价的极端历史记录，尤其是 80%+，
+    # 很可能是把 Klarna/Afterpay 分期金额误当成商品售价。
+    if old_discount is not None and old_discount >= 70 and old_current < old_original * 0.30:
+        return True
+
+    return False
+
+
+def build_correction_message(product, previous):
+    current = product["current_price"]
+    original = product["original_price"]
+    currency = product.get("currency") or ""
+    old_current = safe_float(previous.get("current_price"))
+    old_original = safe_float(previous.get("original_price"))
+
+    lines = [
+        "🔄 价格纠错提醒",
+        "",
+        f"📦 商品：{product['name']}",
+        f"🌐 官网：{product.get('source') or '官网'}",
+    ]
+    if old_current is not None:
+        lines.append(f"⚠️ 错误记录价格：{old_current:.2f} {currency}")
+    lines.append(f"✅ 正确当前价格：{current:.2f} {currency}")
+    lines.append(f"💵 正确原价：{original:.2f} {currency}")
+    lines.append(f"🏷️ 正确折扣：{product['discount']:.1f}%")
+    if old_original is not None:
+        lines.append(f"🧾 已自动修正历史记录：{old_original:.2f} {currency} → {original:.2f} {currency}")
+
+    cny = product.get("cny_price")
+    if cny is not None:
+        lines.extend(["", f"🇨🇳 人民币参考价：¥{cny:,.0f}", "💱 按实时汇率换算"])
+
+    lines.extend([
+        "",
+        "🎨 颜色 / 尺码 / 库存：",
+        format_variant_text(product.get("variants") or []),
+        "",
+        f"🔗 官网商品链接：{product['url']}",
+    ])
+    return "\n".join(lines)
+
+
+def check_product(product, history):
     print("检查：", product["name"])
 
     data = firecrawl_scrape(
         product["url"],
-        formats=["product", "markdown"],
+        formats=["product", "markdown", "html", "rawHtml"],
     )
 
     if not data:
@@ -2347,7 +2338,13 @@ def check_product(product, history, correction_queue=None):
     key = product["url"]
 
     previous = history.get(key)
-    correction_sent_ok = False
+
+    # 如果旧历史是明显错误的 Patagonia 极低价，修复后主动推送一次“价格纠错”，
+    # 然后用正确价格覆盖旧记录；下一次运行不会重复推送。
+    if is_suspicious_old_price(product, previous):
+        correction_message = build_correction_message(current_product, previous)
+        if send_telegram_message(correction_message, current_product.get("image_url")):
+            print("🔄 已推送价格纠错提醒，并覆盖错误历史记录")
 
     discount_ok = (
         current_product["discount"]
@@ -2360,22 +2357,20 @@ def check_product(product, history, correction_queue=None):
         )
 
         if previous_price is not None:
-            # 已有历史：只有实际降价且折扣达到门槛才推送
+            # 已有历史：只有实际降价且折扣达到门槛才推送。
+            # 若本次属于旧历史纠错，则不把“纠错”误报成降价。
             price_changed_down = current_price < previous_price
+            correction_case = is_suspicious_old_price(product, previous)
 
-            if price_changed_down and discount_ok:
+            if price_changed_down and discount_ok and not correction_case:
                 message = build_telegram_message(
                     current_product,
                     previous,
                 )
 
-                sent = send_telegram_message(message, current_product.get("image_url"))
+                send_telegram_message(message, current_product.get("image_url"))
 
-                if sent:
-                    correction_sent_ok = True
-                    print("✅ 已推送降价提醒")
-                else:
-                    print("⚠️ Telegram 推送失败，本次不计为已推送")
+                print("✅ 已推送降价提醒")
     else:
         # 第一次发现：如果已经达到折扣门槛，立即推送一次
         if discount_ok:
@@ -2384,25 +2379,12 @@ def check_product(product, history, correction_queue=None):
                 None,
             )
 
-            sent = send_telegram_message(message, current_product.get("image_url"))
+            send_telegram_message(message, current_product.get("image_url"))
 
-            if sent:
-                correction_sent_ok = True
-                print("✅ 首次发现折扣商品，已推送提醒")
-            else:
-                print("⚠️ Telegram 推送失败，本次不计为已推送")
+            print("✅ 首次发现折扣商品，已推送提醒")
 
     # 无论是否推送，都保存最新价格
     history[key] = current_product
-
-    if correction_queue is not None and key in correction_queue:
-        # 如果 Telegram 本次发送失败，保留队列，下次继续重试；
-        # 如果已有正确历史或当前没有达到提醒门槛，则无需重复纠错。
-        if correction_sent_ok or previous is not None or not discount_ok:
-            correction_queue.discard(key)
-            print("✅ 本次纠错商品已处理完成，已移出纠错队列")
-        else:
-            print("⚠️ 纠错商品 Telegram 未成功发送，保留队列等待下次重试")
 
     print(
         f"当前价格：{current_price:.2f} "
@@ -2428,51 +2410,6 @@ def check_product(product, history, correction_queue=None):
 
 
 # ============================================================
-# 错误历史自动修复
-# ============================================================
-
-def repair_bad_history(history):
-    """清理本次已知的错误价格记录，避免错误历史阻止正确的首次推送。
-
-    本次错误表现是 Patagonia 页面被解析成 10 USD / 99%+ 折扣。
-    正常 Patagonia 男装页面极少会出现这种“当前价 10、原价上千”的结构，
-    且这些记录来自本次错误解析。修复后下次正确价格会按“首次发现折扣”推送。
-    """
-    removed = 0
-    removed_urls = set()
-    if not isinstance(history, dict):
-        return removed_urls
-
-    for key in list(history.keys()):
-        item = history.get(key)
-        if not isinstance(item, dict):
-            continue
-
-        url = clean_text(item.get("url", key)).lower()
-        current = safe_float(item.get("current_price"))
-        original = safe_float(item.get("original_price"))
-        discount = safe_float(item.get("discount"))
-
-        if "patagonia.com/product/" in url or "patagonia.ca/product/" in url:
-            if (
-                current is not None
-                and original is not None
-                and current <= 10.01
-                and original >= 100
-                and discount is not None
-                and discount >= 90
-            ):
-                del history[key]
-                removed_urls.add(canonical_url(url))
-                removed += 1
-
-    if removed:
-        print(f"⚠️ 已自动清理 {removed} 条本次运行产生的 Patagonia 错误价格历史")
-
-    return removed_urls
-
-
-# ============================================================
 # 主程序
 # ============================================================
 
@@ -2483,9 +2420,6 @@ def main():
     print("=" * 60)
 
     history = load_history()
-    repaired_urls = repair_bad_history(history)
-    correction_queue = load_correction_queue()
-    correction_queue |= repaired_urls
     discovered_pool = load_discovered_products()
 
     # --------------------------------------------------------
@@ -2539,38 +2473,13 @@ def main():
         for item in FIXED_PRODUCTS
     }
 
-    # 本次错误历史/错误推送对应的商品优先重新检查，确保直接重新推送正确价格。
-    correction_products = []
-    correction_seen = set()
-    for item in discovered_pool:
-        item_url = canonical_url(item.get("url", ""))
-        if item_url in correction_queue and item_url not in fixed_urls and item_url not in correction_seen:
-            correction_products.append(item)
-            correction_seen.add(item_url)
-
-    # 如果某个纠错 URL 因为商品库尚未同步进来，直接补成临时商品。
-    discovered_by_url = {canonical_url(item.get("url", "")): item for item in discovered_pool}
-    for correction_url in sorted(correction_queue):
-        if correction_url in fixed_urls or correction_url in correction_seen:
-            continue
-        if correction_url in discovered_by_url:
-            continue
-        host = urlparse(correction_url).netloc.lower()
-        correction_products.append({
-            "name": _build_name_from_url(correction_url),
-            "url": correction_url,
-            "source": "Patagonia US" if "patagonia.com" in host else "Patagonia Canada",
-        })
-        correction_seen.add(correction_url)
-
-    remaining_limit = max(0, DISCOVERED_CHECKS_PER_RUN - len(correction_products))
     selected_discovered = choose_discovered_for_check(
         discovered_pool,
-        remaining_limit,
-        fixed_urls=fixed_urls | correction_seen,
+        DISCOVERED_CHECKS_PER_RUN,
+        fixed_urls=fixed_urls,
     )
 
-    products.extend(correction_products + selected_discovered)
+    products.extend(selected_discovered)
 
     print(
         f"本次实际检查商品：{len(products)} "
@@ -2592,7 +2501,7 @@ def main():
         print()
         print(f"========== {index}/{len(products)} ==========")
 
-        check_ok = check_product(product, history, correction_queue)
+        check_ok = check_product(product, history)
 
         # 只有真正成功获取到有效商品数据，才更新轮换时间。
         # Firecrawl 临时 500 / 无价格时不要把商品标记为“已检查”，
@@ -2615,7 +2524,6 @@ def main():
     # --------------------------------------------------------
     save_history(history)
     save_discovered_products(discovered_pool)
-    save_correction_queue(correction_queue)
 
     print()
     print("=" * 60)
