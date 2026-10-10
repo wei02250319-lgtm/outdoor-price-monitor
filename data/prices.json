@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 201.21,
-    "image_url": "https://www.rei.com/media/bce91777-0dff-4d54-9fa0-18e1d892d627.jpg?size=784x588",
+    "cny_price": 200.76,
+    "image_url": "https://www.rei.com/media/28bab7d9-51ba-4591-9f7b-f5ea040bd492.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789632929,
+    "updated_at": 1791623582,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,10 +35,10 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 201.21,
-    "image_url": "https://www.rei.com/media/4d33a0af-f0c0-479f-9743-1eec555ee069.jpg?size=784x588",
+    "cny_price": 200.76,
+    "image_url": "https://i.ytimg.com/vi/Gkm22QMT_iE/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1789632941,
+    "updated_at": 1791623598,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -49,10 +49,10 @@
     "current_price": 30.0,
     "original_price": 209.0,
     "discount": 85.6,
-    "cny_price": 201.21,
-    "image_url": "https://www.rei.com/media/8d862753-f856-4116-baed-23264abaf3a8.jpg?size=784x588",
+    "cny_price": 200.76,
+    "image_url": "https://i.ytimg.com/vi/YE7jvj6dUu8/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1789632953,
+    "updated_at": 1791623614,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
