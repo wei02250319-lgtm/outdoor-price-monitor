@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1791625530,
+    "last_checked": 1792053403,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1789634601,
+    "last_checked": 1792053347,
     "invalid_count": 0
   },
   {
@@ -262,7 +262,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1791623582,
+    "last_checked": 1792053361,
     "invalid_count": 0
   },
   {
@@ -668,7 +668,7 @@
     "name": "85920",
     "url": "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-pants/85920.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792053460,
     "invalid_count": 0
   },
   {
@@ -696,14 +696,14 @@
     "name": "55183",
     "url": "https://www.patagonia.ca/product/mens-quandary-hiking-pants-regular/55183.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792053475,
     "invalid_count": 0
   },
   {
     "name": "24104",
     "url": "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-pants/24104.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792053490,
     "invalid_count": 0
   },
   {
@@ -1319,7 +1319,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1791625512,
+    "last_checked": 1792053390,
     "invalid_count": 0
   },
   {
@@ -2278,6 +2278,146 @@
     "name": "Patagonia Terravia Trail Pants",
     "url": "https://www.rei.com/product/C01331/patagonia-terravia-trail-pants-mens",
     "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "The North Face Lightning Zip In Jacket",
+    "url": "https://www.rei.com/product/C11864/the-north-face-lightning-zip-in-jacket-mens",
+    "source": "REI",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Therme Jacket 0274",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/therme-jacket-0274",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Norvan Jacket 9571",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/norvan-jacket-9571",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Alpha Sl Jacket 0287",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/alpha-sl-jacket-0287",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Serratus Hoody 9570",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/serratus-hoody-9570",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Serratus Pant 9527",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/serratus-pant-9527",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Konseal Sl Pullover Hoody 9807",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/konseal-sl-pullover-hoody-9807",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Spere Sl Pant 0320",
+    "url": "https://outlet.arcteryx.com/us/zh/shop/mens/spere-sl-pant-0320",
+    "source": "Arc'teryx US Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Rush Bib Pant 9904",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/rush-bib-pant-9904",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Serratus Pant 9527",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/serratus-pant-9527",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Serratus Hoody 9570",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/serratus-hoody-9570",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Alpha Sl Jacket 0287",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/alpha-sl-jacket-0287",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "24142",
+    "url": "https://www.patagonia.ca/product/mens-houdini-windbreaker-jacket/24142.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "84675",
+    "url": "https://www.patagonia.ca/product/mens-down-sweater-insulated-jacket/84675.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20495",
+    "url": "https://www.patagonia.ca/product/mens-light-and-variable-windbreaker-jacket/20495.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "40129",
+    "url": "https://www.patagonia.ca/product/mens-r1-fleece-midlayer-jacket/40129.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "31830",
+    "url": "https://www.patagonia.ca/product/mens-insulated-storm-shift-ski-snowboard-jacket/31830.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "30355",
+    "url": "https://www.patagonia.ca/product/mens-insulated-snowfarer-jacket/30355.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "83403",
+    "url": "https://www.patagonia.ca/product/mens-triolet-alpine-jacket/83403.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "85910",
+    "url": "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-jacket/85910.html",
+    "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0
   }

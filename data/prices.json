@@ -7,10 +7,10 @@
     "current_price": 30.0,
     "original_price": 400.0,
     "discount": 92.5,
-    "cny_price": 201.21,
-    "image_url": "https://www.rei.com/media/205bf215-15d4-46ad-8cd8-3b433ab844e9.jpg?size=784x588",
+    "cny_price": 200.78,
+    "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1789634601,
+    "updated_at": 1792053347,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 200.76,
-    "image_url": "https://www.rei.com/media/28bab7d9-51ba-4591-9f7b-f5ea040bd492.jpg?size=784x588",
+    "cny_price": 200.78,
+    "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1791623582,
+    "updated_at": 1792053361,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,24 +35,65 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 200.76,
-    "image_url": "https://i.ytimg.com/vi/Gkm22QMT_iE/maxresdefault.jpg",
+    "cny_price": 200.78,
+    "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1791623598,
+    "updated_at": 1792053376,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
-    "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
+    "name": "Patagonia Men's Fleece Jackets | REI Co-op",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "",
     "currency": "USD",
     "current_price": 30.0,
-    "original_price": 209.0,
-    "discount": 85.6,
-    "cny_price": 200.76,
-    "image_url": "https://i.ytimg.com/vi/YE7jvj6dUu8/maxresdefault.jpg",
-    "variants": [],
-    "updated_at": 1791625512,
+    "original_price": 499.99,
+    "discount": 94.0,
+    "cny_price": 200.78,
+    "image_url": "https://www.rei.com/media/90ab7471-842a-4953-bd57-9d19082523e6.jpg",
+    "variants": [
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "S",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "XL",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "XS",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "3XL",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "M",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "L",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "XXL",
+        "inventory": null
+      },
+      {
+        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
+        "size": "XXXL",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792053390,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -63,10 +104,10 @@
     "current_price": 30.0,
     "original_price": 300.0,
     "discount": 90.0,
-    "cny_price": 200.76,
+    "cny_price": 200.78,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1791625530,
+    "updated_at": 1792053403,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -1950,6 +1991,59 @@
     "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwee4aba81/images/hi-res/21146_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1789633049,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-pants/85920.html": {
+    "name": "Patagonia Men's M10® Storm Waterproof Alpine Pants",
+    "url": "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-pants/85920.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 5730.0,
+    "discount": 99.5,
+    "cny_price": 131.79,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw8ba44eb4/images/hi-res/85920_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792053456,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-quandary-hiking-pants-regular/55183.html": {
+    "name": "Patagonia Men's Quandary Hiking Pants - Regular",
+    "url": "https://www.patagonia.ca/product/mens-quandary-hiking-pants-regular/55183.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 8977.0,
+    "discount": 99.7,
+    "cny_price": 131.79,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6ed32432/images/hi-res/55183_CSC.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792053474,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-pants/24104.html": {
+    "name": "Patagonia Men's Wind Shield Pants - Windbreaker Pants",
+    "url": "https://www.patagonia.ca/product/mens-wind-shield-windbreaker-pants/24104.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 711.0,
+    "discount": 96.1,
+    "cny_price": 131.79,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw254179b6/images/hi-res/24104_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792053489,
     "price_source": "validated"
   }
 }
