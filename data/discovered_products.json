@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1792053403,
+    "last_checked": 1792072970,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1792053347,
+    "last_checked": 1792072922,
     "invalid_count": 0
   },
   {
@@ -262,7 +262,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1792053361,
+    "last_checked": 1792072934,
     "invalid_count": 0
   },
   {
@@ -710,21 +710,21 @@
     "name": "82971",
     "url": "https://www.patagonia.ca/product/mens-terravia-alpine-pants-short/82971.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792073008,
     "invalid_count": 0
   },
   {
     "name": "20366",
     "url": "https://www.patagonia.ca/product/mens-pile-lined-fjord-shirt-jacket/20366.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792073028,
     "invalid_count": 0
   },
   {
     "name": "20235",
     "url": "https://www.patagonia.ca/product/mens-heyes-peak-jacket/20235.html",
     "source": "Patagonia Canada",
-    "last_checked": 0,
+    "last_checked": 1792073043,
     "invalid_count": 0
   },
   {
@@ -1319,7 +1319,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1792053390,
+    "last_checked": 1792072958,
     "invalid_count": 0
   },
   {
@@ -2417,6 +2417,20 @@
   {
     "name": "85910",
     "url": "https://www.patagonia.ca/product/mens-m10-storm-waterproof-alpine-jacket/85910.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "20455",
+    "url": "https://www.patagonia.ca/product/mens-isthmus-unlined-jacket/20455.html",
+    "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "21045",
+    "url": "https://www.patagonia.ca/product/mens-sisar-down-jacket/21045.html",
     "source": "Patagonia Canada",
     "last_checked": 0,
     "invalid_count": 0

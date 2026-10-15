@@ -7,10 +7,10 @@
     "current_price": 30.0,
     "original_price": 400.0,
     "discount": 92.5,
-    "cny_price": 200.78,
+    "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792053347,
+    "updated_at": 1792072922,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 200.78,
+    "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792053361,
+    "updated_at": 1792072934,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,10 +35,10 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 200.78,
+    "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792053376,
+    "updated_at": 1792072946,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -49,7 +49,7 @@
     "current_price": 30.0,
     "original_price": 499.99,
     "discount": 94.0,
-    "cny_price": 200.78,
+    "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/90ab7471-842a-4953-bd57-9d19082523e6.jpg",
     "variants": [
       {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792053390,
+    "updated_at": 1792072958,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -104,10 +104,10 @@
     "current_price": 30.0,
     "original_price": 300.0,
     "discount": 90.0,
-    "cny_price": 200.78,
+    "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792053403,
+    "updated_at": 1792072970,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2044,6 +2044,69 @@
       }
     ],
     "updated_at": 1792053489,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-terravia-alpine-pants-short/82971.html": {
+    "name": "Patagonia Men's Terravia Alpine Pants - Short",
+    "url": "https://www.patagonia.ca/product/mens-terravia-alpine-pants-short/82971.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 1227.0,
+    "discount": 97.7,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb2ba7e3b/images/hi-res/82971_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792073008,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-pile-lined-fjord-shirt-jacket/20366.html": {
+    "name": "Patagonia Men's Pile-Lined Fjord Shirt Jacket",
+    "url": "https://www.patagonia.ca/product/mens-pile-lined-fjord-shirt-jacket/20366.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 5457.0,
+    "discount": 99.5,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw28abbb99/images/hi-res/20366_BTDS.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792073028,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-heyes-peak-jacket/20235.html": {
+    "name": "Patagonia Men's Heyes Peak Jacket",
+    "url": "https://www.patagonia.ca/product/mens-heyes-peak-jacket/20235.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 6953.0,
+    "discount": 99.6,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw3fa0ea69/images/hi-res/20235_TLGR.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Treeline Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Wing Grey",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "New Navy",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792073042,
     "price_source": "validated"
   }
 }
