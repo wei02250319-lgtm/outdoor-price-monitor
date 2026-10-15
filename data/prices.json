@@ -10,7 +10,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792072922,
+    "updated_at": 1792088340,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792072934,
+    "updated_at": 1792088352,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792072946,
+    "updated_at": 1792088364,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792072958,
+    "updated_at": 1792088375,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -107,7 +107,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792072970,
+    "updated_at": 1792088388,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2107,6 +2107,94 @@
       }
     ],
     "updated_at": 1792073042,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-regular/21151.html": {
+    "name": "Men's Travel and Outdoor Pants by Patagonia",
+    "url": "https://www.patagonia.ca/product/mens-terravia-peak-trail-pants-regular/21151.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 159.0,
+    "discount": 82.4,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwa2b6c5bd/images/hi-res/85266_BLK.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792088505,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-r2-techface-pants/21716.html": {
+    "name": "Patagonia Men's R2® TechFace Pants",
+    "url": "https://www.patagonia.ca/product/mens-r2-techface-pants/21716.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 9381.0,
+    "discount": 99.7,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6db8a6b6/images/hi-res/21716_DNBR.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792088520,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.ca/product/mens-better-sweater-fleece-jacket/25528.html": {
+    "name": "Patagonia Men's Better Sweater® Fleece Jacket",
+    "url": "https://www.patagonia.ca/product/mens-better-sweater-fleece-jacket/25528.html",
+    "source": "Patagonia Canada",
+    "currency": "CAD",
+    "current_price": 28.0,
+    "original_price": 4516.0,
+    "discount": 99.4,
+    "cny_price": 131.87,
+    "image_url": "https://dis.patagonia.ca/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dweb9712df/images/hi-res/25528_OLGG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Old Growth Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "New Navy",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Stonewash",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Dried Vanilla",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Blue Sage Rib Knit",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Marlow Brown Rib Knit",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Cinnamon Brown",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Coal Orange",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792088537,
     "price_source": "validated"
   }
 }
