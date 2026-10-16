@@ -10,7 +10,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792100420,
+    "updated_at": 1792109322,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792100432,
+    "updated_at": 1792109334,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792100444,
+    "updated_at": 1792109346,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792100455,
+    "updated_at": 1792109358,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -107,7 +107,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792100468,
+    "updated_at": 1792109370,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2258,6 +2258,48 @@
     "image_url": "https://www.rei.com/media/393af4ab-85c0-480a-91cd-3e7345c4d5dd.jpg?size=784x588",
     "variants": [],
     "updated_at": 1792100552,
+    "price_source": "validated"
+  },
+  "https://www.rei.com/product/C11866/the-north-face-quest-insulated-jacket-mens": {
+    "name": "The North Face Quest Insulated Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C11866/the-north-face-quest-insulated-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 30.0,
+    "original_price": 180.0,
+    "discount": 83.3,
+    "cny_price": 200.73,
+    "image_url": "https://www.rei.com/media/2f254730-8f63-4a17-9874-815f30868770.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1792109406,
+    "price_source": "validated"
+  },
+  "https://www.rei.com/product/228950/patagonia-boulder-fork-rain-jacket-mens": {
+    "name": "Patagonia Boulder Fork Rain Jacket - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/228950/patagonia-boulder-fork-rain-jacket-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 30.0,
+    "original_price": 239.0,
+    "discount": 87.4,
+    "cny_price": 200.73,
+    "image_url": "https://www.rei.com/media/ced9bf85-ce1f-4c7b-ac60-a55548bee089.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1792109421,
+    "price_source": "validated"
+  },
+  "https://www.rei.com/product/C11730/the-north-face-tekware-grid-pants-mens": {
+    "name": "The North Face Tekware Grid Pants - Men's | REI Co-op",
+    "url": "https://www.rei.com/product/C11730/the-north-face-tekware-grid-pants-mens",
+    "source": "REI",
+    "currency": "USD",
+    "current_price": 30.0,
+    "original_price": 110.0,
+    "discount": 72.7,
+    "cny_price": 200.73,
+    "image_url": "https://www.rei.com/media/3fff063f-e15b-42f3-9f05-37ebd2f9c09d.jpg?size=784x588",
+    "variants": [],
+    "updated_at": 1792109435,
     "price_source": "validated"
   }
 }
