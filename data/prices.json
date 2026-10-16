@@ -10,7 +10,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792109322,
+    "updated_at": 1792126341,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 200.73,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792109334,
+    "updated_at": 1792126352,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792109346,
+    "updated_at": 1792126364,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792109358,
+    "updated_at": 1792126376,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -107,7 +107,7 @@
     "cny_price": 200.73,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792109370,
+    "updated_at": 1792126389,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2300,6 +2300,31 @@
     "image_url": "https://www.rei.com/media/3fff063f-e15b-42f3-9f05-37ebd2f9c09d.jpg?size=784x588",
     "variants": [],
     "updated_at": 1792109435,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.com/product/mens-storm-racer-waterproof-running-jacket/24112.html": {
+    "name": "Patagonia Men's Storm Racer Waterproof Running Jacket",
+    "url": "https://www.patagonia.com/product/mens-storm-racer-waterproof-running-jacket/24112.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 99.0,
+    "original_price": 1484.0,
+    "discount": 93.3,
+    "cny_price": 662.41,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwc6bdf68c/images/hi-res/24112_BYFG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Berry Fig",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792126447,
     "price_source": "validated"
   }
 }
