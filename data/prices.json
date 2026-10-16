@@ -7,10 +7,10 @@
     "current_price": 30.0,
     "original_price": 400.0,
     "discount": 92.5,
-    "cny_price": 200.73,
+    "cny_price": 200.59,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792143208,
+    "updated_at": 1792160047,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 200.73,
+    "cny_price": 200.59,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792143220,
+    "updated_at": 1792160059,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,10 +35,10 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 200.73,
+    "cny_price": 200.59,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792143232,
+    "updated_at": 1792160071,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -49,7 +49,7 @@
     "current_price": 30.0,
     "original_price": 499.99,
     "discount": 94.0,
-    "cny_price": 200.73,
+    "cny_price": 200.59,
     "image_url": "https://www.rei.com/media/90ab7471-842a-4953-bd57-9d19082523e6.jpg",
     "variants": [
       {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792143244,
+    "updated_at": 1792160083,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -104,10 +104,10 @@
     "current_price": 30.0,
     "original_price": 300.0,
     "discount": 90.0,
-    "cny_price": 200.73,
+    "cny_price": 200.59,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792143258,
+    "updated_at": 1792160096,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
