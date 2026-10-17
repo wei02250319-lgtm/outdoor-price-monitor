@@ -10,7 +10,7 @@
     "name": "Arcteryx Atom Insulated Hoody",
     "url": "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens",
     "source": "REI",
-    "last_checked": 1792212779,
+    "last_checked": 1792227938,
     "invalid_count": 0
   },
   {
@@ -31,7 +31,7 @@
     "name": "Arcteryx Gamma Mx Hoody",
     "url": "https://www.rei.com/product/235146/arcteryx-gamma-mx-hoody-mens",
     "source": "REI",
-    "last_checked": 1792212732,
+    "last_checked": 1792227884,
     "invalid_count": 0
   },
   {
@@ -262,7 +262,7 @@
     "name": "Arcteryx Gamma Jacket",
     "url": "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens",
     "source": "REI",
-    "last_checked": 1792212744,
+    "last_checked": 1792227898,
     "invalid_count": 0
   },
   {
@@ -1319,7 +1319,7 @@
     "name": "Patagonia R2 Techface Jacket",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "REI",
-    "last_checked": 1792212767,
+    "last_checked": 1792227925,
     "invalid_count": 0
   },
   {
@@ -2432,6 +2432,27 @@
     "name": "21045",
     "url": "https://www.patagonia.ca/product/mens-sisar-down-jacket/21045.html",
     "source": "Patagonia Canada",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Beta Jacket 0511",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/beta-jacket-0511",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Therme Jacket 0274",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/therme-jacket-0274",
+    "source": "Arc'teryx Canada Outlet",
+    "last_checked": 0,
+    "invalid_count": 0
+  },
+  {
+    "name": "Norvan Jacket 9571",
+    "url": "https://outlet.arcteryx.com/ca/en/shop/mens/norvan-jacket-9571",
+    "source": "Arc'teryx Canada Outlet",
     "last_checked": 0,
     "invalid_count": 0
   }
