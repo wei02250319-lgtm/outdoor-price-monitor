@@ -10,7 +10,7 @@
     "cny_price": 200.59,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792293108,
+    "updated_at": 1792311408,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 200.59,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792293120,
+    "updated_at": 1792311420,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 200.59,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792293133,
+    "updated_at": 1792311432,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -93,7 +93,7 @@
         "inventory": null
       }
     ],
-    "updated_at": 1792293145,
+    "updated_at": 1792311444,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -107,7 +107,7 @@
     "cny_price": 200.59,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792293158,
+    "updated_at": 1792311456,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2325,6 +2325,31 @@
       }
     ],
     "updated_at": 1792126447,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.com/product/mens-wind-shield-windbreaker-pants/24104.html": {
+    "name": "Patagonia Men's Wind Shield Pants - Windbreaker Pants",
+    "url": "https://www.patagonia.com/product/mens-wind-shield-windbreaker-pants/24104.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 99.0,
+    "original_price": 6059.0,
+    "discount": 98.4,
+    "cny_price": 661.93,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw254179b6/images/hi-res/24104_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Smolder Blue",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792311494,
     "price_source": "validated"
   }
 }
