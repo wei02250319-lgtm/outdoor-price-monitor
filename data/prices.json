@@ -10,7 +10,7 @@
     "cny_price": 200.42,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792421770,
+    "updated_at": 1792441522,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -24,7 +24,7 @@
     "cny_price": 200.42,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792421784,
+    "updated_at": 1792441533,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -38,7 +38,7 @@
     "cny_price": 200.42,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792421796,
+    "updated_at": 1792441545,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -52,7 +52,7 @@
     "cny_price": 200.42,
     "image_url": "https://i.ytimg.com/vi/YE7jvj6dUu8/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792421809,
+    "updated_at": 1792441556,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -66,7 +66,7 @@
     "cny_price": 200.42,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792421821,
+    "updated_at": 1792441568,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2309,6 +2309,61 @@
       }
     ],
     "updated_at": 1792311494,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.com/product/mens-better-sweater-fleece-jacket/25528.html": {
+    "name": "Patagonia Men's Better Sweater® Fleece Jacket",
+    "url": "https://www.patagonia.com/product/mens-better-sweater-fleece-jacket/25528.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 99.0,
+    "original_price": 468.0,
+    "discount": 78.8,
+    "cny_price": 661.39,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dweb9712df/images/hi-res/25528_OLGG.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [
+      {
+        "color": "Old Growth Green",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Black",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "New Navy",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Stonewash",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Dried Vanilla",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Blue Sage Rib Knit",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Marlow Brown Rib Knit",
+        "size": "",
+        "inventory": null
+      },
+      {
+        "color": "Cinnamon Brown",
+        "size": "",
+        "inventory": null
+      }
+    ],
+    "updated_at": 1792441611,
     "price_source": "validated"
   }
 }
