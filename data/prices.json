@@ -7,10 +7,10 @@
     "current_price": 30.0,
     "original_price": 400.0,
     "discount": 92.5,
-    "cny_price": 200.59,
+    "cny_price": 200.42,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792394582,
+    "updated_at": 1792421770,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 200.59,
+    "cny_price": 200.42,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792394593,
+    "updated_at": 1792421784,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,65 +35,24 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 200.59,
+    "cny_price": 200.42,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792394606,
+    "updated_at": 1792421796,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
-    "name": "Patagonia Men's Fleece Jackets | REI Co-op",
+    "name": "Patagonia R2 TechFace Jacket - Men's | REI Co-op",
     "url": "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens",
     "source": "",
     "currency": "USD",
     "current_price": 30.0,
-    "original_price": 499.99,
-    "discount": 94.0,
-    "cny_price": 200.59,
-    "image_url": "https://www.rei.com/media/90ab7471-842a-4953-bd57-9d19082523e6.jpg",
-    "variants": [
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "S",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "XL",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "XS",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "3XL",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "M",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "L",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "XXL",
-        "inventory": null
-      },
-      {
-        "color": "[Black](https://www.rei.com/b/patagonia/c/mens-fleece-jackets) (6)",
-        "size": "XXXL",
-        "inventory": null
-      }
-    ],
-    "updated_at": 1792394618,
+    "original_price": 209.0,
+    "discount": 85.6,
+    "cny_price": 200.42,
+    "image_url": "https://i.ytimg.com/vi/YE7jvj6dUu8/maxresdefault.jpg",
+    "variants": [],
+    "updated_at": 1792421809,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -104,10 +63,10 @@
     "current_price": 30.0,
     "original_price": 300.0,
     "discount": 90.0,
-    "cny_price": 200.59,
+    "cny_price": 200.42,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792394630,
+    "updated_at": 1792421821,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
