@@ -7,10 +7,10 @@
     "current_price": 30.0,
     "original_price": 400.0,
     "discount": 92.5,
-    "cny_price": 200.42,
+    "cny_price": 200.34,
     "image_url": "https://www.rei.com/media/ef5a848c-3e18-401b-91b1-9439622d45f9.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792487488,
+    "updated_at": 1792506512,
     "price_source": "validated"
   },
   "https://www.rei.com/product/C01007/arcteryx-gamma-jacket-mens": {
@@ -21,10 +21,10 @@
     "current_price": 30.0,
     "original_price": 280.0,
     "discount": 89.3,
-    "cny_price": 200.42,
+    "cny_price": 200.34,
     "image_url": "https://www.rei.com/media/a83388da-3871-4545-b85f-548153ef5672.jpg?size=784x588",
     "variants": [],
-    "updated_at": 1792487500,
+    "updated_at": 1792506523,
     "price_source": "validated"
   },
   "https://www.rei.com/product/242853/arcteryx-gamma-pants-mens": {
@@ -35,10 +35,10 @@
     "current_price": 30.0,
     "original_price": 200.0,
     "discount": 85.0,
-    "cny_price": 200.42,
+    "cny_price": 200.34,
     "image_url": "https://i.ytimg.com/vi/S2DpQmiwzUo/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792487512,
+    "updated_at": 1792506535,
     "price_source": "validated"
   },
   "https://www.rei.com/product/222148/patagonia-r2-techface-jacket-mens": {
@@ -49,10 +49,10 @@
     "current_price": 30.0,
     "original_price": 209.0,
     "discount": 85.6,
-    "cny_price": 200.42,
+    "cny_price": 200.34,
     "image_url": "https://i.ytimg.com/vi/YE7jvj6dUu8/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792487523,
+    "updated_at": 1792506547,
     "price_source": "validated"
   },
   "https://www.rei.com/product/243175/arcteryx-atom-insulated-hoody-mens": {
@@ -63,10 +63,10 @@
     "current_price": 30.0,
     "original_price": 300.0,
     "discount": 90.0,
-    "cny_price": 200.42,
+    "cny_price": 200.34,
     "image_url": "https://i.ytimg.com/vi/EOJ_y-tAQAY/maxresdefault.jpg",
     "variants": [],
-    "updated_at": 1792487535,
+    "updated_at": 1792506561,
     "price_source": "validated"
   },
   "https://www.rei.com/product/235112/arcteryx-beta-sl-jacket-mens": {
@@ -2427,6 +2427,20 @@
     "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dw6db8a6b6/images/hi-res/21716_DNBR.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
     "variants": [],
     "updated_at": 1792487596,
+    "price_source": "validated"
+  },
+  "https://www.patagonia.com/product/mens-terravia-alpine-pants-short/82971.html": {
+    "name": "Patagonia Men's Terravia Alpine Pants - Short",
+    "url": "https://www.patagonia.com/product/mens-terravia-alpine-pants-short/82971.html",
+    "source": "Patagonia US",
+    "currency": "USD",
+    "current_price": 99.0,
+    "original_price": 6159.0,
+    "discount": 98.4,
+    "cny_price": 661.12,
+    "image_url": "https://dis.patagonia.com/dw/image/v2/BDJB_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb2ba7e3b/images/hi-res/82971_SMDB.jpg?sw=256&sh=256&sfrm=png&q=95&bgcolor=f3f4ef",
+    "variants": [],
+    "updated_at": 1792506623,
     "price_source": "validated"
   }
 }
